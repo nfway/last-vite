@@ -17,8 +17,9 @@
     "docs:webpack-clean-serve": "vuepress-webpack dev src --clean-cache",
     "docs:webpack-serve": "vuepress-webpack dev src"
   },
-  "dependencies": {
+  "devDependencies": {
     "@types/three": "0.138.0",
+    "@vuepress/plugin-docsearch": "2.0.0-beta.36",
     "@vuepress/plugin-search": "^1.9.7",
     "axios": "0.26.1",
     "three": "0.138.3",
