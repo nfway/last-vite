@@ -40,6 +40,7 @@ export default defineThemeConfig({
 
   plugins: {
     blog: true,
+    search:true,
 
     comment: {
       type: "giscus",
@@ -49,18 +50,7 @@ export default defineThemeConfig({
       categoryId: "DIC_kwDOG_Pt2M4COD69",
     },
    
-    ['@vuepress/plugin-search',
-      {
-        locales: {
-          '/': {
-            placeholder: 'Search',
-          },
-          '/zh/': {
-            placeholder: '搜索',
-          },
-        },
-      },
-    ],
+   
 
     mdEnhance: {
       enableAll: true,
