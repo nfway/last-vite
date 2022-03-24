@@ -33,12 +33,6 @@ export default defineHopeConfig({
       title: "vuepress-theme-hope",
       description: "A vuepress theme with tons of features✨",
     },
-    "/zh/": {
-      lang: "zh-CN",
-      title: "vuepress-theme-hope",
-      description: "一个具有强大功能的 vuepress 主题✨",
-    },
-  },
 
   themeConfig,
 
