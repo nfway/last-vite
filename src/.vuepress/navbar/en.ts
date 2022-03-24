@@ -18,7 +18,7 @@ export const enNavbarConfig = defineNavbarConfig([
   },
  {
     text: "迁移",
-    prefix: "/migration/",
+    link: "/migration/",
   },
   {
     text: "Project",
