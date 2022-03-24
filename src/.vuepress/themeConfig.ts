@@ -48,8 +48,8 @@ export default defineThemeConfig({
       category: "Announcements",
       categoryId: "DIC_kwDOG_Pt2M4COD69",
     },
-
-    '@vuepress/plugin-search',
+   
+    ['@vuepress/plugin-search',
       {
         locales: {
           '/': {
@@ -60,6 +60,7 @@ export default defineThemeConfig({
           },
         },
       },
+    ],
 
     mdEnhance: {
       enableAll: true,
