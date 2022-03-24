@@ -39,8 +39,9 @@ export default defineThemeConfig({
   },
 
   plugins: {
-    blog: true,
-    search:true,
+    blog: false,
+	  ['@vuepress/plugin-search',true],
+	  search: true,
 
     comment: {
       type: "giscus",
