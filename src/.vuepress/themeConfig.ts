@@ -40,8 +40,14 @@ export default defineThemeConfig({
 
   plugins: {
     blog: false,
-	  ['@vuepress/plugin-search',true],
-	  search: true,
+    search: {
+        locales: {
+          "/zh/": {
+            placeholder: "搜索",
+          },
+        },
+      },
+
 
     comment: {
       type: "giscus",
