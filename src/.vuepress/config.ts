@@ -33,7 +33,8 @@ export default defineHopeConfig({
       title: "vuepress-theme-hope",
       description: "A vuepress theme with tons of features✨",
     },
-
+   },
+  
   themeConfig,
 
   alias: {
