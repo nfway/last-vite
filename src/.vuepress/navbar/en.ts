@@ -5,7 +5,7 @@ export const enNavbarConfig = defineNavbarConfig([
     text: "指南",
     icon: "guide",
     prefix: "/guide/",
-    children: ["tutorial", "markdown/", "vuepress/", "style"],
+    children: ["advanced/", "markdown/", "blog/", "feature","get-started","interface","layout"],
   },
   
   "/config/",
