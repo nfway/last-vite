@@ -33,6 +33,4 @@ tag:
 - `"auto"`: 自动根据用户设备主题或当前时间决定是否应用深色模式
 - `"disable"`: 禁用深色模式
 
-<script setup lang="ts">
-import AppearanceSwitch from '@theme-hope/module/outlook/components/AppearanceSwitch'
-</script>
+
