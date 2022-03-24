@@ -16,7 +16,10 @@ export const enNavbarConfig = defineNavbarConfig([
     prefix: "/cookbook/",
     children: ["tutorial", "markdown/", "vuepress/", "style"],
   },
-  "/migration/",
+ {
+    text: "迁移",
+    prefix: "/migration/",
+  },
   {
     text: "Project",
     icon: "info",
