@@ -124,14 +124,3 @@ Please follow [fontawesome document](https://fontawesome.com/).
 - [Usage Instructions](https://fontawesome.com/docs/web/add-icons/how-to)
 - [Icon List](https://fontawesome.com/icons)
 
-## Featured Icons
-
-```html
-<link rel="stylesheet" href="//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css" />
-```
-
-<IconDisplay link="//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css" />
-
-<script setup lang="ts">
-import IconDisplay from '@IconDisplay';
-</script>
