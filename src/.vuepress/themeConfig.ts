@@ -60,7 +60,6 @@ export default defineThemeConfig({
           },
         },
       },
-    ],
 
     mdEnhance: {
       enableAll: true,
