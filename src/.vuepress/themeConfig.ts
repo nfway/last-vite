@@ -40,13 +40,7 @@ export default defineThemeConfig({
 
   plugins: {
     blog: false,
-    search: {
-        locales: {
-          "/zh/": {
-            placeholder: "搜索",
-          },
-        },
-      },
+    search: true,
 
 
     comment: {
