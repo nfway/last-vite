@@ -1,32 +1,32 @@
 ---
-title: Theme Basic Config
+title: 主题基本配置
 icon: config
 category:
-  - Config
+  - 配置
 tag:
-  - Basic
-  - ThemeConfig
+  - 主题配置
+  - 基础
 ---
 
-## Basic Config
+## 基本选项
 
 ::: danger
 
-These options are important and require you to configure them correctly.
+这些选项很重要，需要你正确配置。
 
 :::
 
-### hostname <Badge text="Root only" type="warning" />
+### hostname <Badge text="仅限 Root" type="warning" />
 
-- Type: `string`
-- Required: Yes
+- 类型: `string`
+- 必填: 是
 
-Domain which to be deployed to.
+当前网站部署到的域名。
 
 ### author
 
-- Type: `Author`
-- Required: No
+- 类型: `Author`
+- 必填: 否
 
 ```ts
 type AuthorInfo = { name: string; url?: string };
@@ -34,22 +34,22 @@ type AuthorInfo = { name: string; url?: string };
 type Author = string | string[] | AuthorInfo | AuthorInfo[];
 ```
 
-Global default author.
+文章显示的默认作者
 
 ### navbar
 
-Navbar config
+导航栏配置
 
-For details, see [Layout → Navbar](../../guide/layout/navbar.md)
+具体配置，请见 [布局 → 导航栏](../../guide/layout/navbar.md)
 
 ### sidebar
 
-Sidebar config
+侧边栏
 
-For details, see [Layout → Sidebar](../../guide/layout/sidebar.md)
+具体配置，请见 [布局 → 侧边栏](../../guide/layout/sidebar.md)
 
 ### locales
 
-- Type: `Record<string, HopeThemeLocaleOptions>`
+- 类型: `Record<string, HopeThemeLocaleOptions>`
 
-I18n config of the theme, where you can set options for each language separately.
+主题的多语言配置，你可以在这里分别为每个语言设置单独的选项。

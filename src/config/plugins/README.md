@@ -1,18 +1,18 @@
 ---
-title: Plugin Config
+title: 插件配置
 icon: config
 ---
 
-## Catalog
+## 目录
 
-- [Theme Plugins Intro](intro.md)
+- [主题插件介绍](intro.md)
 
-- [Blog plugin config](blog.md)
+- [博客插件配置](blog.md)
 
-- [Feed plugin config](feed.md)
+- [Feed 插件配置](feed.md)
 
-- [MdEnhance plugin config](md-enhance.md)
+- [Markdown 增强插件配置](md-enhance.md)
 
-- [PWA plugin config](pwa.md)
+- [PWA 插件配置](pwa.md)
 
-- [Other Plugins](others.md)
+- [其他插件](others.md)

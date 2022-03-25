@@ -1,22 +1,24 @@
 ---
-title: Layout
+title: 布局
 icon: layout
 ---
 
-## Catalog
+## 目录
 
-- [Navigation Bar](navbar.md)
+- [导航栏](navbar.md)
 
-- [Sidebar](sidebar.md)
+- [侧边栏](sidebar.md)
 
-- [Footer](footer.md)
+- [页面](page.md)
 
-- [Page](page.md)
+  - [路径导航](breadcrumb.md)
 
-- [Home Page](home.md)
+  - [页脚](footer.md)
 
-- [Slides](slides.md)
+- [主页](home.md)
 
-- Switch animation
+- [幻灯片页面](slides.md)
 
-  As the page switches, a gradual transition animation will be displayed. Improve document / blog texture.
+- 切换动画
+
+  在页面切换时，将会显示一个渐入的切换动画。提升 文档 / 博客 质感。

@@ -29,10 +29,6 @@ export default defineThemeConfig({
 
   locales: {
     "/": {
-      navbar: enNavbarConfig,
-      sidebar: enSidebarConfig,
-    },
-    "/zh/": {
       navbar: zhNavbarConfig,
       sidebar: zhSidebarConfig,
     },

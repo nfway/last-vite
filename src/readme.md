@@ -1,111 +1,111 @@
 ---
 home: true
+title: 主页
 icon: home
-title: Home
 heroImage: /logo.svg
 heroText: vuepress-theme-hope
-tagline: A vuepress theme with tons of features✨
+tagline: 一个具有强大功能的 vuepress 主题✨
 actions:
-  - text: Get Started 💡
-    link: /guide/
+  - text: 快速上手 💡
+    link: /zh/guide/
     type: primary
 
-  - text: Config 🛠
-    link: /config/
+  - text: 配置 🛠
+    link: /zh/config/
 
 features:
-  - title: Markdown Enhance
+  - title: Markdown 增强
     icon: markdown
-    details: Add align, sup/sub script, footnote, tasklist, tex, flowchart, diagram, mark and presentation support in markdown
-    link: /guide/markdown/
+    details: 新增文字对齐、上下角标、脚注、标记、任务列表、数学公式、流程图、图表与幻灯片支持
+    link: /zh/guide/markdown/
 
-  - title: Slide page
+  - title: 幻灯片页面
     icon: slides
-    details: Adding slide pages to display things you like
-    link: /guide/layout/slides
+    details: 添加幻灯片页面以显示你喜欢的内容
+    link: /zh/guide/layout/slides
 
-  - title: Layout enhancement
+  - title: 布局增强
     icon: layout
-    details: Adding breadcrumb, footer, improved navbar, improved page nav and etc.
-    link: /guide/layout/
+    details: 添加路径导航、页脚、改进的导航栏、改进的页面导航等。
+    link: /zh/guide/layout/
 
-  - title: Pageviews and comments
+  - title: 浏览量与评论
     icon: comment
-    details: Start pageview statistics and comment support with Waline
-    link: /guide/feature/comment.html
+    details: 配合 Waline 来开启阅读量统计与评论支持
+    link: /zh/guide/feature/comment.html
 
-  - title: Article information
+  - title: 文章信息
     icon: info
-    details: Add author, writing date, reading time, word count and other information to your article
-    link: /guide/feature/page-info.html
+    details: 为你的文章添加作者、写作日期、预计阅读时间、字数统计等信息
+    link: /zh/guide/feature/page-info.html
 
-  - title: Blog support
+  - title: 博客支持
     icon: blog
-    details: Listing your articles with their dates, tags and categories with some awesome layouts
-    link: /guide/blog/
+    details: 使用一些很棒的布局提供博客功能，通过文章的日期、标签和分类，自动生成文章、分类、标签与时间轴列表
+    link: /zh/guide/blog/intro.html
 
-  - title: Custom theme color
+  - title: 主题色切换
     icon: palette
-    details: Supports custom theme colors and allows users to switch between preset theme colors
-    link: /guide/interface/theme-color.html
+    details: 支持自定义主题色并允许用户在预设的主题颜色之间切换
+    link: /zh/guide/interface/theme-color.html
 
-  - title: Dark Mode
+  - title: 深色模式
     icon: contrast
-    details: Switch between light and dark modes freely
-    link: /guide/interface/darkmode.html
+    details: 可以自由切换浅色模式与深色模式
+    link: /zh/guide/interface/darkmode.html
 
-  - title: Full A11y support
+  - title: 完整的无障碍支持
     icon: support
-    details: Full support of accessibility in your site
-    link: /guide/interface/accessibility.html
+    details: 为你的网站带来完整的无障碍支持
+    link: /zh/guide/interface/accessibility.html
 
-  - title: Article Encryption
+  - title: 文章加密
     icon: lock
-    details: Encrypt you article based on path and folders, so that only the one you want could see them
-    link: /guide/feature/encrypt.html
+    details: 你可以为你的特定页面或特定目录进行加密，以便陌生人不能随意访问它们
+    link: /zh/guide/feature/encrypt.html
 
-  - title: Copy button
+  - title: 复制按钮
     icon: copy
-    details: Copy codes with one click in code blocks
-    link: /guide/feature/copy-code.html
+    details: 一键复制代码块中的代码
+    link: /zh/guide/feature/copy-code.html
 
-  - title: Image preview
+  - title: 图片预览
     icon: pic
-    details: Support viewing, zooming, sharing your page images like a gallery
-    link: /guide/feature/photo-swipe.html
+    details: 像相册一样允许你浏览、缩放并分享你的页面图片
+    link: /zh/guide/feature/photo-swipe.html
 
-  - title: SEO enhancement
+  - title: SEO 增强
     icon: config
-    details: Optimize pages for search engines
-    link: /guide/advanced/seo.html
+    details: 将最终生成的网页针对搜索引擎进行优化。
+    link: /zh/guide/advanced/seo.html
 
   - title: Sitemap
     icon: sitemap
-    details: Generate a Sitemap for your website
-    link: /guide/advanced/sitemap.html
+    details: 自动为你的网站生成 Sitemap
+    link: /zh/guide/advanced/sitemap.html
 
-  - title: Feed support
+  - title: Feed 支持
     icon: rss
-    details: Generate feed to allow users to subcribe it
-    link: /guide/advanced/feed.html
+    details: 生成你的 Feed，并通知你的用户订阅它
+    link: /zh/guide/advanced/feed.html
 
-  - title: PWA support
+  - title: PWA 支持
     icon: mobile
-    details: Make your website more like an APP
-    link: /guide/advanced/pwa.html
+    details: 让你的网站更像一个 APP
+    link: /zh/guide/advanced/pwa.html
 
-  - title: More new features
+  - title: 更多新特性
     icon: more
-    details: Including icon support, fullscreen button, etc.
-    link: /guide/feature/
+    details: 包括图标支持、全屏按钮、返回顶部按钮等
+    link: /zh/guide/feature/
 
 copyright: false
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 
-## 🛠Install
+## 🛠 安装
 
-Create a vuepress-theme-hope project in `[dir]` folder under the current project:
+在当前项目的 `[dir]` 文件夹内创建 vuepress-theme-hope 项目:
 
 :::: code-group
 
@@ -127,7 +127,7 @@ npm init vuepress-theme-hope@next [dir]
 
 ::::
 
-## 🚀Usage
+## 🚀 使用
 
 :::: code-group
 
@@ -138,7 +138,7 @@ npm init vuepress-theme-hope@next [dir]
 import { defineHopeConfig } from "vuepress-theme-hope";
 
 export default defineHopeConfig({
-  // your config here
+  // 此处放置配置
 });
 ```
 
@@ -151,7 +151,7 @@ export default defineHopeConfig({
 const { defineHopeConfig } = require("vuepress-theme-hope");
 
 module.exports = defineHopeConfig({
-  // your config here
+  // 此处放置配置
 });
 ```
 
@@ -159,6 +159,6 @@ module.exports = defineHopeConfig({
 
 ::::
 
-## Telegram Group
+## 官方 QQ 群
 
-- [vuepressthemehope](https://t.me/vuepressthemehope)
+- [点击加入](https://jq.qq.com/?_wv=1027&k=rATJyxGK) (群号: 1003437555)

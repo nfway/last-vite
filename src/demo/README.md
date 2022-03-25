@@ -1,28 +1,28 @@
 ---
-title: Demos
+title: 项目案例
 icon: discover
 category:
-  - Demo
+  - 案例
 ---
 
-## Mr.Hope’s Blog
+## Mr.Hope 的个人博客
 
-- [Link](https://mrhope.site)
-- [Source](https://github.com/Mister-Hope/Mister-Hope.github.io)
+- [项目地址](https://mrhope.site)
+- [项目文件](https://github.com/Mister-Hope/Mister-Hope.github.io)
 
-## vuepress-theme-hope
+## 希望工作室官网
 
-- [Link][vuepress-theme-hope]
-- [Source](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/docs/theme)
+- [项目地址][hope-studio]
+- [项目文件](https://github.com/Hope-Studio/Hope-Studio.github.io)
 
-## Hope Studio
+## vuepress-theme-hope 文档
 
-- [Link][hope-studio]
-- [Source](https://github.com/Hope-Studio/Hope-Studio.github.io)
+- [项目地址][vuepress-theme-hope]
+- [项目文件](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/docs/theme)
 
-## More
+## 更多
 
-- Feel free to add yours
+- 随时随地添加你的博客或文档到此
 
 [vuepress-theme-hope]: https://vuepress-theme-hope.github.io/v2/
 [hope-studio]: https://hope-studio.innenu.com

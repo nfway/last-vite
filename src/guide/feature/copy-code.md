@@ -1,34 +1,34 @@
 ---
-title: Code Copy
+title: 代码复制
 icon: copy
 category:
-  - Feature
+  - 功能
 tag:
-  - Copy Code
-  - Feature
+  - 功能
+  - 代码复制
 ---
 
-If you are a programmer, you may want your users to be able to copy the code you show in the text with one click.
+如果你是一个程序员，你可能希望你的用户能够一键复制你在正文中展示的代码。
 
-For this, `vuepress-theme-hope` use [vuepress-plugin-copy-code2][copy-code2] to provide a copy button on code blocks.
+针对这一情况，`vuepress-theme-hope` 内置了 [vuepress-plugin-copy-code2][copy-code2]，提供了一个复制按钮。
 
 ::: info
 
-`vuepress-theme-hope` provides `copyCode` options in `themeConfig.plugins` as plugin options to `vuepress-plugin-copy-code2`.
+`vuepress-theme-hope` 将 `themeConfig.plugins` 中的 `copyCode` 选项作为插件选项提供给 `vuepress-plugin-copy-code2`。
 
 :::
 
 <!-- more -->
 
-## Usage
+## 使用
 
-After enabling, this plugin will automatically add a copy button to the bottom right corner of each code block.
+启用后，本插件会自动添加复制按钮到每个代码块的右下角。
 
-By default, the button is only displayed on desktop mode. To display this button on mobile devices, set `showInMobile` to `true` in `themeConfig.plugins.copyCode`.
+默认情况下，按钮仅在桌面模式显示，如果你需要在移动端展示这个按钮，请在 `themeConfig.plugins.copyCode` 中设置 `showInMobile` 为 `true`。
 
-After user press the copy button, a success hint will display on the screen. The default hint duration is 2000ms, to change the duration, please set `duration` in `themeConfig.plugins.copyCode` (ms). To disable the hint, set duration to `0`.
+在用户点击复制按钮后，屏幕上会显示一个复制成功的提示。默认的提示时长为 2000ms，如果你需要更改这个时长，请在 `themeConfig.plugins.copyCode` 中设置 `duration` (单位 ms)，如果你不需要这个提示，请设置 `duration` 设为 `0`。
 
-## Effect
+## 效果
 
 ```js
 // .vuepress/config.js
@@ -43,4 +43,4 @@ module.exports = defineHopeConfig({
 });
 ```
 
-[copy-code2]: https://vuepress-theme-hope.github.io/v2/copy-code/
+[copy-code2]: https://vuepress-theme-hope.github.io/v2/copy-code/zh/

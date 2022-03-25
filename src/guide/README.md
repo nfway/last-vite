@@ -1,171 +1,169 @@
 ---
-title: Guide
+title: 指南
 icon: creative
 category:
-  - Intro
+  - 介绍
 tag:
-  - Intro
+  - 介绍
 ---
 
 ::: tip
 
-If you met a bug while using, you can open an issue [here](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues)
+如果你在使用过程中遇到了 bug，可以 [提一个 issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues) 或者 [加入 QQ 群](https://jq.qq.com/?_wv=1027&k=rATJyxGK) (群号: 1003437555) 进行反馈。
 
 :::
 
-## Theme Features✨
+## 主题特点 ✨
 
-The theme largely inherits the config of `@vuepress/theme-default`, while adds a lot of functions and layout optimization on it.
+主题很大程度上继承了 VuePress 默认主题的配置，并在此基础上添加了大量功能与布局优化。
 
 <!-- more -->
 
-### Markdown Enhance
+### Markdown
 
-Added more syntax to Markdown, enriching documentation and blog writing
+为 Markdown 添加了更多语法，丰富文档与博客写作
 
-- [Custom Container](markdown/container.md)
-- [CodeGroup](markdown/code-group.md)
-- [Tex Support](markdown/tex.md)
-- [Custom alignment](markdown/align.md)
-- [Chart](markdown/chart.md)
-- [FlowChart](markdown/flowchart.md)
-- [Mermaid Diagram](markdown/mermaid.md)
-- [Mark](markdown/mark.md)
-- [Task list](markdown/tasklist.md)
-- [Subscript and Supercript](markdown/sup-sub.md)
-- [Code demo](markdown/demo.md)
-- [Presentation](markdown/presentation.md)
-- [Badge `<Badge />`](markdown/components.md#badge): Add color support
-- [Customize Themes](interface/code-theme.md)
+- [自定义容器](markdown/container.md)
+- [代码组](markdown/code-group.md)
+- [Tex 支持](markdown/tex.md)
+- [自定义对齐](markdown/align.md)
+- [图表](markdown/chart.md)
+- [流程图](markdown/flowchart.md)
+- [Mermaid 图表](markdown/mermaid.md)
+- [标记](markdown/mark.md)
+- [任务列表](markdown/tasklist.md)
+- [上下角标](markdown/sup-sub.md)
+- [代码演示](markdown/demo.md)
+- [幻灯片](markdown/presentation.md)
+- [徽章 `<Badge />`](markdown/components.md#badge) 在官方基础上增加了颜色支持
+- [自定义主题](interface/code-theme.md)
 
-### Layout
+### 布局
 
-New in Page:
+页面新增:
 
-- [Path navigation](layout/breadcrumb.md)
+- [路径导航](layout/breadcrumb.md)
 
-- Add [TOC anchor](layout/page.md#heading-list) on the right side under the desktop width
+- 桌面宽度下右侧增加 [TOC 锚点](layout/page.md#标题列表)
 
-- [Custom footer](layout/footer.md)
+- [自定义页脚](layout/footer.md)
 
-Layout Optimization:
+布局优化:
 
-- Completely refactored mobile layout
-- Page navigation and page meta style improvements
-- [Default homepage optimization](layout/home.md):
+- 完全重构的移动端布局
+- 页面底部导航和信息样式改进
+- [默认主页增强](layout/home.md):
 
-  - Features can have icons, links, and have a new outlook
-  - Widescreen layout optimization
+  - 宽屏布局优化
+  - 特性支持添加图标，拥有全新布局、动画并支持跳转
 
-### Interface
+### 界面
 
-- [Icon support](interface/icon.md)
+- [图标支持](interface/icon.md)
 
-- [Navbar](layout/navbar.md)
+- [导航栏](layout/navbar.md)
 
-- [Sidebar](layout/sidebar.md)
+- [侧边栏](layout/sidebar.md)
 
-- [Theme colors](interface/theme-color.md): allowing you to switch dynamically during browsing
+- [全新主题色](interface/theme-color.md)，允许你在浏览过程中动态切换
 
-- [Dark mode](interface/darkmode.md): allowing you to switch manually or apply automatically according to device settings
+- [深色模式](interface/darkmode.md)，允许你手动切换或者是根据设备设置自动应用
 
-- [Full Screen Button](interface/others.md#fullscreen-button)
+- [全屏按钮](interface/others.md#全屏按钮)
 
-- [Back to top button](interface/others.md#back-to-top-button)
+- [返回顶部按钮](interface/others.md#返回顶部按钮)
 
-### Page Enhance
+### 页面增强
 
-- [One-click copy code](feature/copy-code.md)
+- [一键复制代码](feature/copy-code.md)
 
-- [Picture preview feature](feature/photo-swipe.md): supports zooming, dragging, sliding browsing, sharing and downloading
+- [图片预览](feature/photo-swipe.md)，支持放大，拖拽，滑动浏览，分享和下载
 
-- [Comment Service](feature/comment.md)
+- [评论系统](feature/comment.md)
 
-- [Page info](feature/page-info.md)
+- [页面信息展示](feature/page-info.md)
 
-  - Reading Counts
-  - Author and writing date
-  - Automatically generated word count and estimated reading time
-  - Tags and Categorys
+  - 阅读量统计
+  - 作者与写作日期
+  - 自动生成的字数与预计阅读时间
+  - 标签与分类
 
-- [Encryption](feature/encrypt.md)
+- [文章加密](feature/encrypt.md)
 
-- [Search Support](feature/search.md)
+- [搜索支持](feature/search.md)
 
-### Blog
+### 博客
 
-- [Social follow button and page social sharing][add-this]
+- [支持置顶的文章列表](blog/intro.md)
 
-- [Article list with sticky support, and summary autogeneration](blog/intro.md)
+- [标签分组列表](blog/category-and-tags.md)
 
-- [Cateory and tag list](blog/category-and-tags.md)
+- [时间线](blog/timeline.md)
 
-- [Timeline](blog/timeline.md)
+- [收藏文章](blog/article.md)
 
-- [Star article](blog/article.md)
+- [全新博客主页布局](blog/home.md)
 
-- [New blog homepage layout](blog/home.md)
+### 高级功能
 
-### Advanced Features
+- [PWA 支持](advanced/pwa.md)
 
-- [PWA support](advanced/pwa.md)
+- [Feed 生成](advanced/feed.md)
 
-- [Feed generation](advanced/feed.md)
+- [SEO 增强](advanced/seo.md)
 
-- [SEO enhancement](advanced/seo.md)
+- [Sitemap 生成](advanced/sitemap.md)
 
-- [Sitemap generation](advanced/sitemap.md)
+- [自定义主题组件](advanced/customize.md)
 
-- [Component customize](advanced/customize.md)
+- [主题继承](advanced/extend.md)
 
-- [Theme extending](advanced/extend.md)
+## 内建插件 🧩
 
-## Build-in Plugins🧩
+本主题包含了以下内建插件，如果有需要，你也可以单独进行使用或搭配其他主题。
 
-The theme includes the following plugins, you can use them in other themes or directly.
+- [vuepress-plugin-blog2][blog2]: VuePress2 的博客插件
 
-- [vuepress-plugin-blog2][blog2]: Blog plugin for VuePress2
+- [vuepress-plugin-comment2][comment2]: 评论与浏览量功能
 
-- [vuepress-plugin-comment2][comment2]: Comment and pageviews
+- [@mr-hope/vuepress-plugin-components][components]: 提供一些开箱即用的插件
 
-- [@mr-hope/vuepress-plugin-components][components]: Provide some out of box plugins
+- [vuepress-plugin-copy-code2][copy-code2]: 提供一键复制代码块功能。
 
-- [vuepress-plugin-copy-code2][copy-code2]: Provide copy button for code blocks
+- [vuepress-plugin-feed2][feed2]: Feed 支持
 
-- [vuepress-plugin-feed2][feed2]: Feed support
+- [vuepress-plugin-md-enhance][md-enhance]: 提供更多 Markdown 语法
 
-- [vuepress-plugin-md-enhance][md-enhance]: Provide more Markdown syntax
+- [vuepress-plugin-photo-swipe][photo-swipe]: 基于 Photo Swipe 的图片浏览插件
 
-- [vuepress-plugin-photo-swipe][photo-swipe]: Make the site’s picture support click zoom
+- [vuepress-plugin-pwa2][pwa2]: 增强的 PWA 支持
 
-- [vuepress-plugin-pwa2][pwa2]: Enhanced PWA support
+- [vuepress-plugin-reading-time2][reading-time2]: 阅读时间与字数统计
 
-- [vuepress-plugin-reading-time2][reading-time2]: Expect reading time and words count
+- [vuepress-plugin-sass-palette][sass-palette]: 面向全部插件和主题的 Sass 配置插件
 
-- [vuepress-plugin-sass-palette][sass-palette]: Sass style plugin for all plugins and themes
-
-- [vuepress-plugin-seo2][seo2]: SEO Enhancement Plugin
+- [vuepress-plugin-seo2][seo2]: SEO 增强插件
 
 ::: tip
 
-Here are some other plugins that are not enabled by default by the theme, you can enable them according to your own needs.
+这里还有一些其他没有被主题默认启用的插件，你可以根据自己的需求自行启用。
 
-- [vuepress-plugin-add-this][add-this]: Provide sociel share and follow function using AddThis
+- [vuepress-plugin-add-this][add-this]: 基于 AddThis 的分享插件
 
-- [vuepress-plugin-lightgallery][lightgallery]: Photo preview plugin based on lightgallery
+- [vuepress-plugin-lightgallery][lightgallery]: 基于 lightgallery 图片浏览插件
 
 :::
 
-[add-this]: https://vuepress-theme-hope.github.io/v2/add-this/
-[blog2]: https://vuepress-theme-hope.github.io/v2/blog/
-[comment2]: https://vuepress-theme-hope.github.io/v2/comment/
-[components]: https://vuepress-theme-hope.github.io/v2/components/
-[copy-code2]: https://vuepress-theme-hope.github.io/v2/copy-code/
-[feed2]: https://vuepress-theme-hope.github.io/v2/feed/
-[lightgallery]: https://vuepress-theme-hope.github.io/v2/lightgallery/
-[md-enhance]: https://vuepress-theme-hope.github.io/v2/md-enhance/
-[photo-swipe]: https://vuepress-theme-hope.github.io/v2/photo-swipe/
-[pwa2]: https://vuepress-theme-hope.github.io/v2/pwa/
-[reading-time2]: https://vuepress-theme-hope.github.io/v2/reading-time/
-[sass-palette]: https://vuepress-theme-hope.github.io/v2/sass-palette/
-[seo2]: https://vuepress-theme-hope.github.io/v2/seo/
+[add-this]: https://vuepress-theme-hope.github.io/v2/add-this/zh/
+[blog2]: https://vuepress-theme-hope.github.io/v2/blog/zh/
+[comment2]: https://vuepress-theme-hope.github.io/v2/comment/zh/
+[components]: https://vuepress-theme-hope.github.io/v2/components/zh/
+[copy-code2]: https://vuepress-theme-hope.github.io/v2/copy-code/zh/
+[feed2]: https://vuepress-theme-hope.github.io/v2/feed/zh/
+[lightgallery]: https://vuepress-theme-hope.github.io/v2/lightgallery/zh/
+[md-enhance]: https://vuepress-theme-hope.github.io/v2/md-enhance/zh/
+[photo-swipe]: https://vuepress-theme-hope.github.io/v2/photo-swipe/zh/
+[pwa2]: https://vuepress-theme-hope.github.io/v2/pwa/zh/
+[reading-time2]: https://vuepress-theme-hope.github.io/v2/reading-time/zh/
+[sass-palette]: https://vuepress-theme-hope.github.io/v2/sass-palette/zh/
+[seo2]: https://vuepress-theme-hope.github.io/v2/seo/zh/

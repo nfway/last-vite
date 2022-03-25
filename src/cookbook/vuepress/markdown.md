@@ -1,181 +1,182 @@
 ---
-title: Builtin Markdown features
+title: 内置 Markdown 拓展
 icon: markdown
 category:
-  - Cookbook
+  - 教程知识
   - VuePress
 tag:
   - Markdown
   - VuePress
 ---
 
-Here are some enhance VuePress makes on Markdown syntax.
+## 语法扩展
 
-## Syntax Extensions
+VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来解析 Markdown 内容，因此可以借助于 markdown-it 插件来实现 [语法扩展](https://github.com/markdown-it/markdown-it#syntax-extensions) 。
 
-The Markdown content in VuePress will be parsed by [markdown-it](https://github.com/markdown-it/markdown-it), which supports [syntax extensions](https://github.com/markdown-it/markdown-it#syntax-extensions) via markdown-it plugins.
+本章节将会介绍 VuePress 内置支持的 Markdown 语法扩展。
 
-This section will introduce built-in Markdown syntax extensions of VuePress.
+你也可以通过 [markdown](https://v2.vuepress.vuejs.org/zh/reference/config.md#markdown) 和 [extendsMarkdown](https://v2.vuepress.vuejs.org/zh/reference/plugin-api.md#extendsmarkdown) 来配置这些内置扩展、加载更多 markdown-it 插件、实现你自己的扩展等。
 
-You can also configure those built-in extensions, load more markdown-it plugins and implement your own extensions via [markdown](https://v2.vuepress.vuejs.org/reference/config.md#markdown) option and [extendsMarkdown](https://v2.vuepress.vuejs.org/reference/plugin-api.md#extendsmarkdown) option.
+### 内置
 
-### Embedded
+由 markdown-it 内置支持：
 
-Embedded by markdown-it:
+- [表格](https://help.github.com/articles/organizing-information-with-tables/) (GFM)
+- [删除线](https://help.github.com/articles/basic-writing-and-formatting-syntax/#styling-text) (GFM)
 
-- [Tables](https://help.github.com/articles/organizing-information-with-tables/) (GFM)
-- [Strikethrough](https://help.github.com/articles/basic-writing-and-formatting-syntax/#styling-text) (GFM)
+### 标题锚点
 
-### Header Anchors
-
-You might have noticed that, a `#` anchor is displayed when you hover the mouse on the headers of each section. By clicking the `#` anchor, you can jump to the section directly.
+你可能已经注意到，当你把鼠标放在各个章节的标题上时，会显示出一个 `#` 锚点。点击这个 `#` 锚点，可以直接跳转到对应章节。
 
 ::: tip
-This header anchors extension is supported by [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor).
+标题锚点扩展由 [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor) 支持。
 
-Config reference: [markdown.anchor](https://v2.vuepress.vuejs.org/reference/config.md#markdown-anchor)
+配置参考： [markdown.anchor](https://v2.vuepress.vuejs.org/zh/reference/config.md#markdown-anchor)
 :::
 
-### Links
+### 链接
 
-When using Markdown [link syntax](https://spec.commonmark.org/0.29/#link-reference-definitions), VuePress will implement some conversions for you.
+在你使用 Markdown 的 [链接语法](https://spec.commonmark.org/0.29/#link-reference-definitions) 时， VuePress 会为你进行一些转换。
 
-Take our documentation source files as an example:
+以我们文档的源文件为例：
 
 ```bash
 └─ docs
-   ├─ guide
-   │  ├─ getting-started.md
-   │  ├─ markdown.md    # <- Here we are
-   │  └─ README.md
-   ├─ reference
-   │  └─ config.md
-   └─ README.md
+   └─ zh
+      ├─ guide
+      │  ├─ getting-started.md
+      │  ├─ markdown.md    # <- 我们在这里
+      │  └─ README.md
+      ├─ reference
+      │  └─ config.md
+      └─ README.md
 ```
 
-Raw Markdown:
+原始 Markdown:
 
 ```md
-<!-- relative path -->
+<!-- 相对路径 -->
 
-[Home](../../README.md)  
-[Contribution Guide](../../contribution.md)  
-[VuePress Config](./config.md)
+[首页](../../README.md)  
+[贡献指南](../../contribution.md)  
+[VuePress 配置](./config.md)
 
-<!-- absolute path -->
+<!-- 绝对路径 -->
 
-[Guide](/guide/README.md)  
-[Config > I18n](/config/i18n.md)
+[指南](/zh/guide/README.md)  
+[配置参考 > 多语言](/zh/config/i18n.md)
 
 <!-- URL -->
 
 [GitHub](https://github.com)
 ```
 
-Converted to:
+转换为
 
 ```vue
 <template>
-  <RouterLink to="/">Home</RouterLink>
-  <RouterLink to="/contribution.html">Contribution Guide</RouterLink>
-  <RouterLink to="/cookbook/vuepress/config.html">VuePress Config</RouterLink>
-  <RouterLink to="/guide/">Guide</RouterLink>
-  <RouterLink to="/config/i18n.html">Config &gt; I18n</RouterLink>
+  <RouterLink to="/zh/">首页</RouterLink>
+  <RouterLink to="/zh/contribution.html">贡献指南</RouterLink>
+  <RouterLink to="/zh/cookbook/vuepress/config.html">VuePress 配置</RouterLink>
+  <RouterLink to="/zh/guide/">指南</RouterLink>
+  <RouterLink to="/zh/reference/config.html#links"
+    >配置参考 &gt; 多语言</RouterLink
+  >
   <a href="https://github.com" target="_blank" rel="noopener noreferrer"
     >GitHub</a
   >
 </template>
 ```
 
-Rendered as:
+渲染为
 
-[Home](../../README.md)  
-[Contribution Guide](../../contribution.md)  
-[VuePress Config](./config.md)
-[Guide](/guide/README.md)  
-[Config > I18n](/config/i18n.md)  
+[首页](../../README.md)  
+[贡献指南](../../contribution.md)  
+[VuePress 配置](./config.md)
+[指南](/zh/guide/README.md)  
+[配置参考 > 多语言](/zh/config/i18n.md)
 [GitHub](https://github.com)
 
-Explanation:
+解释:
 
-- Internal links will be converted to `<RouterLink>` for SPA navigation.
-- Internal links to `.md` files will be converted to the [page route path](./page.md#routing), and both absolute path and relative path are supported.
-- External links will get `target="_blank" rel="noopener noreferrer"` attrs.
+- 内部链接会被转换为 `<RouterLink>` 以便进行 SPA 导航。
+- 指向 `.md` 文件的内部链接会被转换为目标页面的 [路由路径](./page.md#路由)，并且支持绝对路径和相对路径。
+- 外部链接会被添加 `target="_blank" rel="noopener noreferrer"` 属性。
 
-Suggestion:
+建议:
 
-Try to use relative paths instead of absolute paths for internal links.
+对于内部链接，尽可能使用相对路径而不是绝对路径。
 
-- Relative paths are a valid links to the target files, and they can navigate correctly when browsing the source files in your editor or repository.
-- Relative paths are consistent in different locales, so you don’t need to change the locale path when translating your content.
-- When using absolute paths, if the [base](https://v2.vuepress.vuejs.org/reference/config.md#base) of your site is not `"/"`, you will need to prepend the `base` manually or use [base helper](https://v2.vuepress.vuejs.org/guide/assets.html#base-helper).
+- 相对路径是指向目标文件的有效链接，在你的编辑器或者代码仓库中浏览源文件时也可以正确跳转。
+- 相对路径在不同 locales 下都是一致的，这样在翻译你的内容时就不需要修改 locale 路径了。
+- 在使用绝对路径时，如果你站点的 [base](https://v2.vuepress.vuejs.org/zh/reference/config.md#base) 不是 `"/"`，你需要手动添加 `base` 或者使用 [base helper](https://v2.vuepress.vuejs.org/guide/assets.html#base-helper) 。
 
 ::: tip
-This links extension is supported by our built-in plugin.
+链接扩展是由我们的内置插件支持的。
 
-Config reference: [markdown.links](https://v2.vuepress.vuejs.org/reference/config.md#markdown-links)
+配置参考： [markdown.links](https://v2.vuepress.vuejs.org/zh/reference/config.md#markdown-links)
 :::
 
 ### Emoji
 
-You can add emoji to your Markdown content by typing `:EMOJICODE:`.
+你可以在你的 Markdown 内容中输入 `:EMOJICODE:` 来添加 Emoji 表情。
 
-For a full list of available emoji and codes, check out [emoji-cheat-sheet](https://github.com/ikatyang/emoji-cheat-sheet).
+前往 [emoji-cheat-sheet](https://github.com/ikatyang/emoji-cheat-sheet) 来查看所有可用的 Emoji 表情和对应代码。
 
-Input:
+输入:
 
 ```md
-VuePress 2 is out :tada: !
+VuePress 2 已经发布 :tada: ！
 ```
 
-Output:
+输出:
 
-VuePress 2 is out :tada: !
+VuePress 2 已经发布 :tada: ！
 
 ::: tip
-This emoji extension is supported by [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji).
+Emoji 扩展由 [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji) 支持。
 
-Config reference: [markdown.emoji](https://v2.vuepress.vuejs.org/reference/config.md#markdown-emoji)
+配置参考： [markdown.emoji](https://v2.vuepress.vuejs.org/zh/reference/config.md#markdown-emoji)
 :::
 
-### Table of Contents
+### 目录
 
-To put the table of contents (TOC) of your current page inside your Markdown content, you can use the `[[toc]]` syntax.
+如果你想要把当前页面的目录添加到 Markdown 内容中，你可以使用 `[[toc]]` 语法。
 
-Input:
+输入:
 
 ```md
 [[toc]]
 ```
 
-Output:
+输出:
 
 [[toc]]
 
-The headers in TOC will link to the corresponding [header anchors](#header-anchors), so TOC won’t work well if you disable header anchors.
+目录中的标题将会链接到对应的 [标题锚点](#标题锚点)，因此如果你禁用了标题锚点，可能会影响目录的功能。
 
 ::: tip
-This toc extension is supported by our built-in plugin, which is forked and modified from [markdown-it-toc-done-right](https://github.com/nagaozen/markdown-it-toc-done-right).
+目录扩展是由我们的内置插件支持的，该扩展 Fork 并修改自 [markdown-it-toc-done-right](https://github.com/nagaozen/markdown-it-toc-done-right)。
 
-Config reference: [markdown.toc](https://v2.vuepress.vuejs.org/reference/config.md#markdown-toc)
+配置参考： [markdown.toc](https://v2.vuepress.vuejs.org/zh/reference/config.md#markdown-toc)
 :::
 
-### Code Blocks
+### 代码块
 
-Following code blocks extensions are implemented during Markdown parsing in Node side. That means, the code blocks won’t be processed in client side.
+下列代码块扩展是在 Node 端进行 Markdown 解析的时候实现的。这意味着代码块并不会在客户端被处理。
 
-#### Line Highlighting
+#### 行高亮
 
-You can highlight specified lines of your code blocks by adding line ranges mark in your fenced code blocks:
+你可以在代码块添加行数范围标记，来为对应代码行进行高亮：
 
-Input:
+输入:
 
 ````md
 ```ts {1,6-8}
 import type { UserConfig } from "@vuepress/cli";
 
 export const config: UserConfig = {
-  title: "Hello, VuePress",
+  title: "你好， VuePress",
 
   themeConfig: {
     logo: "https://vuejs.org/images/logo.png",
@@ -184,13 +185,13 @@ export const config: UserConfig = {
 ```
 ````
 
-Output:
+输出:
 
 ```ts {1,6-8}
 import type { UserConfig } from "@vuepress/cli";
 
 export const config: UserConfig = {
-  title: "Hello, VuePress",
+  title: "你好， VuePress",
 
   themeConfig: {
     logo: "https://vuejs.org/images/logo.png",
@@ -198,169 +199,169 @@ export const config: UserConfig = {
 };
 ```
 
-Examples for line ranges mark:
+行数范围标记的例子：
 
-- Line ranges: `{5-8}`
-- Multiple single lines: `{4,7,9}`
-- Combined: `{4,7-13,16,23-27,40}`
+- 行数范围： `{5-8}`
+- 多个单行： `{4,7,9}`
+- 组合： `{4,7-13,16,23-27,40}`
 
 ::: tip
-This line highlighting extension is supported by our built-in plugin, which is forked and modified from [markdown-it-highlight-lines](https://github.com/egoist/markdown-it-highlight-lines).
+行高亮扩展是由我们的内置插件支持的，该扩展 Fork 并修改自 [markdown-it-highlight-lines](https://github.com/egoist/markdown-it-highlight-lines)。
 
-Config reference: [markdown.code.highlightLines](https://v2.vuepress.vuejs.org/reference/config.md#markdown-code-highlightlines)
+配置参考： [markdown.code.highlightLines](https://v2.vuepress.vuejs.org/zh/reference/config.md#markdown-code-highlightlines)
 :::
 
-#### Line Numbers
+#### 行号
 
-You must have noticed that the number of lines is displayed on the left side of code blocks. This is enabled by default and you can disable it in config.
+你肯定已经注意到在代码块的最左侧会展示行号。这个功能是默认启用的，你可以通过配置来禁用它。
 
-You can add `:line-numbers` / `:no-line-numbers` mark in your fenced code blocks to override the value set in config.
+你可以在代码块添加 `:line-numbers` / `:no-line-numbers` 标记来覆盖配置项中的设置。
 
-Input:
+输入:
 
 ````md
 ```ts
-// line-numbers is enabled by default
+// 行号默认是启用的
 const line2 = "This is line 2";
 const line3 = "This is line 3";
 ```
 
 ```ts:no-line-numbers
-// line-numbers is disabled
+// 行号被禁用
 const line2 = 'This is line 2'
 const line3 = 'This is line 3'
 ```
 ````
 
-Output:
+输出:
 
 ```ts
-// line-numbers is enabled by default
+// 行号默认是启用的
 const line2 = "This is line 2";
 const line3 = "This is line 3";
 ```
 
 ```ts:no-line-numbers
-// line-numbers is disabled
+// 行号被禁用
 const line2 = 'This is line 2'
 const line3 = 'This is line 3'
 ```
 
 ::: tip
-This line numbers extension is supported by our built-in plugin.
+行号扩展是由我们的内置插件支持的。
 
-Config reference: [markdown.code.lineNumbers](https://v2.vuepress.vuejs.org/reference/config.md#markdown-code-linenumbers)
+配置参考： [markdown.code.lineNumbers](https://v2.vuepress.vuejs.org/zh/reference/config.md#markdown-code-linenumbers)
 :::
 
-#### Wrap with v-pre
+#### 添加 v-pre
 
-As [template syntax is allowed in Markdown](#template-syntax), it would also work in code blocks, too.
+由于 [模板语法可以在 Markdown 中使用](#模板语法)，它也同样可以在代码块中生效。
 
-To avoid your code blocks being compiled by Vue, VuePress will add [v-pre](https://v3.vuejs.org/api/directives.html#v-pre) directive to your code blocks by default, which can be disabled in config.
+为了避免你的代码块被 Vue 编译， VuePress 默认会在你的代码块添加 [v-pre](https://v3.vuejs.org/api/directives.html#v-pre) 指令。这一默认行为可以在配置中关闭。
 
-You can add `:v-pre` / `:no-v-pre` mark in your fenced code blocks to override the value set in config.
+你可以在代码块添加 `:v-pre` / `:no-v-pre` 标记来覆盖配置项中的设置。
 
 ::: warning
-The template syntax characters, for example, the "Mustache" syntax (double curly braces) might be parsed by the syntax highlighter. Thus, as the following example, `:no-v-pre` might not work well in some languages.
+模板语法的字符有可能会被语法高亮器解析，比如 "Mustache" 语法 (即双花括号) 。因此，就像下面的例子一样，在某些语言中 `:no-v-pre` 可能并不能生效。
 
-If you want to make Vue syntax work in those languages anyway, try to disable the default syntax highlighting and implement your own syntax highlighting in client side.
+如果你无论如何都想在这种语言中使用 Vue 语法，你可以尝试禁用默认的语法高亮，然后在客户端实现你的自定义代码高亮。
 :::
 
-Input:
+输入:
 
 ````md
 ```md
-<!-- This will be kept as is by default -->
+<!-- 默认情况下，这里会被保持原样 -->
 
 1 + 2 + 3 = {{ 1 + 2 + 3 }}
 ```
 
 ```md:no-v-pre
-<!-- This will be compiled by Vue -->
+<!-- 这里会被 Vue 编译 -->
 1 + 2 + 3 = {{ 1 + 2 + 3 }}
 ```
 
 ```js:no-v-pre
-// This won’t be compiled correctly because of js syntax highlighting
+// 由于 JS 代码高亮，这里不会被正确编译
 const onePlusTwoPlusThree = {{ 1 + 2 + 3 }}
 ```
 ````
 
-Output:
+输出:
 
 ```md
-<!-- This will be kept as is -->
+<!-- 默认情况下，这里会被保持原样 -->
 
 1 + 2 + 3 = {{ 1 + 2 + 3 }}
 ```
 
 ```md:no-v-pre
-<!-- This will be compiled by Vue -->
+<!-- 这里会被 Vue 编译 -->
 1 + 2 + 3 = {{ 1 + 2 + 3 }}
 ```
 
 <!--
-using :no-v-pre on JS code blocks has potential issue with shiki, so we are
-not actually using :no-v-pre here, just as an example of incorrect usage
+在 JS 代码块上使用 :no-v-pre 的话，会在使用 shiki 时遇到一些潜在的问题，所以这里
+我们实际上没有使用 :no-v-pre ，只是作为一个错误用法的示例。
 -->
 
 ```js
-// This won’t be compiled correctly because of js syntax highlighting
+// 由于 JS 代码高亮，这里不会被正确编译
 const onePlusTwoPlusThree = {{ 1 + 2 + 3 }}
 ```
 
 ::: tip
-This v-pre extension is supported by our built-in plugin.
+v-pre 扩展是由我们的内置插件支持的。
 
-Config reference: [markdown.code.vPre](https://v2.vuepress.vuejs.org/reference/config.md#markdown-vpre)
+配置参考： [markdown.code.vPre](https://v2.vuepress.vuejs.org/zh/reference/config.md#markdown-vpre)
 :::
 
-### Import Code Blocks
+### 导入代码块
 
-You can import code blocks from files with following syntax:
+你可以使用下面的语法，从文件中导入代码块：
 
 ```md
-<!-- minimal syntax -->
+<!-- 最简单的语法 -->
 
 @[code](../foo.js)
 ```
 
-If you want to partially import the file:
+如果你只想导入这个文件的一部分：
 
 ```md
-<!-- partial import, from line 1 to line 10 -->
+<!-- 仅导入第 1 行至第 10 行 -->
 
 @[code{1-10}](../foo.js)
 ```
 
-The code language is inferred from the file extension, while it is recommended to specify it explicitly:
+代码语言会根据文件扩展名进行推断，但我们建议你显式指定：
 
 ```md
-<!-- specify the code language -->
+<!-- 指定代码语言 -->
 
 @[code js](../foo.js)
 ```
 
-In fact, the second part inside the `[]` will be treated as the mark of the code fence, so it supports all the syntax mentioned in the above [Code Blocks](#code-blocks) section:
+实际上，`[]` 内的第二部分会被作为代码块标记来处理，因此在上面 [代码块](#代码块) 章节中提到的语法在这里都可以支持：
 
 ```md
-<!-- line highlighting -->
+<!-- 行高亮 -->
 
 @[code js{2,4-5}](../foo.js)
 ```
 
-Here is a complex example:
+下面是一个复杂的例子：
 
-- import line 3 to line 10 of the `"../foo.js"` file
-- specify the language as `"js"`
-- highlight line 3 of the imported code, i.e. line 5 of the `"../foo.js"` file
-- disable line numbers
+- 导入 `"../foo.js"` 文件的第 3 行至第 10 行
+- 指定语言为 `"js"`
+- 对导入代码的第 3 行进行高亮，即 `"../foo.js"` 文件的第 5 行
+- 禁用行号
 
 ```md
 @[code{3-10} js{3}:no-line-numbers](../foo.js)
 ```
 
-Notice that path aliases are not available in import code syntax. You can use following config to handle path alias yourself:
+需要注意的是，路径别名在导入代码语法中不会生效。你可以通过下面的配置来自行处理路径别名：
 
 ```js
 module.exports = {
@@ -374,43 +375,43 @@ module.exports = {
 ```
 
 ```md
-<!-- it will be resolved to 'path/to/src/foo.js' -->
+<!-- 会被解析至 'path/to/src/foo.js' -->
 
 @[code](@src/foo.js)
 ```
 
 ::: tip
-This import code extension is supported by our built-in plugin.
+导入代码扩展是由我们的内置插件支持的。
 
-Config reference: [markdown.importCode](https://v2.vuepress.vuejs.org/reference/config.md#markdown-importcode)
+配置参考： [markdown.importCode](https://v2.vuepress.vuejs.org/zh/reference/config.md#markdown-importcode)
 :::
 
-## Using Vue in Markdown
+## 在 Markdown 中使用 Vue
 
-This section will introduce some basic usage of Vue in Markdown.
+这一章节会介绍 Vue 在 Markdown 中一些基本用法。
 
-Check out [Cookbook > Markdown and Vue SFC](https://v2.vuepress.vuejs.org/advanced/cookbook/markdown-and-vue-sfc.md) for more details.
+可以前往 [Cookbook > Markdown 和 Vue SFC](https://v2.vuepress.vuejs.org/zh/advanced/cookbook/markdown-and-vue-sfc.md) 来了解更多内容。
 
-### Template Syntax
+### 模板语法
 
-As we know:
+我们知道：
 
-- HTML is allowed in Markdown.
-- Vue template syntax is compatible with HTML.
+- Markdown 中允许使用 HTML。
+- Vue 模板语法是和 HTML 兼容的。
 
-That means, [Vue template syntax](https://v3.vuejs.org/guide/template-syntax.html) is allowed in Markdown.
+这意味着， Markdown 中允许直接使用 [Vue 模板语法](https://v3.vuejs.org/guide/template-syntax.html)。
 
-Input:
+输入:
 
 ```md
-One plus one equals: {{ 1 + 1 }}
+一加一等于： {{ 1 + 1 }}
 
 <span v-for="i in 3"> span: {{ i }} </span>
 ```
 
-Output:
+输出:
 
-One plus one equals: {{ 1 + 1 }}
+一加一等于： {{ 1 + 1 }}
 
 <!-- markdownlint-disable -->
 
@@ -418,37 +419,39 @@ One plus one equals: {{ 1 + 1 }}
 
 <!-- markdownlint-restore -->
 
-### Components
+### 组件
 
-You can use Vue components directly in Markdown.
+你可以在 Markdown 中直接使用 Vue 组件。
 
-Input:
+输入:
 
 ```md
-This is default theme built-in `<Badge />` component <Badge text="demo" />
+这是默认主题内置的 `<Badge />` 组件 <Badge text="演示" />
 ```
 
-Output:
+输出:
 
-This is default theme built-in `<Badge />` component <Badge text="demo" />
+这是默认主题内置的 `<Badge />` 组件 <Badge text="演示" />
 
 ::: tip
 
-Check out the [Built-in Components](https://v2.vuepress.vuejs.org/reference/components.md) for a full list of built-in components.
+前往 [内置组件](https://v2.vuepress.vuejs.org/zh/reference/components.md) 查看所有内置组件。
+
+前往 [默认主题 > 内置组件](https://v2.vuepress.vuejs.org/zh/reference/default-theme/components.md) 查看默认主题中的所有内置组件。
 
 :::
 
-## Cautions
+## 注意事项
 
-### Deprecated HTML Tags
+### 已废弃的 HTML 标签
 
-Deprecated HTML tags such as [\<center>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/center) and [\<font>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/font) are not allowed in VuePress Markdown by default.
+已废弃的 HTML 标签默认不允许在 VuePress 的 Markdown 中使用，比如 [\<center>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/center) 和 [\<font>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/font) 等。
 
-Those tags would not be recognized as native HTML tags by Vue template compiler. Instead, Vue will try to resolve those tags as Vue components, and obviously these components usually don’t exist.
+这些标签不会被 Vue 模板编译器识别成原生 HTML 标签。相反，Vue 会尝试将这些标签解析为 Vue 组件，而显然这些组件通常是不存在的。
 
-You should try to avoid using deprecated HTML tags. However, if you want to use those tags anyway, try either of the following workarounds:
+你应该尽量避免使用已废弃的 HTML 标签。不过，如果你无论如何都要使用这些标签的话，可以尝试下面两种方法之一：
 
-- Adding a [v-pre](https://v3.vuejs.org/api/directives.html#v-pre) directive to skip the compilation of the element and its children. Notice that the template syntax would also be invalid.
-- Using [compilerOptions.isCustomElement](https://v3.vuejs.org/api/application-config.html#compileroptions) to tell Vue template compiler not try to resolve them as components.
-  - For `@bundler-webpack`, set [vue.compilerOptions](https://v2.vuepress.vuejs.org/reference/bundler/webpack.md#vue)
-  - For `@bundler-vite`, set [vuePluginOptions.template.compilerOptions](https://v2.vuepress.vuejs.org/reference/bundler/vite.md#vuepluginoptions)
+- 添加一个 [v-pre](https://v3.cn.vuejs.org/api/directives.html#v-pre) 指令来跳过这个元素和它的子元素的编译过程。注意所有的模板语法也都会失效。
+- 设置 [compilerOptions.isCustomElement](https://v3.vuejs.org/api/application-config.html#compileroptions) 来告诉 Vue 模板编译器不要尝试作为组件来解析它们。
+  - 对于 `@bundler-webpack` ，设置 [vue.compilerOptions](https://v2.vuepress.vuejs.org/zh/reference/bundler/webpack.md#vue)
+  - 对于 `@bundler-vite` ，设置 [vuePluginOptions.template.compilerOptions](https://v2.vuepress.vuejs.org/zh/reference/bundler/vite.md#vuepluginoptions)

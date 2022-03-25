@@ -1,8 +1,9 @@
 ---
-title: Nature Emoji
+title: 自然 Emoji
 icon: emoji
 category:
-  - Cookbook
+  - 教程知识
+  - Markdown
 tag:
   - Markdown
   - Emoji

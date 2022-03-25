@@ -1,65 +1,65 @@
 ---
-title: Blog homepage
+title: 博客首页
 icon: home
 category:
-  - Blog
+  - 博客
 tag:
-  - Blog
-  - Home
-  - Layout
+  - 博客
+  - 主页
+  - 布局
 ---
 
-`vuepress-theme-hope` allows you to enable a blog-style homepage.
+`vuepress-theme-hope` 允许你启用博客风格的首页。
 
-You need to set `layout: Blog` and `home: true` in the frontmatter of homepage.
+你需要在相应的页面的 frontmatter 中，设置 `home: true` 和 `layout: Blog` 来使用博客主页。
 
 <!-- more -->
 
-![Homepage screenshot](./assets/blog.png)
+![首页截图](./assets/blog.png)
 
-## Available parameters in frontmatter
+## Frontmatter 可用参数
 
 ### hero
 
-- Type: `boolean`
-- Default: `true`
+- 类型: `boolean`
+- 默认: `true`
 
-Whether to display the icon and description of the home page.
+是否显示主页的图标与描述。主页的图标、描述设置同 [默认主页](../layout/home.md)。
 
 ### bgImage
 
-- Type: `string`
+- 类型: `string`
 
-For the address of the background picture, you must fill in the absolute path. If not filled in, a default landscape picture will be automatically applied.
+背景图片的地址，需填写绝对路径。如果不填写，会自动应用一张默认的风景图片。
 
 ### bgImageStyle
 
-- Type: `Record <string, string>`
+- 类型: `Record<string, string>`
 
-The CSS style of the background image.
+背景图片的 CSS 样式。
 
 ### heroImageStyle
 
-- Type: `Record <string, string>`
+- 类型: `Record<string, string>`
 
-CSS style for home icon
+首页图标的 CSS 样式
 
 ### heroFullScreen
 
-- Type: `boolean`
-- Default: `false`
+- 类型: `boolean`
+- 默认: `false`
 
-Whether Hero is full screen displayed
+是否全屏显示 Hero
 
-### projects
+### 项目
 
-- Type: `ProjectOption[]`
+- 类型: `ProjectOption[]`
 
-`ProjectOption` includes:
+`ProjectOption` 包括以下键值:
 
-- `name`: required, project name
-- `link`: required, project link, fill in an external path or absolute path
-- `desc`: project description
-- `icon`: Icon, you can fill in full path or absolute path image link, also icon FontClass is suppported
+- `name`: 项目名称，必填
+- `link`: 项目链接，必填，填入外部链接或绝对路径。
+- `desc`: 项目描述，选填
+- `icon`: 图标，可填入完整路径或绝对路径的图片链接、图标 FontClass 等。
 
-  We provide these icons as built-in support either: `"link"`, `"project"`, `"book"`, `"article"`, `"friend"`。
+  同时提供了如下内置图标支持: `"link"`、`"project"`、`"book"`、`"article"`、`"friend"`

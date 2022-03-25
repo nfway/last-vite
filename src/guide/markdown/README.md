@@ -1,52 +1,49 @@
 ---
-title: Markdown Enhance
+title: Markdown 增强
 icon: markdown
 ---
 
-Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables more syntax in Markdown via [vuepress-plugin-md-enhance][md-enhance] plugin.
+除了 VuePress 本身新增了一些 Markdown 语法外，`vuepress-theme-hope` 通过 [vuepress-plugin-md-enhance][md-enhance]，在 Markdown 中启用了更多的语法与新功能。
 
 <!-- more -->
 
-## Built-in syntax
+## 内置语法
 
-- [Built-in Markdown extension](../../cookbook/vuepress/markdown.md)
+- [内置 Markdown 扩展](../../cookbook/vuepress/markdown.md)。
 
-## New Components
+## 新组件
 
 - [`<Badge />`](components.md#badge)
+- [`<CodeGroup />` 与 `<CodeGroupItem />`](components.md#codegroup-codegroupitem)
 
-## New Syntax
+## 新语法
 
-- [Custom Container](container.md)
+- [自定义对齐](align.md)
 
-- [Custom Alignment](align.md)
+- [上下角标](sup-sub.md)
 
-- [Code Group](code-group.md)
+- [脚注](footnote.md)
 
-- [Superscript and subscript](sup-sub.md)
+- [标记](mark.md)
 
-- [Footnote](footnote.md)
+- [任务列表](tasklist.md)
 
-- [Mark](mark.md)
+- [图表](chart.md)
 
-- [Task list](tasklist.md)
+- [流程图](flowchart.md)
 
-- [Chart](chart.md)
+- [Mermaid 图表](mermaid.md)
 
-- [Flowchart](flowchart.md)
+- [Tex 语法](tex.md)
 
-- [Mermaid Diagram](mermaid.md)
+- [代码演示](demo.md)
 
-- [Tex](tex.md)
+- [幻灯片](presentation.md)
 
-- [Code demo](demo.md)
+- [其他](others.md)
 
-- [Presentation](presentation.md)
+## 其他
 
-- [Others](others.md)
-
-## Others
-
-- [External Import](external.md)
+- [外部引入](external.md)
 
 [md-enhance]: https://vuepress-theme-hope.github.io/v2/md-enhance/

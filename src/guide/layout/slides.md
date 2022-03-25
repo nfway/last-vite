@@ -1,36 +1,36 @@
 ---
-title: Slide
+title: 幻灯片
 icon: slides
 category:
-  - Layout
+  - 布局
 tag:
-  - Layout
-  - Slides
+  - 布局
+  - 幻灯片
 ---
 
-`vuepress-theme-hope` allows you to add slides pages.
+`vuepress-theme-hope` 允许你添加幻灯片页面。
 
-You need to set `layout: Slide` in the frontmatter of the corresponding page to enable the slides page.
+你需要在相应的页面的 frontmatter 中，设置 `layout: Slide` 来开启幻灯片风格。
 
 <!-- more -->
 
-## Demo
+## 演示
 
-[Here is a demo containing all the slide features](https://vuepress-theme-hope.github.io/v2/md-enhance/guide/presentation/demo.html).
+[这里是一个展示了所有幻灯片功能的案例](https://vuepress-theme-hope.github.io/v2/md-enhance/zh/guide/presentation/demo.html).
 
-![Slide page screenshot](./assets/slides.png)
+![幻灯片页截图](./assets/slides.png)
 
-## Attention
+## 注意事项
 
-::: warning Enable presentation
+::: warning 启用功能
 
-You should enable presentation feature in `vuepress-plugin-md-enhance` by setting `themeConfig.plugins.mdEnhance.enableAll` or `themeConfig.plugins.mdEnhance.presentation`, or the layout won't render correctly.
+你应该通过设置 `themeConfig.plugins.mdEnhance.enableAll` 或 `themeConfig.plugins.mdEnhance.presentation` 在 `vuepress-plugin-md-enhance` 中启用幻灯片功能，否则幻灯片无法正确加载。
 
 :::
 
-::: warning No mutiple slides
+::: warning 不含多个幻灯片
 
-You should only include a single slide syntax on this page to avoid rendering problems.
+该页面只能拥有一个幻灯片语法。多个幻灯片可能会引发渲染问题。
 
 ```md
 @slidestart [your theme]

@@ -1,20 +1,20 @@
 import { defineNavbarConfig } from "vuepress-theme-hope";
 
 export const zhNavbarConfig = defineNavbarConfig([
-  "/zh/guide/",
-  "/zh/config/",
-  "/zh/faq/",
+  "/guide/",
+  "/config/",
+  "/faq/",
   {
     text: "教程",
     icon: "guide",
-    prefix: "/zh/cookbook/",
+    prefix: "/cookbook/",
     children: ["tutorial", "markdown/", "vuepress/", "style"],
   },
-  "/zh/migration/",
+  "/migration/",
   {
     text: "项目",
     icon: "info",
-    prefix: "/zh/",
+    prefix: "/",
     children: [
       "changelog",
       "demo/",
@@ -26,67 +26,67 @@ export const zhNavbarConfig = defineNavbarConfig([
           {
             text: "AddThis 插件",
             icon: "share",
-            link: "https://vuepress-theme-hope.github.io/v2/add-this/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/add-this/",
           },
           {
             text: "博客插件",
             icon: "blog",
-            link: "https://vuepress-theme-hope.github.io/v2/blog/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/blog/",
           },
           {
             text: "评论插件",
             icon: "comment",
-            link: "https://vuepress-theme-hope.github.io/v2/comment/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/comment/",
           },
           {
             text: "组件库",
             icon: "plugin",
-            link: "https://vuepress-theme-hope.github.io/v2/components/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/components/",
           },
           {
             text: "代码复制插件",
             icon: "copy",
-            link: "https://vuepress-theme-hope.github.io/v2/copy-code/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/copy-code/",
           },
           {
             text: "Feed 插件",
             icon: "rss",
-            link: "https://vuepress-theme-hope.github.io/v2/feed/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/feed/",
           },
           {
             text: "LightGallery 插件",
             icon: "pic",
-            link: "https://vuepress-theme-hope.github.io/v2/lightgallery/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/lightgallery/",
           },
           {
             text: "Markdown 增强插件",
             icon: "markdown",
-            link: "https://vuepress-theme-hope.github.io/v2/md-enhance/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/md-enhance/",
           },
           {
             text: "图片预览插件",
             icon: "pic",
-            link: "https://vuepress-theme-hope.github.io/v2/photo-swipe/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/photo-swipe/",
           },
           {
             text: "PWA 插件",
             icon: "app",
-            link: "https://vuepress-theme-hope.github.io/v2/pwa/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/pwa/",
           },
           {
             text: "阅读时间插件",
             icon: "read",
-            link: "https://vuepress-theme-hope.github.io/v2/reading-time/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/reading-time/",
           },
           {
             text: "Sass 调色板插件",
             icon: "palette",
-            link: "https://vuepress-theme-hope.github.io/v2/sass-palette/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/sass-palette/",
           },
           {
             text: "Seo 插件",
             icon: "strong",
-            link: "https://vuepress-theme-hope.github.io/v2/seo/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/seo/",
           },
         ],
       },

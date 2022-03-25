@@ -1,20 +1,20 @@
 ---
-title: Comment Plugin Config
+title: 评论插件配置
 icon: comment
 category:
-  - Config
+  - 配置
 tag:
-  - Comment
-  - Plugin Config
-  - Theme Config
+  - 插件配置
+  - 主题配置
+  - 评论
 ---
 
 ## comment
 
-Comment system
+评论系统
 
-The configuration is omitted here due to the complexity. For the specific configuration, please refer to the [vuepress-plugin-comment2 documentation][comment-config]
+配置因为复杂度在这里被省略，具体配置请见　[vuepress-plugin-comment2 文档][comment-config]
 
-> If you don’t need the comment function, just ignore this option
+> 如果你不需要评论功能，忽略此选项即可
 
-[comment-config]: https://vuepress-theme-hope.github.io/v2/comment/config/
+[comment-config]: https://vuepress-theme-hope.github.io/v2/comment/zh/config/

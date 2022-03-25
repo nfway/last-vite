@@ -1,90 +1,90 @@
 ---
-title: Blog Plugin Config
+title: 博客配置
 icon: blog
 category:
-  - Config
+  - 配置
 tag:
-  - Blog
-  - Plugin Config
-  - Theme Config
+  - 插件配置
+  - 主题配置
+  - 博客
 ---
 
-## Intro
+## 介绍
 
-The theme provides blog feature, and it's not enabled by default.
+主题提供博客功能，默认情况下不启用。
 
-You can enable blogging by setting `themeConfig.plugins.blog` to `true`.
+你可以将 `themeConfig.plugins.blog` 设置为 `true` 来启用博客功能。
 
-For instructions, please see [Blog Intro](../../guide/blog/intro.md).
+有关说明，请参阅[博客介绍](../../guide/blog/intro.md)。
 
-## Options
+## 选项
 
 ### autoExcerpt
 
-- Type: `boolean`
-- Default: `false`
+- 类型: `boolean`
+- 默认值: `false`
 
-Whether to generate excerpt for every page.
+是否为每个页面生成摘录。
 
 ### article
 
-- Type: `string`
-- Default: `/article/`
+- 类型: `string`
+- 默认值: `/article/`
 
-Article list route path.
+文章列表路由路径。
 
 ### category
 
-- Type: `string`
-- Default: `/category/`
+- 类型: `string`
+- 默认值: `/category/`
 
-Category map route path.
+分类地图路由路径。
 
 ### categoryItem
 
-- Type: `string`
-- Default: `/category/:name/`
+- 类型: `string`
+- 默认值: `/category/:name/`
 
-Category list route path.
+分类列表路由路径。
 
 ### tag
 
-- Type: `string`
-- Default: `/tag/`
+- 类型: `string`
+- 默认值: `/tag/`
 
-Tag map route path.
+标签地图路由路径。
 
 ### tagItem
 
-- Type: `string`
-- Default: `/tag/:name/`
+- 类型: `string`
+- 默认值: `/tag/:name/`
 
-Tag list route path.
+标签列表路由路径。
 
 ### encrypted
 
-- Type: `string`
-- Default: `/encrypted/`
+- 类型: `string`
+- 默认值: `/加密/`
 
-Encrypted articles list route path.
+加密文章列表路由路径。
 
 ### slides
 
-- Type: `string`
-- Default: `/slides/`
+- 类型: `string`
+- 默认值: `/slides/`
 
-Slides list route path.
+幻灯片列表路由路径。
 
 ### star
 
-- Type: `string`
-- Default: `/star/`
+- 类型: `string`
+- 默认值: `/star/`
 
-Star article list route path.
+收藏文章列表路由路径。
 
 ### timeline
 
-- Type: `string`
-- Default: `/timeline/`
+- 类型: `string`
+- 默认值: `/timeline/`
 
-Timeline list route path.
+时间线列表路由路径。

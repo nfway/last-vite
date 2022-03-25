@@ -1,20 +1,20 @@
 ---
-title: Blog
+title: 博客
 icon: blog
 ---
 
-## Catalog
+## 目录
 
-- [Blog Intro](intro.md)
+- [博客功能介绍](intro.md)
 
-- [Blog Homepage](home.md)
+- [博客主页](home.md)
 
-- [Blogger Intro](blogger.md)
+- [博主介绍](blogger.md)
 
-- [Article List](article.md)
+- [文章列表](article.md)
 
-- [Categories and Tags](category-and-tags.md)
+- [分类与标签](category-and-tags.md)
 
-- [Timeline](timeline.md)
+- [时间线](timeline.md)
 
-- [Page Path](path.md)
+- [路径配置](path.md)

@@ -1,17 +1,17 @@
 ---
-title: Contribution Guide
+title: 贡献指南
 icon: creative
 category:
   - FAQ
 ---
 
-We always welcome everyone to contribute! Here is a guide for you.
+我们永远欢迎你对项目进行贡献! 这里是一份相关指南。
 
 <!-- more -->
 
-## Clone and Install project
+## 克隆并安装项目
 
-Use Git to clone the project to the local, and use `yarn` to install dependencies.
+使用 Git 克隆项目到本地，并使用 `yarn` 进行依赖的安装。
 
 ```sh
 git clone git@github.com:vuepress-theme-hope/vuepress-theme-hope.git
@@ -21,158 +21,158 @@ yarn
 
 ::: tip
 
-If you have not installed yarn, please install it using `npm i -g yarn`.
+如果你并未安装 yarn，请使用 `npm i -g yarn` 安装它。
 
 :::
 
-## Project File structure
+## 项目文件结构
 
-The project is a monorepo, managed by `lerna`.
+本项目是一个 monorepo，使用 `lerna` 管理。
 
-- `docs`: place the documentation of each plugin and theme, each subfolder is a project
-- `demo`: theme demo project
-- `packages`: place the code of each plugin and theme, each subfolder is a project
-
-```
-.
-├── .github → GitHub config
-├── .husky → husky config
-│
-├── demo → Theme demo project
-│
-├── docs → document directory
-│ ├── add-this → add-this plugin document
-│ ├── blog → blog2 plugin document
-│ ├── comment → comment2 plugin document
-│ ├── components → @mr-hope/components plugin document
-│ ├── copy-code → copy-code2 plugin document
-│ ├── feed → feed2 plugin document
-│ ├── lightgallery → lightgallery plugin document
-│ ├── md-enhance → md-enhance plugin document
-│ ├── photo-swipe → photo-swipe document
-│ ├── pwa → pwa2 plugin document
-│ ├── reading-time → reading-time2 plugin document
-│ ├── sass-palette → sass-palette plugin document
-│ ├── seo → seo2 plugin document
-│ └── theme → theme document
-│
-├── packages → project source code
-│ ├── add-this → add-this plugin
-│ ├── blog2 → blog2 plugin
-│ ├── comment2 → comment2 plugin
-│ ├── components → @mr-hope/components plugin
-│ ├── copy-code2 → copy-code2 plugin
-│ ├── create → create-vuepress-theme-hope helper
-│ ├── feed2 → feed2 plugin
-│ ├── lightgallery → lightgallery plugin
-│ ├── md-enhance → md-enhance plugin
-│ ├── photo-swipe → photo-swipe plugin
-│ ├── pwa2 → pwa2 plugin
-│ ├── reading-time2 → reading-time2 plugin
-│ ├── sass-palette → sass-palette plugin
-│ ├── seo2 → seo2 plugin
-│ ├── shared → shared file
-│ ├── sitemap2 → sitemap2 plugin
-│ └── theme → vuepress-theme-hope theme
-│
-├── scripts → command scripts
-│
-├── ... → some config files
-│
-├── LICENSE → License
-├── package.json → root package.json
-├── README.md → project intro
-├── SECURITY.md → Security Policy
-│
-├── tsconfig.* → TypeScript config file
-│
-└── yarn.lock → yarn version lock file
-```
-
-## Document modification
-
-You can find the corresponding project in the docs folder so you can modify the corresponding Markdown directly.
-
-After ensuring that the `yarn run lint` and `yarn run lint:md` commands emit no errors, you can commit to GitHub to open a PR.
-
-To preview the project locally, since the docs are using local themes and plugins, you need to build the local project through `yarn run build`, and then start it with the corresponding command `yarn run docs/<project abbreviation>:serve` in the root directory to start devServer.
-
-## Project modification
-
-The structure of each project is as follows:
+- docs: 放置各插件与主题的文档，每个子文件夹为一个项目
+- demo: 主题演示项目
+- packages: 放置各插件与主题的代码，每个子文件夹为一个项目
 
 ```
 .
-├── lib → compiled output file
-│ │
-│ ├── client → client-side compiled code
-│ │
-│ └── node → Node.js side compiled code
+├── .github → GitHub 配置
+├── .husky → husky 配置
 │
-└── src → source file
-  │
-  ├── client → client-side souce code
-  │
-  ├── node → Node.js side  soucecode
-  │
-  └── shared → Shared files between node and client
+├── demo → 主题演示项目
+│
+├── docs → 文档目录
+│ ├── add-this → add-this 插件文档
+│ ├── blog → blog2 插件文档
+│ ├── comment → comment2 插件文档
+│ ├── components → @mr-hope/components 插件文档
+│ ├── copy-code → copy-code2 插件文档
+│ ├── feed → feed2 插件文档
+│ ├── lightgallery → lightgallery 插件文档
+│ ├── md-enhance → md-enhance 插件文档
+│ ├── photo-swipe → photo-swipe 文档
+│ ├── pwa → pwa2 插件文档
+│ ├── reading-time → reading-time2 插件文档
+│ ├── sass-palette → sass-palette 插件文档
+│ ├── seo → seo2 插件文档
+│ └── theme → 主题文档
+│
+├── packages → 项目源代码
+│ ├── add-this → add-this 插件
+│ ├── blog2 → blog2 插件
+│ ├── comment2 → comment2 插件
+│ ├── components → @mr-hope/components 插件
+│ ├── copy-code2 → copy-code2 插件
+│ ├── create → create-vuepress-theme-hope 助手
+│ ├── feed2 → feed2 插件
+│ ├── lightgallery → lightgallery 插件
+│ ├── md-enhance → md-enhance 插件
+│ ├── photo-swipe → photo-swipe 插件
+│ ├── pwa2 → pwa2 插件
+│ ├── reading-time2 → reading-time2 插件
+│ ├── sass-palette → sass-palette 插件
+│ ├── seo2 → seo2 插件
+│ ├── shared → 共享文件
+│ ├── sitemap2 → sitemap2 插件
+│ └── theme → vuepress-theme-hope 主题
+│
+├── scripts → 命令脚本
+│
+├── ... → 一些配置文件
+│
+├── LICENSE → 协议
+├── package.json → 项目根 package.json
+├── README.md → 项目介绍
+├── SECURITY.md → 安全政策文件
+│
+├── tsconfig.* → TypeScript 配置文件
+│
+└── yarn.lock → yarn 版本 lock 文件
 ```
 
-Since the client-side uses ES Module (import/export) and the Node.js side uses commonjs (require/exports), the code in the node and client folders cannot be cross-referenced.
+## 文档修改
 
-- `client` folder stores the client code, compiled in esm format
-- `node` folder stores the Node.js code, compiled in cjs format
-- `shared` folder basically stores TypeScript types, and is compiled in cjs format. It can be referenced by the client and node folders.
+你可以直接在 docs 文件夹内找到对应项目，并修改对应的 Markdown。
 
-For better performance, all plugins are packed and minified using rollup when they are published.
+确保 `yarn run lint` 与 `yarn run lint:md` 命令没有错误后，即可提交到 GitHub 发起 PR。
 
-## Project operation and development
+如果你想要本地预览项目，由于文档使用本地的主题与插件，你需要通过 `yarn run build` 构建本地项目，才能通过根目录下的对应命令 `yarn run docs/<项目简写>:serve` 启动开发服务器。
 
-### How to build
+## 项目修改
 
-- For better performance, all plugins are packed and minified using `rollup` when they are published.
-- Use `cpx` package to copy and watch files in other formats from the source file to the output directory.
+每个项目的结构都大致如下:
 
-### Command
+```
+.
+├── lib → 编译后的输出文件
+│ │
+│ ├── client → 客户端侧代码
+│ │
+│ └── node → Node.js 侧代码
+│
+└── src → 源文件
+  │
+  ├── client → 客户端侧代码
+  │
+  ├── node → Node.js 侧代码
+  │
+  └── shared → 客户端和 Node.js 的共享文件
+```
 
-1. Build project: `yarn run build`
+由于客户端一侧使用 ES Module (import/export)，而 Node.js 端一侧使用 commonjs (require/exports)，不能交叉引用 node 和 client 文件夹内的代码。
 
-   It will execute the two commands `yarn run build:copy` and `yarn run build:ts`, corresponding to the two build steps.
+- `client` 文件夹存放客户端代码，使用 esm 格式编译
+- `node` 文件夹存放 Node.js 端代码，使用 cjs 格式编译
+- `shared` 文件夹主要存放 TypeScript 类型。它可以被 client 和 node 文件夹引用，并编译为 cjs 格式。
 
-1. Develop project: `yarn run dev`
+为了更好的性能，所有插件在发布时都会使用 rollup 进行打包并压缩。
 
-   It will execute the two commands `yarn run dev:copy` and `yarn run dev:ts`, and execute and watch the two build steps.
+## 项目的运行与开发
 
-1. Format project: `yarn run lint`
+### 构建方式
 
-   It will execute the two commands `yarn run lint:eslint` and `yarn run lint:prettier`.
+- 为了更好的性能，所有插件在发布时都会使用 `rollup` 进行打包并压缩。
+- 使用 `cpx` 提供的复制与文件监听命令，将其他格式的文件从源文件拷贝到输出目录。
 
-   If you modify Markdown, you also need to run the `yarn run lint:md` command.
+### 命令
+
+1. 构建项目: `yarn run build`
+
+   它会执行 `yarn run build:copy` 和 `yarn run build:ts` 两个命令，对应前文的两种构建步骤。
+
+1. 开发项目: `yarn run dev`
+
+   它会执行 `yarn run dev:copy` 和 `yarn run dev:ts` 两个命令，执行并监听前文的两种构建步骤。
+
+1. 格式化项目: `yarn run lint`
+
+   它会执行 `yarn run lint:eslint` 和 `yarn run lint:prettier` 两个命令。
+
+   如果你修改了 Markdown，你还需要运行 `yarn run lint:md` 命令。
 
 ::: warning
 
-Please do not mix build and dev commands as they compile in completely different ways.
+请不要混用构建和开发命令，因为它们的构建方式完全不同。
 
-You may need to execute the `yarn run clean` command to clear the last build results.
+你可能需要执行 `yarn run clean` 命令来清除上一次的构建结果。
 
 :::
 
-## Commit
+## 提交
 
-The project uses `husky` and `lint-staged` to add Git Hooks for verification:
+项目使用 `husky` 与 `lint-staged` 添加了额外的 Git Hooks 进行验证:
 
-- In `precommit` stage: use `lint-staged` to check the changed code with the corresponding Linter
+- 在 `precommit` 阶段使用 `lint-staged` 配合对应 Linter 对改动的代码进行检验
 
-  This means that you need to ensure that your code is formatted by the project requirements and can pass Linter tests.
+  这意味着你需要保证你的代码按照项目要求进行格式化，可以通过 Linter。
 
-- In `commit-msg` stage: use `commitlint` to verify the commit comment.
+- 在 `commit-msg` 阶段使用 `commitlint` 对提交备注进行校验。
 
-  This means that you need to ensure that your commit comments comply with Semantic
+  这意味着你需要保证你的提交注释符合语义化提交 (Semantic)
 
 ::: tip
 
-If you cannot pass the above Git Hooks, you will not be able to complete `git commit`.
+如果你不能通过上述 Git Hooks，你将无法完成 `git commit`。
 
-If you have already contributed something, but cannot make a commit and don’t know how to fix it, you can add the `--no-verify` flag when committing to bypass Git Hooks.
+如果你已经进行贡献了一些内容，但无法完成提交且不会修复，你可以在提交时添加 `--no-verify` Flag 绕过 Git Hooks。
 
 :::

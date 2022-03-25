@@ -1,7 +1,7 @@
 import { defineSidebarConfig } from "vuepress-theme-hope";
 
 export const zhSidebarConfig = defineSidebarConfig({
-  "/zh/guide/": [
+  "/guide/": [
     {
       text: "快速上手",
       icon: "creative",
@@ -94,7 +94,7 @@ export const zhSidebarConfig = defineSidebarConfig({
     },
   ],
 
-  "/zh/config/": [
+  "/config/": [
     "intro",
     "i18n",
     {
@@ -121,7 +121,7 @@ export const zhSidebarConfig = defineSidebarConfig({
     "style",
   ],
 
-  "/zh/cookbook/": [
+  "/cookbook/": [
     "tutorial",
     {
       text: "Markdown",
@@ -151,7 +151,7 @@ export const zhSidebarConfig = defineSidebarConfig({
     "style",
   ],
 
-  "/zh/": [
+  "/": [
     "",
     {
       text: "指南",

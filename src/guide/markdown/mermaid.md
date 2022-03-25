@@ -4,15 +4,15 @@ icon: diagram
 category:
   - Markdown
 tag:
-  - Diagram
   - Markdown
+  - 图表
 ---
 
-Let the Markdown file support [mermaid](https://mermaid-js.github.io/mermaid/#/) in your VuePress site.
+让你的 VuePress 站点中的 Markdown 文件支持 [mermaid](https://mermaid-js.github.io/mermaid/#/)。
 
 <!-- more -->
 
-## Configuration
+## 配置
 
 :::: code-group
 
@@ -56,23 +56,23 @@ module.exports = defineHopeConfig({
 
 ::::
 
-## Syntax
+## 语法
 
 ````md
 ```mermaid
 
-<!-- Your mermaid code here. -->
+<!-- 在此处放置 mermaid 代码 -->
 
 ```
 ````
 
-## Usage
+## 使用
 
-Please see [mermaid](https://mermaid-js.github.io/mermaid/#/).
+详见 [mermaid 官方文档](https://mermaid-js.github.io/mermaid/#/)。
 
-## Demo
+## 例子
 
-### Flowchart
+### 流程图
 
 ```mermaid
 flowchart TB
@@ -114,7 +114,7 @@ flowchart TB
 
 :::
 
-### Sequence Diagram
+### 循序图
 
 ```sequence
 Alice ->> Bob: Hello Bob, how are you?
@@ -144,7 +144,7 @@ Alice->John: Yes... John, how are you?
 
 :::
 
-### Class Diagram
+### 类图
 
 ```class
 class Square~Shape~{
@@ -178,7 +178,7 @@ Square : +getMessages() List~string~
 
 :::
 
-### State Diagram
+### 状态图
 
 ```state
 [*] --> Active
@@ -222,7 +222,7 @@ state Active {
 
 :::
 
-### Entity Relationship Diagrams
+### 关系图
 
 ```er
 CAR ||--o{ NAMED-DRIVER : allows
@@ -260,7 +260,7 @@ PERSON {
 
 :::
 
-### User Journey Diagram
+### 用户日记图
 
 ```journey
 title My working day
@@ -290,7 +290,7 @@ section Go home
 
 :::
 
-### Gantt diagrams
+### 甘特图
 
 ```gantt
 dateFormat  YYYY-MM-DD
@@ -360,7 +360,7 @@ Add another diagram to demo page    :48h
 
 :::
 
-### Pie chart diagrams
+### 饼图
 
 ```pie
 title What Voldemort doesn’t have?
@@ -382,7 +382,7 @@ title What Voldemort doesn’t have?
 
 :::
 
-### A complex example
+### 一个复杂的案例
 
 ```mermaid
 graph TB

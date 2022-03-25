@@ -1,8 +1,9 @@
 ---
-title: Symbol Emoji
+title: 符号 Emoji
 icon: emoji
 category:
-  - Cookbook
+  - 教程知识
+  - Markdown
 tag:
   - Markdown
   - Emoji

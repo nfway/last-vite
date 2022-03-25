@@ -1,19 +1,19 @@
 ---
-title: Customize Components
+title: 自定义主题组件
 icon: customize
 category:
-  - Advanced
+  - 高级
 tag:
-  - Advanced
-  - Customize
+  - 高级
+  - 自定义
 ---
 
-The theme imports components through `alias`, so you can use it to replace any component of the theme.
+主题通过 `alias` 来引入组件，所以你可以利用它来替换主题的任何一个组件。
 
 <!-- more -->
 
-## Replace components
+## 替换组件的方式
 
-You need to replace the component alias used in the theme with `alias` option in your own VuePress config file.
+你需要在自己的 VuePress 配置文件通过 `alias` 替换主题中使用的组件别名。
 
 
