@@ -144,7 +144,6 @@ export const zhSidebarConfig = defineSidebarConfig({
       prefix: "guide/",
       children: [
         "get-started/",
-        "interface/",
         "layout/",
         "markdown/",
         "feature/",
@@ -172,7 +171,6 @@ export const zhSidebarConfig = defineSidebarConfig({
     },
     "changelog",
     "faq",
-    "demo/",
     "contribution",
   ],
 });

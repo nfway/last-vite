@@ -32,7 +32,7 @@ export default defineThemeConfig({
   },
 
   plugins: {
-    blog: false,
+    blog: true,
     search: true,
 
 
