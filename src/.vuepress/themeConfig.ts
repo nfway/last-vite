@@ -18,7 +18,7 @@ export default defineThemeConfig({
   editLink: false,
   logo: "/logo.svg",
 
-  footer: "MIT Licensed | Copyright © 2019-present Mr.Hope",
+  footer: "MIT Licensed | Copyright © 2019-present Zhou SanFeng",
   copyright: false,
   displayFooter: true,
 
@@ -34,17 +34,7 @@ export default defineThemeConfig({
   plugins: {
     blog: true,
     search: true,
-
-
-    comment: {
-      type: "giscus",
-      repo: "vuepress-theme-hope/giscus-discussions",
-      repoId: "R_kgDOG_Pt2A",
-      category: "Announcements",
-      categoryId: "DIC_kwDOG_Pt2M4COD69",
-    },
-   
-   
+  
 
     mdEnhance: {
       enableAll: true,
