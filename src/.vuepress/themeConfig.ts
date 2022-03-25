@@ -9,8 +9,8 @@ export default defineThemeConfig({
   hostname,
 
   author: {
-    name: "Mr.Hope",
-    url: "https://mrhope.site",
+    name: "San Feng",
+    url: "https://3feng.im",
   },
 
   iconPrefix: "iconfont icon-",
