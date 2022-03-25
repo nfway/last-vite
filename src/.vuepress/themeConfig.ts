@@ -14,11 +14,8 @@ export default defineThemeConfig({
   },
 
   iconPrefix: "iconfont icon-",
-
-  repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
-
-  docsDir: "docs/theme/src",
-
+  contributors: false,
+  editLink: false,
   logo: "/logo.svg",
 
   footer: "MIT Licensed | Copyright © 2019-present Mr.Hope",

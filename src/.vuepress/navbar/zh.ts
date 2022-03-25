@@ -1,7 +1,12 @@
 import { defineNavbarConfig } from "vuepress-theme-hope";
 
 export const zhNavbarConfig = defineNavbarConfig([
-  "/guide/",
+ {
+    text: "指南",
+    icon: "guide",
+    prefix: "/guide/",
+    children: ["advanced/", "markdown/", "blog/", "feature","get-started","layout"],
+  },
   "/config/",
   "/faq/",
   {
@@ -10,9 +15,12 @@ export const zhNavbarConfig = defineNavbarConfig([
     prefix: "/cookbook/",
     children: ["tutorial", "markdown/", "vuepress/", "style"],
   },
-  "/migration/",
+{
+    text: "迁移",
+    link: "/migration/",
+  },
   {
-    text: "项目",
+    text: "下拉菜单",
     icon: "info",
     prefix: "/",
     children: [

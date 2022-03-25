@@ -10,21 +10,6 @@ export const zhSidebarConfig = defineSidebarConfig({
       children: ["intro", "install", "markdown"],
     },
     {
-      text: "界面",
-      icon: "palette",
-      prefix: "interface/",
-      collapsable: true,
-      children: [
-        "darkmode",
-        "theme-color",
-        "icon",
-        "code-theme",
-        "accessibility",
-        "pure",
-        "others",
-      ],
-    },
-    {
       text: "布局",
       icon: "layout",
       prefix: "layout/",
