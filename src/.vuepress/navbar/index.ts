@@ -1,17 +1,48 @@
 import { defineNavbarConfig } from "vuepress-theme-hope";
 
 export const zhNavbarConfig = defineNavbarConfig([
- {
+  {
     text: "ESG介绍",
     prefix: "/about/",
     children: [
 	{
-            text: "ESG是什么",
-            link: "ESG",
+         text: "ESG是什么",
+         link: "ESG",
           },
-	 "ESG-history", "ESG-investment-history"],
+	{
+         text: "ESG发展史",
+         link: "ESG-history",
+          },
+    {
+         text: "ESG投资史",
+         link: "ESG-investment-history",
+          }
+		  ],
   },
- 
+
+  {
+    text: "ESG标准",
+    children: [
+	{
+         text: "ESG标准",
+         link: "/criteria/ESG-Criteria",
+          },
+	{
+         text: "ESG在中国",
+         link: "/criteria/ESG-China",
+          },
+		  
+	{
+         text: "港交所 ESG",
+         link: "/criteria/hkex-ESG",
+          },
+	{
+         text: "ESG 更新",
+         link: "/criteria/ESG-update",
+          }
+		  ],
+  },
+  
   {
     text: "教程",
     icon: "guide",
