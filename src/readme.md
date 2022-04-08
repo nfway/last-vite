@@ -1,164 +1,55 @@
 ---
 home: true
-title: 主页
-icon: home
-heroImage: /logo.svg
-heroText: vuepress-theme-hope
-tagline: 一个具有强大功能的 vuepress 主题✨
+title: 首页
+heroImage: /esg.png
+heroText: All About ESG
+tagline: Environmental, Social, and Governance, and more.
+
 actions:
-  - text: 快速上手 💡
-    link: /guide/
+  - text: ESG为何重要 💡
+    link: /why-esg-matters.html
     type: primary
 
-  - text: 配置 🛠
-    link: /config/
+  - text: ESG帮助 🛠
+    link: /contact.html
 
 features:
-  - title: Markdown 增强
-    icon: markdown
-    details: 新增文字对齐、上下角标、脚注、标记、任务列表、数学公式、流程图、图表与幻灯片支持
-    link: /guide/markdown/
+  - title: Environmental
+    icon: leaf
+    details: 市场主体（投资人、机构等）越来越关注环境问题，公司就必须关注于此。 
 
-  - title: 幻灯片页面
-    icon: slides
-    details: 添加幻灯片页面以显示你喜欢的内容
-    link: /guide/layout/slides
+  - title: Social
+    icon: people
+    details: 社会议题与公司的各利益相关方密切相连：员工，供应链、消费者们等等。
 
-  - title: 布局增强
-    icon: layout
-    details: 添加路径导航、页脚、改进的导航栏、改进的页面导航等。
-    link: /guide/layout/
+  - title: Governance
+    icon: condition
+    details: 公司的财务报表反映过去的管理及结果，公司的治理，将影响其当下及未来。
 
-  - title: 浏览量与评论
-    icon: comment
-    details: 配合 Waline 来开启阅读量统计与评论支持
-    link: /guide/feature/comment.html
+  - title: Value
+    icon: table
+    details: 公司更应关注于 ESG 的价值，而不仅仅在 ESG 披露上倾注资源与耗费投入。
 
-  - title: 文章信息
-    icon: info
-    details: 为你的文章添加作者、写作日期、预计阅读时间、字数统计等信息
-    link: /guide/feature/page-info.html
+  - title: ESG 披露
+    icon: result
+    details: 面对日益严格的ESG监管需求，以及资本市场对ESG信息的要求，企业应如何提升ESG水平？
+    link: /how/ESG-guide.html
 
-  - title: 博客支持
-    icon: blog
-    details: 使用一些很棒的布局提供博客功能，通过文章的日期、标签和分类，自动生成文章、分类、标签与时间轴列表
-    link: /guide/blog/intro.html
+  - title: ESG 评级
+    icon: rank
+    details: 公司/企业在 ESG 评级方面应有何作为？要如何提高自身的评级、提高自身价值？
+    link: /how/ESG-rating.html
 
-  - title: 主题色切换
-    icon: palette
-    details: 支持自定义主题色并允许用户在预设的主题颜色之间切换
-    link: /guide/interface/theme-color.html
+  - title: ESG 监管
+    icon: profile
+    details: ESG 在别的地区是如何用于监管的？带你了解全球的ESG监管政策、趋势
+    link: /apply/ESG-as-supervision.html
 
-  - title: 深色模式
-    icon: contrast
-    details: 可以自由切换浅色模式与深色模式
-    link: /guide/interface/darkmode.html
+  - title: ESG 在中国
+    icon: locate
+    details: 快速了解 ESG 在中国的发展路线图，包括政策、规定的演变时间、内容等
+    link: /criteria/ESG-China.html
 
-  - title: 完整的无障碍支持
-    icon: support
-    details: 为你的网站带来完整的无障碍支持
-    link: /guide/interface/accessibility.html
-
-  - title: 文章加密
-    icon: lock
-    details: 你可以为你的特定页面或特定目录进行加密，以便陌生人不能随意访问它们
-    link: /guide/feature/encrypt.html
-
-  - title: 复制按钮
-    icon: copy
-    details: 一键复制代码块中的代码
-    link: /guide/feature/copy-code.html
-
-  - title: 图片预览
-    icon: pic
-    details: 像相册一样允许你浏览、缩放并分享你的页面图片
-    link: /guide/feature/photo-swipe.html
-
-  - title: SEO 增强
-    icon: config
-    details: 将最终生成的网页针对搜索引擎进行优化。
-    link: /guide/advanced/seo.html
-
-  - title: Sitemap
-    icon: sitemap
-    details: 自动为你的网站生成 Sitemap
-    link: /guide/advanced/sitemap.html
-
-  - title: Feed 支持
-    icon: rss
-    details: 生成你的 Feed，并通知你的用户订阅它
-    link: /guide/advanced/feed.html
-
-  - title: PWA 支持
-    icon: mobile
-    details: 让你的网站更像一个 APP
-    link: /guide/advanced/pwa.html
-
-  - title: 更多新特性
-    icon: more
-    details: 包括图标支持、全屏按钮、返回顶部按钮等
-    link: /guide/feature/
-
-copyright: false
-footer: MIT Licensed | Copyright © 2019-present Mr.Hope
+copyrightText: false
+footer: Copyright © 2019-present by Zhou Sanfeng on Cloud.
 ---
-
-## 🛠 安装
-
-在当前项目的 `[dir]` 文件夹内创建 vuepress-theme-hope 项目:
-
-:::: code-group
-
-<!-- ::: code-group-item yarn
-
-```bash
-yarn create vuepress-theme-hope [dir]
-```
-
-::: -->
-
-::: code-group-item npm
-
-```bash
-npm init vuepress-theme-hope@next [dir]
-```
-
-:::
-
-::::
-
-## 🚀 使用
-
-:::: code-group
-
-::: code-group-item TS
-
-```ts {2,4,6}
-// .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
-
-export default defineHopeConfig({
-  // 此处放置配置
-});
-```
-
-:::
-
-::: code-group-item JS
-
-```js {2,4,6}
-// .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
-
-module.exports = defineHopeConfig({
-  // 此处放置配置
-});
-```
-
-:::
-
-::::
-
-## 官方 QQ 群
-
-- [点击加入](https://jq.qq.com/?_wv=1027&k=rATJyxGK) (群号: 1003437555)
