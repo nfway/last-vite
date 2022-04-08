@@ -2,10 +2,9 @@ import { defineNavbarConfig } from "vuepress-theme-hope";
 
 export const zhNavbarConfig = defineNavbarConfig([
  {
-    text: "指南",
-    icon: "guide",
-    prefix: "/guide/",
-    children: ["advanced/", "markdown/", "blog/", "feature","get-started","layout"],
+    text: "ESG介绍",
+    prefix: "/about/",
+    children: ["ESG", "ESG-history", "ESG-investment-history"],
   },
   "/config/",
   "/faq/",
