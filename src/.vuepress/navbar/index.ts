@@ -6,8 +6,7 @@ export const zhNavbarConfig = defineNavbarConfig([
     prefix: "/about/",
     children: ["ESG", "ESG-history", "ESG-investment-history"],
   },
-  "/config/",
-  "/faq/",
+ 
   {
     text: "教程",
     icon: "guide",
