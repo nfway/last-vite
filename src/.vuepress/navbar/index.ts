@@ -4,7 +4,12 @@ export const zhNavbarConfig = defineNavbarConfig([
  {
     text: "ESG介绍",
     prefix: "/about/",
-    children: ["ESG", "ESG-history", "ESG-investment-history"],
+    children: [
+	{
+            text: "ESG是什么",
+            link: "ESG",
+          },
+	 "ESG-history", "ESG-investment-history"],
   },
  
   {
