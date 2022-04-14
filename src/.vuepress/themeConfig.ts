@@ -34,7 +34,12 @@ export default defineThemeConfig({
   plugins: {
     blog: false,
     search: true,
-  
+    [
+      '@vuepress/plugin-google-analytics',
+      {
+        id: 'G-5NDPDMT1LW',
+      },
+    ],
 
     mdEnhance: {
       enableAll: true,
@@ -81,65 +86,7 @@ export default defineThemeConfig({
             type: "image/png",
           },
         ],
-        shortcuts: [
-          {
-            name: "Guide",
-            short_name: "Guide",
-            url: "/guide/",
-            icons: [
-              {
-                src: "/assets/icon/guide-maskable.png",
-                sizes: "192x192",
-                purpose: "maskable",
-                type: "image/png",
-              },
-              {
-                src: "/assets/icon/guide-monochrome.png",
-                sizes: "192x192",
-                purpose: "monochrome",
-                type: "image/png",
-              },
-            ],
-          },
-          {
-            name: "Config",
-            short_name: "Config",
-            url: "/config/",
-            icons: [
-              {
-                src: "/assets/icon/config-maskable.png",
-                sizes: "192x192",
-                purpose: "maskable",
-                type: "image/png",
-              },
-              {
-                src: "/assets/icon/config-monochrome.png",
-                sizes: "192x192",
-                purpose: "monochrome",
-                type: "image/png",
-              },
-            ],
-          },
-          {
-            name: "Cookbook",
-            short_name: "Cookbook",
-            url: "/cookbook/",
-            icons: [
-              {
-                src: "/assets/icon/basic-maskable.png",
-                sizes: "192x192",
-                purpose: "maskable",
-                type: "image/png",
-              },
-              {
-                src: "/assets/icon/basic-monochrome.png",
-                sizes: "192x192",
-                purpose: "monochrome",
-                type: "image/png",
-              },
-            ],
-          },
-        ],
+       
       },
     },
   },
