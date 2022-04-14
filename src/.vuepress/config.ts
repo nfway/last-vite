@@ -30,8 +30,8 @@ export default defineHopeConfig({
   locales: {
     "/": {
       lang: "zh-CN",
-      title: "这不是一个中文标题",
-      description: "一个具有强大功能的 vuepress 主题✨",
+      title: "All about ESG | ESG 资料库",
+      description: "关于ESG，包括ESG的标准有哪些，公司应如何披露ESG、提升ESG评级。Environmental, Social, Governance and more.",
     },
 
   },
