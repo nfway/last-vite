@@ -1,42 +1,18 @@
 ---
-pageClass: about-page
-description: 'The biography and information about me.'
-avatar: /profile.jpg
-head: 'Harry Potter'
-info: 'Student at Hogwarts School'
-interests: 'Interests: Quidditch and Wizard chess.'
-socials:
-- title: github
-  link: https://github.com/mtobeiyf
-- title: linkedin
-  link: https://www.linkedin.com
-- title: instagram
-  link: https://www.instagram.com
-- title: email
-  link: 'mailto:harry[at]gmail.com'
-actions:
-- text: Projects
-  link: /projects/
-- text: Blog
-  link: https://github.com/mtobeiyf
-- text: CV
-  link: /article/
-footer: Made with ♥ by Fing. Powered by VuePress
+title: 关于ESG
+category:
+  - 关于
+tag:
+  - 关于
 ---
 
-<AboutCard :frontmatter="$page.frontmatter" >
 
-I attended [Hogwarts School of Witchcraft and Wizardry](https://en.wikipedia.org/wiki/Hogwarts) to study witchcraft, supervised by **Dumbledore** and other professors. I'm trying my best to battle with Lord Voldemort, the evil Wizard that we all fear. My research area includes Defence Against the Dark Arts and other magic. :dizzy:
+关于ESG的介绍,ESG 来自何方，指向何处。
 
-</AboutCard>
+## 目录
 
-<style lang="stylus">
+- [ESG是什么](ESG.md)
 
-.theme-container.about-page .page
-  background-color #e6ecf0
-  min-height calc(100vh)
-  
-  .last-updated
-    display none
+- [ESG发展史](ESG-history.md)
 
-</style>
+- [ESG投资史](ESG-investment-history.md)
