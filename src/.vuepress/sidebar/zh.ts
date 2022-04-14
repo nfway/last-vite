@@ -21,6 +21,11 @@ export const zhSidebarConfig = defineSidebarConfig({
         "breadcrumb",
         "footer",
         "home",
+		{
+			type: 'link',
+			text: '编写文档',
+			link: 'home',          
+			},
         "slides",
       ],
     },
