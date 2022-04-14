@@ -3,7 +3,7 @@ import { enNavbarConfig, zhNavbarConfig } from "./navbar";
 import { enSidebarConfig, zhSidebarConfig } from "./sidebar";
 
 const hostname =
-  process.env.HOSTNAME || "https://vuepress-theme-hope-v2.netlify.app";
+  process.env.HOSTNAME || "https://a.bc.com";
 
 export default defineThemeConfig({
   hostname,
@@ -34,12 +34,10 @@ export default defineThemeConfig({
   plugins: {
     blog: false,
     search: true,
-    [
-      '@vuepress/plugin-google-analytics',
+   '@vuepress/plugin-google-analytics',
       {
         id: 'G-5NDPDMT1LW',
       },
-    ],
 
     mdEnhance: {
       enableAll: true,
