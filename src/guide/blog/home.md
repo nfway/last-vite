@@ -1,65 +1,65 @@
 ---
-title: 博客首页
+title: Blog homepage
 icon: home
 category:
-  - 博客
+  - Blog
 tag:
-  - 博客
-  - 主页
-  - 布局
+  - Blog
+  - Home
+  - Layout
 ---
 
-`vuepress-theme-hope` 允许你启用博客风格的首页。
+`vuepress-theme-hope` allows you to enable a blog-style homepage.
 
-你需要在相应的页面的 frontmatter 中，设置 `home: true` 和 `layout: Blog` 来使用博客主页。
+You need to set `layout: Blog` and `home: true` in the frontmatter of homepage.
 
 <!-- more -->
 
-![首页截图](./assets/blog.png)
+![Homepage screenshot](./assets/blog.png)
 
-## Frontmatter 可用参数
+## Available parameters in frontmatter
 
 ### hero
 
-- 类型: `boolean`
-- 默认: `true`
+- Type: `boolean`
+- Default: `true`
 
-是否显示主页的图标与描述。主页的图标、描述设置同 [默认主页](../layout/home.md)。
+Whether to display the icon and description of the home page.
 
 ### bgImage
 
-- 类型: `string`
+- Type: `string`
 
-背景图片的地址，需填写绝对路径。如果不填写，会自动应用一张默认的风景图片。
+For the address of the background picture, you must fill in the absolute path. If not filled in, a default landscape picture will be automatically applied.
 
 ### bgImageStyle
 
-- 类型: `Record<string, string>`
+- Type: `Record <string, string>`
 
-背景图片的 CSS 样式。
+The CSS style of the background image.
 
 ### heroImageStyle
 
-- 类型: `Record<string, string>`
+- Type: `Record <string, string>`
 
-首页图标的 CSS 样式
+CSS style for home icon
 
 ### heroFullScreen
 
-- 类型: `boolean`
-- 默认: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否全屏显示 Hero
+Whether Hero is full screen displayed
 
-### 项目
+### projects
 
-- 类型: `ProjectOption[]`
+- Type: `ProjectOption[]`
 
-`ProjectOption` 包括以下键值:
+`ProjectOption` includes:
 
-- `name`: 项目名称，必填
-- `link`: 项目链接，必填，填入外部链接或绝对路径。
-- `desc`: 项目描述，选填
-- `icon`: 图标，可填入完整路径或绝对路径的图片链接、图标 FontClass 等。
+- `name`: required, project name
+- `link`: required, project link, fill in an external path or absolute path
+- `desc`: project description
+- `icon`: Icon, you can fill in full path or absolute path image link, also icon FontClass is suppported
 
-  同时提供了如下内置图标支持: `"link"`、`"project"`、`"book"`、`"article"`、`"friend"`
+  We provide these icons as built-in support either: `"link"`, `"project"`, `"book"`, `"article"`, `"friend"`。

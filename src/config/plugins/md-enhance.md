@@ -1,80 +1,80 @@
 ---
-title: MdEnhance 插件配置
+title: MdEnhance Plugin Config
 icon: markdown
 category:
-  - 配置
+  - Config
 tag:
-  - 插件配置
-  - 主题配置
   - Markdown
+  - Plugin Config
+  - Theme Config
 ---
 
-## 介绍
+## Introduction
 
-`vuepress-plugin-md-enhance` 插件默认启用，提供 Markdown 增强功能。
+The `vuepress-plugin-md-enhance` plugin is enabled by default and provides Markdown enhancements.
 
-`vuepress-theme-hope` 将 `themeConfig.plugins.mdEnhance` 作为插件选项传递给 `vuepress-plugin-md-enhance` 插件。
+`vuepress-theme-hope` passes `themeConfig.plugins.mdEnhance` as a plugin option to the `vuepress-plugin-md-enhance` plugin.
 
 ::: tip
 
-如果你不需要这个功能，请设置为 `false`。
+If you don’t need this feature, please set to `false`.
 
 :::
 
 ::: info
 
-`vuepress-theme-hope` 会默认将 `container` 选项设置为 `true`。
+`vuepress-theme-hope` will set the `container` option to `true` by default.
 
-有关更多详细信息，请参见 [md-enhance 文档][md-enhance-config]。
+See the [md-enhance documentation][md-enhance-config] for more details.
 
 :::
 
-## 插件选项
+## Plugin Options
 
-### enableAll
+### Enable all
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-启用全部功能。
+Whether to enable all features.
 
 ::: danger
 
-请仅将此选项用于体验或测试。
+Please use this option ONLY for playing or testing.
 
-随着时间的增长，`vupress-plugin-md-enhance` 变得越来越强大。它为 Markdown 解析器添加了更多语法，并输出了更多代码。
+As time grows,`vupress-plugin-md-enhance` is becoming more powerful. It’s adding more syntax to Markdown parser and more code to output.
 
-启用不需要的功能将增加开发和构建时间。 (`markdown-it` 必须检查额外的语法)
+Enabling features you don’t need will increase dev and build time. (`markdown-it` has to check for extra syntaxs)
 
-同样，幻灯片演示功能将在输出中添加 700KB 大小的代码 (主要是 `reveal.js`)。
+Also, presentation feature will add a 700KB size chunk (mostly is `reveal.js`) to your output.
 
-因此，请使用下面的选项，仅启用需要的功能。
+Please use the options below and enable ONLY the feature you want to use.
 
 :::
 
 ### gfm
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否支持完整的 GFM 语法。
+Whether to support full GFM syntax.
 
 ::: note
 
-有关完整的 GFM 语法，请参阅 [GFM](https://github.github.com/gfm/)。
+For full GFM syntax, see [GFM](https://github.github.com/gfm/).
 
-老实说，我们并不是 100% 支持它，我们只补全了它的语法，包括任务列表、脚注等。
+We are not 100% supporting it to be honestly, we only supply it's syntax inlucding tasklists, footnote and so on.
 
-某些行为可能会有所不同，例如，为了允许 Vue 语法，我们并没有禁止 `<script>` 标签。 但在大多数情况下，行为应该是相同的。
+Some of the behavior might be different, for example to allow Vue syntax, we are not disallowing `<script>` tags. But in most situation, the behavior should be same.
 
 :::
 
 ### container
 
-- 类型: `boolean`
-- 默认值: `true`
+- Type: `boolean`
+- Default: `true`
 
-是否启用自定义容器支持:
+Whether to enable custom container including
 
 - info
 - note
@@ -85,66 +85,66 @@ tag:
 
 ### vpre
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用 v-pre 容器。
+Whether to enable v-pre wrapper.
 
 ### codegroup
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用代码组。
+Whether to enable codegroup.
 
 ### align
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用自定义对齐格式支持。
+Whether to enable custom align.
 
 ### sup
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用上角标格式支持。
+Whether to enable the upper format support.
 
 ### sub
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用下角标格式支持。
+Whether to enable the lower corner format support.
 
 ### footnote
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用脚注格式支持。
+Whether to enable footnote format support.
 
 ### lazyLoad
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否使用原生方式懒加载页面图片。
+Whether to lazy load every images in page in native way.
 
 ### mark
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用标记格式支持。
+Whether to enable mark support.
 
 ### imageMark
 
-- 类型: `ImageMarkOptions | boolean`
-- 默认值: `false`
+- Type: `ImageMarkOptions | boolean`
+- Default: `false`
 
-是否启用图片标注支持
+Whether enable image mark support.
 
 ```ts
 interface ImageMarkOptions {
@@ -157,21 +157,21 @@ interface ImageMarkOptions {
 
 ### tasklist
 
-- 类型: `TaskListOptions | boolean`
-- 默认值: `false`
+- Type: `TaskListOptions | boolean`
+- Default: `false`
 
-是否启用任务列表格式支持。你可以传入一个对象作为任务列表的配置选项。
+Whether to enable tasklist format support. You can pass an object to config task list.
 
 ```ts
 interface TaskListOptions {
   /**
-   * 是否使用 `<label>` 来包裹文字
+   * Whether use `<label>` to wrap text
    *
    * @default true
    */
   label?: boolean;
   /**
-   * 是否将 `<label>` 放置在 `<input>` 后还是包裹住 `<input>`
+   * Whether place `<label>` after `<input>` or wrap `<input>`
    *
    * @default true
    */
@@ -181,126 +181,119 @@ interface TaskListOptions {
 
 ### tex
 
-- 类型: `KatexOptions | boolean`
-- 默认值: `false`
+- Type: `KatexOptions | boolean`
+- Default: `false`
 
-是否启用 $\TeX$ 语法支持。你可以传入一个对象作为 $\KaTeX$ 的配置选项。
+Whether to enable $\TeX$ syntax support. You can pass an object to config $\KaTeX$.
 
-可用的选项，详见 [Katex 文档](https://katex.org/docs/options.html)。
+Please see [Katex Docs](https://katex.org/docs/options.html) for available options.
 
 ### flowchart
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用流程图支持。
+Whether to enable flowchart support
 
 ### mermaid
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用 [Mermaid](https://mermaid-js.github.io/mermaid/#/) 支持。
+Whether to enable [Mermaid](https://mermaid-js.github.io/mermaid/#/) support.
 
 ### demo
 
-- 类型: `CodeDemoGlobalOptions | boolean`
-- 默认值: `false`
+- Type: `CodeDemoGlobalOptions | boolean`
+- Default: `false`
 
-是否启用代码案例支持。
+Whether to enable code demo support.
 
 #### demo.jsLib
 
-- 类型: `string[]`
-- 必填: 否
+- Type: `string[]`
+- Required: No
 
-CodePen, JsFiddle 需要引入的外部 JS 库。
+CodePen, JsFiddle requires an external JS library for dating.
 
 #### demo.cssLib
 
-- 类型: `string[]`
-- 必填: 否
+- Type: `string[]`
+- Required: No
 
-CodePen, JsFiddle 需要引入的外部 CSS 库。
+CodePen, JsFiddle need an external CSS library for dating.
 
 ::: warning
 
-上述两个选项仅仅是给第三方代码演示使用的，你需要自行在 `head` 中导入这些库。
+The above two options are only used by third-party code demo service, you need to import these libraries in `head`.
 
 :::
 
 #### demo.jsfiddle
 
-- 类型: `boolean`
-- 默认值: `true`
+- Type: `boolean`
+- Default value: `true`
 
-是否显示 JSFiddle 按钮
+Whether to display the JSFiddle button
 
 #### demo.codepen
 
-- 类型: `boolean`
-- 默认值: `true`
+- Type: `boolean`
+- Default value: `true`
 
-是否显示 CodePen 按钮
+Whether to display the CodePen button
 
 #### demo.codepenLayout
 
-- 类型: `"top" | "left" | "right"`
-- 默认值: `"left"`
+- Type: `"top" | "left" | "correct"`
+- Default value: `"left"`
 
-CodePen 编辑器布局
+CodePen editor layout
 
 #### demo.codepenEditors
 
 - Type: `string`
 - Default value: `"101"`
 
-CodePen 编辑器状态
+CodePen editor status
 
-#### demo.editors
+#### others
 
-- 类型: `string`
-- 默认值: `"101"`
-
-CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第三位代表演示页面。
-
-#### 其他
-
-以下是第三方代码演示使用的库地址，除非你的环境无法访问 jsdelivr 或访问缓慢，否则无需覆盖默认设置。
+The following are the library links used by the third-party code demo service. Unless your environment cannot visit jsdelivr or the speed is slow, you probably don’t need to override the default values.
 
 ##### demo.babel
 
-默认值: `"https://unpkg.com/@babel/standalone/babel.min.js"`
+Default value: `"https://unpkg.com/@babel/standalone/babel.min.js"`
 
 ##### demo.vue
 
-默认值: `"https://unpkg.com/vue/dist/vue.global.prod.js"`
+Default value: `"https://unpkg.com/vue/dist/vue.global.prod.js"`
 
 ##### demo.react
 
-默认值: `"https://unpkg.com/react/umd/react.production.min.js"`
+Default value: `"https://unpkg.com/react/umd/react.production.min.js"`
 
 ##### demo.reactDOM
 
-默认值: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
+Default value: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
 
 ### presentation
 
-- 类型: `PresentationOptions | boolean`
-- 默认值: `false`
+- Type: `PresentationOptions | boolean`
+- Default: `false`
 
-是否启用幻灯片支持。
+Whether to enable presentation syntax support.
 
-你可以传入一个对象，这个对象将用于 reveal.js 配置。
+You can set it with an object, the object will be used to config reveal.js.
 
 #### presentation.plugins
 
-- 类型: `string[]`
-- 必填: No
+- Type: `string[]`
+- Required: No
 
-你想启用的 Reveal.js 插件
+Plugins you want to use on reveal.js.
 
-可接受的插件有:
+Acceptable values are:
 
 - `"highlight"`
 - `"math"`
@@ -314,57 +307,57 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 
 #### presentation.revealConfig
 
-- 类型: `Partial<RevealOptions>`
-- 必填: No
+- Type: `Partial<RevealOptions>`
+- Required: No
 
-你想要传递给 Reveal.js 的配置选项
+Config which you want to pass to reveal.js.
 
 ### delay
 
-- 类型: `number`
-- 默认值: `500`
+- Type: `number`
+- Default: `500`
 
-操作页面 DOM 的延时，单位 ms。
+The delay of operating dom, in ms.
 
 ::: tip
 
-如果你使用的主题有切换动画，建议配置此选项为 `切换动画时长 + 200`。
+If the theme you are using has a switching animation, it is recommended to configure this option to `Switch animation duration + 200`.
 
 :::
 
 ### locales
 
-- 类型: `MarkdownEnhanceLocaleConfig`
+- Type: `MarkdownEnhanceLocaleConfig`
 
   ```ts
   interface MarkdownEnhanceLocaleData {
     /**
-     * 信息块的默认标题
+     * Default Title text for info block
      */
     info: string;
 
     /**
-     * 注释块的默认标题
+     * Default Title text for note block
      */
     note: string;
 
     /**
-     * 提示块的默认标题
+     * Default Title text for tip block
      */
     tip: string;
 
     /**
-     * 注意块的默认标题
+     * Default Title text for warning block
      */
     warning: string;
 
     /**
-     * 警告块的默认标题
+     * Default Title text for danger block
      */
     danger: string;
 
     /**
-     * 详情块的默认标题
+     * Default Title text for details block
      */
     details: string;
   }
@@ -374,8 +367,8 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
   }
   ```
 
-- 必填: 否
+- Required: No
 
-Markdown 增强插件的国际化配置。
+Locales config for markdown enhance plugin.
 
-[md-enhance-config]: https://vuepress-theme-hope.github.io/v2/md-enhance/zh/config.html
+[md-enhance-config]: https://vuepress-theme-hope.github.io/v2/md-enhance/config.html

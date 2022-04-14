@@ -1,23 +1,23 @@
 ---
-title: 分类与标签
+title: Category and tags
 icon: tag
 category:
-  - 博客
+  - Blog
 tag:
-  - 博客
-  - 分类
-  - 标签
+  - Blog
+  - Category
+  - Tag
 ---
 
-你可以通过 frontmatter 来为文章配置分类与标签，使它们出现在特定的分类与标签页面中。
+You can configure category and tags for articles through frontmatter to make them appear in specific categories and tags pages.
 
 <!-- more -->
 
-## 分类设置
+## Category Settings
 
-只需要添加分类名称至在页面的 frontmatter 中的 `category`，该文章会自动渲染在 `/category/<分类名>/` 分类页面的列表中。
+Just add categroy to `category` in page frontmatter, the article will be automatically rendered in the list of the`/category/<category name>/` category page.
 
-比如在某个页面设置:
+For example, add this to a certain page:
 
 ```md
 ---
@@ -25,24 +25,24 @@ category:
   - HTML
 ---
 
-页面内容...
+Page content...
 ```
 
-你就可以在 `/category/HTML` 页面下找到它。
+Then you can find it under the `/category/HTML` page.
 
-::: info 例子
+::: info Example
 
 ![Category](./assets/category.png)
 
-- [地址](https://mrhope.site/category/JavaScript/)
+- [Link](https://mrhope.site/category/JavaScript/)
 
 :::
 
-## 标签
+## Tags
 
-只需要在页面的 frontmatter 中添加 `tags` 数组，并设置一个或多个文章所属的标签 ，该文章会自动渲染在 `/tag/<标签名>/` 标签页面的列表中。
+Just add the `tags` array to the frontmatter of the page, and set the tag to which one or more articles belong, and the article will be automatically rendered in the list of the `/tag/<tag name>/` tag page.
 
-比如在某个页面设置:
+For example, add this in a certain page:
 
 ```md
 ---
@@ -51,25 +51,25 @@ tag:
   - Web
 ---
 
-页面内容...
+Page content...
 ```
 
-你就可以在 `/tag/HTML` 和 `/tag/Web` 页面下找到它。
+Then you can find it under the `/tag/HTML` and `/tag/Web` pages.
 
-::: info 例子
+::: info Example
 
 ![Tag](./assets/tag.png)
 
-- [地址](https://mrhope.site/tag/Vuex/)
+- [Link](https://mrhope.site/tag/Vuex/)
 
 :::
 
-## 查看列表
+## View list
 
-除了直接访问对应的地址外，分类和标签名称会显示在文章开头的文章信息处，你可以点击它来导航到对应的列表查看相同分类或标签的文章。
+Besides directly accessing the corresponding link, the category and tag name will be displayed at the article information at the top of the article. You can click on it to navigate to the corresponding list to view the articles of the same category or tag.
 
-![文章信息](./assets/info.png)
+![Article Information](./assets/info.png)
 
-你也可以在博客主页侧边栏中选择分类或标签选项卡选择对应的项目进入列表。
+You can also select the category or tag tab in the sidebar of the blog homepage and select the corresponding item to enter the list.
 
-![侧边栏选项卡](./assets/sidebar.png)
+![Sidebar Tab](./assets/sidebar.png)

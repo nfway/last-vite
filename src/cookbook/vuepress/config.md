@@ -1,17 +1,17 @@
 ---
-title: VuePress 配置
+title: VuePress Config
 icon: config
 category:
-  - 教程知识
+  - Cookbook
   - VuePress
 tag:
-  - 配置
+  - Config
   - VuePress
 ---
 
-## 配置文件
+## Config File
 
-如果没有任何配置，你的 VuePress 站点仅有一些最基础的功能。为了更好地自定义你的网站，让我们首先在你的文档目录下创建一个 `.vuepress` 目录，所有 VuePress 相关的文件都将会被放在这里。你的项目结构可能是这样：
+Without any configuration, the VuePress site is pretty minimal. To customize your site, let’s first create a `.vuepress` directory inside your docs directory. This is where all VuePress-specific files will be placed. Your project structure is probably like this:
 
 ```
 ├─ docs
@@ -22,7 +22,7 @@ tag:
 └─ package.json
 ```
 
-VuePress 站点必要的配置文件是 `.vuepress/config.js`，它应该导出一个 JavaScript 对象。如果你使用 TypeScript ，你可以将其替换为 `.vuepress/config.ts` ，以便让 VuePress 配置得到更好的类型提示。
+The essential file for configuring a VuePress site is `.vuepress/config.js`, which should export a JavaScript object. If you are using TypeScript, you can use `.vuepress/config.ts` instead to get better types hint for VuePress Config.
 
 :::: code-group
 
@@ -30,12 +30,12 @@ VuePress 站点必要的配置文件是 `.vuepress/config.js`，它应该导出�
 
 ```js
 module.exports = {
-  // 站点配置
-  lang: "zh-CN",
-  title: "你好， VuePress ！",
-  description: "这是我的第一个 VuePress 站点",
+  // site config
+  lang: "en-US",
+  title: "Hello, VuePress!",
+  description: "This is my first VuePress site",
 
-  // 主题和它的配置
+  // theme and its config
   theme: "hope",
   themeConfig: {
     logo: "https://vuejs.org/images/logo.png",
@@ -49,15 +49,15 @@ module.exports = {
 
 ```ts
 import { defineUserConfig } from "vuepress";
-import type { HopeThemeOptions } from "vuepress-theme-hope";
+import type { DefaultThemeOptions } from "vuepress";
 
-export default defineUserConfig<HopeThemeOptions>({
-  // 站点配置
+export default defineUserConfig<DefaultThemeOptions>({
+  // site config
   lang: "en-US",
   title: "Hello VuePress",
   description: "Just playing around",
 
-  // 主题和它的配置
+  // theme and its config
   theme: "hope",
   themeConfig: {
     logo: "https://vuejs.org/images/logo.png",
@@ -71,30 +71,30 @@ export default defineUserConfig<HopeThemeOptions>({
 
 ::: tip
 
-前往 [配置参考](https://v2.vuepress.vuejs.org/zh/reference/config.md) 查看所有 VuePress 配置。
+Check out the [Config Reference](https://v2.vuepress.vuejs.org/reference/config.md) for a full list of VuePress config.
 
 :::
 
-## 配置作用域
+## Config Scopes
 
-你可能已经注意到了，在 VuePress 配置中有一项 `themeConfig` 配置项。
+You may have noticed that there is a `themeConfig` option in VuePress config.
 
-在 `themeConfig` 外部的配置项属于 **站点配置** ，而在 `themeConfig` 内部的配置项则属于 **主题配置**。
+Options outside `themeConfig` are **Site Config**, while options inside `themeConfig` are **Theme Config**.
 
-### 站点配置
+### Site Config
 
-站点配置的意思是，无论你使用什么主题，这些配置项都可以生效。
+Site config means that, no matter what theme you are using, these configurations are always valid.
 
-我们知道，每一个站点都应该有它的 `lang`, `title` 和 `description` 等属性，因此 VuePress 内置支持了这些属性的配置。
+As we know, every site should have its own `lang`, `title`, `description`, etc. Thus, VuePress has built-in support for those options.
 
-### 主题配置
+### Theme Config
 
-主题配置将会被 VuePress 主题来处理，所以它取决于你使用的主题是什么。
+Theme config will be processed by VuePress theme, so it depends on the theme you are using.
 
-对于 `vuepress-theme-hope` 来说，你应该设置 `theme: "hope"`。
+To use `vuepress-theme-hope`, you should set `theme: "hope"`.
 
 ::: warning
 
-如果你没有设置 VuePress 配置的 `theme` 配置项，则代表使用的是默认主题。
+If you don’t specify the `theme` option of VuePress config, the default theme will be used.
 
 :::

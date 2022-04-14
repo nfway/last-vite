@@ -1,50 +1,50 @@
 ---
-title: 页脚支持
+title: Footer
 icon: footer
 category:
-  - 布局
+  - Layout
 tag:
-  - 布局
-  - 页脚
+  - Footer
+  - Layout
 ---
 
-`vuepress-theme-hope` 为所有页面提供了页脚功能 <Badge text="支持页面配置" />。
+`vuepress-theme-hope` provides footer feature for all pages <Badge text="Support page config" />.
 
 <!-- more -->
 
-## 全局配置
+## Global Config
 
-在主题配置中，`footer` 字段用于全局配置页脚。你可以在 `themeConfig` 中设置 `footer` 和 `copyright` 全局设置默认的页脚内容与版权信息。
+In the themeConfig, `footer` field is used to config footer globally. You can set `footer` and `copyright` in `themeConfig` to set the default footer content and copyright information globally.
 
-默认情况下页脚不会显示在页面中。如果希望每个页面都显示页脚，需要将 `themeConfig.displayFooter` 设置为 `true`。
+The footer is not displayed on the page by default. To display the footer on every page, you need to set `themeConfig.displayFooter` to `true`.
 
-::: info 多语言配置支持
+::: info I18n Locales
 
-你可以在 `themeConfig.locales` 中单独为每个语言设置页脚。
+You can set footers for each language individually in `themeConfig.locales`.
 
 :::
 
-## 页面配置
+## Page Config
 
-你可以在页面的 frontmatter 中配置 `footer`，`copyright` 字段，指定特定页面的页脚内容。
+You can configure the `footer`, `copyright` fields in the frontmatter of the page to set footer content of a specific page.
 
 ### footer
 
-- 当 `themeConfig.displayFooter` 为 `true` 时，你可以在 frontmatter 中将 `footer` 设置为 `false` 来禁用特定页面的页脚。
+- When `themeConfig.displayFooter` is `true`, you can set `footer` to `false` in frontmatter to disable the footer of a specific page.
 
-- 当全局显示页脚未开启时，将 `footer` 设置为 `true` 会显示默认的页脚文字。
+- When the global display of footer is not enabled, setting `footer` to `true` will display the default footer text.
 
-- 如果你填入一个字符串，它会以 `v-html` 指令的形式插入到页脚的位置作为页脚的内容，所以你可以填入 HTMLString。
+- If you fill in a string, it will be inserted into the footer as the content of the footer with `v-html` command, so you can fill in HTMLString.
 
 ### copyright
 
-`copyright` 字段用于设置特定页面的版权信息，它同样也支持 HTMLString (当你引用了文章且文章使用了特定许可的情况下很有用)。
+The `copyright` field is used to set the copyright information of a specific page. It also supports HTMLString (useful when you cite an article and the article uses a specific license).
 
-当然在 `themeConfig.displayFooter` 为 `true` 时，你也可以填入 `false` 来隐藏特定页面的版权信息。
+When `themeConfig.displayFooter` is `true`, you can also fill in `false` to hide the copyright information of a specific page.
 
-## 例子
+## Example
 
-- 启用默认的页脚文字:
+- Enable the default footer text:
 
   ```md
   ---
@@ -52,25 +52,26 @@ tag:
   ---
   ```
 
-- 自定义页脚文字，同时不显示版权信息
+- Customize footer text without displaying copyright information:
 
   ```md
   ---
   footer: This website is served by GitHub Pages
   copyright: false
+  medialink: false
   ---
   ```
 
-- 自定义页脚的内容和版权信息
+- Custom footer content and copyright information:
 
   ```md
   ---
-  footer: <a href="https://github.com/Mister-Hope">Mr.Hope</a>
-  copyrightText: MIT LICENSE
+  footer: <a href="https://github.com/Mister-Hope"> Mr.Hope </a>
+  copyright: MIT LICENSE
   ---
   ```
 
-- 当你在主题中设置了 `displayFooter` 为 `true` 时，你还可以局部禁用它
+- When you set `displayFooter` to true in the theme, you can also disable it locally:
 
   ```md
   ---
@@ -78,7 +79,7 @@ tag:
   ---
   ```
 
-- 如果你希望移除默认的 footer 内容同时保持版权信息显示，请传入一个空字符串。
+- To remove the default footer content while keeping copyright information displayed, please use an empty string.
 
   ```md
   ---

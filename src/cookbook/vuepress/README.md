@@ -1,50 +1,50 @@
 ---
-title: VuePress
+title: About VuePress
 icon: vue
 category:
-  - 教程知识
+  - Cookbook
   - VuePress
 tag:
-  - 介绍
+  - Intro
   - VuePress
 prev: ../markdown/demo.html
 ---
 
-VuePress 是一个以 Markdown 为中心的静态网站生成器。你可以使用 [Markdown](https://zh.wikipedia.org/wiki/Markdown) 来书写内容 (如文档、博客等) ，然后 VuePress 会帮助你生成一个静态网站来展示它们。
+## As Easy as 1, 2, 3
 
-<!-- more -->
-
-## 像数 1, 2, 3 一样容易
-
-```shell
-# 在 docs 文件夹创建 vuepress 项目
+```bash
+# Create a vuepress-theme-hope project under docs
 npm init vuepress-theme-hope docs
 ```
 
-## 它是如何工作的？
+VuePress is a markdown-centered static site generator. You can write your content (documentations, blogs, etc.) in [Markdown](https://en.wikipedia.org/wiki/Markdown), then VuePress will help you to generate a static site to host them.
 
-一个 VuePress 站点本质上是一个由 [Vue](https://v3.vuejs.org/) 和 [Vue Router](https://next.router.vuejs.org) 驱动的单页面应用 (SPA)。
+The purpose of creating VuePress was to support the documentation of Vue.js and its sub-projects, but now it has been helping a large amount of users to build their documentation, blogs, and other static sites.
 
-路由会根据你的 Markdown 文件的相对路径来自动生成。每个 Markdown 文件都通过 [markdown-it](https://github.com/markdown-it/markdown-it) 编译为 HTML ，然后将其作为 Vue 组件的模板。因此，你可以在 Markdown 文件中直接使用 Vue 语法，便于你嵌入一些动态内容。
+## How It Works
 
-在开发过程中，我们启动一个常规的开发服务器 (dev-server) ，并将 VuePress 站点作为一个常规的 SPA。如果你以前使用过 Vue 的话，你在使用时会感受到非常熟悉的开发体验。
+A VuePress site is in fact a single-page application (SPA) powered by [Vue](https://v3.vuejs.org/) and [Vue Router](https://next.router.vuejs.org).
 
-在构建过程中，我们会为 VuePress 站点创建一个服务端渲染 (SSR) 的版本，然后通过虚拟访问每一条路径来渲染对应的 HTML 。这种做法的灵感来源于 [Nuxt](https://nuxtjs.org/) 的 `nuxt generate` 命令，以及其他的一些项目，比如 [Gatsby](https://www.gatsbyjs.org/)。
+Routes are generated according to the relative path of your Markdown files. Each Markdown file is compiled into HTML with [markdown-it](https://github.com/markdown-it/markdown-it) and then processed as the template of a Vue component. This allows you to directly use Vue inside your Markdown files and is great when you need to embed dynamic content.
 
-## VuePress 介绍
+During development, we start a normal dev-server, and serve the VuePress site as a normal SPA. If you’ve used Vue before, you will notice the familiar development experience when you are writing and developing with VuePress.
 
-- [页面](page.md)
+During build, we create a server-rendered version of the VuePress site and render the corresponding HTML by virtually visiting each route. This approach is inspired by [Nuxt](https://nuxtjs.org/)’s `nuxt generate` command and other projects like [Gatsby](https://www.gatsbyjs.org/).
+
+## VuePress Intro
+
+- [Page](page.md)
 
 - [Markdown](markdown.md)
 
-- [文件结构简介](file.md)
+- [File Structure](file.md)
 
-- [配置](config.md)
+- [Config File](config.md)
 
-- [插件](plugin.md)
+- [Plugins](plugin.md)
 
-- [主题](theme.md)
+- [theme](theme.md)
 
-## VuePress 官方文档
+## VuePress Official Docs
 
-- [VuePress](https://v2.vuepress.vuejs.org/zh/)
+- [VuePress](https://v2.vuepress.vuejs.org/)

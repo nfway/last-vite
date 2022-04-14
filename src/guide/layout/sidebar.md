@@ -1,24 +1,24 @@
 ---
-title: 侧边栏
+title: Sidebar
 icon: sidebar
 category:
-  - 布局
+  - Layout
 tag:
-  - 布局
-  - 侧边栏
+  - Layout
+  - Sidebar
 ---
 
-侧边栏可能会包含相关的文档列表，文档标题以及博客模式下的博主信息。
+The sidebar may contain a list of related documents, document titles, and blogger information in blog mode.
 
 <!-- more -->
 
-## 侧边栏链接
+## Sidebar links
 
-站点侧边栏的配置由 `themeConfig.sidebar` 控制。
+You should use `themeConfig.sidebar` to control sidebar.
 
-### 字符串格式
+### String format
 
-同导航栏，你可以填入一个包含多个文件链接的数组，作为侧边栏基本的配置:
+Just like navbar, you can fill in an array of multiple file links as the basic configuration of the sidebar:
 
 :::: code-group
 
@@ -30,7 +30,7 @@ import { defineHopeConfig } from "vuepress-theme-hope";
 
 export default defineHopeConfig({
   themeConfig: {
-    sidebar: ["/zh/README.md", "/zh/guide/README.md", "/zh/config/README.md"],
+    sidebar: ["README.md", "guide/README.md", "config/README.md"],
   },
 });
 ```
@@ -45,7 +45,7 @@ const { defineHopeConfig } = require("vuepress-theme-hope");
 
 module.exports = defineHopeConfig({
   themeConfig: {
-    sidebar: ["/zh/README.md", "/zh/guide/README.md", "/zh/config/README.md"],
+    sidebar: ["README.md", "guide/README.md", "config/README.md"],
   },
 });
 ```
@@ -54,22 +54,22 @@ module.exports = defineHopeConfig({
 
 ::::
 
-数组的每一项会自动提取对应文件的图标与标题，渲染为一个侧边栏项目。
+Each item of the array will be rendered as a sidebar item.
 
 ::: tip
 
-你可以省略 `.md` 扩展名，以 `/` 结尾的路径会被推断为 `/README.md`。
+You can omit the `.md` extension, and paths ending with `/` are inferred as `/README.md`.
 
 :::
 
-### 对象格式
+### Object format
 
-同导航栏，如果你对页面的图标不满意或者觉得页面标题太长，你可以改为配置一个对象。可用的配置项有:
+Just like navbar, if you are not satisfied with the page’s icon or feel that the page title is too long, you can configure an object instead. Available configuration items are:
 
-- `text:` 项目文字
-- `link` 项目链接
-- `icon`: 项目图标 (可选)
-- `activeMatch`: 项目激活匹配 (可选)，支持正则字符串。
+- `text:`: item text
+- `link`: item link
+- `icon`: item icon (optional)
+- `activeMatch`: item active math (optional), support regexp strings
 
 :::: code-group
 
@@ -83,20 +83,20 @@ export default defineHopeConfig({
   themeConfig: {
     sidebar: [
       {
-        text: "指南",
-        link: "/zh/guide/README.md",
+        text: "Guide",
+        link: "/guide/README.md",
         icon: "creative",
-        // 仅在 `/zh/guide/` 激活
-        activeMatch: "^/zh/guide/$",
+        // only active in `/guide/`
+        activeMatch: "^/guide/$",
       },
-      { text: "配置", link: "/zh/config/README.md", icon: "config" },
+      { text: "Config", link: "/config/README.md", icon: "config" },
       {
-        text: "常见问题",
-        link: "/zh/faq.md",
+        text: "FAQ",
+        link: "/faq.md",
         icon: "question",
-        // 会在 `/zh/faq` 开头的路径激活
-        // 所以当你前往 `/zh/faq/xxx.html` 时也会激活
-        activeMatch: "^/zh/faq",
+        // active in path starting with `/faq`
+        // so it will active in path like `/faq/xxx.html`
+        activeMatch: "^/zh/faq/",
       },
     ],
   },
@@ -115,20 +115,20 @@ module.exports = defineHopeConfig({
   themeConfig: {
     sidebar: [
       {
-        text: "指南",
-        link: "/zh/guide/README.md",
+        text: "Guide",
+        link: "/guide/README.md",
         icon: "creative",
-        // 仅在 `/zh/guide/` 激活
-        activeMatch: "^/zh/guide/$",
+        // only active in `/guide/`
+        activeMatch: "^/guide/$",
       },
-      { text: "配置", link: "/zh/config/README.md", icon: "config" },
+      { text: "Config", link: "/config/README.md", icon: "config" },
       {
-        text: "常见问题",
-        link: "/zh/faq.md",
+        text: "FAQ",
+        link: "/faq.md",
         icon: "question",
-        // 会在 `/zh/faq` 开头的路径激活
-        // 所以当你前往 `/zh/faq/xxx.html` 时也会激活
-        activeMatch: "^/zh/faq",
+        // active in path starting with `/faq`
+        // so it will active in path like `/faq/xxx.html`
+        activeMatch: "^/zh/faq/",
       },
     ],
   },
@@ -139,23 +139,23 @@ module.exports = defineHopeConfig({
 
 ::::
 
-::: tip activeMatch 的高级用法
+::: tip Advanced usage of activeMatch
 
-`activeMatch` 主要给予你控制路径是否激活的能力，比如你可能有如下链接:
+`activeMatch` gives you the ability to control whether the path is active, for example you may have the following dropdown:
 
 - `/path/`
 - `/path/a/`
 - `/path/b/`
 
-此时你可能想避免在 `/path/a/` 以及 `/path/b/` 开头的路径下，出现两个菜单同时激活的情况。将第一项的 `activeMatch` 选项设置为 `^/path/(?:(?!a/|b/).*)?$` 就可以有效避免。
+But you may have multiple folders with files under `/path/`. To avoid mutiple dropown items been actived under route starting with `/path/a/` or `/path/b/`, you can set `activeMatch` option for the first item with `^/path/(?:(?!a/|b/).*)?$`.
 
 :::
 
-### 分组与嵌套
+### Grouping and Nesting
 
-如果你需要展示嵌套结构的侧边栏，你可以将同类链接整理成菜单分组。
+If you need a sidebar that displays a nested structure, you can group similar links.
 
-你需要使用 [对象格式](#对象格式) ，并提供额外的 `children` 选项设置链接列表。和导航栏一样，你可以在侧边栏中使用 `prefix` 来为组内的每个链接添加默认的路径前缀，并且侧边栏额外支持设置 `collapsable: true` 来使菜单分组可折叠。
+You should use [object format](#object-format) and provide an additional `children` option to set the list of links. Like navbar, you can use `prefix` in the sidebar to add a default path prefix to each link in the group, and the sidebar additionally supports setting `collapsable: true` to make the menu group collapsible.
 
 :::: code-group
 
@@ -169,17 +169,17 @@ export default defineHopeConfig({
   themeConfig: {
     sidebar: [
       {
-        // 必要的，分组的标题文字
-        text: "分组 1",
-        // 可选的, 分组标题对应的图标
+        // required, title of group
+        text: "Group 1",
+        // optional, icon of group
         icon: "tip",
-        // 可选的, 分组标题对应的链接
-        link: "/foo/",
-        // 可选的，会添加到每个 item 链接地址之前
+        // optional, link of group title
+        path: "/foo/",
+        // optional, will be appended to each item link
         prefix: "/foo/",
-        // 可选的, 设置分组是否可以折叠，默认值是 false,
-        collapsable: true,
-        // 必要的，分组的子项目
+        // optional, defaults to false
+        collapsable: false,
+        // required, items of group
         children: [
           "README.md" /* /foo/index.html */,
           /* ... */
@@ -187,8 +187,7 @@ export default defineHopeConfig({
         ],
       },
       {
-        text: "分组 2",
-        prefix: "/ray/",
+        text: "Group 2",
         children: [
           /* ... */
           "bar.md" /* /ray/bar.html */,
@@ -212,17 +211,17 @@ module.exports = defineHopeConfig({
   themeConfig: {
     sidebar: [
       {
-        // 必要的，分组的标题文字
-        text: "分组 1",
-        // 可选的, 分组标题对应的图标
+        // required, title of group
+        text: "Group 1",
+        // optional, icon of group
         icon: "tip",
-        // 可选的, 分组标题对应的链接
-        link: "/foo/",
-        // 可选的，会添加到每个 item 链接地址之前
+        // optional, link of group title
+        path: "/foo/",
+        // optional, will be appended to each item link
         prefix: "/foo/",
-        // 可选的, 设置分组是否可以折叠，默认值是 false,
-        collapsable: true,
-        // 必要的，分组的子项目
+        // optional, defaults to false
+        collapsable: false,
+        // required, items of group
         children: [
           "README.md" /* /foo/index.html */,
           /* ... */
@@ -230,8 +229,7 @@ module.exports = defineHopeConfig({
         ],
       },
       {
-        text: "分组 2",
-        prefix: "/ray/",
+        text: "Group 2",
         children: [
           /* ... */
           "bar.md" /* /ray/bar.html */,
@@ -247,7 +245,7 @@ module.exports = defineHopeConfig({
 
 ::::
 
-侧边栏分组也可以进行嵌套:
+You can also nest Sidebar grouping:
 
 :::: code-group
 
@@ -267,17 +265,17 @@ export default defineHopeConfig({
           "baz" /* /baz.html */,
           {
             text: "Sub Group 1",
-            children: ["quz.md" /* /quz.html */, "xyzzy.md" /* /xyzzy.html */],
+            children: ["quz" /* /quz.html */, "xyzzy" /* /xyzzy.html */],
           },
           {
             text: "Sub Group 2",
             prefix: "corge/",
             children: [
-              "fred.md" /* /corge/fred.html */,
-              "grault.md" /* /corge/grault.html */,
+              "fred" /* /corge/fred.html */,
+              "grault" /* /corge/grault.html */,
             ],
           },
-          "foo.md" /* /foo.html */,
+          "foo" /* /foo.html */,
         ],
       },
     ],
@@ -300,20 +298,20 @@ module.exports = defineHopeConfig({
         text: "Group",
         prefix: "/",
         children: [
-          "baz.md" /* /baz.html */,
+          "baz" /* /baz.html */,
           {
             text: "Sub Group 1",
-            children: ["quz.md" /* /quz.html */, "xyzzy.md" /* /xyzzy.html */],
+            children: ["quz" /* /quz.html */, "xyzzy" /* /xyzzy.html */],
           },
           {
             text: "Sub Group 2",
             prefix: "corge/",
             children: [
-              "fred.md" /* /corge/fred.html */,
-              "grault.md" /* /corge/grault.html */,
+              "fred" /* /corge/fred.html */,
+              "grault" /* /corge/grault.html */,
             ],
           },
-          "foo.md" /* /foo.html */,
+          "foo" /* /foo.html */,
         ],
       },
     ],
@@ -325,9 +323,9 @@ module.exports = defineHopeConfig({
 
 ::::
 
-通常情况下，你可能希望搭配 `prefix` 使用来快速还原文档的结构。
+You may want to use it with `prefix` to restore the structure of the document easily.
 
-比如，将你的页面文件为下述的目录结构:
+For example, suppose you have a following directory structure:
 
 ```
 .
@@ -344,7 +342,7 @@ module.exports = defineHopeConfig({
     └─ four.md
 ```
 
-你就可以进行以下配置:
+Then you can use the following config:
 
 :::: code-group
 
@@ -424,11 +422,11 @@ module.exports = defineHopeConfig({
 
 ::::
 
-### 多个侧边栏
+### Multiple Sidebars
 
-如果你想为不同的页面组来显示不同的侧边栏，你需要通过 `路径前缀: 侧边栏配置` 的格式为侧边栏配置一个对象。
+To display different sidebars for different page groups, set an object for the sidebar in the format of `path: config`.
 
-比如，将你的页面文件为下述的目录结构:
+For example, if you have the following structure:
 
 ```
 .
@@ -445,7 +443,7 @@ module.exports = defineHopeConfig({
     └─ four.md
 ```
 
-你就可以遵循以下的侧边栏配置，来为不同路径显示不同的分组:
+You can define your sidebar for each section using below configuration:
 
 :::: code-group
 
@@ -519,11 +517,19 @@ module.exports = defineHopeConfig({
 
 ::::
 
-## 自动生成侧栏
+::: warning
 
-### 自动生成标题
+You need to pay special attention to the order of object key declaration. Generally speaking, you should put the more precise path first, because VuePress will traverse the key names of the sidebar configuration to find the matching configuration. Once a key name is successfully matched with the current path, it will display the corresponding sidebar configuration.
 
-如果你希望自动生成一个仅仅包含了当前页面标题(headers)链接的侧边栏，你可以通过 frontmatter 来实现:
+In this case, the fallback sidebar must be defined last for this reason.
+
+:::
+
+### Auto Sidebar
+
+### Automatically Generate with Titles
+
+To automatically generate a sidebar that contains only the header links for the current page, you can use frontmatter on that page:
 
 ```md
 ---
@@ -531,7 +537,7 @@ sidebar: heading
 ---
 ```
 
-你也可以通过配置来在所有页面中启用它:
+You can also enable it in all pages by using config:
 
 :::: code-group
 
@@ -567,11 +573,11 @@ module.exports = defineHopeConfig({
 
 ::::
 
-### 自动按文件结构生成侧栏 <Badge text="新增" />
+### Automatically Generate from file structure <Badge text="New" />
 
-你可以在上述任意侧边栏配置中，将原来的“侧边栏数组”替换为 `"structure"` 关键词。这会让主题自动读取本地文件，为你生成对应的侧边栏结构，以大大减少你的配置工作量。
+You can replace the original "sidebarConfig array" with `"structure"` keyword in any of the above sidebar config. This will allow the theme to automatically read local files, then generate sidebar from file structure for you, to reduce your config workload.
 
-比如对于之前在 [多个侧边栏](#多个侧边栏) 提到的如下例子:
+For example, for the following example mentioned earlier in [multiple sidebars](#multiple-sidebars):
 
 ```
 .
@@ -579,16 +585,16 @@ module.exports = defineHopeConfig({
 ├─ contact.md
 ├─ about.md
 ├─ foo/
-│   ├─ README.md
-│   ├─ one.md
-│   └─ two.md
+│ ├─ README.md
+│ ├─ one.md
+│ └─ two.md
 └─ bar/
     ├─ README.md
     ├─ three.md
     └─ four.md
 ```
 
-你可以将原来的配置改为:
+You can change the original config to:
 
 :::: code-group
 
@@ -646,42 +652,42 @@ module.exports = defineHopeConfig({
 
 ::::
 
-在上述的修改中，由于原侧边栏数组即为相关路径下的全部文件，你可以轻松将其替换为 `"structure"` 关键词。
+In the above modification, since the original sidebar array is all files under the relevant path, you can easily replace it with the `"structure"` keyword.
 
-如果你使用结构生成的文件夹下嵌套了其他文件夹且**文件夹包含 `README.md` 文件**，则对应的文件夹会被渲染成一个分组。所以你甚至可以更加激进，比如直接设置 `sidebar: "structure"` 让你的侧边栏全部从文件结构中自动生成。
+If you use the structure to generate a folder with other folders nested under it and **the folder contains a `README.md` file**, the corresponding folder will be rendered as a group. So you can even be more aggressive, for example setting `sidebar: "structure"` to have your sidebars all auto-generated from the file structure.
 
-#### 进阶控制
+#### Advanced Control
 
-在从结构自动生成的过程中，你可以通过页面 Frontmatter 中的 `index` 选项控制同一文件夹下的文件是否被包含、以及它们的排序方式。
+During the automatic generation from the structure, you can control whether files in the same folder are included and how they are sorted through the `index` option in the page Frontmatter.
 
-`index` 选项支持布尔值和数字，当设置为 `false` 时，这意味着你不希望该页面被侧边栏收录。当设置为一个正数标号时，标号越小的项目会出现在最前面。
+`index` option supports boolean values ​​and numbers, when set to `false` it means you don't want the page to be indexed by the sidebar. When set to a positive integer, item with smaller value will appear first.
 
 ::: tip
 
-`README.md` 是一个例外，只要你不通过 `index: false` 或使其成为分组链接禁止其出现在侧边栏中，它总会在排序中成为第一项。
+`README.md` is an exception, as long as you don't disable it from the sidebar via `index: false` or make it as group link, it will allways be the first item in the sort.
 
 :::
 
-对于嵌套文件夹，其分组信息由对应文件夹下的 `README.md` 控制，你可以通过 Frontmatter 中的 `dir` 选项控制文件夹分组的行为，相关可选项目如下:
+For nested folders, the grouping information is controlled by `README.md` under that folder. You can control the behavior of folder grouping through the `dir` option in Frontmatter. The relevant optional items are as follows:
 
 ```ts
 interface SidebarDirInfo {
   /**
-   * 目录标题
+   * Directory title
    *
-   * @default README.md 标题
+   * @default README.md title
    */
   text?: string;
 
   /**
-   * 目录图标
+   * Directory icon
    *
-   * @default README.md 图标
+   * @default README.md icon
    */
   icon?: string;
 
   /**
-   * 目录是否可折叠
+   * Whether the directory is collapsible
    *
    * @default true
    */
@@ -689,9 +695,9 @@ interface SidebarDirInfo {
   collapsable?: boolean;
 
   /**
-   * 目录是否可点击
+   * Whether the directory is clickable
    *
-   * @description 将会将目录分组的链接设置为 README.md 对应的链接
+   * @description will set the link of the directory grouping to the link corresponding to README.md
    *
    * @default false
    */
@@ -699,7 +705,7 @@ interface SidebarDirInfo {
   link?: boolean;
 
   /**
-   * 目录序号
+   * Dir index
    *
    * @default true
    */
@@ -707,9 +713,9 @@ interface SidebarDirInfo {
 }
 ```
 
-## 禁用侧边栏
+### Disabling the Sidebar
 
-你可以通过 `YAML front matter` 来禁用指定页面的侧边栏:
+You can disable the sidebar on a specific page with `YAML front matter`:
 
 ```md
 ---
@@ -719,15 +725,15 @@ sidebar: false
 
 ::: note
 
-侧边栏在主页中默认禁用。
+Sidebar is disabled by default in home page.
 
 :::
 
-## 嵌套的标题链接
+## Nested header links
 
-默认情况下，侧边栏会自动地显示由当前页面的标题(headers)组成的链接，并按照页面本身的结构进行嵌套，你可以通过 `themeConfig.headingDepth` 来修改它的行为。默认的深度(也是最大的深度)是 `2`，它将提取到 `h2` 和 `h3` 的标题，设置成 `0` 将会禁用标题(headers)链接。
+The sidebar automatically displays links for headers in the current active page, nested under the link for the page itself. You can customize this behavior using `themeConfig.headingDepth`. The default depth(the max value) is `2`, which extracts both `h2` and `h3` headers. Setting it to `0` disables the header links.
 
-也可以使用 frontmatter 来为某个页面重写此值:
+A page can also override this value via frontmatter:
 
 ```md
 ---
@@ -737,17 +743,15 @@ headingDepth: 2
 
 ::: note
 
-有效最大值取决于你通过 [markdown.extractHeaders.level](https://v2.vuepress.vuejs.org/zh/reference/config.html#markdown-extractheaders) 提取了哪些级别的标题。
+The valid maximum value depends on which levels of headers you have extracted via [markdown.extractHeaders.level](https://v2.vuepress.vuejs.org/reference/config.html#markdown-extractheaders).
 
-由于 [markdown.extractHeaders.level](https://v2.vuepress.vuejs.org/zh/reference/config.html#markdown-extractheaders) 的默认值是 `[2, 3]` ，因此 `headingDepth` 的默认最大值是 `2` 。
+Since the default value of [markdown.extractHeaders.level](https://v2.vuepress.vuejs.org/reference/config.html#markdown-extractheaders) is `[2, 3]`, so The default maximum value for `headingDepth` is `2`.
 
 :::
 
-## 活动的标题链接
+### Active Header Links
 
-默认情况下，当用户通过滚动查看页面的不同部分时，嵌套的标题链接和 URL 中的 Hash 值会实时更新。
-
-这个功能是通过插件 `@vuepress/plugin-active-header-links` 实现的，并可以通过以下的配置来禁用:
+By default, the nested header links and the hash in the URL are updated as the user scrolls to view the different sections of the page. This behavior can be disabled with the following theme config:
 
 :::: code-group
 
@@ -760,7 +764,7 @@ import { defineHopeConfig } from "vuepress-theme-hope";
 export default defineHopeConfig({
   themeConfig: {
     plugins: {
-      // 默认值: true
+      // Default: true
       activeHeaderLinks: false,
     },
   },
@@ -778,7 +782,7 @@ const { defineHopeConfig } = require("vuepress-theme-hope");
 module.exports = defineHopeConfig({
   themeConfig: {
     plugins: {
-      // 默认值: true
+      // Default: true
       activeHeaderLinks: false,
     },
   },
@@ -789,13 +793,13 @@ module.exports = defineHopeConfig({
 
 ::::
 
-## 图标支持
+## Icon Support
 
-侧边栏默认启用图标支持，将在侧边栏的链接前显示页面的图标。你可以在 `themeConfig` 中将 `sidebarIcon` 设置为 `false` 来禁用它。
+Icon support is enabled in the sidebar by default, and the icon of the page will be displayed before the link in the sidebar (by reading `icon` field in frontmatter). It can be disabled by setting `sidebarIcon` to `false` in `themeConfig`.
 
-## 多语言
+## I18n Support
 
-主题的侧边栏支持 [多语言](https://v2.vuepress.vuejs.org/zh/guide/i18n.html)，所以你可以为每个语言单独设置侧边栏:
+The theme’s navbar supports [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), so you can set sidebar individually in each language:
 
 :::: code-group
 
@@ -810,12 +814,12 @@ export default defineHopeConfig({
     locales: {
       "/": {
         sidebar: [
-          /* 根目录下的英文配置 */
+          /* English config under root */
         ],
       },
       "/zh/": {
         sidebar: [
-          /* 中文目录下的中文配置 */
+          /* Chinese config under zh folder */
         ],
       },
     },
@@ -836,12 +840,12 @@ module.exports = defineHopeConfig({
     locales: {
       "/": {
         sidebar: [
-          /* 根目录下的英文配置 */
+          /* English config under root */
         ],
       },
       "/zh/": {
         sidebar: [
-          /* 中文目录下的中文配置 */
+          /* Chinese config under zh folder */
         ],
       },
     },
@@ -853,13 +857,13 @@ module.exports = defineHopeConfig({
 
 ::::
 
-## 相关助手与类型
+## Types and Helpers
 
-`vuepress-theme-hope` 将侧边栏的类型导出为 `HopeThemeSideConfig`，同时，提供了一个 `defineSidebarConfig` Helper 函数。它们可以在 TS 和 JS 中提供侧边栏配置的校验与自动补全。
+`vuepress-theme-hope` exports the type of sidebar as `HopeThemeSideConfig`, and provides a `defineSidebarConfig` helper function. They can provide validation and autocompletion of sidebar configuration in TS and JS.
 
 ::: tip
 
-为了应对当你将 [多侧边栏配置](#多个侧边栏) 拆分成多个部分的情景，我们还针对性的提供了 `HopeThemeSidebarArrayConfig` `HopeThemeSidebarObjectConfig` 类型与 `defineSidebarArrayConfig` 和 `defineSidebarObjectConfig` Helper 函数。
+In order to deal with the situation when you split [multi-sidebar configuration](#multiple-sidebars) into multiple parts, we also provide `HopeThemeSidebarArrayConfig` `HopeThemeSidebarObjectConfig` type and `defineSidebarArrayConfig` and `defineSidebarObjectConfig` Helper function.
 
 :::
 
@@ -867,23 +871,23 @@ module.exports = defineHopeConfig({
 
 ::: code-group-item TS Helper
 
-```ts {4}
+```ts {6}
 // .vuepress/sidebar.ts
 import { defineSidebarConfig } from "vuepress-theme-hope";
 
-export default defineSidebarConfig(/* 你的侧边栏配置 */);
+export default defineSidebarConfig(/* Your sidebar configuration */);
 ```
 
 :::
 
-::: code-group-item TS 类型
+::: code-group-item TS Types
 
 ```ts {4}
 // .vuepress/navbar.ts
 import type { HopeThemeSidebarConfig } from "vuepress-theme-hope";
 
 const sidebarConfig: HopeThemeSidebarConfig = [
-  /* 你的侧边栏配置 */
+  /* Your sidebar configuration */
 ];
 
 export default sidebarConfig;
@@ -897,22 +901,22 @@ export default sidebarConfig;
 // .vuepress/sidebar.js
 const { defineSidebarConfig } = require("vuepress-theme-hope");
 
-module.exports = defineSidebarConfig(/* 你的侧边栏配置 */);
+module.exports = defineSidebarConfig(/* Your sidebar configuration */);
 ```
 
 :::
 
 ::::
 
-## 例子
+## Demo
 
-::::: details 本文档的侧边栏配置
+::::: details Configuration of this documentation
 
 :::: code-group
 
 ::: code-group-item TS
 
-@[code](../../../.vuepress/sidebar/zh.ts)
+@[code](../../.vuepress/sidebar/en.ts)
 
 :::
 
@@ -923,23 +927,23 @@ module.exports = defineSidebarConfig(/* 你的侧边栏配置 */);
 const { defineSidebarConfig } = require("vuepress-theme-hope");
 
 module.exports = defineSidebarConfig({
-  "/zh/guide/": [
+  "/guide/": [
     {
-      text: "快速上手",
+      text: "Get Started",
       icon: "creative",
       prefix: "get-started/",
       collapsable: true,
       children: ["intro", "install", "markdown"],
     },
     {
-      text: "界面",
+      text: "Interface",
       icon: "palette",
       prefix: "interface/",
       collapsable: true,
       children: ["darkmode", "theme-color", "icon", "accessibility", "others"],
     },
     {
-      text: "布局",
+      text: "Layout",
       icon: "layout",
       prefix: "layout/",
       collapsable: true,
@@ -954,7 +958,7 @@ module.exports = defineSidebarConfig({
       ],
     },
     {
-      text: "Markdown 增强",
+      text: "Markdown enhance",
       icon: "markdown",
       prefix: "markdown/",
       collapsable: true,
@@ -977,7 +981,7 @@ module.exports = defineSidebarConfig({
       ],
     },
     {
-      text: "功能",
+      text: "Features",
       icon: "discover",
       prefix: "feature/",
       collapsable: true,
@@ -995,7 +999,7 @@ module.exports = defineSidebarConfig({
       ],
     },
     {
-      text: "博客",
+      text: "Blog",
       icon: "blog",
       prefix: "blog/",
       collapsable: true,
@@ -1003,17 +1007,17 @@ module.exports = defineSidebarConfig({
     },
   ],
 
-  "/zh/config/": [
+  "/config/": [
     "intro",
     "i18n",
     {
-      text: "主题配置",
+      text: "Theme Config",
       icon: "config",
       prefix: "theme/",
       children: ["", "basic", "feature", "layout", "apperance"],
     },
     {
-      text: "插件配置",
+      text: "Plugin Config",
       icon: "plugin",
       prefix: "plugins/",
       children: [
@@ -1030,7 +1034,7 @@ module.exports = defineSidebarConfig({
     "style",
   ],
 
-  "/zh/cookbook/": [
+  "/cookbook/": [
     "tutorial",
     {
       text: "Markdown",
@@ -1052,14 +1056,14 @@ module.exports = defineSidebarConfig({
       text: "VuePress",
       icon: "vue",
       prefix: "vuepress/",
-      children: ["", "file", "markdown", "config", "plugin", "theme"],
+      children: ["", "page", "markdown", "file", "config", "plugin", "theme"],
     },
   ],
 
-  "/zh/": [
+  "/": [
     "",
     {
-      text: "指南",
+      text: "Guide",
       icon: "creative",
       prefix: "guide/",
       children: [
@@ -1072,19 +1076,19 @@ module.exports = defineSidebarConfig({
       ],
     },
     {
-      text: "配置",
+      text: "Config",
       icon: "config",
       prefix: "config/",
       children: ["intro", "i18n", "theme/", "plugins/", "page", "style"],
     },
     {
-      text: "教程",
+      text: "Cookbook",
       icon: "guide",
       prefix: "cookbook/",
       children: ["tutorial", "markdown/", "vuepress/"],
     },
     {
-      text: "迁移",
+      text: "Migration",
       icon: "change",
       prefix: "migration",
       children: ["config", "page", "style"],

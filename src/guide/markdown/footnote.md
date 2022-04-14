@@ -1,18 +1,18 @@
 ---
-title: 脚注
+title: Footnote
 icon: footnote
 category:
   - Markdown
 tag:
+  - Footnote
   - Markdown
-  - 脚注
 ---
 
-让你的 VuePress 站点中的 Markdown 文件支持脚注。
+Let the Markdown file in your VuePress site support footnotes.
 
 <!-- more -->
 
-## 配置
+## Configuration
 
 :::: code-group
 
@@ -56,42 +56,42 @@ module.exports = defineHopeConfig({
 
 ::::
 
-## 语法
+## Syntax
 
-- 在 Markdown 中使用 `[^锚点文字]` 来定义脚注。
+- Use `[^Anchor text]` in Markdown to define a footnote
 
-- 在之后的任何位置使用 `[^锚点文字]: ...` 来描述脚注内容。
+- Use `[^Anchor text]: ...` to describe footnote content
 
-- 如果脚注包含多个段落，其后的段落应当保持双层缩进。
+- If there are muti paragraph in footnote, the paragraph show be double indented
 
-## 例子
+## Demo
 
-脚注 1 链接[^first].
+Footnote 1 link[^first].
 
-脚注 2 链接[^second].
+Footnote 2 link[^second].
 
-行内的脚注^[Text of inline footnote] 定义.
+Inline footnote^[Text of inline footnote] definition.
 
-重复的页脚定义[^second].
+Duplicated footnote reference[^second].
 
-[^first]: 脚注 **可以包含特殊标记**
+[^first]: Footnote **can have markup**
 
-    也可以由多个段落组成
+    and multiple paragraphs.
 
-[^second]: 脚注文字。
+[^second]: Footnote text.
 
 ```md
-脚注 1 链接[^first].
+Footnote 1 link[^first].
 
-脚注 2 链接[^second].
+Footnote 2 link[^second].
 
-行内的脚注^[Text of inline footnote] 定义.
+Inline footnote^[Text of inline footnote] definition.
 
-重复的页脚定义[^second].
+Duplicated footnote reference[^second].
 
-[^first]: 脚注 **可以包含特殊标记**
+[^first]: Footnote **can have markup**
 
-    也可以由多个段落组成
+    and multiple paragraphs.
 
-[^second]: 脚注文字。
+[^second]: Footnote text.
 ```

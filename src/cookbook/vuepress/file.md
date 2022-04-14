@@ -1,41 +1,36 @@
 ---
-title: 文件结构介绍
+title: File Structure
 icon: folder
 category:
-  - 教程知识
+  - Cookbook
   - VuePress
 tag:
-  - 文件结构
+  - File Structure
   - VuePress
 ---
 
-## 文件结构
+## File Structure
 
 ```md
 .
-├── src → 由你指定的文档文件夹
+├── src → Docs folder depending on you
 │ │
-│ ├── .vuepress (可选的) → 用于存放全局的配置、组件、静态资源等
+│ ├── .vuepress (Optional) → VuePress Config
 │ │ │
-│ │ ├── dist (默认的) → 构建输出目录
+│ │ ├── dist (Default) → Output folder
 │ │ │
-│ │ ├── public (可选的) → 静态资源目录
 │ │ │
-│ │ ├── styles (可选的) → 用于存放样式相关的文件
+│ │ ├── public (Optional) → Static resource dir
 │ │ │
-│ │ ├── config.{js,ts} (可选的) → 配置文件的入口文件
+│ │ ├── styles (Optional) → Stores style related files
 │ │ │
-│ │ └── clientAppEnhance.{js,ts} (可选的) → 客户端应用的增强
+│ │ ├── config.{js,ts} (Optional) → Entry file of configuration
+│ │ │
+│ │ └── clientAppEnhance.{js,ts} (Optional) → App level enhancement
 │ │
 │ ├── ...
 │ │
 │ └── README.md
 │
-└── package.json → Nodejs 配置文件
+└── package.json → Node.js declaration file for the entire project
 ```
-
-::: warning
-
-请注意 VuePress 对目录大小写敏感。
-
-:::

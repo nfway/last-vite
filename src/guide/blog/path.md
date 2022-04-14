@@ -1,25 +1,25 @@
 ---
-title: 博客页面路径
+title: Blog Page Path
 icon: link
 category:
-  - 博客
+  - Blog
 tag:
-  - 博客
-  - 路径
+  - Blog
+  - Path
 ---
 
-你可以通过 `themeConfig.plugins.blog` 控制博客中各页面路径。
+You can control the path of each page in the blog through `themeConfig.plugins.blog`.
 
-博客提供的默认路径如下，如果它们与你的已有路径发生冲突，并且你不想调整自己的路径，你可以对它们进行修改。
+The default paths provided by the blog are as follows, if they conflict with your existing paths, and you don't want to adjust your own paths, you can modify them.
 
-| 配置项         | 描述         | 默认路径           |
-| -------------- | ------------ | ------------------ |
-| `article`      | 文章列表     | `/article/`        |
-| `category`     | 分类地图页   | `/category/`       |
-| `categoryItem` | 特定分类列表 | `/category/:name/` |
-| `tag`          | 标签地图页   | `/tag/`            |
-| `tagItem`      | 特定标签列表 | `/tag/:name/`      |
-| `encrypted`    | 加密文章列表 | `/encrypted/`      |
-| `slides`       | 幻灯片列表   | `/encrypted/`      |
-| `star`         | 星标文章列表 | `/encrypted/`      |
-| `timeline`     | 时间线列表   | `/timeline/`       |
+| Options        | Description                   | Default Path       |
+| -------------- | ----------------------------- | ------------------ |
+| `article`      | list of articles              | `/article/`        |
+| `category`     | Category map page             | `/category/`       |
+| `categoryItem` | A list of specific categories | `/category/:name/` |
+| `tag`          | Tag map page                  | `/tag/`            |
+| `tagItem`      | list of specific tags         | `/tag/:name/`      |
+| `encrypted`    | List of encrypted articles    | `/encrypted/`      |
+| `slides`       | List of slides                | `/encrypted/`      |
+| `star`         | List of starred articles      | `/encrypted/`      |
+| `timeline`     | Timeline list                 | `/timeline/`       |

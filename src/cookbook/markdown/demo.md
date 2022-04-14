@@ -1,161 +1,157 @@
 ---
-title: Markdown 示例
+title: Markdown DEMO
 icon: markdown
 category:
-  - 教程知识
+  - Cookbook
   - Markdown
 tag:
-  - 示例
+  - Demo
   - Markdown
 ---
 
 <!-- markdownlint-disable -->
 
-# 一级标题
+# First Heading
 
 <!-- markdownlint-restore -->
 
 ```md
-# 一级标题
+# First Heading
 ```
 
-## 二级标题
+## Second Heading
 
 ```md
-## 二级标题
+## Second Heading
 ```
 
-### 三级标题
+### Third Heading
 
 ```md
-### 三级标题
+### Third Heading
 ```
 
-#### 四级标题
+#### Fourth Heading
 
 ```md
-#### 四级标题
+#### Fourth Heading
 ```
 
-##### 五级标题
+##### Fifth Heading
 
 ```md
-##### 五级标题
+##### Fifth Heading
 ```
 
-###### 六级标题
+###### Sixth Heading
 
 ```md
-###### 六级标题
+###### Sixth Heading
 ```
 
 ## Text
 
-这句话里拥有**加粗**、*倾斜*和~~删除~~
+This sentence has **bold**、_italic_ and ~~delete~~ style text.
 
 ```md
-这句话里拥有**加粗**、*倾斜*和~~删除~~
+This sentence has **bold**、_italic_ and ~~delete~~ style text.
 ```
 
-## 段落
+## Paragraph
 
-这是一个段落。
+This is a paragraph.
 
-这是另一个段落。
+This is another paragraph.
 
 ```md
-这是一个段落
+This is a paragraph.
 
-这是另一个段落。
+This is another paragraph.
 ```
 
-## 换行
+## Line Break
 
-这是一句话不过我要在这里  
-换行
-
-```md
-这是一句话不过我要在这里  
-换行
-```
-
-::: tip
-
-上方的代码中 `这里` 后面有两个空格
-
-:::
-
-## 引用
-
-> 引用也可以连用
->
-> > 可以添加额外的大于号制造更深的引用
+I would like to line break at  
+this point
 
 ```md
-> 引用也可以连用
->
-> > 可以添加额外的大于号制造更深的引用
-```
-
-## 列表
-
-### 无序列表
-
-- 无序列表项
-- 无序列表项
-
-  - 列表中的列表项
-    - 更多的列表项
-    - 更多的列表项
-    - 更多的列表项
-  - 列表中的长列表项，这个列表项很长。
-
-    而且由很多个段落构成。
-
-    甚至最后一个段落还包含了[链接](#链接)。
-
-- 无序列表项
-
-```md
-- 无序列表项
-- 无序列表项
-
-  - 列表中的列表项
-    - 更多的列表项
-    - 更多的列表项
-    - 更多的列表项
-  - 列表中的长列表项，这个列表项很长。
-
-    而且由很多个段落构成。
-
-    甚至最后一个段落还包含了[链接](#链接)。
-
-- 无序列表项
-```
-
-### 有序列表
-
-1. 有序列表第一项
-1. 有序列表第二项  
-   第二项的需要换行  
-   再次换行
-1. 有序列表第三项
-
-```md
-1. 有序列表第一项
-1. 有序列表第二项  
-   第二项的需要换行  
-   再次换行
-1. 有序列表第三项
+I would like to line break at  
+this point
 ```
 
 ::: tip
 
-上方的代码中`换行`后面有也两个空格
+In codes above, two spaces are behind `at`.
 
 :::
 
-## 分割线
+## Blockquotes
+
+> Blockquotes can also be nested...
+>
+> > ...by using greater-than signs right next to each other...
+> >
+> > > ...or with spaces between arrows.
+
+```md
+> Blockquotes can also be nested...
+>
+> > ...by using greater-than signs right next to each other...
+> >
+> > > ...or with spaces between arrows.
+```
+
+## List
+
+### Unordered List
+
+- Create a list by starting a line with `-`
+- Make sub-lists by indenting 2 spaces:
+
+  - Marker character change forces new list start:
+
+    - Ac tristique libero volutpat at
+    - Facilisis in pretium nisl aliquet
+    - Nulla volutpat aliquam velit  
+      link break
+
+      New paragraph
+
+- It’s easy!
+
+```md
+- Create a list by starting a line with `-`
+- Sub-lists are made by indenting 2 spaces:
+
+  - Marker character change forces new list start:
+
+    - Ac tristique libero volutpat at
+    - Facilisis in pretium nisl aliquet
+    - Nulla volutpat aliquam velit  
+      link break
+
+      New paragraph
+
+- Very easy!
+```
+
+### Ordered List
+
+1. Lorem ipsum dolor sit amet
+1. Consectetur adipiscing elit  
+   line break  
+   line break again
+1. Integer molestie lorem at massa
+
+```md
+1. Lorem ipsum dolor sit amet
+1. Consectetur adipiscing elit  
+   line break  
+   line break again
+1. Integer molestie lorem at massa
+```
+
+## HR
 
 ---
 
@@ -163,51 +159,51 @@ tag:
 ---
 ```
 
-## 链接
+## Link
 
-[根目录访问主页](/)
+[Home page using absolute path](/)
 
-[相对路径主页](../../README.md)
+[Home page using relative path](../README.md)
 
-[根目录访问关于](/about)
+[About page using absolute path](/about)
 
-[相对路径关于](../../about.md)
+[About page using relative path](../about.md)
 
 ```md
-[根目录访问主页](/)
+[Home page using absolute path](/)
 
-[相对路径主页](../../README.md)
+[Home page using relative path](../README.md)
 
-[根目录访问关于](/about)
+[About page using absolute path](/about)
 
-[相对路径关于](../../about.md)
+[About page using relative path](../about.md)
 ```
 
 ::: tip
 
-VuePress 还兼容如下跳转到主页的写法:
+You can also use these in VuePress:
 
-- [相对路径访问，兼容 Markdown 编写时相互跳转](../README.md)
+- [Home page-Can route when editing Markdown file](../README.md)
 
-- [根目录访问主页 2](/README.md)
+- [Home page using absolute path 2](/README.md)
 
-- [HTML 形式](../index.html)
+- [Visit in HTML](../index.html)
 
-如果希望在使用编辑器编辑 Markdown 时也能够进行相互跳转的话，则需要全部使用**相对路径**，并且`README.md`**不能省略**。
+To be able to jump to each other when editing the Markdown using the editor, you need to use the **relative path**, also you must place `README.md` in **every folder**.
 
 代码:
 
 ```md
-[根目录访问主页 2](/README.md)
+- [Home page-Can route when editing Markdown file](../README.md)
 
-[相对路径访问，兼容 Markdown 编写时相互跳转](../README.md)
+- [Home page using absolute path 2](/README.md)
 
-[HTML 形式](../index.html)
+- [Visit in HTML](../index.html)
 ```
 
 :::
 
-## 图片
+## Image
 
 ![Logo](/logo.png)
 
@@ -217,7 +213,7 @@ VuePress 还兼容如下跳转到主页的写法:
 
 ## Emoji
 
-经典方式:
+Classic:
 
 :wink: :cry: :laughing: :yum:
 
@@ -225,7 +221,7 @@ VuePress 还兼容如下跳转到主页的写法:
 :wink: :cry: :laughing: :yum:
 ```
 
-简写:
+Shortcuts:
 
 8-) :) :\* :( :-) :-( ;)
 
@@ -235,35 +231,35 @@ VuePress 还兼容如下跳转到主页的写法:
 
 ::: tip
 
-更多详见[emoji 列表](emoji/README.md)
+For more see [emoji list](emoji/README.md)
 
 :::
 
-## 表格
+## Tables
 
-|     居中      |         右对齐 | 左对齐         |
-| :-----------: | -------------: | :------------- |
-| 居中使用`:-:` | 右对齐使用`-:` | 左对齐使用`:-` |
-|       b       |      aaaaaaaaa | aaaa           |
-|       c       |           aaaa | a              |
-
-```md
-|     居中      |         右对齐 | 左对齐         |
-| :-----------: | -------------: | :------------- |
-| 居中使用`:-:` | 右对齐使用`-:` | 左对齐使用`:-` |
-|       b       |      aaaaaaaaa | aaaa           |
-|       c       |           aaaa | a              |
-```
-
-## 代码
-
-行内代码效果: `code`
+|           center           |                    right | left                    |
+| :------------------------: | -----------------------: | :---------------------- |
+| For center align use `:-:` | For right align use `-:` | For left align use `:-` |
+|             b              |                aaaaaaaaa | aaaa                    |
+|             c              |                     aaaa | a                       |
 
 ```md
-行内代码效果: `code`
+|           center           |                    right | left                    |
+| :------------------------: | -----------------------: | :---------------------- |
+| For center align use `:-:` | For right align use `-:` | For left align use `:-` |
+|             b              |                aaaaaaaaa | aaaa                    |
+|             c              |                     aaaa | a                       |
 ```
 
-缩进代码:
+## Codes
+
+Inline Code: `code`
+
+```md
+Inline Code: `code`
+```
+
+Indented code:
 
 ```
 // Some comments
@@ -272,30 +268,30 @@ line 2 of code
 line 3 of code
 ```
 
-实际代码:
+```
+Indented code:
 
-```md
     // Some comments
     line 1 of code
     line 2 of code
     line 3 of code
 ```
 
-块级代码
+Block code:
 
-```md
+```
 Sample text here...
 ```
 
 ````md
-块级代码
+Block code:
 
 ```
 Sample text here...
 ```
 ````
 
-高亮格式:
+Syntax highlighting:
 
 ```js
 var foo = function (bar) {
@@ -306,7 +302,7 @@ console.log(foo(5));
 ```
 
 ````md
-高亮格式:
+Syntax highlighting:
 
 ```js
 var foo = function (bar) {

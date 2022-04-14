@@ -1,18 +1,18 @@
 ---
-title: 代码演示
+title: Code Demo
 icon: discover
 category:
   - Markdown
 tag:
+  - Code Demo
   - Markdown
-  - 代码演示
 ---
 
-让你的 VuePress 站点中的 Markdown 文件支持代码案例。
+Let you insert code demos in your Markdown file.
 
 <!-- more -->
 
-## 配置
+## Configuration
 
 :::: code-group
 
@@ -56,23 +56,23 @@ module.exports = defineHopeConfig({
 
 ::::
 
-## 语法
+## Syntax
 
-请使用以下语法：
+You should use the following syntax:
 
 ````md
-::: demo [类型] 可选的标题文字
+::: demo [type] Optional title text
 
 ```html
-<!-- ↑ 使用可用的语言 -->
-<!-- 在代码块中放置你对应语言的代码，一个语言不能出现多个块 -->
-<!-- 你可以有多个代码块，并且 html, js, css 都是视情况可选的 -->
+<!-- ↑ use available ones -->
+<!-- your code here -->
+<!-- you can have mutiple code block, but each language must appear only once. -->
 ```
 
 ```json
-// json block 作为插件配置存放处
+// json block is for config
 {
-  // 放置你的配置 (optional)
+  // your config here (optional)
 }
 ```
 
@@ -81,22 +81,22 @@ module.exports = defineHopeConfig({
 
 ::: tip
 
-JSON 块是可选的，可用的配置详见 [配置](../config.md#demo)。
+The json block is optional, for config please see [config](../../config/plugins/md-enhance.md#demo).
 
 :::
 
-该插件支持三种类型：
+The plugin support three types:
 
-- normal (默认)
+- normal (default)
 - vue
 - react
 
 ### Normal
 
-写法:
+Syntax:
 
 ````md
-::: demo 可选的标题文字
+::: demo Optional title text
 
 ```html
 <!-- html code -->
@@ -111,7 +111,7 @@ JSON 块是可选的，可用的配置详见 [配置](../config.md#demo)。
 ```
 
 ```json
-// 配置 (可选)
+// config (optional)
 {
   "jsLib": [
     ...
@@ -122,33 +122,33 @@ JSON 块是可选的，可用的配置详见 [配置](../config.md#demo)。
 }
 ```
 
-:::
+::::
 ````
 
 ### Vue
 
-语法:
+Syntax:
 
 ````md
-::: demo [vue] 可选的标题文字
+::: demo [vue] Optional title text
 
 ```vue
-<!-- ↑ 你也可以使用 html -->
+<!-- ↑ you can also use html-->
 <template>
-  <!-- vue 模板 -->
+  <!-- vue template -->
 </template>
 <script>
 export default {
-  // vue 组件
+  // vue component
 };
 </script>
 <style>
-/* css 代码 */
+/* style */
 </style>
 ```
 
 ```json
-// 配置 (可选)
+// config (optional)
 ```
 
 :::
@@ -156,44 +156,44 @@ export default {
 
 ### React
 
-语法:
+Syntax:
 
 ````md
-::: demo [react] 可选的标题文字
+::: demo [react] Optional title text
 
 ```js
 export default class App extends React.Component {
-  // react 组件
+  // your react component
 }
 ```
 
 ```css
-/* 你的 css 内容 */
+/* your css content */
 ```
 
 ```json
-// 配置 (可选)
+// config (optional)
 ```
 
 :::
 ````
 
-### 可用的语言
+### Available languages
 
-你可以在演示块中使用不同语言。
+You can use different language in your demo block.
 
-当你设置一些不能在浏览器上直接运行的语言时，由于插件无法解析它们，因此网页演示将被禁用。插件只显示代码。同时提供一个 "在 CodePen 中打开" 按钮允许用户直接在 CodePen 打开并浏览代码。
+When you set language which can not run on browers, since the plugin is not able to resolve them, so demo display will be disabled. The plugin will only show the code and provide you a button to open it in CodePen.
 
-可用的 HTML 语言:
+Available HTML languages:
 
-- `"html"` (默认)
+- `"html"` (default)
 - `"slim"`
 - `"haml"`
 - `"markdown"`
 
-> 你也可以在代码块中使用 `md`。
+> You can also use `md` in code block.
 
-可用的 JS 语言:
+Available JS languages:
 
 - `"javascript"` (default)
 - `"coffeescript"`
@@ -201,9 +201,9 @@ export default class App extends React.Component {
 - `"livescript"`
 - `"typescript"`
 
-> 你也可以在代码块中使用 `js`, `ts`, `coffee` 和 `ls`。
+> You can also use `js`, `ts`, `coffee` and `ls` in code block.
 
-可用的 CSS 语言:
+Available CSS languages:
 
 - `"css"` (default)
 - `"less"`
@@ -211,20 +211,20 @@ export default class App extends React.Component {
 - `"sass"`
 - `"stylus"`
 
-> 你也可以在代码块中使用 `styl`。
+> You can also use `styl` in code block.
 
-## 演示
+## Demo
 
-::: demo Demo 演示
+::: demo Demo
 
 ```html
 <h1>VuePress Theme Hope</h1>
-<p><span id="very">非常</span>强大!</p>
+<p>is <span id="very">very</span> powerful!</p>
 ```
 
 ```js
 document.querySelector("#very").addEventListener("click", () => {
-  alert("非常强大");
+  alert("Very powerful");
 });
 ```
 
@@ -236,19 +236,19 @@ span {
 
 :::
 
-:::: details 代码
+:::: details Code
 
 ````md
-::: demo Demo 演示
+::: demo Demo
 
 ```html
 <h1>VuePress Theme Hope</h1>
-<p><span id="very">非常</span>强大!</p>
+<p>is <span id="very">very</span> powerful!</p>
 ```
 
 ```js
 document.querySelector("#very").addEventListener("click", () => {
-  alert("非常强大");
+  alert("Very powerful");
 });
 ```
 
@@ -261,26 +261,24 @@ span {
 :::
 ````
 
-::::
-
-::: demo [react] 一个函数式 React Demo
+::: demo [react] A function-based React Demo
 
 ```js
 const { useState } = React;
 
 export default () => {
-  const [message, setMessage] = useState(" 强大");
+  const [message, setMessage] = useState(" powerful");
 
   const handler = () => {
-    setMessage(`十分${message}`);
+    setMessage(` very${message}`);
   };
 
   return (
     <div className="box">
-      <code>vuepress-theme-hope</code>
+      <code>vuepress-theme-hope</code> is
       <span id="powerful" onClick={handler}>
         {message}
-      </span>
+      </span>!
     </div>
   );
 };
@@ -294,27 +292,27 @@ export default () => {
 
 :::
 
-:::: details 代码
+:::: details Code
 
 ````md
-::: demo [react] 一个函数式 React Demo
+::: demo [react] A function-based React Demo
 
 ```js
 const { useState } = React;
 
 export default () => {
-  const [message, setMessage] = useState(" 强大");
+  const [message, setMessage] = useState(" powerful");
 
   const handler = () => {
-    setMessage(`十分${message}`);
+    setMessage(` very${message}`);
   };
 
   return (
     <div className="box">
-      <code>vuepress-theme-hope</code>
+      <code>vuepress-theme-hope</code> is
       <span id="powerful" onClick={handler}>
         {message}
-      </span>
+      </span>!
     </div>
   );
 };
@@ -331,25 +329,25 @@ export default () => {
 
 ::::
 
-::: demo [react] 一个类式 React Demo
+::: demo [react] A class-based React Demo
 
 ```js
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { message: "强大" };
+    this.state = { message: " powerful" };
   }
   handler() {
     this.setState((state) => ({
-      message: `十分${state.message}`,
+      message: ` very${state.message}`,
     }));
   }
   render() {
     return (
       <div className="box">
-        <code>vuepress-theme-hope</code>
+        <code>vuepress-theme-hope</code> is
         <span id="powerful" onClick={this.handler.bind(this)}>
-          {this.state.message}
+          {this.state.message}!
         </span>
       </div>
     );
@@ -365,28 +363,28 @@ export default class App extends React.Component {
 
 :::
 
-:::: details 代码
+:::: details Code
 
 ````md
-::: demo [react] 一个类式 React Demo
+::: demo [react] A class-based React Demo
 
 ```js
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { message: "强大" };
+    this.state = { message: " powerful" };
   }
   handler() {
     this.setState((state) => ({
-      message: `十分${state.message}`,
+      message: ` very${state.message}`,
     }));
   }
   render() {
     return (
       <div className="box">
-        <code>vuepress-theme-hope</code>
+        <code>vuepress-theme-hope</code> is
         <span id="powerful" onClick={this.handler.bind(this)}>
-          {this.state.message}
+          {this.state.message}!
         </span>
       </div>
     );
@@ -405,7 +403,7 @@ export default class App extends React.Component {
 
 ::::
 
-::: demo [vue] 一个 Vue Composition 演示
+::: demo [vue] A Vue Composition Demo
 
 ```vue
 <template>
@@ -445,7 +443,7 @@ export default {
 :::: details Code
 
 ````md
-::: demo [vue] 一个 Vue Composition 演示
+::: demo [vue] A Vue Composition Demo
 
 ```vue
 <template>
@@ -485,7 +483,7 @@ export default {
 
 ::::
 
-::: demo [vue] 一个 Vue Option 演示
+::: demo [vue] A Vue Option Demo
 
 ```vue
 <template>
@@ -517,7 +515,7 @@ export default {
 :::: details Code
 
 ````md
-::: demo [vue] 一个 Vue Option 演示
+::: demo [vue] A Vue Option Demo
 
 ```vue
 <template>
@@ -549,12 +547,12 @@ export default {
 
 ::::
 
-::: demo 一个使用浏览器不支持解析语言 Demo
+::: demo A demo using language not supoprted by browsers
 
 ```md
-# 标题
+# Title
 
-十分强大
+is very powerful!
 ```
 
 ```ts
@@ -575,15 +573,15 @@ h1 {
 
 :::
 
-:::: details 代码
+:::: details Code
 
 ````md
-::: demo 一个使用浏览器不支持解析语言 Demo
+::: demo A normal demo
 
 ```md
-# 标题
+# Title
 
-十分强大
+is very powerful!
 ```
 
 ```ts

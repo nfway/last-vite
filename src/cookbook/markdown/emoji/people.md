@@ -1,9 +1,8 @@
 ---
-title: 人物 Emoji
+title: People Emoji
 icon: emoji
 category:
-  - 教程知识
-  - Markdown
+  - Cookbook
 tag:
   - Markdown
   - Emoji

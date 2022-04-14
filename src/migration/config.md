@@ -1,25 +1,25 @@
 ---
-title: 配置迁移指南
+title: Config Migration Guide
 icon: config
 category:
-  - 迁移
+  - Migration
 tag:
-  - 迁移
-  - 主题配置
+  - Migration
+  - Theme Config
 ---
 
-## 主题使用
+## Theme usage
 
-- `config` 重命名为 `defineHopeConfig`
-- `themeConfig` 重命名为 `defineThemeConfig`
-- `navbarConfig` 重命名为 `defineNavbarConfig`
-- `sidebarConfig` 重命名为 `defineSidebarConfig`
+- `config` renamed to `defineHopeConfig`
+- `themeConfig` renamed to `defineThemeConfig`
+- `navbarConfig` renamed to `defineNavbarConfig`
+- `sidebarConfig` renamed to `defineSidebarConfig`
 
-  同时新提供 `defineSidebarArrayConfig`, `defineSidebarObjectConfig`
+  At the same time, `defineSidebarArrayConfig`, `defineSidebarObjectConfig` are newly provided
 
-## 主题配置
+## ThemeConfig
 
-- `author` 类型从 `string | undefined` 改为 `AuthorInfo[] | AuthorInfo | string[] | string | undefined`
+- `author` type changed from `string | undefined` to `AuthorInfo[] | AuthorInfo | string[] | string | undefined`
 
   ```ts
   interface AuthorInfo {
@@ -28,118 +28,118 @@ tag:
   }
   ```
 
-  此改动允许你添加多个作者，并为其设置网站。
+  This change allows you to add multiple authors and set sites for them.
 
-### 导航栏
+### Navigation Bar
 
-- `nav`, `navbar` 统一为 `navbar`
+- `nav`, `navbar` unified to `navbar`
 
-- `darkLogo` 重命名为 `logoDark`
+- `darkLogo` renamed to `logoDark`
 
-- `navAutoHide` 重命名为 `navbarAutoHide`
+- `navAutoHide` renamed to `navbarAutoHide`
 
-- 新增 `navbarIcon` 选项
+- Added `navbarIcon` option
 
-由于主题不再内置搜索:
+Since the theme no longer has a built-in search:
 
-- 移除 `search`, `searchPlaceholder`, `searchMaxSuggestions`
+- Removed `search`, `searchPlaceholder`, `searchMaxSuggestions`
 
-- 移除 `algolia`, `algoliaType`
+- remove `algolia`, `algoliaType`
 
-### 侧边栏
+### Sidebar
 
-- `sidebarDepth` 重命名为 `headingDepth`
+- `sidebarDepth` renamed to `headingDepth`
 
-- 移除 `displayAllHeaders`
+- remove `displayAllHeaders`
 
-### 导航栏侧边栏配置统一
+### Navbar Sidebar Config Unified
 
-- 导航栏配置中的 `items` 改为 `children`
+- `items` in navbar config changed to `children`
 
-- 侧边栏配置中的 `title` 改为 `text`, `path` 改为 `link`。
+- Changed `title` to `text` and `path` to `link` in sidebar configuration.
 
-- V2 导航栏支持像侧边栏一样直接设置 Markdown 文件路径自动生成文字、图标与链接
+- The V2 navigation bar supports setting the Markdown file path directly like the sidebar to automatically generate text, icons and links
 
-这样他们的配置统一为 `text`, `icon`, `prefix`, `link`, `children`。
+In this way, their configuration is unified as `text`, `icon`, `prefix`, `link`, `children`.
 
-- 两者配置新增 `activeMatch` 控制激活情况
+- Added `activeMatch` to control activation in both configurations
 
-### 页面链接
+### Page Link
 
-- 移除 `prevLinks` 和 `nextLinks`
+- remove `prevLinks` and `nextLinks`
 
-- `editLinks` 重命名为 `editLink`
+- `editLinks` renamed to `editLink`
 
-- `updateTime` 重命名为 `lastUpdated`
+- `updateTime` renamed to `lastUpdated`
 
-### 外观
+### Outlook
 
-- `iconPrefix` 默认值由 `icon-` 清空。
+- `iconPrefix` default value is cleared from `icon-`.
 
-  你现在需要根据使用图标的 Font Class 自行配置
+  You now need to configure it yourself according to the Font Class that uses the icon
 
-  - 如果你使用 IconFont，你可能需要将其设置为 `iconfont icon-`
-  - 如果你使用 FontAwesome，你可能需要将其设置为 `fa fa-`
+  - If you use IconFont, you may need to set it to `iconfont icon-`
+  - If you use FontAwesome, you may need to set it to `fa fa-`
 
-- `darkmode` 新增 `"force-dark"`，强制暗黑模式
+- `darkmode` added `"force-dark"` to force dark mode
 
-### 博客配置
+### Blog Config
 
-- 博客配置现在支持在每个语言中单独配置
+- Blog config now supports separate config in each language
 
-- 新增 `blog.description` 配置博主描述或座右铭
+- Added `blog.description` to set blogger description or motto
 
-- `blog.links` 重命名为 `blog.medias`
+- `blog.links` renamed to `blog.medias`
 
-- `blog.roundAvatar` 默认值由 `true` 改为 `false`
+- `blog.roundAvatar` default value changed from `true` to `false`
 
-- `blog.perPage` 重命名为 `blog.articlePerPage`
+- `blog.perPage` renamed to `blog.articlePerPage`
 
-- `blog.autoExcerpt` 移动至 `plugins.blog.autoExcerpt`，且默认值由 `true` 改为 `false`
+- `blog.autoExcerpt` moved to `plugins.blog.autoExcerpt`, and default value changed from `true` to `false`
 
-### 加密配置
+### Encryption Config
 
-- `encrypt.status: "global" | "local"` (默认 `"local"`) 改为 `encrypt.global: boolean` (默认 `false`)
+- `encrypt.status: "global" | "local"` (default `"local"`) changed to `encrypt.global: boolean` (default `false`)
 
-- `encrypt.global` 重命名为 `encrypt.admin`
+- `encrypt.global` renamed to `encrypt.admin`
 
-### 自定义布局
+### custom layout
 
-- 移除 `custom`
+- remove `custom`
 
-### 页面布局
+### Page Layout
 
-- `anchorDisplay` 重命名为 `toc`
+- `anchorDisplay` renamed to `toc`
 
-### 阅读速度
+### Reading speed
 
-- `wordPerMinute` 移至 `plugins.readingTime.wordPerMinute`
+- `wordPerMinute` moved to `plugins.readingTime.wordPerMinute`
 
-## 插件变更
+## plugin changes
 
-### 改动
+### Changes
 
-所有插件相关选项均被移至 `plugins` 下。
+All plugin related options have been moved under `plugins`.
 
-- `activeHeaderLinks` 移动至 `plugins.activeHeaderLinks`
+- `activeHeaderLinks` moved to `plugins.activeHeaderLinks`
 
-- `comment` 移动至 `plugins.comment`
+- `comment` moved to `plugins.comment`
 
-- `copyCode` 移动至 `plugins.copyCode`
+- `copyCode` moved to `plugins.copyCode`
 
-- `feed` 移动至 `plugins.feed`
+- `feed` moved to `plugins.feed`
 
-  主题不再默认输出三种格式的 Feed 文件，如果有需要，请自行配置插件请求需要格式。
+  The theme no longer outputs feed files in three formats by default. If necessary, please set options to output formats needed.
 
-- `mdEnhance` 移动至 `plugins.mdEnhance`
+- `mdEnhance` moved to `plugins.mdEnhance`
 
-  - `plugins.mdEnhance.codegroup` 的主题默认值由 `true` 改为 `false`
+  - Theme default value for `plugins.mdEnhance.codegroup` changed from `true` to `false`
 
-  - `plugins.mdEnhance.lazyLoad` 默认值由 `true` 改为 `false`
+  - `plugins.mdEnhance.lazyLoad` default value changed from `true` to `false`
 
-  - 新增 `plugins.mdEnhance.vpre`
+  - Added `plugins.mdEnhance.vpre`
 
-    VuePress2 不再内置下列语法。
+    The following syntax is no longer built into VuePress2.
 
     ```md
     ::: v-pre
@@ -147,54 +147,54 @@ tag:
     :::
     ```
 
-  - 移除 `plugins.mdEnhance.lineNumbers`
+  - Removed `plugins.mdEnhance.lineNumbers`
 
-    VuePress2 支持单独对代码块配置行号
+    VuePress2 supports line numbers config for code blocks individually
 
-  - 移除 `plugins.mdEnhance.imageFix`
+  - remove `plugins.mdEnhance.imageFix`
 
-    图片相关问题已在 V2 中得到修正
+    Image related issues have been fixed in V2
 
-- `photoSwipe` 移动至 `plugins.photoSwipe`
+- `photoSwipe` moved to `plugins.photoSwipe`
 
-- `pwa` 移动至 `plugins.pwa`
+- `pwa` moved to `plugins.pwa`
 
-- `readingTime` 移动至 `plugins.readingTime`
+- `readingTime` moved to `plugins.readingTime`
 
-- `seo` 移动至 `plugins.seo`
+- `seo` moved to `plugins.seo`
 
-- `sitemap` 移动至 `plugins.sitemap`
+- `sitemap` moved to `plugins.sitemap`
 
-### 新增
+### Add
 
-- 新增 `plugins.blog` 控制博客地址
+- Added `plugins.blog` to control blog address
 
-### 移除
+### Remove
 
-- 移除 `activeHash`
+- remove `activeHash`
 
-  主题现在使用 `@vuepress/plugin-active-header-links` 官方插件。
+  The theme now uses official plugin `@vuepress/plugin-active-header-links`.
 
-- 移除 `addThis`
+- remove `addThis`
 
-  `vuepress-plugin-add-this` V2 迁移时已标为废弃，主题不再默认捆绑。
+  `vuepress-plugin-add-this` V2 was marked as deprecated when migrating and the theme no longer bundles it by default.
 
-- 移除 `chunkRename`
+- remove `chunkRename`
 
-  主题不再提供此功能。
+  The theme no longer provides this functionality.
 
-- 移除 `cleanUrl`
+- remove `cleanUrl`
 
-  主题不再提供此功能。
+  The theme no longer provides this functionality.
 
-- 移除 `copyright`
+- remove `copyright`
 
-  相关插件暂未适配 V2。
+  Related plugin ism't compatible with V2 yet.
 
-- 移除 `git`
+- remove `git`
 
-  主题现在使用 `@vuepress/plugin-git` 官方插件。
+  The theme now uses official plugin `@vuepress/plugin-git`.
 
-- 移除 `smoothScroll`
+- remove `smoothScroll`
 
-  主题现在通过 CSS 提供平滑滚动，不再对旧浏览器提供兼容。
+  The theme now provides smooth scrolling via CSS and no longer provides compatibility with older browsers.

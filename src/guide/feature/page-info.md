@@ -1,45 +1,45 @@
 ---
-title: 页面信息
+title: Page information
 icon: info
 category:
-  - 功能
+  - Feature
 tag:
-  - 功能
-  - 页面信息
+  - Feature
+  - Page Info
 ---
 
-通过引入 [`@mr-hope/vuepress-plugin-components`][components]，`vuepress-theme-hope` 实现了文章信息展示。
+By including [`@mr-hope/vuepress-plugin-components`][components], `vuepress-theme-hope` can display article information for you.
 
 <!-- more -->
 
-## 启用
+## Enable
 
-页面信息默认全局启用，同时支持页面配置[^supportpageconfig]。你可以在特定页面的 front matter 中设置 `pageInfo: false` 来局部禁用它。
+Page information display is enabled globally by default, while supports page config. You can disable it by setting `pageInfo: false` in frontmatter of a specific page.
 
-如果你需要保持全局禁用，请设置 `themeConfig.pageInfo` 为 `false`。这样你可以在特定页面的 front matter 中设置 `pageInfo` 来局部启用它。
+To keep it globally disabled, please set `pageInfo` to `false` in the plugin options. Then you can set `pageInfo` in frontmatter of a specific page to enable it locally.
 
-## 参数 <Badge text="支持页面配置" />
+## Parameters <Badge text="Support page config" />
 
-`pageInfo` 默认接受一个字符串数组，可以填入各条目名称，填入的顺序即是各条目显示的顺序。
+`pageInfo` accepts an array of strings by default, filling in a group of items. The order of filling is the order in which the items are displayed.
 
-条目可选的值和对应内容如下:
+The optional values and corresponding contents of the entry are as follows:
 
-| 条目            | 对应内容     | 页面 frontmatter 值     | 主题设置的配置项        |
-| --------------- | ------------ | ----------------------- | ----------------------- |
-| `"Author"`      | 作者         | author                  | author                  |
-| `"Date"`        | 写作日期     | date                    | N/A                     |
-| `"Original"`    | 是否原创     | isOriginal              | N/A                     |
-| `"Category"`    | 分类         | category                | N/A                     |
-| `"Tag"`         | 标签         | tags                    | N/A                     |
-| `"ReadingTime"` | 预计阅读时间 | N/A(自动生成)           | N/A                     |
-| `"Word"`        | 字数         | N/A(自动生成)           | N/A                     |
-| `"PageView"`    | 访问量       | visitor(仅 Waline 可用) | plugins.comment.visitor |
+| Entry           | Corresponding content  | page frontmatter value                |
+| --------------- | ---------------------- | ------------------------------------- |
+| `"Author"`      | author                 | `author`                              |
+| `"Date"`        | Writing Date           | `time`                                |
+| `"Original"`    | Whether is original    | `isOriginal`                          |
+| `"Category"`    | Category               | `category`                            |
+| `"Tag"`         | tags                   | `tags`                                |
+| `"ReadingTime"` | Estimated reading time | N/A (automatically generated)         |
+| `"Word"`        | Word count             | N/A (automatically generated)         |
+| `"PageView"`    | Visits                 | `pageview` (only available in Waline) |
 
-默认会显示 “作者，访问量，写作日期，分类，标签，预计阅读时间”。
+By default it will display "Author, Visit Number, Writing Date, Category, Tags, Expect Reading Time".
 
-### 作者 <Badge text="支持页面配置" />
+### author <Badge text="Support page config" />
 
-例子:
+Example:
 
 ```md
 ---
@@ -47,11 +47,11 @@ author: Mr.Hope
 ---
 ```
 
-作者姓名也可以在 `themeConfig.author` 中全局配置，这样每篇文章都会显示默认作者。这时，你仍可以在页面中配置 front matter 中的 `author` 为一个新值来覆盖默认作者，或者设置 `author` 为 `false` 取消作者显示。
+You can configure `author` in the plugin options to set the default author. And you can also configure `author` in frontmatter with a new value in the page to override the default author, or set it to `false` to cancel the author display.
 
-作者支持 `string[]`、`string`、`AuthorInfo` 和 `AuthorInfo[]`。
+Authors support `string[]`, `string`, `AuthorInfo` and `AuthorInfo[]`.
 
-其中 AuthorInfo 格式如下:
+The format of AuthorInfo is as follows:
 
 ```ts
 interface AuthorInfo {
@@ -60,11 +60,11 @@ interface AuthorInfo {
 }
 ```
 
-### 写作日期
+### Writing time
 
-建议 time 以标准格式输入日期，即 `xxxx-xx-xx` 的形式，如 “2020 年 4 月 1 日” 应当输入为 `2020-04-01`
+We recommended to fill it with a standard date format. A standard format is in the form of `xxxx-xx-xx`, such as "April 1, 2020" should be written as `2020-04-01`.
 
-例子:
+Example:
 
 ```md
 ---
@@ -72,19 +72,19 @@ date: 2020-01-01
 ---
 ```
 
-### 分类与标签
+### Category and Tags
 
-详见 [博客章节](../blog/category-and-tags.md)
+See [blog section](../blog/category-and-tags.md) for details
 
-### 阅读时间
+### Reading time
 
-默认的统计方式是一分钟 300 字，你可以设置 `themeConfig.plugins.readingTime.wordPerMinute` 来覆盖它，该选项不支持在页面单独配置。
+The default statistic method is 300 words per minute. You can override it by setting `themeConfig.plugins.readingTime.wordPerMinute`. This option does not support individual configuration on the page.
 
-### 浏览量 <Badge text="支持页面配置" />
+### View Count <Badge text="Support page config" />
 
-当配置 Waline 作为 [评论功能](comment.md) 的提供者时，该功能默认启用。
+When using Waline as [Comment Service](comment.md), this function is enabled by default.
 
-例子:
+Example:
 
 ```md
 ---
@@ -92,4 +92,4 @@ pageview: false
 ---
 ```
 
-[components]: https://vuepress-theme-hope.github.io/v2/components/zh/
+[components]: https://vuepress-theme-hope.github.io/v2/components/

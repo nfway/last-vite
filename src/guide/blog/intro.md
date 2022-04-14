@@ -1,43 +1,43 @@
 ---
-title: 博客功能介绍
+title: Blog Intro
 icon: blog
 category:
-  - 博客
+  - Blog
 tag:
-  - 博客
-  - 介绍
+  - Blog
+  - Intro
 ---
 
-主题通过引入 `vuepress-plugin-blog2` 提供了博客支持，该功能是**默认禁用**的。
+The theme supports blog feature with`vuepress-plugin-blog2` by default, and it's **disabled by default**.
 
-如果你需要博客功能，你可以配置 `themeConfig.plugins.blog` 为 `true` 来启用博客功能。
+If you need blog functionality, you can set `themeConfig.plugins.blog` to `true` to enable blog functionality.
 
 <!-- more -->
 
-## 介绍
+## Intro
 
-启用博客功能后，主题允许你通过页面的 frontmatter，为页面配置分类、标签、是否是文章、是否出现在时间线中、收藏、置顶等功能。
+After enabling the blog function, the theme allows you to configure categories, tags, whether it is an article, whether it appears in the timeline, stars, sticky and other functions through the frontmatter of the page.
 
-::: tip 案例
+::: tip Demo
 
-[这里有一个案例](https://mrhope.site/) 以便你预览使用 `vuepress-theme-hope` 构建的博客站点。
+[Here is a demo](https://mrhope.site/en/) for you to preview blog sites built with `vuepress-theme-hope`.
 
 :::
 
-## 多语言支持
+## I18n Support
 
-主题已为博客系统适配多语言。你可以在 `themeConfig.locales` 中，分别为每一种语言指定属于自己的博客配置。
+The theme adds support for i18n in blog system. You can set differernt blog config for each language in `themeConfig.locales`.
 
-当你配置了多语言后，每个语言下的文章列表、时间线等会保持独立。
+When you have multiple languages, the article list, timeline, etc. under each language will remain independent.
 
-## 侧边栏
+## Sidebar
 
-主题提供了一个博客相关的侧边栏。该侧边栏会在博客相关的页面显示 (在桌面会显示在右侧，在移动视图下收起到侧边栏中)
+The theme provides a blog info sidebar. The sidebar will be displayed on the blog-related page (it will be displayed on the right side on the desktop, and retracted into the sidebar in mobile view)
 
-你可以在主题设置中通过 `blog.sidebarDisplay` 控制该侧边栏在非博客相关的页面的显示行为。可选的值有 `"mobile" | "none" | "always"`。默认为 `"mobile"`，即当你在移动视图下访问非博客相关的页面时，你也可以在侧边栏看到它。
+You can control the display behavior of the sidebar on non-blog related pages through `blog.sidebarDisplay` in themeConfig. Optional values are `"mobile" | "none" | "always"`. The default is `"mobile"`, that is, when you visit non-blog related pages in mobile view, you can also see it in the sidebar.
 
-## 分页配置
+## Pagination
 
-对于所有页面的文章列表，我们都会在底部显示一个分页组件。你可以通过这个组件快捷的在首页、尾页、前后两页进行跳转。你也可以输入数字跳转到指定页面。
+For the list of articles on all pages, we will display a pagination component at the bottom. You can use this component to quickly jump to the first page, the last page, and the two pages before and after. You can also enter a number to jump to the specified page.
 
-默认每个分页的文章数为 `10`，你可以在主题设置中配置 `blog.articlePerPage` 来覆盖它。
+The default number of articles per page is `10`, you can set `blog.articlePerPage` in themeConfig to override it.

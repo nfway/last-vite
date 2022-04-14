@@ -40,8 +40,8 @@ export default defineThemeConfig({
  ],
   
   author: {
-    name: "San Feng",
-    url: "https://3feng.im",
+    name: "Mr.Hope",
+    url: "https://mrhope.site",
   },
 
   iconPrefix: "iconfont icon-",
@@ -49,17 +49,25 @@ export default defineThemeConfig({
   editLink: false,
   logo: "/logo.svg",
 
-  footer: "MIT Licensed | Copyright © 2019-present Zhou SanFeng",
+  footer: "MIT Licensed | Copyright © 2019-present Mr.Hope",
   copyright: false,
   displayFooter: true,
 
   pageInfo: ["Category", "Tag", "ReadingTime"],
 
+<<<<<<< HEAD
+=======
+  locales: {
+    "/": {
+      navbar: enNavbarConfig,
+      sidebar: enSidebarConfig,
+    },
+  },
+>>>>>>> parent of c11cfce (Merge branch 'dev')
 
   plugins: {
-    blog: true,
+    blog: false,
     search: true,
-  
 
     mdEnhance: {
       enableAll: true,

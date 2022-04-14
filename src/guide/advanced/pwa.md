@@ -2,180 +2,176 @@
 title: PWA
 icon: setting
 category:
-  - 高级
+  - Advanced
 tag:
-  - 高级
+  - Advanced
   - PWA
 ---
 
-该主题将通过内置 [`vuepress-plugin-pwa2`][pwa2] 提供渐进式 Web 应用程序支持[^pwa-intro]，该功能默认禁用。
+The theme provides progressive web app support [^pwa-intro] via builtin [`vuepress-plugin-pwa2`][pwa2], and it's disabled by default.
 
-[^pwa-intro]: **PWA 介绍**
+[^pwa-intro]: **PWA introduction**
 
-    PWA 全称 Progressive Web app，即渐进式网络应用程序，标准由 W3C 规定。
+    PWA, full name Progressive Web app. PWA standard is stipulated by W3C.
 
-    它允许网站通过支持该特性的浏览器将网站作为 App 安装在对应平台上。
+    It allows sites to install the site as an App on supported platform through a browser that supports this feature.
 
 ::: info
 
-`vuepress-theme-hope` 将 `themeConfig.plugins` 中的 `pwa` 选项作为插件选项提供给 `vuepress-plugin-pwa2`。
+`vuepress-theme-hope` provides the `pwa` options in `themeConfig.plugins` as plugin options to `vuepress-plugin-pwa2`.
 
+You can set `pwa: true` to enable the plugin with default options. <Badge text="Not recommanded" type="warning" />
 :::
 
 <!-- more -->
 
-## 快速启用 <Badge text="不推荐" type="warning" />
+## Direct Enable <Badge text="Not recommended" type="warning" />
 
-你可以将 `themeConfig.plugins.pwa` 设置为 `true` 来让主题自动生成必要配置并快速启用插件。但我们推荐你按照下方说明对部分选项进行手动配置。
+You can set `themeConfig.plugins.pwa` to `true` to let theme automatically generate the necessary config and enable plugins quickly. However, we recommend you to manually set some options by following the instructions below.
 
-## 介绍
+## Intro
 
-Service Worker [^service-worker] (简称 SW) 主要用于获取并托管网站内容。
+Service Worker [^service-worker] (SW for short) is mainly used to cache and proxy site content.
 
-[^service-worker]: **Service Worker 简要介绍**
+[^service-worker]: **Service Worker Introduction**
 
-    1. Service Worker 会在注册过程中获取注册在其中的所有文件并缓存它们。
+    1. The Service Worker will get and cache all the files registered in it during the registration process.
 
-    1. 注册成功后，Service Worker 激活，并开始代理并控制你的全部请求。
+    1. After the registration complete, the Service Worker is activated, and starts to proxy and control all your requests.
 
-    1. 每当你想要通过浏览器发起访问请求后，Service Worker 将会查看其是否存在与自身缓存列表中，若存在则直接返回缓存好的结果，否则调用自身的 fetch 方法进行获取。你可以通过自定义 fetch 方法，来完全控制网页内资源获取请求的结果，比如在离线时提供一个 fallback 的网页。
+    1. Whenever you want to initiate an access request through the browser, the Service Worker will check whether it exists in its own cache list, if it exists, it will directly return the cached result, otherwise it will call its own fetch method to get it. You can use a custom fetch method to fully control the result of the request for resources in the web page, such as providing a fallback web page when offline.
 
-    1. 每次用户重新打开网站时，Service Worker 会向自身注册时的地址发出校验命令，如果检测到新版本的 Service Woker，则会更新自身，并开始缓存注册在新 Service Worker 中的资源列表。成功获取内容更新后，Service Worker 将会触发 `update` 事件。可以通过此事件提示用户，比如将在右下角显示一个弹出窗口，提示用户新内容可用并允许用户触发更新。
+    1. Every time the user reopens the site, the Service Worker will request to the link when it was registered. If a new version of Service Woker is detected, it will update itself and start caching the list of resources registered in the new Service Worker . After the content update is successfully obtained, the Service Worker will trigger the `update` event. The user can be notified through this event, for example, a pop-up window will be displayed in the lower right corner, prompting the user that new content is available and allowing the user to trigger an update.
 
-本插件会自动通过 `workbox-build` 注册 Service Woker。为了更好地控制 Service Worker 可以预缓存的内容，插件提供了下列设置。
+This plugin will automatically register Service Woker through `workbox-build`. To better control what the Service Worker can pre-cache, the plugin provides the following configurations.
 
 ::: tip
 
-如果你是一个高级用户，你可以直接在 `themeConfig.plugins.pwa` 中设置 `generateSwConfig` 来将选项传递给 `workbox-build`。
+If you are an advanced user, you can also set `generateSwConfig` in `themeConfig.plugins.pwa` directly to pass options to `workbox-build`.
 
 :::
 
-## 缓存控制
+## Cache control
 
-基于可安装性[^installable]的要求，插件提供了缓存控制的相关选项。
+Based on the requirement of installable [^installable], the plugin provides related options for cache control.
 
-[^installable]: **可安装性**
+[^installable]: **Installable**
 
-    想要让网站可以注册为 PWA，网站需要自行成功注册有效的 Service Worker，同时添加合法的 manifest 清单文件并在网站中声明它。
+    To let the site be registered as a PWA, the site needs to successfully register a valid service worker by itself, and at the same time add a valid manifest file and declare it.
 
-    各平台或浏览器对 Service Worker 缓存的大小有要求，当 Service Worker 缓存的文件体积过大后，该网站将会被标记为不可安装。对于 Safari 这个阈值是 50 MB，少数浏览器会设置更少或更多的值 (30MB, 70MB, 80MB)，最大的 Chrome 也将阈值标识在 100 MB。
+    Each platform or browser has requirements for the size of the Service Worker cache. When the file size of the Service Worker cache is too large, the site will be marked as not installable. For Safari, the threshold is 50 MB, a few browsers will set less or more values (30MB, 70MB, 80MB), and Chrome will mark the threshold at 100 MB.
 
-    另外，清单文件应至少包含 `name`(或 `short_name`) `icons` `start_url`。
+    The manifest file should contain at least `name` (or `short_name`) `icons` `start_url`
 
     ::: note
 
-    从 Chrome 93 起 Service Woker 必须含有有效的控制离线请求的 fetch 事件，才符合可安装性标准。
+    Starting from Chrome 93, Service Woker must contain effective fetch events to control offline requests.
 
-    但是插件目前并没有默认包含相关处理逻辑，所以在 Chrome 93 或更高版本的安卓设备上，网站不会弹出安装提示。
+    However, currently the plugin does not contain relevant processing logic by default, so on Android devices with Chrome 93 or later, the site will not pop up an installation prompt.
 
     :::
 
-### 默认缓存
+### Default cache
 
-默认情况下插件会预缓存所有的 JS、CSS 和 SVG 文件，但仅缓存主页和 404 页面的 HTML。
+By default, the plugin will pre-cache all the `js` `css` and `svg`.And only homepage and 404 `html` are cached.
 
-同时插件还会缓存字体文件: `**/*.{woff,woff2,eot,ttf,otf}`。
+At the same time, the plugin will cache font files: `**/*.{woff,woff2,eot,ttf,otf}`.
 
-### 图片缓存
+### Image Cache
 
-你可以在 `themeConfig.plugins.pwa` 中通过设置 `cachePic` 选项为 `true` 来缓存站点图片。
+You can cache site pictures by setting the `cachePic` option in `themeConfig.plugins.pwa` to `true`.
 
-如果你的站点体积不大，且配图大多为关键性说明，希望可以在离线模式下显示，建议将此项设置为 `true`。
+If your site is not large and the pictures are mostly critical descriptions, and hope to be displayed in offline mode, please set this option to `true`.
 
-::: info 图片识别
+::: info Image recognition
 
-我们通过文件后缀名识别图片，任何以 `.png`, `.jpg`, `.jpeg` , `.gif`, `.bmp`, `.webp` 结尾的文件都会视为图片。
-
-:::
-
-### HTML 缓存
-
-当你网站体积不大，并且希望文档完全离线可用时，你可以在 `themeConfig.plugins.pwa` 中通过设置 `cacheHTML` 为 `true` 来缓存所有 HTML 页面。
-
-::: tip 为什么默认不缓存非主页和 404 页面
-
-虽然说 VuePress 为所有的页面通过 SSR[^ssr] 生成了 HTML 文件，但是这些文件主要用于 SEO[^seo]，并能够让你在后端不做 SPA[^spa] 配置的情况下能够直接访问任何链接。
-
-[^ssr]: **SSR**: **S**erver **S**ide **R**endering，服务端渲染
-[^seo]: **SEO**: **S**earch **E**ngine **O**ptimization，搜索引擎增强，
-
-    详见 [SEO 介绍](https://mrhope.site/code/website/html/definition/seo.html)
-
-[^spa]: **SPA**: **S**ingle **P**age **A**pplication, 单页应用
-
-    大多只有主页，并使用 history mode 处理路由，而不是真的在页面之间导航。
-
-VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主页进入即可正常访问所有页面。所以默认不缓存其他 HTML 能够有效减小缓存大小 (可以缩减大约 40% 的体积)，加快 SW 更新速度。
-
-但是这样做也有缺点，如果用户直接从非主页进入网站，首个页面的 HTML 文件仍需要从互联网加载。同时离线环境下，用户只能通过主页进入再自行导航到对应页面，直接访问某个链接会出现无法访问的提示。
+We recognize images by file extension. Any files ending with `.png`, `.jpg`, `.jpeg`, `.gif`, `.bmp`, `.webp` will be regarded as images.
 
 :::
 
-### 大小控制
+### HTML cache
 
-为了防止在预缓存列表中包含大文件，任何大于 2MB 的文件或大于 1MB 的图片都将被删除。
+If you have small sites, and would like to make docusment fully offline available, you can set `cacheHTML` to `true` in `themeConfig.plugins.pwa` to cache all html files.
 
-你可以在 `themeConfig.plugins.pwa` 中通过 `maxSize` 选项自定义缓存的最大文件大小 (单位 KB)，或通过 `maxPicSize` 来更改图片的大小限制 (单位: KB)。
+::: tip Why only home and 404 page been cached by default?
 
-## 更新控制
+Though VuePress generates HTML files through SSR[^ssr] for all pages, these files are mainly used for SEO[^seo] and allow you to directly configure the backend without SPA[^spa] Visit any link.
 
-我们在 `themeConfig.plugins.pwa` 中提供 `update` 选项控制用户如何接收更新。
+[^ssr]: **SSR**: **S**erver **S**ide **R**endering,
+[^seo]: **SEO**: **S**earch **E**ngine **O**ptimization.
+[^spa]: **SPA**: **S**ingle **P**age **A**pplication, most of them only have the homepage, and use history mode to handle routing instead of actually navigating between pages.
 
-`update` 选项的默认值是 `"available"`，这意味着当网站内容更新后，新的 SW 会在后台静默安装，并在安装结束后弹窗提示用户新内容就绪。用户可以自主选择是否立即刷新查看新内容。
+VuePress is essentially a SPA. This means that you only need to cache the home page and enter from the home page to access all pages normally. Therefore, not caching other HTML by default can effectively reduce the cache size (40% smaller in size) and speed up the SW update speed.
 
-由于默认行为下，用户访问途中在 SW 就绪前都会阅读旧版本文档并且得不到相关提示。如果你的文档仍在建设期，希望尽早提示用户他可能在阅读已过时的内容，你可以将其设置为 `"hint"`。这样用户在进入文档后数秒内就可以收到新内容已发布的提示。但这样做的负面效果是如果用户在新 SW 就绪前选择更新，那么他将在新 SW 安装并接管页面前，需要从互联网获取页面的全部资源。
-
-如果你的文档很稳定，或者你在托管博客，不太关心用户立即接收到最新版本，你可以将其设置为 `"disabled"`，这意味着新的 SW 将在后台完全静默安装并在安装后等待，当旧版本 SW 控制的页面全部关闭后，用户下一次访问时，新 SW 将开始接管并提供用户新内容。此设置可以避免用户在访问途中被右下角的弹窗所打扰。
-
-如果你希望通过 SW 来加速用户在弱网或无网条件下的访问，但同时希望用户时刻访问新内容，你可以将此选项设置为 `"force"`。此选项的行为是在检测到新 SW 后立即注销旧 SW 并刷新页面以确保用户浏览最新内容。但我们强烈推荐除非必要不适用此选项，因为这会导致新 SW 发布后，用户在进入网站后的几秒内会遇到预期之外的突然刷新，并且他们将必须通过互联网访问文档并完全重新安装最新的 SW。
-
-### 更新提示弹窗
-
-当检测到新内容 (检测到新的 SW) 时， 更新提示弹窗将会在右下角显示，并允许用户刷新并应用。
-
-::: tip 自定义弹窗
-
-如果你对默认的弹窗不满意，你可以自行编写组件更换。你需要全局注册自己的弹窗组件，并将组件的名称传递给 `themeConfig.plugins.pwa.hintComponent` 选项。
+But this also has the disadvantage. If the user enters the website directly from a non-home page, the HTML file for the first page still needs to be loaded from the Internet. Also, in offline environment, users can only enter through the homepage and then navigate to the corresponding page by themselves. If they directly access a link, an inaccessible prompt will appear.
 
 :::
 
-### 更新就绪弹窗
+### Size control
 
-当新内容就绪 (新的 SW 安装成功并开始等待) 后，更新就绪弹窗将会在右下角显示，并允许用户刷新并应用。
+To prevent large files from being included in the pre-cache list, any files larger than 2MB or pictures larger than 1MB will be deleted.
 
-::: tip 自定义弹窗
+You can customize the maximum file size of the cache (unit: KB) with the `maxSize` option in `themeConfig.plugins.pwa`, or change the size limit of the picture (unit: KB) with `maxPicSize` in `themeConfig.plugins.pwa`.
 
-如果你对默认的弹窗不满意，你可以自行编写组件更换。你需要全局注册自己的弹窗组件，并将组件的名称传递给 `themeConfig.plugins.pwa.updateComponent` 选项。
+## Update Control
+
+We provide the `update` option in `themeConfig.plugins.pwa` to control how users receive updates.
+
+The default value of the `update` option is `"available"`, which means that when new content available, the new SW will be installed silently in the background, and a pop-up window will prompt the user that the new content is ready after SW finish installing. Users can choose whether to refresh immediately to view new content.
+
+Under the default behavior, users will still read old content before the SW is ready and they will not be prompted. If your project is still in building stage and you want to alert the user that he may be reading outdated content, you can set this to `"hint"`. This allows users to be notified that new content has been published within seconds after visiting docs. But the negative effect of this is that if the user chooses to update before the new SW is ready, he will need to get all the resources of the page from the internet before the new SW installs and controls the page.
+
+If your docs are stable, or you're hosting a blog and don't care much about users receiving the latest version right away, you can set this to `"disabled"`, which means that the new SW will be installed completely silently in the background and start waiting, when the pages controlled by the old version SW are all closed, the new SW will start to take control and provide users with new content the next time users visit. This setting can prevent users from being disturbed by the pop-up window in the bottom right corner during the visit.
+
+If you want to speed up user access under weak or no network conditions through SW, but also want users to always access new content, you can set this option to `"force"`. The behavior of this option is to unregister old SW as soon as a new SW is detected and refresh the page to ensure the user is browsing the latest content. But we strongly recommend not using this option unless necessary, as after a new SW is released, all users will experience unexpected sudden refresh within seconds after entering the site, and they will have to access the document over the internet and install the whole latest SW.
+
+### Update prompt popup
+
+When new content is detected (new SW detected), an update prompt popup will appear in the bottom right corner and allow the user to refresh and apply.
+
+::: tip custom popup
+
+If you are not satisfied with the default popup, you can write your own component. You need to register your own popup component globally and pass the name of the component to the `hintComponent` option in `themeConfig.plugins.pwa`.
 
 :::
 
-## 清单文件生成
+### Update ready popup
 
-为了保证 PWA 的可安装性，网站需要生成清单文件，并通过 `link` 声明有效的 manifest 清单文件地址[^manifest]。
+When the new content is ready (the new SW installed successfully and started waiting), the update ready popup will appear in the bottom right corner and allow the user to refresh and apply.
 
-[^manifest]: **清单文件**
+::: tip custom popup
 
-    清单文件使用 JSON 格式，负责声明 PWA 各项信息，如名称、描述、图标、快捷动作等。
+If you are not satisfied with the default popup, you can write your own component. You need to register your popup component globally and pass the name of the component to the `updateComponent` option in `themeConfig.plugins.pwa`.
 
-    为了使你的站点能够被注册为 PWA，你需要满足 manifest 基本的规范，才能使浏览器认为该网站为一个可安装的 PWA 并允许用户安装它。
+:::
+
+## Manifest file generation
+
+To ensure the installability of PWA, the site needs to generate a manifest file and declare a valid manifest file address [^manifest] through `link`.
+
+[^manifest]: **Manifest File**
+
+    The manifest file uses the JSON format and is responsible for declaring various information of the PWA, such as name, description, icon, and shortcut actions.
+
+    In order for your site to be registered as a PWA, you need to meet the basic specifications of the manifest to make the browser consider the site as an installable PWA and allow users to install it.
 
     ::: info
 
-    Manifest 的标准与规范，请详见 [W3C Manifest](https://w3c.github.io/manifest/)
+    For Manifest standards and specifications, please see [W3C Manifest](https://w3c.github.io/manifest/)
 
     :::
 
-插件会在输出目录自动为你生成 Manifest 文件 `manifest.webmanifest`，同时还会添加清单地址声明到每一个 HTML 的 `<head>` 中。
+The plugin will automatically generate the Manifest file `manifest.webmanifest` for you in the output directory, and will also add the manifest address statement to each HTML `<head>`.
 
-如果你在 `.vuepress/public` 中已有一个 `manifest.webmanifest` 或 `manifest.json`，该插件将读取它并合并到最终 manifest 中。
+If you already have a `manifest.webmanifest` or `manifest.json` in `.vuepress/public`, the plugin will read and merge it into the final manifest.
 
-### 自动生成
+### Automatic generation
 
-插件会尽可能的通过 VuePress 插件接口的信息，为 manifest 的大部分设置项设置 fallback，这意味着即使你无需设置 manifest 的大多数内容。
+The plugin will use the information from the VuePress plugin API and set the fallback for fields in manifest as much as possible. So you don’t need to set most of the manifest fields.
 
-如果未设置下列选项，它们会按照顺序依次尝试回退到以下预设值。
+If the following fields are not set, they will try to fallback to the following preset values in order.
 
-| 选项                        | 默认值                                                                                                  |
+| Options                     | Default value                                                                                           |
 | --------------------------- | ------------------------------------------------------------------------------------------------------- |
 | name                        | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `"Site"`                                   |
 | short_name                  | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `"Site"`                                   |
@@ -189,45 +185,45 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 | orientation                 | `"portrait-primary"`                                                                                    |
 | prefer_related_applications | `false`                                                                                                 |
 
-完整的配置项详见 [Manifest 类型定义文件](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/pwa2/src/shared/manifest.ts)。
+For complete configuration items, please see [Manifest Type Definition File](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/pwa2/src/shared/manifest.ts).
 
-### 手动配置
+### Manual configuration
 
-你可以在 `themeConfig.plugins.pwa` 中通过 `manifest` 选项中手动指定 manifest 的各项内容。
+You can manually specify the contents of the manifest in the `manifest` option in `themeConfig.plugins.pwa`.
 
-::: tip 优先级
+::: tip Priority
 
-`manifest` 选项的设置具有最高的优先级，之后是 `public` 文件夹下可能存在的 manifest 文件。
+`manifest` option in `themeConfig.plugins.pwa` has the highest priority, followed by manifest files that may exist in the `public` folder.
 
 :::
 
-**你至少应该通过 `manifest.icons` 或 PWA 插件中的其他选项设置一个有效的图标。** 因为这是我们没法默认生成的。
+**You should at least set a valid icon through `manifest.icons` in `themeConfig.plugins.pwa` or other icon related options in the PWA plugin.**
 
 ::: warning
 
-可安装性[^installable]规范要求 manifest 中至少声明一个有效的图标。
+The installability [^installable] specification requires at least one valid icon to be declared in the manifest.
 
-所以如果你不在 `themeConfig.plugins.pwa` 中配置 `manifest.icons`，访问者只能享受到 Service Worker 缓存带来的离线可访问性，而并不能作为 PWA 进行安装。
+So if you do not configure `manifest.icons` in `themeConfig.plugins.pwa`, visitors can only enjoy the offline accessibility brought by the Service Worker cache, while cannot install your site as a PWA.
 
-此外，该插件默认不处理清单中的任何内容，而是按原样输出。 这意味着，如果你计划部署到子目录，则应自行将 url 前缀附加到自己的清单 Urls 中。
+Besides the plugin does not process anything in the manifest by default, but outputs them as-is. This means that if you plan to deploy to a subdirectory, you should append the url prefix to manifest Urls yourself.
 
-但是，如果你需要的所有东西都在 base 文件夹下，你可以在 `themeConfig.plugins.pwa` 中设置 `appendBase: true` 让插件将 `base` 自动附加到任何地址。
+But, if everything you need is all under base folder, you can set `appendBase: true` in `themeConfig.plugins.pwa` to let the plugin append `base` to any Urls in
 
 :::
 
-## 其他选项
+## Other options
 
-插件还提供了其他 PWA 相关选项，比如微软磁贴图标与颜色设置，苹果图标等。
+The plugin also provides other PWA-related options, such as Microsoft tile icon and color settings, Apple icon and so on.
 
-你可以酌情根据需要设置它们。详细的选项请见 [PWA 插件配置](../../config/plugins/pwa.md)。
+You can set them as needed. For detailed options, please see [PWA config](../../config//plugins/pwa.md).
 
-## 相关阅读
+## Further Reading
 
-更多内容，请详见:
+For more details, please see:
 
-- [PWA 插件文档][pwa2]
+- [PWA plugin docs][pwa2]
 - [Google PWA](https://web.dev/progressive-web-apps/)
-- [MDN PWA](https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps)
-- [W3C Manifest 规范](https://w3c.github.io/manifest/)
+- [MDN PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
+- [W3C Manifest Specification](https://w3c.github.io/manifest/)
 
-[pwa2]: https://vuepress-theme-hope.github.io/v2/pwa/zh/
+[pwa2]: https://vuepress-theme-hope.github.io/v2/pwa/

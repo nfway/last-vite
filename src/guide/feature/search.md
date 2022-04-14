@@ -1,128 +1,73 @@
 ---
-title: 搜索
+title: Search
 icon: search
 category:
-  - 功能
+  - Feature
 tag:
-  - 功能
-  - 搜索
+  - Feature
+  - Search
 ---
 
-主题对 [`@vuepress/search`][search] 和 [`@vuepress/docsearch`][docsearch] 提供了内置支持。
+The theme adds built-in support for [`@vuepress/search`][search] and [`@vuepress/docsearch`][docsearch].
 
 ::: warning
 
-为了保持主题的简洁性，我们不会声明这两个插件的依赖，你需要手动安装需要的插件。
+To keep the theme simple, we will not add these two plugins as dependencies , so install the needed plugin yourself.
 
 :::
 
 <!-- more -->
 
-## 使用 `@vuepress/search`
+## use `@vuepress/search`
 
-你可以通过 `themeConfig.plugins.search` 传递插件选项。
+You can pass plugin options via `themeConfig.plugins.search`.
 
-关于插件的可用选项，详见 [插件文档][search]。
+See [Plugin Docs][search] for the available options for search plugin.
 
-### `@vuepress/search` 本地化翻译
+## use `@vuepress/docsearch`
 
-如果你正在提供中文文档，你可以将其设置到 `themeConfig.plugins.search.locales[对应路径]` 中。
+You can pass plugin options via `themeConfig.plugins.docsearch`.
 
-::::: details 中文多语言配置
+In order to use the plugin properly, you need to pass in `apiKey`, `indexName` and `appId` correctly, and set up the Algolia Crawler correctly according to the following requirements.
 
-:::: code-group
+::: details Crawler Config Example
 
-::: code-group-item TS
-
-```ts
-// .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
-
-export default defineHopeConfig({
-  themeConfig: {
-    plugins: {
-      search: {
-        locales: {
-          "/zh/": {
-            placeholder: "搜索",
-          },
-        },
-      },
-    },
-  },
-});
-```
-
-:::
-
-::: code-group-item JS
-
-```js
-// .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
-
-module.exports = defineHopeConfig({
-  themeConfig: {
-    plugins: {
-      search: {
-        locales: {
-          "/zh/": {
-            placeholder: "搜索",
-          },
-        },
-      },
-    },
-  },
-});
-```
-
-:::
-
-:::::
-
-## 使用 `@vuepress/docsearch`
-
-你可以通过 `themeConfig.plugins.docsearch` 传递插件选项。
-
-为了正常的使用插件，你需要正确传入 `apiKey`、`indexName` 和 `appId`，并按照下列要求正确设置 Algolia Crawler。
-
-::: details 爬虫配置示例
-
-```js {36-50,58}
+```js {35-51,60}
 new Crawler({
   appId: "YOUR_APP_ID",
   apiKey: "YOUR_API_KEY",
   rateLimit: 8,
   startUrls: [
-    // 这是 Algolia 开始抓取网站的初始地址
-    // 如果你的网站被分为数个独立部分，你可能需要在此设置多个入口链接
+    // These are urls which algolia start to craw
+    // If your site is divided in to mutiple parts,
+    // you may want to set mutiple entry links
     "https://YOUR_WEBSITE_URL/",
   ],
   sitemaps: [
-    // 如果你在使用 Sitemap 插件 (如: vuepress-plugin-sitemap2)，你可以提供 Sitemap 链接
+    // if you are using sitemap plugins (e.g.: vuepress-plugin-sitemap2), you may provide one
     "https://YOUR_WEBSITE_URL/sitemap.xml",
   ],
   ignoreCanonicalTo: false,
   exclusionPatterns: [
-    // 你可以通过它阻止 Algolia 抓取某些 URL
+    // You can use this to stop algolia crawing some paths
   ],
   discoveryPatterns: [
-    // 这是 Algolia 抓取 URL 的范围
+    // These are urls which algolia looking for,
     "https://YOUR_WEBSITE_URL/**",
   ],
-  // 爬虫执行的计划时间，可根据文档更新频率设置
+  // Crawler schedule, set it according to your docs update frequency
   schedule: "at 02:00 every 1 day",
   actions: [
-    // 你可以拥有多个 action，特别是你在一个域名下部署多个文档时
+    // you may have mutiple actions, especially when you are deploying mutiple docs under one domain
     {
-      // 使用适当的名称为索引命名
+      // name the index with name you like
       indexName: "YOUR_INDEX_NAME",
-      // 索引生效的路径
+      // paths where the index take effect
       pathsToMatch: ["https://YOUR_WEBSITE_URL/**"],
-      // 控制 Algolia 如何抓取你的站点
+      // controls how algolia extracts records from your site
       recordExtractor: ({ $, helpers }) => {
-        // 以下是适用于 vuepress-theme-hope 的默认选项选项
-        // vuepress-theme-hope 默认的容器类名为 theme-hope-content
+        // The following are the default options for vuepress-theme-hope
+        // vuepress-theme-hope default container class name is theme-hope-content
         return helpers.docsearch({
           recordProps: {
             lvl0: {
@@ -143,8 +88,9 @@ new Crawler({
     },
   ],
   initialIndexSettings: {
-    // 控制索引如何被初始化，这仅当索引尚未生成时有效
-    // 你可能需要在修改后手动删除并重新生成新的索引
+    // controls how index are initialized
+    // only has effects before index are initialize
+    // you may need to delete your index and recraw after modification
     YOUR_INDEX_NAME: {
       attributesForFaceting: ["type", "lang"],
       attributesToRetrieve: ["hierarchy", "content", "anchor", "url"],
@@ -217,157 +163,19 @@ new Crawler({
 
 ::: warning
 
-Crawler 配置中 `initialIndexSettings.YOUR_INDEX_NAME.attributesForFaceting` 字段**必须**包含 `"lang"`，否则该插件将无法正常工作。
+`initialIndexSettings.YOUR_INDEX_NAME.attributesForFaceting` field **must** contain `"lang"`, otherwise the plugin will not work properly.
 
 :::
 
-关于插件的可用选项，详见 [插件文档][docsearch]。
+See [Plugin Docs][docsearch] for the available options for docsearch plugin.
 
-### `@vuepress/docsearch` 本地化翻译
-
-你可以通过 `themeConfig.plugins.docsearch.locales` 配置多语言。
-
-::::: details 中文多语言配置示例
-
-:::: code-group
-
-::: code-group-item TS
-
-```ts
-// .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
-
-export default defineHopeConfig({
-  themeConfig: {
-    plugins: {
-      docsearch: {
-        // ...
-
-        locales: {
-          "/zh/": {
-            placeholder: "搜索文档",
-            translations: {
-              button: {
-                buttonText: "搜索文档",
-                buttonAriaLabel: "搜索文档",
-              },
-              modal: {
-                searchBox: {
-                  resetButtonTitle: "清除查询条件",
-                  resetButtonAriaLabel: "清除查询条件",
-                  cancelButtonText: "取消",
-                  cancelButtonAriaLabel: "取消",
-                },
-                startScreen: {
-                  recentSearchesTitle: "搜索历史",
-                  noRecentSearchesText: "没有搜索历史",
-                  saveRecentSearchButtonTitle: "保存至搜索历史",
-                  removeRecentSearchButtonTitle: "从搜索历史中移除",
-                  favoriteSearchesTitle: "收藏",
-                  removeFavoriteSearchButtonTitle: "从收藏中移除",
-                },
-                errorScreen: {
-                  titleText: "无法获取结果",
-                  helpText: "你可能需要检查你的网络连接",
-                },
-                footer: {
-                  selectText: "选择",
-                  navigateText: "切换",
-                  closeText: "关闭",
-                  searchByText: "搜索提供者",
-                },
-                noResultsScreen: {
-                  noResultsText: "无法找到相关结果",
-                  suggestedQueryText: "你可以尝试查询",
-                  openIssueText: "你认为该查询应该有结果？",
-                  openIssueLinkText: "点击反馈",
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  },
-});
-```
-
-:::
-
-::: code-group-item JS
-
-```js
-// .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
-
-module.exports = defineHopeConfig({
-  themeConfig: {
-    plugins: {
-      docsearch: {
-        // ...
-
-        locales: {
-          "/zh/": {
-            placeholder: "搜索文档",
-            translations: {
-              button: {
-                buttonText: "搜索文档",
-                buttonAriaLabel: "搜索文档",
-              },
-              modal: {
-                searchBox: {
-                  resetButtonTitle: "清除查询条件",
-                  resetButtonAriaLabel: "清除查询条件",
-                  cancelButtonText: "取消",
-                  cancelButtonAriaLabel: "取消",
-                },
-                startScreen: {
-                  recentSearchesTitle: "搜索历史",
-                  noRecentSearchesText: "没有搜索历史",
-                  saveRecentSearchButtonTitle: "保存至搜索历史",
-                  removeRecentSearchButtonTitle: "从搜索历史中移除",
-                  favoriteSearchesTitle: "收藏",
-                  removeFavoriteSearchButtonTitle: "从收藏中移除",
-                },
-                errorScreen: {
-                  titleText: "无法获取结果",
-                  helpText: "你可能需要检查你的网络连接",
-                },
-                footer: {
-                  selectText: "选择",
-                  navigateText: "切换",
-                  closeText: "关闭",
-                  searchByText: "搜索提供者",
-                },
-                noResultsScreen: {
-                  noResultsText: "无法找到相关结果",
-                  suggestedQueryText: "你可以尝试查询",
-                  openIssueText: "你认为该查询应该有结果？",
-                  openIssueLinkText: "点击反馈",
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  },
-});
-```
-
-:::
-
-::::
-
-:::::
-
-## 补充说明
+## Additional Info
 
 ::: note
 
-除了通过 themeConfig 传递选项外你也可以自行在 [VuePress 配置文件](../../cookbook/vuepress/config.md) 通过 `plugins` 调用对应插件。
+You can also call plugins via `plugins` in the [VuePress config file](../../cookbook/vuepress/config.md).
 
 :::
 
-[docsearch]: https://v2.vuepress.vuejs.org/zh/reference/plugin/docsearch.html
-[search]: https://v2.vuepress.vuejs.org/zh/reference/plugin/search.html
+[docsearch]: https://v2.vuepress.vuejs.org/reference/plugin/docsearch.html
+[search]: https://v2.vuepress.vuejs.org/reference/plugin/search.html

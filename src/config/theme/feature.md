@@ -1,151 +1,149 @@
 ---
-title: 主题功能配置
+title: Theme Feature Config
 icon: config
 category:
-  - 配置
+  - Config
 tag:
-  - 主题配置
-  - 功能
+  - Feature
+  - Theme Config
 ---
 
-这些是主题功能的配置项。
+These are config items of features provided by theme.
 
-## 博客配置
+## Blog config
 
-此功能通过 [`vuepress-plugin-blog2`][blog2] 提供，默认禁用。
+This feature is built on [`vuepress-plugin-blog2`][blog2], and is disabled by default.
 
-要启用博客插件并使用默认选项，你可以将 `themeConfig.plugins.blog` 设置为 `true`。
+To enable blog plugin and use default options, you can set `themeConfig.plugins.blog` to `true`.
 
 ::: warning
 
-除非你启用博客插件，否则以下选项将不起作用。
+The following options will have NO effects unless you enable blog plugin.
 
-有关详细信息，请参阅 [博客功能介绍](../../guide/blog/intro.md)。
+For details, see [Blog Feature Intro](../../guide/blog/intro.md).
 
 :::
 
 ### blog.name
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-博主姓名，默认为 `themeConfig.author` 的名称
+Blogger name, default is name in `themeConfig.author`
 
 ### blog.avatar
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-博主头像，默认为 `themeConfig.logo`
+Blogger avatar, default is `themeConfig.logo`
 
 ### blog.description
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-口号、座右铭或介绍语。
+Motto, slogan or a short description.
 
 ### blog.intro
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-博主的个人介绍地址。
+Personal introduction address of the blogger.
 
 ::: note
 
-填写后将可以点击“博主信息”中的头像或姓名进入个人介绍页。
+Visitors can click on the avatar or name in "Blogger Information" to enter the personal introduction page.
 
 :::
 
 ### blog.medias
 
-- 类型: `Record<MediaType, string>`
-- 必填: 否
+- Type: `Record<string, string | [string, string]>`
+- Required: No
 
-博主的媒体链接配置。
+Set social links.
 
-- 如果社交媒体已在下方列表中，你可以直接设置 `社交媒体名称: 社交媒体地址`。
-- 否则，你应该传入一个元组 `社交媒体名称: [社交媒体地址, 社交媒体 SVG 图标字符串或图标路径]`,
+- If the social media icon is available below, you can set `MediaName: MediaLink` directly.
+- Otherwise, you should pass in a tuple `MediaName: [MediaLink , MediaIconSvgString or MediaIconPath]`,
 
-::: tip 可用的社交媒体
+::: tip Available social media:
 
-以下社交媒体具有内置图标:
+The following social medias has built-in icons:
 
-- `"Baidu"`: 百度
-- `"Bitbucket"`: Bitbucket
-- `"Dingding"`: 钉钉
-- `"Discord"`: Discord
-- `"Dribbble"`: Dribbble
-- `"Email"`: 邮件
-- `"Evernote"`: 印象笔记
-- `"Facebook"`: 脸书
-- `"Flipboard"`: 红板报
-- `"Gitee"`: 码云
-- `"GitHub"`: GitHub
-- `"Gitlab"`: Gitlab
-- `"Gmail"`: 谷歌邮箱
-- `"Instagram"`: Instagram
-- `"Line"`: Line
-- `"Linkedin"`: 领英
-- `"Pinterest"`: 拼趣
-- `"Pocket"`: Pocket
-- `"QQ"`: QQ
-- `"Qzone"`: QQ 空间
-- `"Reddit"`: 红迪
-- `"Rss"`: RSS 地址
-- `"Steam"`: 蒸汽
-- `"Twitter"`: 推特
-- `"Wechat"`: 微信
-- `"Weibo"`: 微博
-- `"Whatsapp"`:瓦次艾普
-- `"Youtube"`: 油管
-- `"Zhihu"`: 知乎
-
-(请不要好奇为什么这里一定要加上特别奇怪的中文翻译)
+- `"Baidu"`
+- `"Bitbucket"`
+- `"Dingding"`
+- `"Discord"`
+- `"Dribbble"`
+- `"Email"`
+- `"Evernote"`
+- `"Facebook"`
+- `"Flipboard"`
+- `"Gitee"`
+- `"GitHub"`
+- `"Gitlab"`
+- `"Gmail"`
+- `"Instagram"`
+- `"Line"`
+- `"Linkedin"`
+- `"Pinterest"`
+- `"Pocket"`
+- `"QQ"`
+- `"Qzone"`
+- `"Reddit"`
+- `"Rss"`
+- `"Steam"`
+- `"Twitter"`
+- `"Wechat"`
+- `"Weibo"`
+- `"Whatsapp"`
+- `"Youtube"`
+- `"Zhihu"`
 
 :::
 
 ### blog.roundAvatar
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否剪裁头像为圆形形状
+Whether cliping the avatar with round shape
 
 ### blog.sidebarDisplay
 
-- 类型: `"mobile" | "none" | "always"`
-- 默认值: `"mobile"`
+- Type: `"mobile" | "none" | "always"`
+- Default: `"mobile"`
 
-是否在侧边栏展示博主信息。
+Whether to show blogger information in the sidebar
 
-- `"mobile"`: 在移动视图中显示在侧边栏中
-- `"always"`: 总是展示在侧边栏中
-- `"none"`: 永远不在侧边栏展示
+- `"mobile"`: Show in sidebar in mobile view
+- `"always"`: Always show in the sidebar
+- `"none"`: Never show in the sidebar
 
 ### blog.timeline
 
-- 类型: `string`
-- 默认值: `"昨日不在"`
+- Type: `string`
+- Default: `"Yesterday once more"`
 
-时间轴的顶部文字。
+Text on the top of timeline page.
 
 ### blog.articlePerPage
 
-- 类型: `number`
-- 默认: `10`
+- Type: `number`
+- Default: `10`
 
-每页的文章数量。
+Article number per page
 
 ### blog.articleInfo
 
-- 类型: `ArticleInfo[]`
-- 默认: `["Author", "Original", "Date", "PageView", "Category", "Tag", "ReadingTime"]`
+- Type: `ArticleInfo[]`
+- Default: `["Author", "Original", "Date", "PageView", "Category", "Tag", "ReadingTime"]`
 
-文章列表中展示的文章信息
+Article info displayed in article list
 
-`ArticleInfo` 的可选值如下:
+Available values for `ArticleInfo`:
 
 - `"Author"`
 - `"Category"`
@@ -155,46 +153,46 @@ tag:
 - `"ReadingTime"`
 - `"Word"`
 
-## 加密配置 <Badge text="仅限 Root" type="warning" />
+## Encrypt Config <Badge text="Root only" type="warning" />
 
 ::: note
 
-你只能在 `themeConfig` 下直接设置此选项，在各语言中分别配置**没有任何效果**。
+You can only set this option directly under `themeConfig`, setting it in each loclae **has NO effect**.
 
 :::
 
 ### encrypt.global
 
-- 类型: `boolean`
-- 默认值: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否全局加密。
+Whether to encrypt globally.
 
 ### encrypt.admin
 
-- 类型: `string | string[]`
-- 必填: 否
+- Type: `string | string []`
+- Required: No
 
-最高权限密码，可以以数组的形式设置多个。
+Admin password with highest authority, you can set multiple by using array.
 
 ### encrypt.config
 
-- 类型: `Record<string, string | string[]>`
-- 必填: 否
+- Type: `Record <string, string | string []>`
+- Required: No
 
-加密配置，为一个对象，键名为匹配的路径，键值为对应的密码，接受字符串或字符串数组。
+The encryption configuration is an object with a key name matching the path and a key-value corresponding to a password that accepts a string or an array of strings.
 
-::: details 例子
+::: details Example
 
 ```js
 {
-  // 这会加密整个 guide 目录，并且两个密码都是可用的
+  // This will encrypt the entire guide directory and both passwords will be available
   "/guide/": ["1234", "5678"],
-  // 这只会加密 config/page.html
+  // this will only encrypt config/page.html
   "/config/page.html": "1234"
 }
 ```
 
 :::
 
-[blog2]: https://vuepress-theme-hope.github.io/v2/blog/zh/
+[blog2]: https://vuepress-theme-hope.github.io/v2/blog/

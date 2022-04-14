@@ -1,18 +1,19 @@
 ---
-title: 上下角标
+title: Superscript and Subscript
 icon: superscript
 category:
   - Markdown
 tag:
   - Markdown
-  - 上下角标
+  - Superscript
+  - Subscript
 ---
 
-让你的 VuePress 站点中的 Markdown 文件支持上下角标。
+Let the Markdown file in your VuePress site support Subscript and Superscript.
 
 <!-- more -->
 
-## 配置
+## Config
 
 :::: code-group
 
@@ -26,9 +27,9 @@ export default defineHopeConfig({
   themeConfig: {
     plugins: {
       mdEnhance: {
-        // 启用下角标功能
+        // Enable Subscript
         sub: true,
-        // 启用上角标
+        // Enable  Superscript
         sup: true,
       },
     },
@@ -48,9 +49,9 @@ module.exports = defineHopeConfig({
   themeConfig: {
     plugins: {
       mdEnhance: {
-        // 启用下角标功能
+        // Enable Subscript
         sub: true,
-        // 启用上角标
+        // Enable  Superscript
         sup: true,
       },
     },
@@ -62,12 +63,12 @@ module.exports = defineHopeConfig({
 
 ::::
 
-## 语法
+## Syntax
 
-- 使用`^ ^`进行上角标标注。
-- 使用`~ ~`进行下角标标注。
+- Use `^ ^` to mark the superscript.
+- Use `~ ~` to mark the subscript.
 
-## 例子
+## Demo
 
 - 19^th^
 - H~2~O

@@ -1,42 +1,42 @@
 ---
-title: 图片预览
+title: Image Preview
 icon: preview
 category:
-  - 功能
+  - Feature
 tag:
-  - 功能
-  - 图片浏览
+  - Feature
+  - Image Preview
 ---
 
-通过内置 [vuepress-plugin-photo-swipe][photo-swipe], vuepress-theme-hope 会使页面正文内的图片在点击时进入浏览模式浏览。
+By including [vuepress-plugin-photo-swipe][photo-swipe], vuepress-theme-hope will make the pictures in the body of the page enter the preview mode when clicked.
 
-如果你不需要此功能，请在 `themeConfig.plugins` 中设置 `photoSwipe` 为 `false`。
+If you don’t need this feature, you can set `photoSwipe` in `themeConfig.plugins` to `false` to disable it.
 
 <!-- more -->
 
-## 浏览模式
+## Browse Mode
 
-在浏览模式中，你可以:
+In preview mode, you can:
 
-- 左右滑动按顺序浏览页面内其他的图片
-- 查看图片的描述
-- 对图片进行缩放
-- 全屏浏览图片
-- 下载图片
-- 分享图片
+- Swipe left and right to preview other pictures on the page in order
+- View the description of the picture
+- Zoom in and zoom out the picture
+- View pictures in full screen
+- Download pictures
+- Share pictures
 
 ::: tip
 
-- 除了点击右上角的 "×" 退出浏览模式外，在上下滚动超过一定距离后，会自动退出图片浏览模式
-- 在移动端，或使用 PC 触控板，你可以使用平移、缩放手势在浏览模式中平移、缩放图片
+- Besides clicking "×" in the upper right corner to exit the preview mode, scrolling up and down more than a certain distance will also exit preview mode
+- On cellphones, or using the PC trackpad, you can use pan and zoom gestures to pan and zoom in the preview mode
 
 :::
 
-## 自定义配置
+## Customize config
 
-`themeConfig.plugin.photoSwipe` 会作为插件选项传入 [`vuepress-plugin-photo-swipe][photo-swipe]。 你可以查看 [插件文档][photo-swipe] 来来进行高级配置。
+`themeConfig.plugin.photoSwipe` is passed as plugin options to [`vuepress-plugin-photo-swipe][photo-swipe]. You can check the [plugin documentation][photo-swipe] for advanced configuration.
 
-## 演示
+## Demo
 
 <!-- markdownlint-disable -->
 

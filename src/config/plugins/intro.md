@@ -1,114 +1,114 @@
 ---
-title: 插件说明
+title: Plugin Description
 icon: info
 category:
-  - 配置
+  - Config
 tag:
-  - 插件配置
-  - 主题配置
-  - 介绍
+  - Intro
+  - Plugin Config
+  - Theme Config
 ---
 
-`vuepress-theme-hope` 会调用很多 VuePress 插件。
+`vuepress-theme-hope` bundles many VuePress plugins.
 
-- 一些插件会自动启用，如果你不需要，可以在 `themeConfig` 中将其禁用;
-- 一些插件只有你在进行必要配置后才会启用。
+- Some plugins are automatically enabled, you can disable them in `themeConfig` if you don’t need it;
+- Some plugins are only enabled when you provide necessary options.
 
 ::: note
 
-作为 [VuePress Org](https://github.com/orgs/vuepress/people) 的成员之一，Mr.Hope 开发了很多 VuePress 插件。
+As a member of [VuePress Org](https://github.com/orgs/vuepress/people), Mr. Hope has developed many VuePress plugins.
 
-`vuepress-theme-hope` 调用的所有插件均为官方插件或托管在 `vuepress-theme-hope` 仓库下由 Mr.Hope 自己开发的插件。
+All plugins called by `vuepress-theme-hope` are official plugins or plugins developed by Mr. Hope which hosted under the `vuepress-theme-hope` repository.
 
-- 官方插件的文档详见 [VuePress2 官网][vuepress]
-- Mr.Hope 自己开发的插件也全部拥有自己的文档，可以搭配其他主题使用。
+- For the documentation of the official plugin, see [VuePress2 official website][vuepress]
+- All plugins developed by Mr.Hope have their own documentation and can be used with other themes.
 
 :::
 
 <!-- more -->
 
-## 配置插件
+## Plugin Config
 
-主题提供 `plugins` 选项向对应的插件传递所需选项。
+The theme provides `plugins` option to pass options to plugins.
 
-::: info 配置键名
+::: info Config Key Name
 
-所有的配置键名均为插件名称的驼峰式 (camelcase) 版本，并去除名称中可能存在的数字 2 结尾。
+All keys in `plugins` option are the camelcase version of the plugin name, with the number `2` ending in the name removed.
 
-例如: `vuepress-plugin-copy-code2` 的配置键名为 `copyCode`。
+For example: `vuepress-plugin-copy-code2` has a configuration key named `copyCode`.
 
 :::
 
-## 插件列表
+## plugin list
 
-### Mr.Hope 提供的插件
+### Plugins provided by Mr.Hope
 
-- [vuepress-plugin-blog2][blog2]: VuePress2 的博客插件
+- [vuepress-plugin-blog2][blog2]: Blog plugin for VuePress2
 
-- [vuepress-plugin-comment2][comment2]: 提供评论与浏览量功能
+- [vuepress-plugin-comment2][comment2]: Provides comment and pageview function
 
-- [@mr-hope/vuepress-plugin-components][components]: 提供一些开箱即用的插件
+- [@mr-hope/vuepress-plugin-components][components]: Provides some plugins out of the box
 
-- [vuepress-plugin-copy-code2][copy-code2]: 提供一键复制代码块功能。
+- [vuepress-plugin-copy-code2][copy-code2]: Provides one-click copy code block function.
 
-- [vuepress-plugin-feed2][feed2]: Feed 支持
+- [vuepress-plugin-feed2][feed2]: Feed support
 
-- [vuepress-plugin-md-enhance][md-enhance]: 提供更多 Markdown 语法
+- [vuepress-plugin-md-enhance][md-enhance]: Provides more Markdown syntax
 
-- [vuepress-plugin-photo-swipe][photo-swipe]: 基于 Photo Swipe 的图片浏览插件
+- [vuepress-plugin-photo-swipe][photo-swipe]: Image preview plugin based on photo-swipe
 
-- [vuepress-plugin-pwa2][pwa2]: 增强的 PWA 支持
+- [vuepress-plugin-pwa2][pwa2]: Enhanced PWA support
 
-- [vuepress-plugin-reading-time2][reading-time2]: 阅读时间与字数统计
+- [vuepress-plugin-reading-time2][reading-time2]: Reading time and word count
 
-- [vuepress-plugin-sass-palette][sass-palette]: 面向全部插件和主题的 Sass 配置插件
+- [vuepress-plugin-sass-palette][sass-palette]: Sass style plugin for all plugins and themes
 
-- [vuepress-plugin-seo2][seo2]: SEO 增强插件
+- [vuepress-plugin-seo2][seo2]: SEO enhancement plugin
 
 ::: tip
 
-这里还有一些其他没有被主题默认启用的插件，你可以根据自己的需求自行启用。
+Here are some other plugins that are not enabled by default by the theme, you can enable them according to your own needs.
 
-- [vuepress-plugin-add-this][add-this]: 基于 AddThis 的分享插件
+- [vuepress-plugin-add-this][add-this]: Share plugin based on AddThis
 
-- [vuepress-plugin-lightgallery][lightgallery]: 基于 lightgallery 图片浏览插件
+- [vuepress-plugin-lightgallery][lightgallery]: Image preview plugin based on lightgallery
 
 :::
 
-### 官方插件
+### Official plugin
 
-- [@vuepress/plugin-active-header-links][active-header-links]: 自动更新路由 Hash
+- [@vuepress/plugin-active-header-links][active-header-links]: Automatically update route Hash
 
-- [@vuepress/plugin-container][container]: 自定义容器
+- [@vuepress/plugin-container][container]: custom container
 
-- [@vuepress/external-link-icon][external-link-icon]: 为 Markdown 的外部链接添加外部链接图标。
+- [@vuepress/external-link-icon][external-link-icon]: Add external link icon for external links in Markdown.
 
-- [@vuepress/plugin-git][git]: 基于 Git 的信息插件
+- [@vuepress/plugin-git][git]: Git-based info plugin
 
-- [@vuepress/plugin-nprogress][nprogress]: 进度条
+- [@vuepress/plugin-nprogress][nprogress]: progress bar
 
-- [@vuepress/plugin-prismjs][prismjs]: 基于 prism.js 的代码高亮插件
+- [@vuepress/plugin-prismjs][prismjs]: Code highlighting plugin using Prism.js
 
-- [@vuepress/plugin-theme-data][theme-data]: 主题配置的 Composition API 插件
+- [@vuepress/plugin-theme-data][theme-data]: Composition API plugin for themeConfig
 
-[add-this]: https://vuepress-theme-hope.github.io/v2/add-this/zh/
-[blog2]: https://vuepress-theme-hope.github.io/v2/blog/zh/
-[comment2]: https://vuepress-theme-hope.github.io/v2/comment/zh/
-[components]: https://vuepress-theme-hope.github.io/v2/components/zh/
-[copy-code2]: https://vuepress-theme-hope.github.io/v2/copy-code/zh/
-[feed2]: https://vuepress-theme-hope.github.io/v2/feed/zh/
-[lightgallery]: https://vuepress-theme-hope.github.io/v2/lightgallery/zh/
-[md-enhance]: https://vuepress-theme-hope.github.io/v2/md-enhance/zh/
-[photo-swipe]: https://vuepress-theme-hope.github.io/v2/photo-swipe/zh/
-[pwa2]: https://vuepress-theme-hope.github.io/v2/pwa/zh/
-[reading-time2]: https://vuepress-theme-hope.github.io/v2/reading-time/zh/
-[sass-palette]: https://vuepress-theme-hope.github.io/v2/sass-palette/zh/
-[seo2]: https://vuepress-theme-hope.github.io/v2/seo/zh/
-[active-header-links]: https://v2.vuepress.vuejs.org/zh/reference/plugin/active-header-links.html
-[container]: https://v2.vuepress.vuejs.org/zh/reference/plugin/container.html
-[external-link-icon]: https://v2.vuepress.vuejs.org/zh/reference/plugin/external-link-icon.html
-[git]: https://v2.vuepress.vuejs.org/zh/reference/plugin/git.html
-[nprogress]: https://v2.vuepress.vuejs.org/zh/reference/plugin/nprogress.html
-[prismjs]: https://v2.vuepress.vuejs.org/zh/reference/plugin/prismjs.html
-[theme-data]: https://v2.vuepress.vuejs.org/zh/reference/plugin/theme-data.html
-[vuepress]: https://v2.vuepress.vuejs.org/zh/
+[add-this]: https://vuepress-theme-hope.github.io/v2/add-this/
+[blog2]: https://vuepress-theme-hope.github.io/v2/blog/
+[comment2]: https://vuepress-theme-hope.github.io/v2/comment/
+[components]: https://vuepress-theme-hope.github.io/v2/components/
+[copy-code2]: https://vuepress-theme-hope.github.io/v2/copy-code/
+[feed2]: https://vuepress-theme-hope.github.io/v2/feed/
+[lightgallery]: https://vuepress-theme-hope.github.io/v2/lightgallery/
+[md-enhance]: https://vuepress-theme-hope.github.io/v2/md-enhance/
+[photo-swipe]: https://vuepress-theme-hope.github.io/v2/photo-swipe/
+[pwa2]: https://vuepress-theme-hope.github.io/v2/pwa/
+[reading-time2]: https://vuepress-theme-hope.github.io/v2/reading-time/
+[sass-palette]: https://vuepress-theme-hope.github.io/v2/sass-palette/
+[seo2]: https://vuepress-theme-hope.github.io/v2/seo/
+[active-header-links]: https://v2.vuepress.vuejs.org/reference/plugin/active-header-links.html
+[container]: https://v2.vuepress.vuejs.org/reference/plugin/container.html
+[external-link-icon]: https://v2.vuepress.vuejs.org/reference/plugin/external-link-icon.html
+[git]: https://v2.vuepress.vuejs.org/reference/plugin/git.html
+[nprogress]: https://v2.vuepress.vuejs.org/reference/plugin/nprogress.html
+[prismjs]: https://v2.vuepress.vuejs.org/reference/plugin/prismjs.html
+[theme-data]: https://v2.vuepress.vuejs.org/reference/plugin/theme-data.html
+[vuepress]: https://v2.vuepress.vuejs.org/

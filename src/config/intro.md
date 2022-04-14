@@ -1,29 +1,29 @@
 ---
-title: 配置介绍
+title: Config Intro
 icon: config
 category:
-  - 配置
+  - Config
 tag:
-  - 介绍
+  - Intro
 ---
 
-## 配置概念
+## Config Concepts
 
-VuePress 主要通过目录下的 `.vuepress/` 文件夹存放配置和需要的文件。
+VuePress mainly stores config and required files through the `.vuepress/` folder in the directory.
 
 ::: info
 
-关于 VuePress 的文件结构，详见 [VuePress 基础 → 文件结构](../cookbook/vuepress/file.md)。
+For the file structure of VuePress, see [VuePress Basics → File Structure](../cookbook/vuepress/file.md).
 
 :::
 
-在 VuePress 中，有三种配置概念：
+In VuePress, there are three config concepts:
 
-- 站点配置: 这是你在配置文件中直接导出的对象
-- 主题配置: 配置文件中的 `themeConfig` 对象
-- 页面配置: 由在页面顶部基于 YAML 语法的 Frontmatter 提供
+- Site Config: this is the object you export directly in the config file
+- Theme Config: `themeConfig` object in the config file
+- Page Config: provided by Frontmatter at the top of the page based on YAML syntax
 
-## 使用主题
+## Theme Usage
 
 :::: code-group
 
@@ -34,9 +34,9 @@ VuePress 主要通过目录下的 `.vuepress/` 文件夹存放配置和需要的
 import { defineHopeConfig } from "vuepress-theme-hope";
 
 export default defineHopeConfig({
-  // 此处放置配置
+  // siteConfig here
   themeConfig: {
-    // 此处放置主题配置
+    // themeConfig here
   },
 });
 ```
@@ -50,9 +50,9 @@ export default defineHopeConfig({
 const { defineHopeConfig } = require("vuepress-theme-hope");
 
 module.exports = defineHopeConfig({
-  // 此处放置配置
+  // siteConfig here
   themeConfig: {
-    // 此处放置主题配置
+    // themeConfig here
   },
 });
 ```

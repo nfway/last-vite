@@ -1,24 +1,24 @@
 ---
-title: 导航栏
+title: NavBar
 icon: navbar
 category:
-  - 布局
+  - Layout
 tag:
-  - 布局
-  - 导航栏
+  - Layout
+  - Navbar
 ---
 
-导航栏可能包含你的站点名称、[搜索框](#搜索框)、 [导航栏链接](#导航栏链接)、[多语言支持](https://v2.vuepress.vuejs.org/zh/guide/i18n.html)、[仓库链接](#git-仓库和编辑链接) 和 [外观弹窗](#外观弹窗)。它们均取决于你的配置。
+The Navbar may contain your site title, [Search Box](#search-box), [Navbar Links](#navbar-links), [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), [Repository Link](#git-repo-and-edit-links) and [outlook panel](#outlook-panel). They all depend on your configuration.
 
 <!-- more -->
 
-## 导航栏链接
+## Navbar Links
 
-你可以通过 `themeConfig.navbar` 配置导航栏链接，它接受一个数组。
+You can add links to the navbar via `themeConfig.navbar`, it accepts an array.
 
-### 字符串格式
+### String format
 
-配置导航栏最简单的方式，是依次填入需要展示的页面文件的路径，这样导航栏的文字、图标和链接会自动通过对应文件生成。
+The easiest way to configure the navigation bar is to fill in the paths of the page files to be displayed in turn, so that the text, icons and links of the item will be automatically generated from the corresponding files.
 
 :::: code-group
 
@@ -30,7 +30,7 @@ import { defineHopeConfig } from "vuepress-theme-hope";
 
 export default defineHopeConfig({
   themeConfig: {
-    navbar: ["/zh/guide/README.md", "/zh/config/README.md", "/zh/faq.md"],
+    navbar: ["/guide/README.md", "/config/README.md", "/faq.md"],
   },
 });
 ```
@@ -45,7 +45,7 @@ const { defineHopeConfig } = require("vuepress-theme-hope");
 
 module.exports = defineHopeConfig({
   themeConfig: {
-    navbar: ["/zh/guide/README.md", "/zh/config/README.md", "/zh/faq.md"],
+    navbar: ["/guide/README.md", "/config/README.md", "/faq.md"],
   },
 });
 ```
@@ -56,18 +56,18 @@ module.exports = defineHopeConfig({
 
 ::: tip
 
-你可以省略 `.md` 扩展名，以 `/` 结尾的路径会被推断为 `/README.md`。
+You can omit the `.md` extension, and paths ending with `/` are inferred as `/README.md`.
 
 :::
 
-### 对象格式
+### Object format
 
-如果你对页面的图标不满意或者觉得页面标题太长，你可以改为配置一个对象。可用的配置项有:
+If you are not satisfied with the page’s icon or feel that the page title is too long, you can configure an object instead. Available configuration items are:
 
-- `text:`: 项目文字
-- `link`: 项目链接
-- `icon`: 项目图标 (可选)
-- `activeMatch`: 项目激活匹配 (可选)，支持正则字符串。
+- `text:`: item text
+- `link`: item link
+- `icon`: item icon (optional)
+- `activeMatch`: item active math (optional), support regexp strings
 
 :::: code-group
 
@@ -81,20 +81,20 @@ export default defineHopeConfig({
   themeConfig: {
     navbar: [
       {
-        text: "指南",
-        link: "/zh/guide/README.md",
+        text: "Guide",
+        link: "/guide/README.md",
         icon: "creative",
-        // 仅在 `/zh/guide/` 激活
-        activeMatch: "^/zh/guide/$",
+        // only active in `/guide/`
+        activeMatch: "^/guide/$",
       },
-      { text: "配置", link: "/zh/config/README.md", icon: "config" },
+      { text: "Config", link: "/config/README.md", icon: "config" },
       {
-        text: "常见问题",
-        link: "/zh/faq.md",
+        text: "FAQ",
+        link: "/faq.md",
         icon: "question",
-        // 会在 `/zh/faq` 开头的路径激活
-        // 所以当你前往 `/zh/faq/xxx.html` 时也会激活
-        activeMatch: "^/zh/faq",
+        // active in path starting with `/faq`
+        // so it will active in path like `/faq/xxx.html`
+        activeMatch: "^/zh/faq/",
       },
     ],
   },
@@ -113,20 +113,20 @@ module.exports = defineHopeConfig({
   themeConfig: {
     navbar: [
       {
-        text: "指南",
-        link: "/zh/guide/README.md",
+        text: "Guide",
+        link: "/guide/README.md",
         icon: "creative",
-        // 仅在 `/zh/guide/` 激活
-        activeMatch: "^/zh/guide/$",
+        // only active in `/guide/`
+        activeMatch: "^/guide/$",
       },
-      { text: "配置", link: "/zh/config/README.md", icon: "config" },
+      { text: "Config", link: "/config/README.md", icon: "config" },
       {
-        text: "常见问题",
-        link: "/zh/faq.md",
+        text: "FAQ",
+        link: "/faq.md",
         icon: "question",
-        // 会在 `/zh/faq` 开头的路径激活
-        // 所以当你前往 `/zh/faq/xxx.html` 时也会激活
-        activeMatch: "^/zh/faq",
+        // active in path starting with `/faq`
+        // so it will active in path like `/faq/xxx.html`
+        activeMatch: "^/zh/faq/",
       },
     ],
   },
@@ -137,23 +137,23 @@ module.exports = defineHopeConfig({
 
 ::::
 
-::: tip activeMatch 的高级用法
+::: tip Advanced usage of activeMatch
 
-`activeMatch` 主要给予你控制路径是否激活的能力，比如你可能有如下链接:
+`activeMatch` gives you the ability to control whether the path is active, for example you may have the following dropdown:
 
 - `/path/`
 - `/path/a/`
 - `/path/b/`
 
-此时你可能想避免在 `/path/a/` 以及 `/path/b/` 开头的路径下，出现两个菜单同时激活的情况。将第一项的 `activeMatch` 选项设置为 `^/path/(?:(?!a/|b/).*)?$` 就可以有效避免。
+But you may have multiple folders with files under `/path/`. To avoid mutiple dropown items been actived under route starting with `/path/a/` or `/path/b/`, you can set `activeMatch` option for the first item with `^/path/(?:(?!a/|b/).*)?$`.
 
 :::
 
-### 下拉列表
+### Dropdown list
 
-如果你需要展示较多的链接，你可以将同类链接整理成下拉列表。
+If you need to display more links, you can group similar links into a dropdown list.
 
-你需要设置对象式导航栏配置项，并提供额外的 `children` 选项设置链接列表:
+You need use object format and provide the additional `children` option to nest links:
 
 :::: code-group
 
@@ -167,9 +167,9 @@ export default defineHopeConfig({
   themeConfig: {
     navbar: [
       {
-        text: "基础",
+        text: "Basic",
         icon: "info",
-        children: ["/zh/basic/markdown.md", "/zh/basic/vuepress.md"],
+        children: ["/basic/markdown.md", "/basic/vuepress.md"],
       },
     ],
   },
@@ -188,9 +188,9 @@ module.exports = defineHopeConfig({
   themeConfig: {
     navbar: [
       {
-        text: "基础",
+        text: "Basic",
         icon: "info",
-        children: ["/zh/basic/markdown.md", "/zh/basic/vuepress.md"],
+        children: ["/basic/markdown.md", "/basic/vuepress.md"],
       },
     ],
   },
@@ -201,9 +201,9 @@ module.exports = defineHopeConfig({
 
 ::::
 
-由于大多数情况下，导航栏的分组项目都属于同一类别，会放在同一个子目录下，它们具有相同的路径前缀。
+In most cases, the grouped items in the navigation bar belong to the same category and will be placed in the same subdirectory, and they have the same path prefix.
 
-为了简化配置，你可以添加 `prefix` 字段为分组的每一个子链接添加一个前缀:
+To simplify the configuration, you can add the `prefix` field to add a prefix to each sub-link in the group:
 
 :::: code-group
 
@@ -217,9 +217,9 @@ export default defineHopeConfig({
   themeConfig: {
     navbar: [
       {
-        text: "基础",
+        text: "Basic",
         icon: "info",
-        prefix: "/zh/basic/",
+        prefix: "/basic/",
         children: ["markdown.md", "vuepress.md"],
       },
     ],
@@ -239,9 +239,9 @@ module.exports = defineHopeConfig({
   themeConfig: {
     navbar: [
       {
-        text: "基础",
+        text: "Basic",
         icon: "info",
-        prefix: "/zh/basic/",
+        prefix: "/basic/",
         children: ["markdown.md", "vuepress.md"],
       },
     ],
@@ -253,7 +253,7 @@ module.exports = defineHopeConfig({
 
 ::::
 
-此外，你还可以通过嵌套的 `children` 来在下拉列表中设置分组:
+You can also have sub groups inside a dropdown by having nested `children`:
 
 :::: code-group
 
@@ -267,19 +267,21 @@ export default defineHopeConfig({
   themeConfig: {
     navbar: [
       {
-        text: "插件列表",
-        icon: "plugin",
+        text: "Project",
+        icon: "info",
         children: [
           {
-            text: "内置插件",
+            text: "Built in Plugins",
+            icon: "plugin",
             children: [
-              /* 一些子项目 */
+              /* Some items */
             ],
           },
           {
-            text: "外部插件",
+            text: "Third party Plugins",
+            icon: "plugin",
             children: [
-              /* 一些子项目 */
+              /* Some items */
             ],
           },
         ],
@@ -301,19 +303,21 @@ module.exports = defineHopeConfig({
   themeConfig: {
     navbar: [
       {
-        text: "插件列表",
-        icon: "plugin",
+        text: "Project",
+        icon: "info",
         children: [
           {
-            text: "内置插件",
+            text: "Built in Plugins",
+            icon: "plugin",
             children: [
-              /* 一些子项目 */
+              /* Some items */
             ],
           },
           {
-            text: "外部插件",
+            text: "Third party Plugins",
+            icon: "plugin",
             children: [
-              /* 一些子项目 */
+              /* Some items */
             ],
           },
         ],
@@ -327,9 +331,9 @@ module.exports = defineHopeConfig({
 
 ::::
 
-## 禁用导航栏
+## Disable navbar
 
-你可以设置 `navbar: false` 来禁用所有页面的导航栏:
+To disable the navbar globally, set `navbar: false` in `themeConfig`:
 
 :::: code-group
 
@@ -365,7 +369,7 @@ module.exports = defineHopeConfig({
 
 ::::
 
-你也可以通过 `YAML front matter` 来禁用某个指定页面的导航栏:
+You can disable the navbar for a specific page via `YAML front matter`:
 
 ```md
 ---
@@ -373,17 +377,17 @@ navbar: false
 ---
 ```
 
-## 网站图标
+## Site logo
 
-你可以使用 `themeConfig.logo` 来配置站点的图标，请填入绝对路径。
+You can use `themeConfig.logo` to configure the logo displayed in navigation bar.
 
-::: note 笔记
+::: note
 
-请填写绝对路径并将 logo 放在 `.vuepress/public` 文件夹中。
+Please fill in the absolute path and place the logo in `.vuepress/public` folder.
 
 :::
 
-配置图标后，图标将移动设备上取代先前的站点名称显示在导航栏上。
+After logo is set, the logo will be displayed on the navigation bar instead of the previous site name on mobile.
 
 :::: code-group
 
@@ -421,13 +425,13 @@ module.exports = defineHopeConfig({
 
 ::: tip
 
-你可以设置 `themeConfig.logoDark` 以在深色模式下显示另一个 Logo。
+You can set `themeConfig.logoDark` to display another logo in dark mode.
 
 :::
 
-## 多语言
+## I18n Support
 
-主题的导航栏支持 [多语言](https://v2.vuepress.vuejs.org/zh/guide/i18n.html)，所以你可以为每个语言单独设置上面提到的导航栏选项:
+The theme’s navbar supports [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), so you can set navbar options mentioned above individually in each language:
 
 :::: code-group
 
@@ -443,13 +447,13 @@ export default defineHopeConfig({
       "/": {
         logo: "/logo.svg",
         navbar: [
-          /* 根目录下的英文配置 */
+          /* English config under root */
         ],
       },
       "/zh/": {
         logo: "/zh-logo.svg",
         navbar: [
-          /* 中文目录下的中文配置 */
+          /* Chinese config under zh folder */
         ],
       },
     },
@@ -471,13 +475,13 @@ module.exports = defineHopeConfig({
       "/": {
         logo: "/logo.svg",
         navbar: [
-          /* 根目录下的英文配置 */
+          /* English config under root */
         ],
       },
       "/zh/": {
         logo: "/zh-logo.svg",
         navbar: [
-          /* 中文目录下的中文配置 */
+          /* Chinese config under zh folder */
         ],
       },
     },
@@ -489,65 +493,66 @@ module.exports = defineHopeConfig({
 
 ::::
 
-## 搜索框
+## Search Box
 
-`vuepress-theme-hope` 同默认主题一样，带来了搜索插件的内置支持。你可以根据自己的需要来自行启用下列的插件。导航栏会自动出现对应的搜索框。
+Like the default theme, `vuepress-theme-hope` brings built-in support for search plugins. You can enable the following plugins according to your own needs. The corresponding search box will automatically appear in the navigation bar.
 
-### 本地搜索
+### Local Search
 
-你可以通过 `@vuepress/plugin-search` 插件来实现本地搜索。你需要手动安装它，并通过 `themeConfig.plugins.search` 传递插件选项。(你也可以自行调用)
+You can implement local search via the `@vuepress/plugin-search` plugin. index. You need to install it manually, passing plugin options via `themeConfig.plugins.search`. (You can also call it yourself)
 
 ::: info
 
-默认情况下，插件只会提取页面的标题作为搜索索引。
+By default, the plugin will only extract page headings to generate search
 
-相关的配置及说明详见 [官方文档][plugin-search]。
+For related configuration and instructions, see [official documentation][plugin-search].
 
 :::
 
-### Algolia 搜索
+### Algolia DocSearch
 
-你可以通过 `@vuepress/plugin-docsearch` 插件来实现基于 Algolia 的搜索。你需要手动安装它，并通过 `themeConfig.plugins.docsearch` 传递插件选项。(你也可以自行调用)
+You can implement Algolia-based search via the `@vuepress/plugin-docsearch` plugin. You need to install it manually, passing plugin options via `themeConfig.plugins.docsearch`. (You can also call it yourself)
 
-你需要 [提交你的网站 URL](https://docsearch.algolia.com/apply/) 来加入 DocSearch 项目。当你的索引成功创建后， DocSearch 团队会将 appId 和 apiKey 发送到你的邮箱。接下来，你就可以配置 Algolia clawer 和该插件，在 VuePress 中启用 DocSearch 了。
+You need to [submit the URL of your site](https://docsearch.algolia.com/apply/) to join the DocSearch program. The DocSearch team will send appId and apiKey to your email. Next, you can configure the Algolia clawer and the plugin to enable DocSearch in VuePress.
 
-::: details 爬虫配置示例
+::: details Crawler Config Example
 
-```js {36-50,58}
+```js {35-51,60}
 new Crawler({
   appId: "YOUR_APP_ID",
   apiKey: "YOUR_API_KEY",
   rateLimit: 8,
   startUrls: [
-    // 这是 Algolia 开始抓取网站的初始地址
-    // 如果你的网站被分为数个独立部分，你可能需要在此设置多个入口链接
+    // These are urls which algolia start to craw
+    // If your site is divided in to mutiple parts,
+    // you may want to set mutiple entry links
     "https://YOUR_WEBSITE_URL/",
   ],
   sitemaps: [
-    // 如果你在使用 Sitemap 插件 (如: vuepress-plugin-sitemap2)，你可以提供 Sitemap 链接
+    // if you are using sitemap plugins (e.g.: vuepress-plugin-sitemap2), you may provide one
     "https://YOUR_WEBSITE_URL/sitemap.xml",
   ],
   ignoreCanonicalTo: false,
   exclusionPatterns: [
-    // 你可以通过它阻止 Algolia 抓取某些 URL
+    // You can use this to stop algolia crawing some paths
   ],
   discoveryPatterns: [
-    // 这是 Algolia 抓取 URL 的范围
+    // These are urls which algolia looking for,
     "https://YOUR_WEBSITE_URL/**",
   ],
-  // 爬虫执行的计划时间，可根据文档更新频率设置
+  // Crawler schedule, set it according to your docs update frequency
   schedule: "at 02:00 every 1 day",
   actions: [
-    // 你可以拥有多个 action，特别是你在一个域名下部署多个文档时
+    // you may have mutiple actions, especially when you are deploying mutiple docs under one domain
     {
-      // 使用适当的名称为索引命名
+      // name the index with name you like
       indexName: "YOUR_INDEX_NAME",
-      // 索引生效的路径
+      // paths where the index take effect
       pathsToMatch: ["https://YOUR_WEBSITE_URL/**"],
-      // 控制 Algolia 如何抓取你的站点
+      // controls how algolia extracts records from your site
       recordExtractor: ({ $, helpers }) => {
-        // 以下是适用于 vuepress-theme-hope 的默认选项选项
-        // vuepress-theme-hope 默认的容器类名为 theme-hope-content
+        // The following are the default options for vuepress-theme-hope
+        // vuepress-theme-hope default container class name is theme-hope-content
         return helpers.docsearch({
           recordProps: {
             lvl0: {
@@ -568,8 +573,9 @@ new Crawler({
     },
   ],
   initialIndexSettings: {
-    // 控制索引如何被初始化，这仅当索引尚未生成时有效
-    // 你可能需要在修改后手动删除并重新生成新的索引
+    // controls how index are initialized
+    // only has effects before index are initialize
+    // you may need to delete your index and recraw after modification
     YOUR_INDEX_NAME: {
       attributesForFaceting: ["type", "lang"],
       attributesToRetrieve: ["hierarchy", "content", "anchor", "url"],
@@ -640,21 +646,21 @@ new Crawler({
 
 :::
 
-或者，你也可以 [运行你自己的爬虫](https://docsearch.algolia.com/docs/run-your-own/) 来创建索引，然后使用你自己的 [appId](#appId), [apiKey](#apikey) 和 [indexName](#indexname) 来配置该插件。
+Alternatively, you can [run your own crawler](https://docsearch.algolia.com/docs/run-your-own/) to generate the index, and then use your own [appId](#appId), [apiKey](#apikey) and [indexName](#indexname) to configure this plugin.
 
 ::: warning
 
-Crawler 配置中 `initialIndexSettings.YOUR_INDEX_NAME.attributesForFaceting` 字段**必须**包含 `"lang"`，否则该插件将无法正常工作。
+`initialIndexSettings.YOUR_INDEX_NAME.attributesForFaceting` field **must** contain `"lang"`, otherwise the plugin will not work properly.
 
 :::
 
-相关的配置及说明详见 [官方文档][plugin-docsearch]。
+For related configuration and instructions, see [Official Documentation][plugin-docsearch].
 
-## Git 仓库和编辑链接
+## Git repository and Edit Links
 
-当你提供了 `themeConfig.repo` 选项，将会自动在每个页面的导航栏生成源文件仓库按钮。
+Providing `themeConfig.repo` auto generates a repo button in the navbar.
 
-你可以通过 `themeConfig.repoDisplay` 控制是否显示仓库按钮。
+You can control whether showing the repository button via `themeConfig.repoDisplay`.
 
 :::: code-group
 
@@ -666,12 +672,12 @@ import { defineHopeConfig } from "vuepress-theme-hope";
 
 export default defineHopeConfig({
   themeConfig: {
-    // 默认为 GitHub. 同时也可以是一个完整的 URL
-    repo: "vuepress-theme-hope/vuepress-theme-hope",
-    // 自定义仓库链接文字。默认从 `themeConfig.repo` 中自动推断为
-    // "GitHub" / "GitLab" / "Gitee" / "Bitbucket" 其中之一，或是 "Source"。
+    // Assumes GitHub. Can also be a full GitLab url.
+    repo: "vuejs/vuepress",
+    // Customising the header label
+    // Defaults to "GitHub" / "GitLab" / "Gitee" / "Bitbucket" or "Source" depending on `themeConfig.repo`
     repoLabel: "GitHub",
-    // 是否在导航栏内显示仓库链接，默认为 `true`
+    // Whether to display repo link, default is `true`
     repoDisplay: true,
   },
 });
@@ -687,12 +693,12 @@ const { defineHopeConfig } = require("vuepress-theme-hope");
 
 module.exports = defineHopeConfig({
   themeConfig: {
-    // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
+    // Assumes GitHub. Can also be a full GitLab url.
     repo: "vuejs/vuepress",
-    // 自定义仓库链接文字。默认从 `themeConfig.repo` 中自动推断为
-    // "GitHub"/"GitLab"/"Bitbucket" 其中之一，或是 "Source"。
-    repoLabel: "查看源码",
-    // 是否在导航栏右侧显示仓库链接，默认为 `true`
+    // Customising the header label
+    // Defaults to "GitHub" / "GitLab" / "Gitee" / "Bitbucket" or "Source" depending on `themeConfig.repo`
+    repoLabel: "GitHub",
+    // Whether to display repo link, default is `true`
     repoDisplay: true,
   },
 });
@@ -702,21 +708,21 @@ module.exports = defineHopeConfig({
 
 ::::
 
-## 外观弹窗
+## Outlook Popup
 
-提供下列三种功能:
+The following three functions are provided:
 
-- [主题色切换](../interface/theme-color.md)
-- [深色模式](../interface/darkmode.md)
-- [全屏按钮](../interface/others.md#全屏按钮)
+- [Theme color switch](../interface/theme-color.md)
+- [Dark Mode](../interface/darkmode.md)
+- [FullScreen button](../interface/others.md#fullscreen-button)
 
-## 相关助手与类型
+## Types and Helpers
 
-`vuepress-theme-hope` 将导航栏的类型导出为 `HopeThemeNavbarConfig`，同时，提供了一个 `defineNavbarConfig` Helper 函数。它们可以在 TS 和 JS 中提供导航栏配置的校验与自动补全。
+`vuepress-theme-hope` exports the type of navigation bar as `HopeThemeNavbarConfig`, and provides a `defineNavbarConfig` helper function. They can provide validation and autocompletion of navbar configuration in TS and JS.
 
 ::: tip
 
-它们主要应对当你将 VuePress 配置拆分成多个部分的情景。
+They mainly deal with scenarios when you split your VuePress configuration into multiple parts.
 
 :::
 
@@ -729,20 +735,20 @@ module.exports = defineHopeConfig({
 import { defineNavbarConfig } from "vuepress-theme-hope";
 
 export default defineNavbarConfig([
-  /* 你的导航栏配置 */
+  /* Your navbar configuration */
 ]);
 ```
 
 :::
 
-::: code-group-item TS 类型
+::: code-group-item TS Type
 
 ```ts
 // .vuepress/navbar.ts
 import type { HopeThemeNavbarConfig } from "vuepress-theme-hope";
 
 const navbarConfig: HopeThemeNavbarConfig = [
-  /* 你的导航栏配置 */
+  /* Your navbar configuration */
 ];
 
 export default navbarConfig;
@@ -757,7 +763,7 @@ export default navbarConfig;
 const { defineNavbarConfig } = require("vuepress-theme-hope");
 
 module.exports = defineNavbarConfig([
-  /* 你的导航栏配置 */
+  /* Your navbar configuration */
 ]);
 ```
 
@@ -765,110 +771,110 @@ module.exports = defineNavbarConfig([
 
 ::::
 
-## 例子
+## Demo
 
-::::: details 本文档的导航栏配置
+::::: details Configuration of this documentation
 
 :::: code-group
 
 ::: code-group-item TS
 
-@[code](../../../.vuepress/navbar/zh.ts)
+@[code](../../.vuepress/navbar/en.ts)
 
 :::
 
 ::: code-group-item JS
 
 ```js
+// .vuepress/navbar.js
 const { defineNavbarConfig } = require("vuepress-theme-hope");
 
 module.exports = defineNavbarConfig([
-  "/zh/guide/",
-  "/zh/config/",
-  "/zh/faq/",
+  "/guide/",
+  "/config/",
+  "/faq/",
   {
-    text: "教程",
+    text: "Cookbook",
     icon: "guide",
-    prefix: "/zh/cookbook/",
+    prefix: "/cookbook/",
     children: ["tutorial", "markdown/", "vuepress/"],
   },
-  "/zh/migration/",
+  "/migration/",
   {
-    text: "项目",
+    text: "Project",
     icon: "info",
-    prefix: "/zh/",
     children: [
-      "changelog",
-      "demo/",
-      "contribution",
+      "/changelog",
+      "/demo/",
+      "/contribution",
       {
-        text: "插件",
+        text: "Plugins",
         icon: "plugin",
         children: [
           {
-            text: "AddThis 插件",
+            text: "AddThis Plugin",
             icon: "share",
-            link: "https://vuepress-theme-hope.github.io/v2/add-this/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/add-this/",
           },
           {
-            text: "博客插件",
+            text: "Blog Plugin",
             icon: "blog",
-            link: "https://vuepress-theme-hope.github.io/v2/blog/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/blog/",
           },
           {
-            text: "评论插件",
+            text: "Comment Plugin",
             icon: "comment",
-            link: "https://vuepress-theme-hope.github.io/v2/comment/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/comment/",
           },
           {
-            text: "组件库",
+            text: "Components Plugin",
             icon: "plugin",
-            link: "https://vuepress-theme-hope.github.io/v2/components/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/components/",
           },
           {
-            text: "代码复制插件",
+            text: "Copy Code Plugin",
             icon: "copy",
-            link: "https://vuepress-theme-hope.github.io/v2/copy-code/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/copy-code/",
           },
           {
-            text: "Feed 插件",
+            text: "Feed Plugin",
             icon: "rss",
-            link: "https://vuepress-theme-hope.github.io/v2/feed/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/feed/",
           },
           {
-            text: "LightGallery 插件",
+            text: "LightGallery Plugin",
             icon: "pic",
-            link: "https://vuepress-theme-hope.github.io/v2/lightgallery/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/lightgallery/",
           },
           {
-            text: "Markdown 增强插件",
+            text: "Markdown Enhance Plugin",
             icon: "markdown",
-            link: "https://vuepress-theme-hope.github.io/v2/md-enhance/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/md-enhance/",
           },
           {
-            text: "图片预览插件",
+            text: "Photo Swipe Plugin",
             icon: "pic",
-            link: "https://vuepress-theme-hope.github.io/v2/photo-swipe/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/photo-swipe/",
           },
           {
-            text: "PWA 插件",
+            text: "PWA Plugin",
             icon: "app",
-            link: "https://vuepress-theme-hope.github.io/v2/pwa/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/pwa/",
           },
           {
-            text: "阅读时间插件",
+            text: "Reading Time Plugin",
             icon: "read",
-            link: "https://vuepress-theme-hope.github.io/v2/reading-time/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/reading-time/",
           },
           {
-            text: "Sass 调色板插件",
+            text: "Sass Palette Plugin",
             icon: "palette",
-            link: "https://vuepress-theme-hope.github.io/v2/sass-palette/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/sass-palette/",
           },
           {
-            text: "Seo 插件",
+            text: "Seo Plugin",
             icon: "strong",
-            link: "https://vuepress-theme-hope.github.io/v2/seo/zh/",
+            link: "https://vuepress-theme-hope.github.io/v2/seo/",
           },
         ],
       },
@@ -883,5 +889,5 @@ module.exports = defineNavbarConfig([
 
 :::::
 
-[plugin-search]: https://v2.vuepress.vuejs.org/zh/reference/plugin/search.html
-[plugin-docsearch]: https://v2.vuepress.vuejs.org/zh/reference/plugin/docsearch.html
+[plugin-search]: https://v2.vuepress.vuejs.org/reference/plugin/search.html
+[plugin-docsearch]: https://v2.vuepress.vuejs.org/reference/plugin/docsearch.html

@@ -29,11 +29,20 @@ export default defineHopeConfig({
 
   locales: {
     "/": {
+<<<<<<< HEAD
       lang: "zh-CN",
       title: "这不是一个中文标题",
       description: "一个具有强大功能的 vuepress 主题✨",
     },
 
+=======
+      lang: "en-US",
+      title: "vuepress-theme-hope",
+      description: "A vuepress theme with tons of features✨",
+    },
+   },
+  
+>>>>>>> parent of c11cfce (Merge branch 'dev')
   themeConfig,
 
   alias: {

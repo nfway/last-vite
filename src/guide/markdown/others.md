@@ -1,5 +1,5 @@
 ---
-title: 其他
+title: Others
 icon: more
 category:
   - Markdown
@@ -9,7 +9,7 @@ tag:
 
 ## v-pre
 
-由于 VuePress2 已经在 `@vuepress/core` 中移除了 V1 的 v-pre 容器，插件提供了一个选项支持它。也就是你可以在下面的容器中使用任何 Mustacle 语法。
+Since VuePress2 has removed V1's v-pre container in core, the plugin provides an option to support it. That is, you can use any Mustacle syntax in the container below.
 
 ```md
 ::: v-pre
@@ -21,9 +21,9 @@ tag:
 
 ## Image Mark
 
-GFM 支持通过 ID 标记图片，使得图片只在特定的模式显示。我们同时支持 GitHub 的标记与简易标记 `#light` 和 `#dark`。
+GFM supports marking pictures by ID suffix so that pictures are only displayed in a specific mode. We support both GitHub's markup and the easy markup `#light` and `#dark`.
 
-你可以通过 `imageMark` 选项控制它。
+You can enable it using `imageMark` option.
 
 ```md
 ![GitHub Light](/assets/icon/github-light.png#gh-dark-mode-only)
@@ -33,9 +33,9 @@ GFM 支持通过 ID 标记图片，使得图片只在特定的模式显示。我
 ![GitHub Dark](/assets/icon/github-dark.png#light)
 ```
 
-::: details 案例
+::: details case
 
-上述演示会渲染如下结果
+The above demo will render the following result
 
 ![GitHub Light](/assets/icon/github-light.png#gh-dark-mode-only)
 ![GitHub Dark](/assets/icon/github-dark.png#gh-light-mode-only)
@@ -47,10 +47,10 @@ GFM 支持通过 ID 标记图片，使得图片只在特定的模式显示。我
 
 ## GFM
 
-如果你的文档既在文档站点上提供又直接在 GitHub 上提供，我们提供了一个 `gfm` 选项来使你的 Markdown 行为与 GitHub 保持一致。
+If your docs both serve on documentation site and directly on GitHub, we provide a `gfm` option to align your Markdown behavior with GitHub.
 
 ::: note
 
-自定义容器在 `@vuepress/theme-default` 和 `vuepress-theme-hope` 中默认启用，但在 GitHub Markdown 预览中不可用。
+Custom container is enabled by default in `@vuepress/theme-default` and `vuepress-theme-hope`, but not available in GitHub Markdown preview.
 
 :::

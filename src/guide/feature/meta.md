@@ -1,59 +1,59 @@
 ---
-title: 页面元数据
+title: Page Meta
 icon: time
 category:
-  - 功能
+  - Feature
 tag:
-  - 功能
-  - 元数据
+  - Feature
+  - Meta
 ---
 
-主题通过 [`@vuepress/plugin-git`][git] 插件在页面底部显示页面的最后更新时间与贡献者，并提供了“编辑此页”按钮的支持。
+The theme displays last update time and contributors of the page via the [`@vuepress/plugin-git`][git] plugin, and provides support for an "edit this page" button.
 
-主题同时根据侧边栏配置提供上一页和下一页的导航按钮。
+The theme also provides navigation buttons for previous and next pages depending on sidebar config.
 
 <!-- more -->
 
-## 基于 Git 的信息
+## Git-based Information
 
-`vuepress-theme-hope` 通过内置 [`@vuepress/plugin-git`][git] 插件，实现了页面创建时间、最后更新时间与贡献者的自动生成。
+`vuepress-theme-hope` uses the built-in [`@vuepress/plugin-git`][git] plugin to automatically generate page create time, last update time and contributors.
 
-插件会通过页面文件最后一次 `git` 提交的 UNIX 时间戳 (ms) 来自动生成页面创建时间和最后更新时间，同时根据提交记录生成贡献者。
+The plugin will automatically generate the page creation time and last update time from the UNIX timestamp (ms) of the last `git` commit of the page file, and generate contributors based on the commit record.
 
-主题将以合适的日期格式将最后更新时间显示在每一页的底部，同时显示该页面所有贡献者。
+The theme will display last update time in the appropriate date format, along with all page contributors at the botom of the page.
 
 ::: tip
 
-主题会使用 `dayjs` 自动根据当前语言，本地化最后更新时间的表述文字。
+The theme will use `dayjs` to automatically localize the text of last update time according to the current language.
 
 :::
 
-::: warning 使用注意事项
+::: warning Usage Notes
 
-由于最后更新时间是基于 `git` 的, 所以你只能在一个基于 `git` 的项目中启用它。此外，由于使用的时间戳来自 git commit，因此它将仅在给定页的第一次提交之后显示，并且仅在该页面后续提交更改时更新。
-
-:::
-
-::: danger 开发模式默认禁用
-
-由于 `git` 插件对性能有严重影响，所以在**开发模式下主题不会启用**。如有需要请自行在配置文件中引入插件，或运行开发命令时添加 `--debug` 参数。
+Since the last update time is `git` based, you can only enable it in a `git` based project. Also, since the timestamp used is from a git commit, it will only be displayed after the first commit on a given page, and will only be updated when subsequent commits change to that page.
 
 :::
 
-## 编辑此页链接
+::: danger Not available in dev
 
-你可以通过在 `themeConfig` 中设置如下项目，来自动为每个页面生成编辑此页链接:
+Since the `git` plugin has a serious performance impact, the theme will not enable it in devServer. If you need it, please import the plugin yourself in config files, or add the `--debug` flag to run dev command.
 
-- `docsRepo`: 文档仓库地址，默认同 `themeConfig.repo`
-- `docsDir`: 文档在仓库中的目录，默认为根目录
-- `docsBranch`: 文档存放的分值，默认为 `"main"`
+:::
 
-## 显示控制
+## Edit this page link
 
-如果你想要全局禁用这些项目的显示，请在 `themeConfig` 中，将以下对应项目设置为 `false`。你也可以通过 `YAML front matter` 中设置这些项目来启用/禁用指定页面:
+You can automatically generate edit this page links for each page by setting the following items in `themeConfig`:
 
-- `lastUpdated`: 是否显示页面最后更新时间
-- `contributors`: 是否显示页面贡献者
-- `editLink`: 是否展示编辑此页链接
+- `docsRepo`: docs repository link, same as `themeConfig.repo` by default
+- `docsDir`: the directory of docs in the repository, defaults to root directory
+- `docsBranch`: docs branch, defaults to `"main"`
 
-[git]: https://v2.vuepress.vuejs.org/zh/reference/plugin/git.html
+## Display Control
+
+To hide these items globally, set the corresponding items below to `false` in `themeConfig`. You can also enable/disable specific pages by setting these items in `YAML front matter`:
+
+- `lastUpdated`: whether to display last update time of the page
+- `contributors`: whether to show page contributors
+- `editLink`: whether to display "edit page" link
+
+[git]: https://v2.vuepress.vuejs.org/reference/plugin/git.html

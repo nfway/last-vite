@@ -1,42 +1,42 @@
 ---
-title: 页面配置
+title: Page Config
 icon: config
 category:
-  - 配置
+  - Config
 tag:
-  - 主题配置
+  - Theme Config
   - Frontmatter
 ---
 
-页面的 frontmatter 新增如下配置选项:
+The following configuration options have been added to the page’s Front Matter:
 
-## 信息类
+## Information
 
 ### title
 
-- 类型: `string`
-- 必填: 否
+- Type: `string | boolean`
+- Required: No
 
-当前页面内容标题，默认为 Markdown 文件中的第一个 h1 标签内容。
+Current page’s title. Markdown’s first h1 by default.
 
 ### description
 
-- 类型: `string`
-- 必填: 否
+- Type: `string | boolean`
+- Required: No
 
-当前页面内容描述。
+Current page’s description.
 
 ### icon
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-当前页面图标的 FontClass (建议填写)。
+FontClass of the current page icon (recommended).
 
 ### author
 
-- 类型: `Author | boolean`
-- 必填: 否
+- Type: `Author | boolean`
+- Required: No
 
 ```ts
 type AuthorInfo = { name: string; url?: string };
@@ -44,177 +44,174 @@ type AuthorInfo = { name: string; url?: string };
 type Author = string | string[] | AuthorInfo | AuthorInfo[];
 ```
 
-作者，如果不填，则会回退到默认作者。
+Show the author of the current page. If you don’t fill it, you will fall back to the default author.
 
 ::: tip
 
-在主题配置中指定默认作者时，可以设置 `false` 以防止显示默认作者。
+When setting default author in themeConfig, you can set `false` to prevent showing the default author.
 
 :::
 
 ### isOriginal
 
-- 类型: `boolean`
-- 默认: `false`
+- Type: `boolean`
+- Default: `false`
 
-当前文章是否为原创。
+Whether the current article is original.
 
 ### date
 
-- 类型: `DateString`
-- 必填: 否
-- 格式: `YYYY-MM-DD` 或 `YYYY/MM/DD hh:mm:ss`
+- Type: `DateString`
+- Required: No
+- Format: `YYYY-MM-DD` or `YYYY/MM/DD hh:mm:ss`
 
-写作时间。
+Set the writing time of the current page.
 
 ### category
 
-- 类型: `string | string[]`
-- 必填: 否
+- Type: `string | string[]`
+- Required: No
 
-分类。
+Set the category of the current page.
 
 ### tags
 
-- 类型: `string | string[]`
-- 必填: 否
+- Type: `string | string []`
+- Required: No
 
-标签。
+Set the label of the current page.
 
 ### sticky
 
-- 类型: `boolean | number`
-- 默认值: `false`
+- Type: `boolean | number`
+- Default: `false`
 
-是否在列表中置顶。当填入数字时，数字越大，排名越靠前。
+Sets whether the current article is pinned in the list. When fill in with number, greater ones come before smaller ones.
 
 ### star
 
-- 类型: `boolean | number`
-- 默认值: `false`
+- Type: `boolean | number`
+- Default: `false`
 
-是否收藏在博客主题的文章列表中。当填入数字时，数字越大，排名越靠前。
+Sets whether the current article is pinned in the article list in blog theme. When fill in with number, greater ones come before smaller ones.
 
 ### article
 
-- 类型: `boolean`
-- 默认: `true`
+- Type: `boolean`
+- Default: `true`
 
-是否将该文章添加至文章列表中。
+Whether to add the article to the article list.
 
 ### timeline
 
-- 类型: `boolean`
-- 默认: `true`
+- Type: `boolean`
+- Default: `true`
 
-是否将该文章添加至时间线中。
+Whether to add the article to the timeline list.
 
 ### image
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-设置预览图(分享图)，请填入绝对路径。
+Current page’s image，needs an absolute path.
 
-## 组件与布局
+## Components and Layout
 
 ### pageInfo
 
-- 类型: `PageInfo[] | false`
-- 默认值: 主题配置中的值
+- Type: `PageInfo[] | false`
+- Default value: value in themeConfig
 
-`PageInfo` 可选的值和对应内容如下:
+| Item            | Corresponding Content | Page frontmatter Value                  |
+| --------------- | --------------------- | --------------------------------------- |
+| `"Author"`      | Author                | `author`                                |
+| `"Date"`        | Writing Date          | `date`                                  |
+| `"category"`    | Category              | `category`                              |
+| `"tag"`         | Tags                  | `tag`                                   |
+| `"ReadingTime"` | Expect reading time   | N/A (automatically generated)           |
+| `"Word"`        | Word count            | N/A (automatically generated)           |
+| `"PageView"`    | Visit Number          | `pageview` (only available with Waline) |
 
-| 条目            | 对应内容     | 页面 frontmatter 值         |
-| --------------- | ------------ | --------------------------- |
-| `"Author"`      | 作者         | `author`                    |
-| `"Date"`        | 写作日期     | `date`                      |
-| `"Original"`    | 是否原创     | `isOriginal`                |
-| `"Category"`    | 分类         | `category`                  |
-| `"Tag"`         | 标签         | `tag`                       |
-| `"ReadingTime"` | 预计阅读时间 | N/A(自动生成)               |
-| `"Word"`        | 字数         | N/A(自动生成)               |
-| `"PageView"`    | 访问量       | `pageview` (仅 Waline 可用) |
-
-文章信息展示项目。
+Set whether to show page details on the current page
 
 ### pageview
 
-- 类型: `boolean`
-- 默认值: 主题配置中的值
+- Type: `boolean`
+- Default value: value in themeConfig
 
-是否显示浏览量。
+Whether display page views.
 
 ::: tip
 
-显示浏览量功能需要你拥有有效的 Waline 评论服务配置。
+The pageviews feature requires you to have a valid Waline Comment Service config.
 
 :::
 
 ### breadcrumb
 
-- 类型: `boolean`
-- 默认值: 主题配置中的值
+- Type: `boolean`
+- Default value: value in themeConfig
 
-是否开启路径导航。
+Whether path navigation is enabled on the current page.
 
 ### breadcrumbIcon
 
-- 类型: `boolean`
-- 默认值: 主题配置中的值
+- Type: `boolean`
+- Default value: value in themeConfig
 
-是否开启路径导航图标。
+Whether path navigation icon is enabled on the current page.
 
 ### navbar
 
-- 类型: `boolean`
+- Type: `boolean`
 
-导航栏配置，填入 `false` 会禁用导航栏
+The navigation bar configuration of the page, filling in `false` will disable the navigation bar
 
 ### sidebar
 
-- 类型: `"heading" | false`
+- Type: `"heading" | false`
 
-侧边栏配置选项。支持 `"heading"` 或 `false`。
+Page sidebar configuration options. Supports `"heading"` or `false`.
 
 ### headingDepth
 
-- 类型: `number`
-- 默认值: `2`
+- Type: `number`
+- Default: `2`
 
-标题渲染深度。
+The page’s sidebar heading rendering depth.
 
 ### comment
 
-- 类型: `boolean`
-- 默认值: 主题配置中的值
+- Type: `boolean`
+- Default value: value in themeConfig
 
-当前页面是否开启评论功能。
+Whether to enable comments on the current page.
 
 ### lastUpdated
 
-- 类型: `boolean`
-- 默认值: 主题配置中的值
+- Type: `boolean`
+- Default value: value in themeConfig
 
-是否显示最后更新时间。
+Whether display lastUpdated time.
 
 ### editLink
 
-- 类型: `boolean`
-- 默认值: 主题配置中的值
+- Type: `boolean`
+- Default value: value in themeConfig
 
-是否显示编辑链接。
+Whether to show edit link.
 
 ### contributors
 
-- 类型: `boolean`
-- 默认值: 主题配置中的值
+- Type: `boolean`
+- Default value: value in themeConfig
 
-是否显示贡献者。
+Whether to show contributors.
 
 ### prev
 
-- 类型: `string | false`
+- Type: `AutoLink | string | false`
 
   ```ts
   interface AutoLink {
@@ -224,11 +221,11 @@ type Author = string | string[] | AuthorInfo | AuthorInfo[];
   }
   ```
 
-上一篇文章链接。
+Previous article link.
 
 ### next
 
-- 类型: `string | false`
+- Type: `AutoLink |string | false`
 
   ```ts
   interface AutoLink {
@@ -238,51 +235,54 @@ type Author = string | string[] | AuthorInfo | AuthorInfo[];
   }
   ```
 
-下一篇文章链接。
+Next article link.
 
 ### footer
 
-- 类型: `boolean | string | HTMLString`
+- Type: `boolean | string | HTMLString`
+- Default value: the value configured globally
 
-设置页脚内容。
+Footer content.
 
-- 设置为 `false` 以禁用页脚
-- 设置为 `""` 以移除默认的页脚内容，
-- 设置为 `true` 以使用默认页脚。
+- Set it to an empty string if you want an empty content
+- Set it to `false` to disable the footer
+- Set it to `true` to display the default footer
 
-更多详情请看 [页面 → 页脚支持](../guide/layout/footer.md)
+For more details, please see [Page → Footer Support](../guide/layout/footer.md).
 
 ### copyright
 
-- 类型: `string | false`
-- 默认值: 主题配置中的值
+- Type: `string | false`
+- Default value: value in themeConfig
 
-设置版权信息，更多详情请看 [页面 → 页脚支持](../guide/layout/footer.md)
+Copyright information
+
+For more details, please see [Page → Footer Support](../guide/layout/footer.md).
 
 ### backToTop
 
-- 类型: `boolean`
-- 默认值: `true`
+- Type: `boolean`
+- Default value: true
 
-设置是否显示返回顶部按钮
+Whether display the back to top button.
 
 ### toc
 
-- 类型: `boolean`
-- 默认值: 主题配置中的值
+- Type: `boolean`
+- Default value: value in themeConfig
 
-设置在桌面模式下是否在右侧显示标题列表。
+Whether display toc in desktop mode.
 
 ### containerClass
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-额外的页面容器 Class。
+Extra container class.
 
 ### layout
 
-- 类型: `string`
-- 默认: `"Layout"`
+- Type: `string`
+- Default: `"Layout"`
 
-页面的自定义布局名称。
+Page custom layout name.

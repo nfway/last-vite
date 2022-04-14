@@ -1,20 +1,20 @@
 ---
-title: 页面
+title: Page
 icon: page
 category:
-  - 布局
+  - Layout
 tag:
-  - 布局
-  - 页面
+  - Page
+  - Layout
 ---
 
-## 图标支持
+## Icon support
 
-你可以在页面的 frontmatter 中配置 `icon` 字段，填入对应图标的 FontClass 即可绑定图标到页面。
+You can configure the `icon` field in the frontmatter of the page, and fill in the FontClass of the corresponding icon to bind the icon to the page.
 
-该图标会在导航栏，侧边栏，路径导航和标题中使用。
+This icon is used in navbar, sidebar, breadcrumb and page title.
 
-::: details 例子
+::: details Example
 
 ```md
 ---
@@ -26,35 +26,35 @@ icon: home
 
 ::: info
 
-图标的相关设置，详见 [图标支持](../interface/icon.md)
+For icon settings, please see [Icon Support](../interface/icon.md)
 
 :::
 
-## 路径导航
+## Page Info Display
 
-详见 [路径导航](breadcrumb.md) 章节。
+Please see [Page Info Section](../feature/page-info.md)
 
-## 文章信息展示
+## Breadcrumb
 
-详见 [文章信息](../feature/page-info.md) 章节。
+Please see [Breadcrumb](breadcrumb.md).
 
-## 标题列表
+## Heading list
 
-在桌面模式下，文章的标题列表会自动显示在屏幕的右侧。(在移动视图下它们会放置在侧边栏里)
+In desktop mode, a list of article headings will automatically be displayed on the right side of the screen. (They will be placed in the sidebar on mobile devices)
 
-如果你不希望在桌面模式下显示右侧的标题列表，请将 `themeConfig.toc` 设置为 `false`。
+If you don’t want to display the title list on the right in desktop mode, please set `themeConfig.toc` to `false`.
 
-你也可以在特定页面的 frontmatter 中通过 `toc` 来指定它。
+You can also set it through `toc` in page frontmatter.
 
-## 贡献者与最后更新时间
+## Contributors and Last Updated Time
 
-详见 [页面元数据](../feature/meta.md) 章节。
+Please see [Page Meta](../feature/meta.md).
 
-## 上 / 下一篇链接
+## Prev / Next Links
 
 <!-- TODO: Improve it -->
 
-上一篇和下一篇文章的链接将会自动地根据当前页面的侧边栏的顺序来获取。你也可以使用 `themeConfig` 或 frontmatter 来明确地重写或者禁用它:
+Prev and next links are automatically inferred based on the sidebar order of the active page. You can also explicitly overwrite or disable them globally with theme config or on specific pages using `Front matter`:
 
 ```md
 ---
@@ -63,13 +63,13 @@ next: false
 ---
 ```
 
-## 评论
+## Comment
 
-具体详情请见 [评论](../feature/comment.md) 章节。
+Please see [Comment section](../feature/comment.md) for details.
 
-## 自定义布局
+## Custom Layout
 
-默认情况下，每个 `*.md` 文件将会被渲染在一个 `<div class="page">` 容器中，同时还有侧边栏、自动生成的编辑链接，以及上 / 下一篇文章的链接。如果你想要使用一个完全自定义的组件来代替当前的页面，你可以通过 frontmatter 来指定布局组件。
+By default the content of each `*.md` file is rendered in a `<div class="page">` container, along with the sidebar, auto-generated edit links and prev/next links. To use a fully custom component in place of the page, you can again specify the component to use using frontmatter:
 
 ```md
 ---
@@ -77,20 +77,20 @@ layout: SpecialLayout
 ---
 ```
 
-这将会为当前的页面渲染 VuePress 中注册的 SpecialLayout 布局。
+This will render `SpecialLayout` layout registed in VuePress for the given page.
 
 ::: note
 
-主题只提供了 `Layout`，`404` 布局。同时:
+The theme only provides `Layout`, `404` layout. Also:
 
-- 在博客功能启用时提供 `Blog` 布局
-- 在幻灯片功能启用时提供 `Slide` 布局
+- Provides a `Blog` layout when the blogging feature is enabled
+- Provides a `Slide` layout when the slideshow feature is enabled
 
 :::
 
-## 自定义容器 Class
+## Custom container Class
 
-默认情况下，每个页面都会渲染在 class 为 `theme-container` 的 `div` 中。如果你需要对特定页面应用一些特殊样式，你可以通过在 frontmatter 中设置 `containerClass` 来额外指定一个类名
+By default, each page is rendered in a `div` with class `theme-container`. To apply some special styles to specific pages, you can additionally specify a class name by setting `containerClass` in frontmatter
 
 ```md
 ---
@@ -98,4 +98,4 @@ containerClass: fancy-container
 ---
 ```
 
-这将会为当前的页面渲染在 `<div class="theme-container fancy-container" />` 中。
+This will render in `<div class="theme-container fancy-container" />` for the current page.

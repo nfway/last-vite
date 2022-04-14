@@ -1,32 +1,32 @@
 ---
-title: 组件
+title: Components
 icon: plugin
 category:
   - Markdown
 tag:
+  - Components
   - Markdown
-  - 组件
 ---
 
 ## Badge
 
-在 Markdown 中可用的徽章。
+Badge available in Markdown
 
-### Badge 属性
+### Badge Props
 
 #### text
 
-- 类型: `string`
-- 必填: 是
+- Type: `string`
+- Required: Yes
 
-徽章的文字
+Text of the badge
 
 #### type
 
-- 类型: `"tip" | "warning" | "danger" | "info" | "note"`
-- 默认值: `"tip"`
+- Type: `"tip" | "warning" | "danger" | "info" | "note"`
+- Default: `"tip"`
 
-徽章的类型
+Badge types:
 
 - <Badge text="tip" type="tip" vertical="middle" />
 - <Badge text="warning" type="warning" vertical="middle" />
@@ -36,21 +36,21 @@ tag:
 
 #### color
 
-- 类型: `string`
-- 必填: 否
+- Type: `string`
+- Required: No
 
-徽章的颜色，填入在 CSS 中合法的颜色值。
+Badge color, please fill in CSS color strings
 
 #### vertical
 
-- 类型: `"top" | "middle"`
-- 默认值: `"top"`
+- Type: `"top" | "middle"`
+- Default: `"top"`
 
-徽章的垂直方向的位置
+Vertical position of the badge
 
-### Badge 使用
+### Badge Usage
 
-你可以在 Markdown 中使用这个组件来为标题或链接添加一些状态:
+You can use it in Markdown to add some status for titles or links:
 
 ```md
 ### Badge <Badge text="Building" type="warning"/> <Badge text="MrHope" color="grey" />

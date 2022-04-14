@@ -1,18 +1,18 @@
 ---
-title: 代码块分组
+title: CodeGroup
 icon: code
 category:
   - Markdown
 tag:
+  - CodeGroup
   - Markdown
-  - 代码组
 ---
 
-主题为你带来了代码块分组支持。
+The theme provides you you code group support.
 
 <!-- more -->
 
-## 配置
+## Config
 
 :::: code-group
 
@@ -56,15 +56,15 @@ module.exports = defineHopeConfig({
 
 ::::
 
-## 使用
+## Usage
 
-你需要在外围使用 `code-group` 容器，并仅在内部放置 `code-group-item` 容器。
+You need to use `code-group` container outside, and place only `code-group-item` container inside it.
 
-你需要给 `code-group-item` 容器设置标题，并将待展示的单个代码块放入 `code-group-item` 容器中。
+You need to set title for each `code-group-item` container, and place one code block in each `code-group-item` container.
 
-如果你需要令某个选项卡被默认激活，你可以在标题后补充 `:active` 后缀。
+If you want some item be actived by default, you can append a `:active` suffix at the end of title.
 
-## 演示
+## Demo
 
 :::: code-group
 

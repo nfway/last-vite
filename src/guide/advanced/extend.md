@@ -1,24 +1,22 @@
 ---
-title: 主题继承
+title: Theme Extending
 icon: extend
 category:
-  - 高级
+  - Advanced
 tag:
-  - 高级
-  - 自定义
+  - Advanced
+  - Customize
 ---
 
-`vuepress-theme-hope` 和默认主题一样，同样支持继承。
+`vuepress-theme-hope` supports extending just like `@vuepress/theme-default`.
 
-你可以根据自己的需求在 `vuepress-theme-hope` 的基础上二次创作自己的主题并本地使用或发布它。
+You can create your own theme based on `vuepress-theme-hope` and use it locally or publish it according to your needs.
 
-<!-- more -->
+## Theme extending
 
-## 继承主题
+You need to create an entry file for your theme and set `extends: "vuepress-theme-hope"` to extend the `vuepress-theme-hope` theme.
 
-你需要为自己的主题创建一个入口文件，并设置 `extends: "vuepress-theme-hope"` 指定继承 `vuepress-theme-hope` 主题。
-
-你自己新创建的主题的同名别名 (`alias`) 和 同名布局 (`layouts`) 的优先级高于被继承主题 `vuepress-theme-hope`，这意味着你可以通过 `alias` 覆盖 `vuepress-theme-hope` 主题的组件，并通过 `layouts` 覆盖或新增 `vuepress-theme-hope` 提供的布局。
+The aliases of the same name (`alias`) and layouts (`layouts`) of your own newly created theme has higher priority over the extended theme `vuepress-theme-hope`, which means that you can override `vuepress-theme-hope` components via `alias` and add or override layout provided by `vuepress-theme-hope` via `layouts`.
 
 :::: code-group
 
@@ -32,18 +30,18 @@ export default {
   name: "vuepress-theme-local",
   extends: "vuepress-theme-hope",
   alias: {
-    // 你可以在这里覆盖或新增别名
-    // 比如这里我们将 vuepress-theme-hope 主页组件改为自己主题下的 components/HomePage.vue
+    // You can override or add aliases here
+    // For example, here we change the vuepress-theme-hope HomePage component to components/HomePage.vue under our own theme
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
       "./components/HomePage.vue"
     ),
   },
   layouts: {
-    // 你可以在这里覆盖或新增布局
-    // 比如这里我们将 vuepress-theme-hope 的默认布局改为自己主题下的 layouts/Layout.vue
+    // You can override or add layouts here
+    // For example, here we change the default layout of vuepress-theme-hope to layouts/Layout.vue under our own theme
     Layout: path.resolve(__dirname, "layouts/Layout.vue"),
-    // 同时我们新增了一个 Changelog 布局
+    // Also we added a Changelog layout
     Changelog: path.resolve(__dirname, "layouts/Changelog.vue"),
   },
 };
@@ -61,18 +59,18 @@ module.exports = {
   name: "vuepress-theme-local",
   extends: "vuepress-theme-hope",
   alias: {
-    // 你可以在这里覆盖或新增别名
-    // 比如这里我们将 vuepress-theme-hope 主页组件改为自己主题下的 components/HomePage.vue
+    // You can override or add aliases here
+    // For example, here we change the vuepress-theme-hope HomePage component to components/HomePage.vue under our own theme
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
       "./components/HomePage.vue"
     ),
   },
   layouts: {
-    // 你可以在这里覆盖或新增布局
-    // 比如这里我们将 vuepress-theme-hope 的默认布局改为自己主题下的 layouts/Layout.vue
+    // You can override or add layouts here
+    // For example, here we change the default layout of vuepress-theme-hope to layouts/Layout.vue under our own theme
     Layout: path.resolve(__dirname, "layouts/Layout.vue"),
-    // 同时我们新增了一个 Changelog 布局
+    // Also we added a Changelog layout
     Changelog: path.resolve(__dirname, "layouts/Changelog.vue"),
   },
 };

@@ -1,23 +1,21 @@
 ---
-title: 插件
+title: Plugins
 icon: plugin
 category:
-  - 教程知识
+  - Cookbook
   - VuePress
 tag:
+  - Plugin
   - VuePress
-  - 插件
 ---
 
-## 介绍
+With the help of [Plugin API](https://v2.vuepress.vuejs.org/reference/plugin-api.md), VuePress plugin can provide different features for you.
 
-借助于 [插件 API](https://v2.vuepress.vuejs.org/zh/reference/plugin-api.md) ， VuePress 插件可以为你提供各种不同的功能。
+## Community Plugin
 
-## 社区插件
+Community users have created lots of plugins and published them to [NPM](https://www.npmjs.com/search?q=keywords:vuepress-plugin). VuePress team also maintains some official plugins under the [@vuepress](https://www.npmjs.com/search?q=%40vuepress%20keywords%3Aplugin) scope. You should check the plugin’s own documentation for detailed guide.
 
-社区用户创建了很多插件，并将它们发布到了 [NPM](https://www.npmjs.com/search?q=keywords:vuepress-plugin) 上。 VuePress 团队也在 [@vuepress](https://www.npmjs.com/search?q=%40vuepress%20keywords%3Aplugin) Scope 下维护了一些官方插件。查看插件本身的文档可以获取更详细的指引。
-
-一般而言，你需要在 [plugins](https://v2.vuepress.vuejs.org/zh/reference/config.md#plugins) 配置项中设置你要使用的插件名称：
+In general, you need to specify the name of the plugin to use in [plugins](https://v2.vuepress.vuejs.org/reference/config.md#plugins) option:
 
 ```js
 module.exports = {
@@ -26,34 +24,34 @@ module.exports = {
     [
       "bar",
       {
-        /* 配置项 */
+        /* options */
       },
     ],
   ],
 };
 ```
 
-你可以使用插件名称或者它的简称：
+You can use either plugin name or its shorthand:
 
-| 插件名称                   | 简称               |
+| Plugin Name                | Shorthand          |
 | -------------------------- | ------------------ |
 | `vuepress-plugin-foo`      | `foo`              |
 | `@org/vuepress-plugin-bar` | `@org/bar`         |
 | `@vuepress/plugin-foobar`  | `@vuepress/foobar` |
 
 ::: tip
-大部分插件只能使用一次，如果同一个插件被多次使用，那么只有最后一次会生效。
+Most plugins can only be used once. If the same plugin is used multiple times, only the last one will take effect.
 
-然而，部分插件是可以被多次使用的 (例如 [@vuepress/plugin-container](https://v2.vuepress.vuejs.org/zh/reference/plugin/container.md)) ，你应该查看插件本身的文档来获取详细指引。
+However, some plugins can be used multiple times (e.g. [@vuepress/plugin-container](https://v2.vuepress.vuejs.org/reference/plugin/container.md)), and you should check the documentation of the plugin itself for detailed guide.
 :::
 
-## 本地插件
+## Local Plugin
 
-如果你想要使用自己的插件，但是又不想发布它，你可以创建一个本地插件。
+To use your own plugin but don’t want to publish it, you can create a local plugin.
 
-推荐你直接将 [配置文件](./config.md#配置文件) 作为插件使用，因为 [几乎所有的插件 API 都可以在配置文件中使用](https://v2.vuepress.vuejs.org/zh/reference/config.md#插件-api)，这在绝大多数场景下都更为方便。
+It is recommended to use the [Config File](./config.md#config-file) directly as a plugin, because [almost all of the Plugin APIs are available](https://v2.vuepress.vuejs.org/reference/config.md#plugin-api), which would be more convenient in most cases.
 
-但是如果你在配置文件中要做的事情太多了，最好还是将它们提取到单独的插件中，然后通过设置绝对路径或者通过 require 来使用它们：
+But if you have too many things to do in your config file, it’s better to extract them into separate plugins, and use them by setting the absolute path to them or requiring them:
 
 ```js
 module.exports = {
@@ -64,4 +62,4 @@ module.exports = {
 };
 ```
 
-前往 [深入 > 开发插件](https://v2.vuepress.vuejs.org/zh/advanced/plugin.md) 学习如何开发你自己的插件。
+You can refer to [Advanced > Writing a Plugin](https://v2.vuepress.vuejs.org/advanced/plugin.md) for how to write your own plugin.

@@ -1,64 +1,62 @@
 ---
-title: 文章列表
+title: Article List
 icon: article
 category:
-  - 博客
+  - Blog
 tag:
-  - 博客
-  - 文章
-  - 加密
-  - 幻灯片
-  - 收藏
+  - Article
+  - Blog
+  - Encrypt
+  - Slide
+  - Star
 ---
 
-主题默认在 `/article/` 路径下为你提供了全部的文章列表。
+The topic provides you with a list of all articles under the path `/article/` by default.
 
-<!-- more -->
+## Auto Excerpt
 
-## 自动摘要
+By default, the theme will only display the excerpt or description you specify in the article list.
 
-主题默认情况下只会在文章列表中展示你指定的摘要或描述。
+If you want the theme to automatically extract excerpts, set `autoExcerpt: true` in `themeConfig.plugins.blog`.
 
-如果你想要让主题自动提取摘要，请在 `themeConfig.plugins.blog` 中设置 `autoExcerpt: true`。
+## Article
 
-## 文章
+All articles will be added to the article list by default and rendered under the path `/article/`.
 
-所有文章都会默认被添加到文章列表中渲染在 `/article/` 路径下。
+![Article list](./assets/article-list.png)
 
-![文章列表](./assets/article-list.png)
+If you don’t want the list to contain some specific articles, just set the `article` to `false` in the frontmatter of the article.
 
-如果你不希望该列表包含一些特定的文章，只需在文章的 frontmatter 中将 `article` 设置为 `false`。
+To sticky a specific article in the article list, just set `sticky` to `true` in the frontmatter of the article.
 
-如果你希望在文章列表中置顶特定文章，只需在文章的 frontmatter 中将 `sticky` 设置为 `true`。
+::: tip Order
 
-::: tip 置顶顺序
-
-对于置顶文章，你可以将 `sticky` 设置为 `number` 来设置它们的顺序。数值大的文章会排列在前面。
+For sticky articles, you can set `sticky` with a number to set their order. Articles with large numbers will be listed first.
 
 :::
 
-## 收藏文章
+## Star articles
 
-你可以通过在 frontmatter 中设置 `star` 为 `true` 收藏一个文章。收藏后，用户就可以在 `/star/` 页面中查看这些文章。
+You can star an article by setting `star` to `true` in frontmatter. After staring, users can view these articles on the `/star/` page.
 
-同时任何任何收藏的文章都会显示在博客主页侧边栏的文章栏目中。
+At the same time, any star articles will be displayed in the article column on the sidebar of the blog homepage.
 
 ::: info
 
-我们提供收藏选项的考虑是: 主题使用者可能希望向访客展示一定数量的精品文章，而又不希望置顶文章充斥主页，导致用户不能看到最近更新的文章。
+Our consideration for providing star options: Theme users may want to show visitors some high-quality articles, but do not want sticky articles to flood the homepage, resulting in visitors not being able to see the recently updated articles.
 
 :::
 
-::: tip 收藏顺序
+::: tip Order
 
-类似置顶文章，你同样可以将 `star` 设置为 `number` 来设置它们的顺序。数值大的文章会排列在前面。
+Similar to sticky articles, you can also set `star` to number to set their order. Articles with large numbers will be listed first.
 
 :::
 
-## 加密与幻灯片
+## Encryption and Slideshow
 
-主题为加密文章页与幻灯片页这两个特殊页面提供了单独的列表，你可以在 `/encrypt/` 和 `/slide/` 页面查看它们。
+The theme provides separate lists for the two special pages: encrypted article page and slide page. You can view them on the `/encrypt/` and `/slide/` pages.
 
-同时为了帮助访问者区分，这两个类别的页面会在文章列表中用图标明确标明其类别。
+At the same time, to help visitors distinguish between these two categories of pages, their categories will be clearly marked with icons in the article list.
 
-![类别提示](./assets/icon-type.png)
+![Category Tips](./assets/icon-type.png)

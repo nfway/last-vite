@@ -1,18 +1,18 @@
 ---
-title: 标记
+title: Markup
 icon: write
 category:
   - Markdown
 tag:
+  - Markup
   - Markdown
-  - 标记
 ---
 
-让你的 VuePress 站点中的 Markdown 文件支持标记。
+Make Markdown files in your VuePress site support markup.
 
 <!-- more -->
 
-## 配置
+## Configuration
 
 :::: code-group
 
@@ -56,14 +56,14 @@ module.exports = defineHopeConfig({
 
 ::::
 
-## 语法
+## Syntax
 
-使用 `== ==` 进行标记。请注意两边需要有空格。
+Use `== ==` to mark.
 
-## 例子
+## Demo
 
-VuePress Theme Hope ==非常== 强大!
+VuePress Theme Hope is ==powerfull==.
 
 ```md
-VuePress Theme Hope ==非常== 强大!
+VuePress Theme Hope is ==powerfull==.
 ```

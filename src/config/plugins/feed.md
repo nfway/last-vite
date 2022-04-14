@@ -1,90 +1,90 @@
 ---
-title: Feed 插件配置
+title: Feed Plugin Config
 icon: rss
 category:
-  - 配置
+  - Config
 tag:
-  - 插件配置
-  - 主题配置
   - Feed
+  - Plugin Config
+  - Theme Config
 ---
 
-## 介绍 <Badge text="默认启用" />
+## Intro <Badge text="enabled by default" />
 
-`vuepress-theme-hope` 通过 `vuepress-plugin-feed2` 插件提供 Feed 生成支持。
+`vuepress-theme-hope` provides feed generation support via the `vuepress-plugin-feed2` plugin.
 
-`vuepress-theme-hope` 将 `themeConfig.plugins.feed` 作为插件选项传递给 `vuepress-plugin-feed2` 插件。
+`vuepress-theme-hope` passes `themeConfig.plugins.feed` as a plugin option to the `vuepress-plugin-feed2` plugin.
 
-`vuepress-plugin-feed2` 插件可为你生成以下三种格式的 feed 文件:
+The `vuepress-plugin-feed2` plugin can generate feed files in the following three formats for you:
 
 - Atom 1.0
 - JSON 1.1
 - RSS 2.0
 
-请按照需要生成的格式，在插件选项中设置 `atom`, `json` 或 `rss` 为 `true` 来启用插件。
+Please enable the plugin by setting `atom`, `json` or `rss` to `true` in the plugin options according to the format you want to generate.
 
 ::: tip
 
-Atom 和 JSON 是为了提供更多 Feed 软件的适配而提供的。
+Atom and JSON are provided to provide more adaptations for Feed software.
 
-如果可以，请尽可能使用 RSS。
+If possible, use RSS as first choise.
 
 :::
 
 ::: info
 
-有关更多详细信息，请参见 [feed2 插件文档][feed-config]。
+See the [feed2 plugin documentation][feed-config] for more details.
 
 :::
 
-## 插件选项
+## Plugin options
 
 ### atom
 
-- 类型: `boolean`
-- 默认: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用 Atom 格式输出。
+Whether to output Atom syntax files.
 
 ### json
 
-- 类型: `boolean`
-- 默认: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用 JSON 格式输出。
+Whether output JSON syntax files.
 
 ### rss
 
-- 类型: `boolean`
-- 默认: `false`
+- Type: `boolean`
+- Default: `false`
 
-是否启用 RSS 格式输出。
+Whether to output RSS syntax files.
 
 ### image
 
-- 类型: `string`
+- Type: `string`
 
-一个大的图片，用作 feed 展示。
+A large image/icon of the feed, probably used as banner.
 
 ### icon
 
-- 类型: `string`
+- Type: `string`
 
-一个小的图标，显示在订阅列表中。
+A small icon of the feed, probably used as favicon.
 
 ### count
 
-- 类型: `number`
-- 默认值: `1000`
+- Type: `number`
+- Default: `1000`
 
-设置 feed 的最大项目数量。在所有页面排序好后，插件会截取前 count 个项目。
+Set the maximum number of items in the feed. After all pages are sorted, the first `count` items will be intercepted.
 
-如果你的站点文章很多，你应该考虑设置这个选项以减少 feed 文件大小。
+If your site has a lot of articles, you may consider this option to reduce feed file size.
 
 ### filter
 
-- 类型: `(page: Page)=> boolean`
-- 默认值:
+- Type: `(page: Page)=> boolean`
+- Default:
 
   ```ts
   ({ frontmatter, filePathRelative }: Page): boolean =>
@@ -96,72 +96,70 @@ Atom 和 JSON 是为了提供更多 Feed 软件的适配而提供的。
     );
   ```
 
-自定义的过滤函数，用于过滤哪些项目在 feed 中显示。
+A custom filter funciton, used to filter feed items.
 
 ### sort
 
-- 类型: `(pageA: Page, pageB: Page)=> number`
+- Type: `(pageA: Page, pageB: Page)=> number`
 
-自定义排序函数，用于对站点中的页面进行排序。
-
-最终生成的 feed 文件将会按照这个顺序对项目进行显示。
+A custom sort function, used to sort feed items.
 
 ::: warning
 
-强烈建议设置这个选项，否则 feed 流中，项目的顺序完全由 VuePress 默认输出的 pages 顺序决定。
+We strongly recommend you setting this option, otherwise the order of items in the feed stream is completely determined by the order of pages output by VuePress.
 
-你可以按照自己的需求对站点内的页面进行排序。
+You can sort the pages in the site according to your needs.
 
 :::
 
 ### channel
 
-`channel` 选项用于配置 Feed 频道。
+`channel` option is used to config _Feed Channels_.
 
-可用选项详见 [配置 → 频道设置][feed-config-channel]
+For available options, please see [Config → Channel][feed-config-channel]
 
 ### atomOutputFilename
 
-- 类型: `string`
-- 默认: `atom.xml`
+- Type: `string`
+- Default: `atom.xml`
 
-Atom 格式输出路径，相对于输出路径。
+Atom syntax output filename, relative to dest folder
 
 ### jsonOutputFilename
 
-- 类型: `string`
-- 默认: `feed.json`
+- Type: `string`
+- Default: `feed.json`
 
-JSON 格式输出路径，相对于输出路径。
+JSON syntax output filename, relative to dest folder
 
 ### rssOutputFilename
 
-- 类型: `string`
-- 默认: `rss.xml`
+- Type: `string`
+- Default: `rss.xml`
 
-RSS 格式输出路径，相对于输出路径。
+RSS syntax output filename, relative to dest folder.
 
 ### getter
 
-Feed 生成控制器
+Feed generation controller.
 
 ::: tip
 
-插件已经在默认情况下提供了合理的获取器，如果你需要完全控制 Feed 生成，你可以设置此项。
+The plugin is providing a resonable getter by default, if you want full control of feed generating, you can set this field.
 
 :::
 
-详见 [Feed 生成器][feed-config-getter].
+For details, see [Feed Getter][feed-config-getter].
 
 ### locales
 
-- 类型: `Record<string, BaseFeedOptions>`
-- 必填: 否
+- Type: `Record<string, BaseFeedOptions>`
+- Required: No
 
-你可以将它用于每个语言环境的特定选项。
+You can use it to specific options for each locale.
 
-除 `hostname` 外，上述任何选项均受支持。
+Any options above are supported except `hostname`.
 
-[feed-config]: https://vuepress-theme-hope.github.io/v2/feed/zh/config/
-[feed-config-channel]: https://vuepress-theme-hope.github.io/v2/feed/zh/config/channel.html
-[feed-config-getter]: https://vuepress-theme-hope.github.io/v2/feed/zh/config/getter.html
+[feed-config]: https://vuepress-theme-hope.github.io/v2/feed/config/
+[feed-config-channel]: https://vuepress-theme-hope.github.io/v2/feed/config/channel.html
+[feed-config-getter]: https://vuepress-theme-hope.github.io/v2/feed/config/getter.html

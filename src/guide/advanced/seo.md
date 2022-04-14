@@ -2,71 +2,74 @@
 title: SEO
 icon: config
 category:
-  - 高级
+  - Advanced
 tag:
-  - 高级
+  - Advanced
   - SEO
 ---
 
-`vuepress-theme-hope` 通过内置 [`vuepress-plugin-seo2`][seo2] 为提供 SEO 增强功能。
+`vuepress-theme-hope` provides SEO enhancements via built-in [`vuepress-plugin-seo2`][seo2].
 
-为了使插件能够更好的工作，你可能需要查看一下 [页面配置](../../config/page.md#信息类) 并合理的配置它们。
+In order to make the plugin work better, you may need to check the [page config](../../config/page.md#information) and configure them properly.
 
 ::: info
 
-`vuepress-theme-hope` 将 `themeConfig.plugins` 中的 `seo` 选项作为插件选项提供给 `vuepress-plugin-seo2`。
+`vuepress-theme-hope` provides `seo` options in `themeConfig.plugins` as plugin options to `vuepress-plugin-seo2`.
 
 :::
 
-插件会通过向网站 `<head>` 注入标签，让你的网站完全支持 [开放内容协议 OGP](https://ogp.me/) 和 [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/)，以全面增强站点的搜索引擎优化性。
+The plugin will make your site fully support [Open Content Protocol OGP](https://ogp.me/) and [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/) to fully enhance the SEO of the site.
 
-如果不需要这个插件，请设置 `themeConfig.plugins.seo` 为 `false`。
+If you don’t need this plugin, please set `themeConfig.plugins.seo` to `false`.
 
 <!-- more -->
 
-## 开箱即用
+## Out of box
 
-插件开箱即用，在不做任何配置的情况下，会尽可能通过页面内容，提取对应的信息补全 OGP 与 JSON-LD 所需的必要标签。
+The plugin works out of the box. Without any config, it will extract information from the page content as much as possible to complete the necessary tags required by OGP and JSON-LD.
 
-默认情况下，插件会读取站点配置、主题配置与页面的 frontmatter 来尽可能自动生成。诸如站点名称，页面标题，页面类型，写作日期，最后更新日期，文章标签均会自动生成。
+By default, the plugin will read the SiteConfig, ThemeConfig and page frontmatter to automatically generate tags as much as possible. Such as site name, page title, page type, writing date, last update date, and article tags are all automatically generated.
 
-### 默认的 OGP 生成逻辑
+The following are the `<meta>` tags and their values that will be injected into `<head>` by default:
 
-|         属性名称         |                                                   值                                                   |
-| :----------------------: | :----------------------------------------------------------------------------------------------------: |
-|         `og:url`         |                                    `themeConfig.hostname` + `path`                                     |
-|      `og:site_name`      |                                           `siteConfig.title`                                           |
-|        `og:title`        |                                              `page.title`                                              |
-|     `og:description`     |      `page.frontmatter.description` \|\| 自动生成 (当插件选项中的 `autoDescription` 为 `true` 时)      |
-|        `og:type`         |                                              `"article"`                                               |
-|        `og:image`        | `themeConfig.hostname` + `page.frontmatter.image` \|\| 页面的第一张图片\|\| 插件选项的 `fallbackImage` |
-|    `og:updated_time`     |                                         `page.git.updatedTime`                                         |
-|       `og:locale`        |                                              `page.lang`                                               |
-|  `og:locale:alternate`   |                                  `themeConfig.locales` 包含的其他语言                                  |
-|      `twitter:card`      |                                `"summary_large_image"` (仅在找到图片时)                                |
-|   `twitter:image:alt`    |                                     `page.title` (仅在找到图片时)                                      |
-|     `article:author`     |                          `page.frontmatter.author` \|\| `themeConfig.author`                           |
-|      `article:tag`       |                          `page.frontmatter.tags` \|\| `page.frontmatter.tag`                           |
-| `article:published_time` |                          `page.frontmatter.date` \|\| `page.createTimeStamp`                           |
-| `article:modified_time`  |                                         `page.git.updatedTime`                                         |
+### Default OGP Generation
 
-### 默认的 JSON-LD 生成逻辑
+The following are the `<meta>` tags and their value injected into `<head>` by default to satisfy OGP:
 
-|     属性名      |                                 值                                 |
-| :-------------: | :----------------------------------------------------------------: |
-|   `@context`    |                       `"https://schema.org"`                       |
-|     `@type`     |                          `"NewsArticle"`                           |
-|   `headline`    |                            `page.title`                            |
-|     `image`     | 页面中的图片\|\| `themeConfig.hostname` + `page.frontmatter.image` |
-| `datePublished` |        `page.frontmatter.date` \|\| `page.createTimeStamp`         |
-| `dateModified`  |                       `page.git.updatedTime`                       |
-|    `author`     |        `page.frontmatter.author` \|\| `themeConfig.author`         |
+|        Meta Name         |                                                      Value                                                       |
+| :----------------------: | :--------------------------------------------------------------------------------------------------------------: |
+|         `og:url`         |                                         `themeConfig.hostname` + `path`                                          |
+|      `og:site_name`      |                                                `siteConfig.title`                                                |
+|        `og:title`        |                                                   `page.title`                                                   |
+|     `og:description`     |     `page.frontmatter.description` \|\| auto generated (when `autoDescription` is `true` in plugin options)      |
+|        `og:type`         |                                                   `"article"`                                                    |
+|        `og:image`        | `themeConfig.hostname` + `page.frontmatter.image` \|\|first image in page \|\| `fallbackImage` in plugin options |
+|    `og:updated_time`     |                                              `page.git.updateTime`                                               |
+|       `og:locale`        |                                                   `page.lang`                                                    |
+|  `og:locale:alternate`   |                                Other languages including in `themeConfig.locales`                                |
+|      `twitter:card`      |                            `"summary_large_image"` (only available when image found)                             |
+|   `twitter:image:alt`    |                                  `page.title` (only available when image found)                                  |
+|     `article:author`     |                               `page.frontmatter.author` \|\| `themeConfig.author`                                |
+|      `article:tag`       |                               `page.frontmatter.tags` \|\| `page.frontmatter.tag`                                |
+| `article:published_time` |                               `page.frontmatter.date` \|\| `page.createTimeStamp`                                |
+| `article:modified_time`  |                                              `page.git.updatedTime`                                              |
 
-## 自由定制
+### Default JSON-LD Generation
 
-你可以在页面的 frontmatter 中配置 `head` 选项，自主添加特定标签到页面 `<head>` 以增强 SEO。
+|  Property Name  |                                                   Value                                                   |
+| :-------------: | :-------------------------------------------------------------------------------------------------------: |
+|   `@context`    |                                          `"https://schema.org"`                                           |
+|     `@type`     |                                              `"NewsArticle"`                                              |
+|   `headline`    |                                               `page.title`                                                |
+|     `image`     | image in page \|\| `themeConfig.hostname` + `page.frontmatter.image` \|\| `siteFavIcon` in plugin options |
+| `datePublished` |                            `page.frontmatter.date` \|\| `page.createTimeStamp`                            |
+| `dateModified`  |                                          `page.git.updatedTime`                                           |
+|    `author`     |                            `page.frontmatter.author` \|\| `themeConfig.author`                            |
 
-如:
+## Free customization
+
+You can configure the `head` option in the page’s frontmatter to add specific tags to the page `<head>` to enhance SEO.
+For example:
 
 ```md
 ---
@@ -77,42 +80,42 @@ head:
 ---
 ```
 
-会自动注入 `<meta name="keywords" content="SEO plugin" />`。
+Will automatically inject `<meta name="keywords" content="SEO plugin" />`.
 
-## 自定义生成过程
+## Customize Generation
 
-插件支持让你完全控制生成逻辑。
+The plugin also gives you full control over the build logic.
 
-### 页面类型
+### Page Type
 
-对于大多数页面，基本只有文章和网页两种类型，所以插件提供了 `isArticle` 选项让你提供辨别文章的逻辑。
+For most pages, there are basically only two types: articles and website, so the plugin provides the `isArticle` option to allow you to provide logic for identifying articles.
 
-选项接受一个 `(page: Page) => boolean` 格式的函数，默认情况下从 Markdown 文件生成的非主页页面都会被视为文章。
+The option accepts a function in the format `(page: Page) => boolean`, by default all non-home pages generated from Markdown files are treated as articles.
 
 ::: note
 
-如果某个网页的确符合图书、音乐之类的“冷门”类型，你可以通过设置下方三个选项处理它们。
+If a page does fit into the "unpopular" genre like books, music, etc., you can handle them by setting the three options below.
 
 :::
 
 ### ogp
 
-你可以在 `themeConfig.plugins.seo` 中通过 `ogp` 传入一个函数来按照你的需要修改默认 OGP 对象并返回。
+You can use options `ogp` in `themeConfig.plugins.seo to pass in a function to modify the default OGP object to your needs and return it.
 
 ```ts
 function ogp<ExtendObject = Record<string, unknown>>(
-  /** 插件自动推断的 OGP 对象 */
-  ogp: SeoContent,
-  /** 页面对象 */
+   /** OGP Object inferred by plugin */
+ ogp: SeoContent,
+  /** Page Objext */
   page: ExtendPage<ExtendObject>,
   /** VuePress App */
   app: App
-): SeoContent;
+) => SeoContent;
 ```
 
-详细的参数结构详见 [配置][seo2-config]。
+For detailed parameter structure, see [Config][seo2-config].
 
-比如你在使用某个第三方主题，并按照主题要求为每篇文章在 front matter 中设置了 `banner`，那你可以传入这样的 `ogp`:
+For example, if you are using a third-party theme and set a `banner` in frontmatter for each article according to the theme requirements, then you can pass in the following `ogp`:
 
 ```ts
 ({
@@ -125,13 +128,13 @@ function ogp<ExtendObject = Record<string, unknown>>(
 
 ### JSON-LD
 
-同 OGP，你可以在 `themeConfig.plugins.seo` 中通过 `jsonLd` 传入一个函数来按照你的需要修改默认 JSON-LD 对象并返回。
+Like OGP, you can use `jsonLd` options in `themeConfig.plugins.seo` to pass in a function to modify the default JSON-LD object to your needs and return it.
 
 ```ts
 function jsonLd<ExtendObject = Record<string, unknown>>(
-  /** 插件自动推断的 JSON-LD 对象 */
+  /** JSON-LD Object inferred by plugin */
   jsonLD: ArticleJSONLD | null,
-  /** 页面对象 */
+  /** Page Objext */
   page: ExtendPage<ExtendObject>,
   /** VuePress App */
   app: App
@@ -140,58 +143,63 @@ function jsonLd<ExtendObject = Record<string, unknown>>(
 
 ::: warning
 
-请注意插件不会对非文章页生成 JSON-LD，所以函数的首个参数可能为 `null`。
+Please note that the plugin does not generate JSON-LD for non-article pages, so the first parameter of the function may be null.
 
 :::
 
 ### customHead
 
-有些时候你可能需要符合其他协议或按照其他搜索引擎提供的格式提供对应的 SEO 标签，此时你可以在 `themeConfig.plugins.seo` 中使用 `customHead` 选项，其类型为:
+Sometimes you may need to fit other protocols or provide the corresponding SEO tags in the format provided by other search engines. In this case, you can use the `customHead` option in `themeConfig.plugins.seo`, whose type is:
 
 ```ts
 function customHead<ExtendObject = Record<string, unknown>>(
   head: HeadConfig[],
-  /** 页面对象 */
+  /** Page Objext */
   page: ExtendPage<ExtendObject>,
   /** VuePress App */
   app: App
 ): void;
 ```
 
-你应该直接修改传入的 `head` 参数。
-
-## SEO 介绍
-
-搜索引擎优化 (**S**earch **E**ngine **O**ptimization)，是一种透过了解搜索引擎的运作规则来调整网站，以及提高目的网站在有关搜索引擎内排名的方式。由于不少研究发现，搜索引擎的用户往往只会留意搜索结果最前面的几个条目，所以不少网站都希望透过各种形式来影响搜索引擎的排序，让自己的网站可以有优秀的搜索排名。 所谓“针对搜索引擎作最优化的处理”，是指为了要让网站更容易被搜索引擎接受。搜索引擎会将网站彼此间的内容做一些相关性的资料比对，然后再由浏览器将这些内容以最快速且接近最完整的方式，呈现给搜索者。搜索引擎优化就是通过搜索引擎的规则进行优化，为用户打造更好的用户体验，最终的目的就是做好用户体验。
+You should modify the `head` array in this function directly
 
 ## RDFa 1.1
 
-主题通过遵循 [RDFa 1.1](https://www.w3.org/TR/rdfa-primer/)，为网站的大部分结构添加了富媒体结构支持。
+The theme adds rich media structure support to most of the site structure by following [RDFa 1.1](https://www.w3.org/TR/rdfa-primer/).
 
 ::: tip
 
-你可以使用 [Google 富媒体结构测试工具](https://search.google.com/test/rich-results) 测试本站点。
+You can use [Google Rich Media Structure Test Tool](https://search.google.com/test/rich-results) to test this site.
 
 :::
 
-## 相关文档
+## SEO Introduction
 
-- [开放内容协议 OGP](https://ogp.me/) (**O**pen **G**raph **Pr**otocal)
+**S**earch **e**ngine **optimization** (SEO) is the process of improving the quality and quantity of site traffic to a site or a web page from search engines. SEO targets unpaid traffic (known as "natural" or "organic" results) rather than direct traffic or paid traffic. Unpaid traffic may originate from different kinds of searches, including image search, video search, academic search, news search, and industry-specific vertical search engines.
 
-  本插件完美支持该协议，会自动生成符合该协议的 `<meta>` 标签。
+As an internet marketing strategy, SEO considers how search engines work, the computer-programmed algorithms that dictate search engine behavior, what people search for, the actual search terms or keywords typed into search engines, and which search engines are preferred by their targeted audience. SEO is performed because a site will receive more visitors from a search engine when sites rank higher on the search engine results page (SERP). These visitors can then potentially be converted into customers.
+
+## Related documents
+
+- [Open Content Protocol OGP](https://ogp.me/) (**O**pen **G**raph **Pr**otocal)
+
+  SEO plugin perfectly supports this protocol and will automatically generate `<meta>` tags that conform to the protocol.
 
 - [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/)
 
-  本插件会为文章类页面生成 NewsArticle 类标签。
+  SEO will generate "NewsArticle" scheme for article pages.
 
 - [RDFa 1.1](https://www.w3.org/TR/rdfa-primer/)
 
-  主题结构完美支持
+  `vuepress-theme-hope` support this
 
 - [Schema.Org](https://schema.org/)
 
-  结构标记的 Schema 定义站点
+  Schema definition site for structural markup
 
-## 相关工具
+## Related tools
 
-- [Google 富媒体结构测试工具](https://search.google.com/test/rich-results)
+- [Google Rich Media Structure Test Tool](https://search.google.com/test/rich-results)
+
+[seo2]: https://vuepress-theme-hope.github.io/v2/seo/
+[seo2-config]: https://vuepress-theme-hope.github.io/v2/seo/config.html

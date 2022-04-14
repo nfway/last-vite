@@ -1,18 +1,18 @@
 ---
-title: 任务列表
+title: Task list
 icon: check
 category:
   - Markdown
 tag:
   - Markdown
-  - 任务列表
+  - Task List
 ---
 
-让你的 VuePress 站点中的 Markdown 文件支持任务列表。
+Let the Markdown file in your VuePress site support task list.
 
 <!-- more -->
 
-## 配置
+## Configuration
 
 :::: code-group
 
@@ -56,12 +56,12 @@ module.exports = defineHopeConfig({
 
 ::::
 
-## 语法
+## Syntax
 
-- 使用 `- [ ] 一些文字` 渲染一个未勾选的任务项
-- 使用 `- [x] 一些文字` 渲染一个勾选了的任务项 (我们也支持大写的 `X`)
+- Use `- [ ] some text` to render a unchecked task item.
+- Use `- [x] some text` to render a checked task item. (Capital `X` is also supported)
 
-## 例子
+## Demo
 
 - [ ] Plan A
 - [x] Plan B

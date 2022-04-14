@@ -1,94 +1,90 @@
 ---
-title: 小白教程
+title: Step by Step Tutorial
 icon: creative
 category:
-  - 快速上手
-  - 基础知识
-  - 教程
+  - Cookbook
+  - Tutorial
+  - Get Started
 ---
 
-本教程是一个针对小白手把手教程。
+This tutorial is a step by step tutorial.
 
-<!-- more -->
+## Environment
 
-## 环境安装
+You need to install the latest Node.js long-term support version.
 
-你需要安装最新的 Node.js 长期支持版。
+Download address:
 
-下载地址:
-
-- Node.js 长期支持版: [下载地址](https://nodejs.org/zh-cn/)
+- Node.js long-term support version: [download link](https://nodejs.org/en/)
 
   ::: note
 
-  请在打开的页面中，点击左侧的绿色按钮，即可完成下载。
+  Please click the green button on the left to download it.
 
   :::
 
-  在安装过程中，保持所有的默认设置，一路下一步即可。
+  During the installation process, keep all the default settings, click "next step" till it comes to "finish".
 
   ::: warning
 
-  如果你真的是个小白，请不要改默认安装目录，以免你在出现问题时找不到对应的文件夹。
-
-  Node.js 本身只会占据几十 M 的空间!
+  If you are really a newcomer, DO NOT change the default installation directory.
 
   :::
 
-## 创建模板
+## Creating template
 
-在一个合适的位置创建一个文件夹，并在该文件夹下打开终端。
+Create a folder in a suitable location and open the terminal under the folder.
 
-::: note Windows 下对应操作
+::: note Actions for Windows
 
-请使用文件管理器打开对应文件夹，之后在上方的地址栏中输入 `cmd` 之后按下回车。
+Please use the file explorer to open the corresponding folder, and then enter `cmd` in the address bar above and press Enter.
 
 :::
 
-在终端中执行:
+Execute in the terminal:
 
 ```sh
 npm create vuepress-theme-hope@next docs
 ```
 
-稍等片刻，你就可以在浏览器地址栏输入 `localhost:8080/zh/` 访问开发服务器了。
+After a while, you can enter `localhost:8080/` in the browser address bar to access the development server.
 
 ::: tip
 
-启动开发服务器，请在终端输入 `npm run docs:dev` 并回车。
+To start the development server, please enter `npm run docs:dev` in the terminal and press Enter.
 
-如果你需要终止开发服务器，请点击终端，并连续两次按下 `Ctrl + C`。
+To terminate the development server, please click on the terminal and press `Ctrl + C` twice.
 
 :::
 
-## 添加或修改页面
+## Add or modify pages
 
-`docs` 文件夹下除 `.vuepress` 文件夹之外的文件都会渲染为网页，渲染后的链接与文件夹结构和文件名称一一对应。只有 `README.md` 是特例，它会显示为文件夹下的默认网页 (默认主页)。这应该很好理解。
+Except for the `.vuepress` folder under the docs folder, all the files are rendered as web pages, and the generated links correspond to the folder structure and filename one-to-one. Only `README.md` is a special case, it will be displayed as the default web page (default homepage) under the folder. This should be easy to understand.
 
-比如你想要创建一个 `/a/b/`，你可以创建 `docs/a/b/README.md`；想要创建一个 `/x/y.html`，你可以创建 `docs/x/y.md`。
+For example, to create a `/a/b/`, you can create `docs/a/b/README.md`; to create a `/x/y.html`, you can create `docs/x/y.md`,
 
-Markdown 的内容会渲染为网页的内容。关于 Markdown 教程，请见 [Markdown 教程](markdown/README.md)。大概十五分钟，你就可以学会 Markdown 的内容，看完之后记得回来！
+The content of Markdown will be rendered as the content of the web page. For the Markdown tutorial, please see [Markdown Tutorial](markdown/README.md). You can learn the content of Markdown in about fifteen minutes, and remember to come back after reading it!
 
-学会 Markdown 之后你就可以尝试自己编辑 Markdown 文件来修改模板的内容。
+After learning Markdown, you can try to edit the Markdown file yourself to modify the content of the template.
 
-## 配置 VuePress
+## Configure VuePress
 
-接下来请阅读本文档 [VuePress 基础](vuepress/README.md)，大致了解 VuePress 是什么和如何使用它。
+Next, read this document [VuePress Basics](vuepress/README.md) to get a general understanding of what VuePress is and how to use it.
 
-如果你觉得已经掌握，接下来就是阅读 [VuePress 官方文档](https://v2.vuepress.vuejs.org/zh/guide/) 和本主题文档，根据你想要的对本主题进行配置。
+If you feel that you have mastered it, the next step is to read [VuePress official documentation](https://v2.vuepress.vuejs.org/guide/) and this theme document, so you can config this theme according to your needs.
 
 ::: warning
 
-请务必先阅读官方文档再阅读本主题文档。
+Please be sure to read the official document first before reading theme docs.
 
-本主题文档并没有针对官方文档已有的内容做过多的重复介绍，所以如果你不阅读官方文档，你可能无法掌握某些配置，比如模板中使用的多语言。
+The theme docs do not provide repetitive introductions to the existing content of the official document, so if you do not read the official document, you may not be able to master certain config, such as i18n used in the template.
 
 :::
 
-## 构建网站
+## Building a site
 
-在你初步配置好项目之后，你就可以使用 `npm run docs:build` 命令将网站构建输出到 dist 文件夹下。
+After you have initially configured the project, you can use the `npm run docs:build` command to output the build result to the dist folder.
 
-你可以将文件夹的内容部署到你网站的服务器上。最简单的做法是上传到 GitHub 并开启 GitHub Pages。
+You can deploy the contents of the folder to the server of your site. The easiest way is to upload to GitHub and serve with GitHub Pages.
 
-关于 GitHub 的相关教程，你可以参考 [GitHub 简介](https://mrhope.site/code/github/)。
+For related tutorials on GitHub, you can see [GitHub Documentation](https://docs.github.com/).

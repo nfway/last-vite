@@ -1,17 +1,17 @@
 ---
-title: 安装/使用
+title: Install / Usage
 icon: install
 category:
-  - 快速上手
+  - Get Started
 tag:
-  - 快速上手
-  - 安装
-  - 使用
+  - Get Started
+  - Install
+  - Usage
 ---
 
-## 安装
+## Install
 
-在当前项目的 `[dir]` 文件夹内创建 vuepress-theme-hope 项目:
+Create a vuepress-theme-hope project in `[dir]` folder under the current project:
 
 :::: code-group
 
@@ -33,7 +33,7 @@ npm init vuepress-theme-hope@next [dir]
 
 ::::
 
-## 使用
+## Usage
 
 :::: code-group
 
@@ -44,7 +44,7 @@ npm init vuepress-theme-hope@next [dir]
 import { defineHopeConfig } from "vuepress-theme-hope";
 
 export default defineHopeConfig({
-  // 此处放置配置
+  // your config here
 });
 ```
 
@@ -57,7 +57,7 @@ export default defineHopeConfig({
 const { defineHopeConfig } = require("vuepress-theme-hope");
 
 module.exports = defineHopeConfig({
-  // 此处放置配置
+  // your config here
 });
 ```
 
@@ -65,6 +65,6 @@ module.exports = defineHopeConfig({
 
 ::::
 
-你可以查看 [本文档配置][docs-config] 作为一个配置参考。
+You can view [Config of this site][docs-config] as an example.
 
-[docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/docs/theme/src/.vuepress/config.ts
+[docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/docs/theme/src/.vuepress/config.ts

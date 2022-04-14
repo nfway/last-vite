@@ -1,48 +1,48 @@
 ---
-title: 配置
+title: Config
 icon: config
 category:
-  - 配置
+  - Config
 tag:
-  - 配置
+  - Config
 ---
 
-## 配置介绍
+## Config Intro
 
-- [查看详情](intro.md)
+- [View Details](intro.md)
 
-## 多语言支持
+## I18n Support
 
-- [查看详情](i18n.md)
+- [View Details](i18n.md)
 
-## 主题配置
+## Theme Config
 
-- [主题基本配置](theme/basic.md)
+- [Theme Basic Config](theme/basic.md)
 
-- [主题功能配置](theme/feature.md)
+- [Theme Feature Config](theme/feature.md)
 
-- [主题布局配置](theme/layout.md)
+- [Theme Layout Config](theme/layout.md)
 
-- [主题外观配置](theme/apperance.md)
+- [Theme Appearance Config](theme/apperance.md)
 
-## 插件配置
+## Plugins Config
 
-- [主题插件介绍](plugins/intro.md)
+- [Theme Plugins Intro](plugins/intro.md)
 
-- [博客插件配置](plugins/blog.md)
+- [Blog plugin config](plugins/blog.md)
 
-- [Feed 插件配置](plugins/feed.md)
+- [Feed plugin config](plugins/feed.md)
 
-- [Markdown 增强插件配置](plugins/md-enhance.md)
+- [Markdown enhancement plugin config](plugins/md-enhance.md)
 
-- [PWA 插件配置](plugins/pwa.md)
+- [PWA plugin config](plugins/pwa.md)
 
-- [其他插件](plugins/others.md)
+- [Other Plugins](plugins/others.md)
 
-## 页面配置
+## Page Config
 
-- [Frontmatter 配置](page.md)
+- [Frontmatter config](page.md)
 
-## 样式配置
+## Style Config
 
-- [样式配置](style.md)
+- [Style config](style.md)

@@ -1,22 +1,22 @@
 ---
-title: 基础教程
+title: Cookbook
 icon: guide
 ---
 
-## 小白指南
+## Tutorial
 
-这里是一个精确到每一步的小白指南:
+Here is a step by step tutorial for newcomers:
 
-- [小白指南](tutorial.md)
+- [Step by step tutorial](tutorial.md)
 
-## 如何书写 Markdown
+## How to write Markdown
 
-- [Markdown 教程](markdown/README.md)
+- [Markdown Guide](markdown/README.md)
 
-## VuePress 介绍
+## VuePress Introduction
 
-- [VuePress 介绍](vuepress/README.md)
+- [VuePress Intro](vuepress/README.md)
 
-## 实用教程
+## Practical tutorial
 
-- [自定义样式](style.md)
+- [Style Customization](style.md)

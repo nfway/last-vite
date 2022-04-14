@@ -1,9 +1,8 @@
 ---
-title: 地点 Emoji
+title: Place Emoji
 icon: emoji
 category:
-  - 教程知识
-  - Markdown
+  - Cookbook
 tag:
   - Markdown
   - Emoji
