@@ -1,7 +1,5 @@
 # ESG 为何重要
 
-
-
 环境、社会这两个范畴的议题关系到人类整体——原因在于，人类生活中这些议题的影响之中。而管治（Governance），则影响着地球上的各类实体，如经济组织，特别是目前应用最广的经济组织：公司。
 
 所以，环境、社会和管治这三样的影响力几乎涵盖人们生活的方方面面，特别是经济活动的方方面面。而经济活动越来越多地对环境造成影响。为了一个可持续的未来，让商业活动也变得可持续，将是人类恒久的努力方向。
@@ -63,7 +61,7 @@ It is noted that strong companies with good ESG scores attract better talent and
 
 The findings come at a time when sustainable investing is rapidly transforming from a niche of the investment world into what looks like an unstoppable force. Based on U.S. demographic trends, Savita Subramanian, Head of U.S. Equity & Quantitative Strategy for BofA (Bank of America) Global Research, estimates that the amount invested in ESG funds could rise by $15-20 trillion over the next two decades. “That’s equivalent to the size of the S&P 500 today,” she notes.
 
-![](BofA_ESG-Placemat_For-in-line-article_2.png)
+![](./assets/BofA_ESG-Placemat_For-in-line-article_2.png)
 
 **Past performance is no guarantee of future results.**
 
@@ -77,7 +75,7 @@ Among U.S. companies on the S&P 500 index, those that scored in the top fifth of
 
 
 
-![](BofA_ESG-Placemat_For-in-line-article_1.png)
+![](./assets/BofA_ESG-Placemat_For-in-line-article_1.png)
 
 Past performance is no guarantee of future results.
 
@@ -136,3 +134,4 @@ ESG investors are values-based investors who are more interested in what happens
 **5.Companies that espouse strong ESG values tend to attract and retain the best talent.**
 
 Millennials care deeply that the companies they work for (and the businesses they support) embrace values that are aligned with their own, and environmental and social responsibility are very important to them. Employees who are passionate about the organization, who are loyal, and who feel valued drive an intangible good will that strengthens the brand of the company and improves the overall productivity of the workforce.
+

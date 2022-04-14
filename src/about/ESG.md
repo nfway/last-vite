@@ -1,6 +1,4 @@
----
-title: ESG 是什么
----
+# ESG 是什么
 
 > What Are Environmental, Social, and Governance (ESG) Criteria? 
 >

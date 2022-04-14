@@ -1,7 +1,4 @@
----
-title: The future of ESG integration
----
-
+# The future of ESG integration
 
 “ESG integration” is defined as including environmental, social and  governance (ESG) factors as a component of fundamental analysis to  identify potential sources of alpha or risk reduction.
 
