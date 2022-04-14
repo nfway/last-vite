@@ -53,7 +53,11 @@ export const zhNavbarConfig = defineNavbarConfig([
 		},
     ],
   }, 
- 		
+
+ { text: "如何写ESG报告",
+   icon: "edit",
+   link: "/how/ESG-guide",
+ }, 		
            			
   {
 	text: "帮助/关于",  //默认显示        
