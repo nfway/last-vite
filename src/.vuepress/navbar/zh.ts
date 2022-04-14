@@ -4,34 +4,52 @@ export const zhNavbarConfig = defineNavbarConfig([
  {
     text: "首页",
     icon: "home",
-    link: "../",    
+    link: "/",    
   },
  { text: "ESG介绍", 
    icon: "guide",
+   prefix: "/about/"
    children:[
-	{ text: "ESG是什么", link: "/about/ESG/", },
-	{ text: "ESG发展史", link: "/about/ESG-history/",},
-	{ text: "ESG投资史", link: "/about/ESG-investment-history/",},
+	{ text: "ESG是什么", link: "ESG", },
+	{ text: "ESG发展史", link: "ESG-history",},
+	{ text: "ESG投资史", link: "ESG-investment-history",},
 	  
 	],	
   }, 
  { text: "ESG标准", 
    icon: "define",
+   prefix: "/criteria/"
    children: [
-	 { text: "ESG标准",   link: "/criteria/ESG-Criteria/", },
-	 { text: "ESG在中国", link: "/criteria/ESG-China/",},
-	 { text: "港交所ESG", link: "/criteria/hkex-ESG/",},
-	 { text: "政策更新",  link: "/criteria/ESG-update/",},
+	 { text: "ESG标准",
+	   link: "ESG-Criteria", 
+	 },
+	 { text: "ESG在中国", 
+	   link: "ESG-China",
+	 },
+	 { text: "港交所ESG", 
+	   link: "hkex-ESG",
+	  },
+	 { text: "政策更新",
+   	   link: "ESG-update",
+	   },
 	],	
  }, 
   { text: "ESG评级", 
     icon: "rank",
+	prefix: "/apply/"
     children:[
-		{ text: "ESG评级", link: "/apply/ESG-rating/",},
-		{ text: "ESG投资", link: "/apply/ESG-investment/",},
-		{ text: "绿色债券", link: "/apply/Green-bond-definition-priciples-reporting/",},
-		{ text: "投资者需求", link: "/apply/ESG-investor-need/",},
-		],
+		{ text: "ESG评级", 
+		  link: "ESG-rating",
+		},
+		{ text: "ESG投资", 
+		  link: "ESG-investment",
+		},
+		{ text: "绿色债券", 
+		  link: "Green-bond-definition-priciples-reporting",},
+		{ text: "投资者需求", 
+		  link: "ESG-investor-need",
+		},
+    ],
   }, 
   { text: "如何写ESG报告", 
     icon: "edit", 
@@ -49,5 +67,9 @@ export const zhNavbarConfig = defineNavbarConfig([
 		{ text: "作者简历", link: "https://zhou.3feng.im/",},
 		],
    },
+ 
+ 
+ 
+ 
  
 ]);
