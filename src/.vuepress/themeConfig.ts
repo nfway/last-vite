@@ -16,7 +16,7 @@ export default defineThemeConfig({
   iconPrefix: "iconfont icon-",
   contributors: false,
   editLink: false,
-  logo: "/logo.svg",
+  logo: "/esg.png",
 
   footer: "MIT Licensed | Copyright © 2019-present Zhou SanFeng",
   copyright: false,
