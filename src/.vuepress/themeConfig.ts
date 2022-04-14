@@ -112,50 +112,7 @@ export default defineThemeConfig({
   },
 	],
 
-//sidebar
-   
-   sidebar: {
-	
-	'/guide/': [
-		{
-		  type: 'group',
-		  text: '指南',
-		  link: '',
-		  children: [
-			'',
-			'getting-started',
-			'appearance',
-			'navbar',
-			'sidebar',
-			'writing-content',
-		  ],
-		},
-	  ],
-
-	'/configuration/': [
-		{
-		  type: 'link-group',
-		  text: '主题配置',
-		  link: '',
-		  children: [
-			'basic',
-			'navbar',
-			'sidebar',
-			'page',
-			'markdown',
-			'i18n',			
-			{
-			type: 'link',
-			text: '编写文档',
-			link: 'plugins',          
-			},
-		  ],
-		},
-	  ],
-		
-   },
-
-   
+ 
   
   
   
