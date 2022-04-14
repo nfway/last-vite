@@ -1,10 +1,5 @@
----
-title: 关于ESG
-category:
-  - 关于
-tag:
-  - 关于
----
+
+# 关于ESG
 
 
 关于ESG的介绍,ESG 来自何方，指向何处。
