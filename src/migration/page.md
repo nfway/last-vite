@@ -1,27 +1,27 @@
 ---
-title: Page Migration Guide
+title: 页面迁移指南
 icon: page
 category:
-  - Migration
+  - 迁移
 tag:
-  - Migration
+  - 迁移
+  - 页面
   - Frontmatter
-  - Page
 ---
 
 ## Frontmatter
 
-### Obsolete
+### 废弃
 
-- `time` is marked as deprecated, use `date` instead
+- `time` 标记为废弃，请使用 `date`
 
-- `categories` marked as deprecated, use `category` instead
+- `categories` 标记为废弃，请使用 `category`
 
-- `tags` marked as deprecated, use `tag` instead
+- `tags` 标记为废弃，请使用 `tag`
 
-### Change
+### 变更
 
-- `author` type changed from `string | undefined` to `AuthorInfo[] | AuthorInfo | string[] | string | undefined`
+- `author` 类型从 `string | undefined` 改为 `AuthorInfo[] | AuthorInfo | string[] | string | undefined`
 
   ```ts
   interface AuthorInfo {
@@ -30,27 +30,27 @@ tag:
   }
   ```
 
-  This change allows you to add multiple authors and set up sites for them.
+  此改动允许你添加多个作者，并为其设置网站。
 
-- `date` now only supports standard DateString marked with `-`
+- `date` 现在仅支持使用 `-` 标记的标准 DateString
 
-- `category` type change from `string | undefined` to `string[] | string | undefined`
+- `category` 类型从 `string | undefined` 改为 `string[] | string | undefined`
 
-  The theme now supports multiple categories.
+  主题现在支持多个分类。
 
-- `pageInfo` type changed from `PageInfo[] | false` to `ArticleInfo[] | false`.
+- `pageInfo` 类型从 `PageInfo[] | false` 改为 `ArticleInfo[] | false`。
 
-  Available values ​​changed from `"author"`, `"time"`, `"category"`, `"tag"`, `"reading-time"`, `"word"`, `"visitor"` to `"Author"`, `"Date"`, `"Original"`, `"Category"`, `"Tag"`, `"ReadingTime"`, `"Word"`, `"Visitor"`
+  可填入的值从 `"author"`, `"time"`, `"category"`, `"tag"`, `"reading-time"`, `"word"`, `"visitor"` 改为 `"Author"`, `"Date"`, `"Original"`, `"Category"`, `"Tag"`, `"ReadingTime"`, `"Word"`, `"PageView"`
 
-- `sidebarDepth` renamed to `headingDepth`
+- `sidebarDepth` 重命名为 `headingDepth`
 
-- `copyrightText` renamed to `copyright`
+- `copyrightText` 重命名为 `copyright`
 
-- `anchorDisplay` renamed to `toc`
+- `anchorDisplay` 重命名为 `toc`
 
-- `updateTime` renamed to `lastUpdated`
+- `updateTime` 重命名为 `lastUpdated`
 
-- `prev` and `next` types changed from `string | false` to `AutoLink | string | false`
+- `prev` 和 `next` 类型由 `string | false` 改为 `AutoLink | string | false`
 
   ```ts
   interface AutoLink {
@@ -60,26 +60,26 @@ tag:
   }
   ```
 
-### remove
+### 移除
 
-- remove `password`
+- 移除 `password`
 
-  For security reasons, V2 removes this method of encrypting the original text of the cipher.
+  出于安全性考虑 V2 移除了这种通过密码原文加密的方式。
 
-- remove original `copyright`
+- 移除原 `copyright`
 
-  Related plugin is not yet compatible with V2.
+  相关插件暂未适配 V2。
 
-- remove `mediaLink`
+- 移除 `mediaLink`
 
-  Footer no longer displays media links.
+  页脚不再展示媒体链接。
 
-## Layout
+## 布局
 
-### Project HomePage
+### 项目主页
 
-Project HomePage frontmatter options are changed.
+项目主页 frontmatter 选项已更改。
 
-- `title` renamed to `heroText`
-- `darkHeroImage` renamed to `heroImageDark`
-- `action` renamed to `actions`
+- `title` 重命名为 `heroText`
+- `darkHeroImage` 重命名为 `heroImageDark`
+- `action` 重命名为 `actions`

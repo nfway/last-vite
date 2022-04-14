@@ -1,20 +1,20 @@
 ---
-title: V2 Migration
+title: V2 迁移指南
 icon: change
 ---
 
-This guide helps you migrate from V1 to V2.
+本指南帮助你从 V1 迁移至 V2。
 
 <!-- more -->
 
-## Upgrade to the latest version V1
+## 升级到最新版 V1
 
-Upgrading to the latest version V1 is the first step in the migration. During the upgrade to the latest version V1, you can check the [V1 Changelog](https://vuepress-theme-hope.github.io/v1/changelog.html) to adapt the changes made in V1.
+升级到最新版 V1 是迁移的第一步。在升级到最新版 V1 的过程中，你可以查看 [V1 变更日志](https://vuepress-theme-hope.github.io/v1/zh/changelog.html) 来适配 V1 中进行的变更。
 
-## V2 Migration Guide
+## V2 迁移指南
 
-The following pages list the changes between V1 and V2, respectively.
+以下页面分别列出了 V1 到 V2 之间发生的更改。
 
-- [Config Migration Guide](config.md)
-- [Page Migration Guide](page.md)
-- [Style Migration Guide](style.md)
+- [配置迁移指南](config.md)
+- [页面迁移指南](page.md)
+- [样式迁移指南](style.md)

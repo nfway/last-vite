@@ -2,37 +2,35 @@
 title: Markdown
 icon: markdown
 category:
-  - Get Started
+  - 快速上手
 tag:
-  - Get Started
+  - 快速上手
   - Markdown
 ---
 
-Every document page in VuePress is rendered by Markdown.
-
-You need to build your document or blog page by creating and writing Markdown in the corresponding path.
+VuePress 的每个文档页面都是由 Markdown 渲染而成。所以你需要通过在相应路径创建编写 Markdown 建立你的文档或博客页面。
 
 <!-- more -->
 
-## Markdown introduction
+## Markdown 介绍
 
-If you are a new learner and don’t know how to write Markdown, please read [Markdown Intro](../../cookbook/markdown/README.md) and [Markdown Demo](../../cookbook/markdown/demo.md).
+如果你是一个新手，还不会编写 Markdown，请先阅读 [Markdown 介绍](../../cookbook/markdown/README.md) 和 [Markdown 演示](../../cookbook/markdown/demo.md)。
 
 ::: info Frontmatter
 
-Frontmatter is a important concept in VuePress. If you don’t know it, you need to read [Frontmatter Introduction](../../cookbook/vuepress/page.md#front-matter).
+Frontmatter 是 VuePress 中很重要的一个概念，如果你不了解它，你需要阅读 [Frontmatter 介绍](../../cookbook/vuepress/page.md#front-matter)。
 
 :::
 
-## VuePress enhance
+## VuePress 扩展
 
-To enrich document writing, VuePress has extended Markdown syntax.
+为了丰富文档写作，VuePress 对 Markdown 语法进行了扩展。
 
-For these extensions, please read [Markdown extensions in VuePress](../../cookbook/vuepress/markdown.md).
+关于这些扩展，请阅读 [VuePress 中的 Markdown 扩展](../../cookbook/vuepress/markdown.md)。
 
-## Theme enhance
+## 主题扩展
 
-### CodeGroup
+### 代码块
 
 :::: code-group
 
@@ -54,54 +52,54 @@ npm i -D vuepress-theme-hope
 
 ::::
 
-- [View Detail](../markdown/code-group.md)
+- [查看详情](../markdown/code-group.md)
 
-### Superscript and Subscript
-
-19^th^ H~2~O
-
-- [View Detail](../markdown/sup-sub.md)
-
-### Align
+### 自定义对齐
 
 ::: center
 
-I am center
+我是居中的
 
 :::
 
 ::: right
 
-I am right align
+我在右对齐
 
 :::
 
-- [View Detail](../markdown/align.md)
+- [查看详情](../markdown/align.md)
 
-### Footnote
+### 上下角标
 
-This text has footnote[^first].
+19^th^ H~2~O
 
-[^first]: This is footnote content
+- [查看详情](../markdown/sup-sub.md)
 
-- [View Detail](../markdown/footnote.md)
+### 脚注
 
-### Mark
+此文字有脚注[^first].
 
-You can mark ==important words== .
+[^first]: 这是脚注内容
 
-- [View Detail](../markdown/mark.md)
+- [查看详情](../markdown/footnote.md)
 
-### Tasklist
+### 标记
 
-- [x] Plan A
-- [ ] Plan B
+你可以标记 ==重要的内容== 。
 
-- [View Detail](../markdown/tasklist.md)
+- [查看详情](../markdown/mark.md)
 
-### Chart
+### 任务列表
 
-::: chart A Scatter Chart
+- [x] 计划 1
+- [ ] 计划 2
+
+- [查看详情](../markdown/tasklist.md)
+
+### 图表
+
+::: chart 一个散点图案例
 
 ```json
 {
@@ -109,7 +107,7 @@ You can mark ==important words== .
   "data": {
     "datasets": [
       {
-        "label": "Scatter Dataset",
+        "label": "散点数据集",
         "data": [
           { "x": -10, "y": 0 },
           { "x": 0, "y": 10 },
@@ -133,20 +131,20 @@ You can mark ==important words== .
 
 :::
 
-- [View Detail](../markdown/chart.md)
+- [查看详情](../markdown/chart.md)
 
-### Flowchart
+### 流程图
 
 ```flow
-cond=>condition: Process?
-process=>operation: Process
-e=>end: End
+cond=>condition: 是否执行操作?
+process=>operation: 操作
+e=>end: 结束
 
 cond(yes)->process->e
 cond(no)->e
 ```
 
-- [View Detail](../markdown/flowchart.md)
+- [查看详情](../markdown/flowchart.md)
 
 ### Mermaid
 
@@ -167,29 +165,29 @@ flowchart TB
     two --> c2
 ```
 
-- [View Detail](../markdown/mermaid.md)
+- [查看详情](../markdown/mermaid.md)
 
-### Tex
+### Tex 语法
 
 $$
 \frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
 = \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
 $$
 
-- [View Detail](../markdown/tex.md)
+- [查看详情](../markdown/tex.md)
 
-### Code Demo
+### 代码演示
 
-::: demo A normal demo
+::: demo 一个普通 Demo
 
 ```html
 <h1>VuePress Theme Hope</h1>
-<p>Is <span id="very">very</span> powerful!</p>
+<p><span id="very">非常</span>强大!</p>
 ```
 
 ```js
 document.querySelector("#very").addEventListener("click", () => {
-  alert("Very powerful!");
+  alert("非常强大");
 });
 ```
 
@@ -201,26 +199,26 @@ span {
 
 :::
 
-- [View Detail](../markdown/demo.md)
+- [查看详情](../markdown/demo.md)
 
-### Presentation
+### 幻灯片
 
 @slidestart
 
-## Slide 1
+## 幻灯片 1
 
-A paragraph with some text and a [link](https://mrhope.site)
-
----
-
-## Slide 2
-
-- Item 1
-- Item 2
+一个有文字和 [链接](https://mrhope.site) 的段落
 
 ---
 
-## Slide 3.1
+## 幻灯片 2
+
+- 项目 1
+- 项目 2
+
+---
+
+## 幻灯片 3.1
 
 ```js
 const a = 1;
@@ -228,7 +226,7 @@ const a = 1;
 
 --
 
-## Slide 3.2
+## 幻灯片 3.2
 
 $$
 J(\theta_0,\theta_1) = \sum_{i=0}
@@ -236,4 +234,4 @@ $$
 
 @slideend
 
-- [View Detail](../markdown/presentation.md)
+- [查看详情](../markdown/presentation.md)

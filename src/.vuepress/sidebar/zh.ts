@@ -1,28 +1,13 @@
 import { defineSidebarConfig } from "vuepress-theme-hope";
 
 export const zhSidebarConfig = defineSidebarConfig({
-  "/zh/guide/": [
+  "/guide/": [
     {
       text: "快速上手",
       icon: "creative",
       prefix: "get-started/",
       collapsable: true,
       children: ["intro", "install", "markdown"],
-    },
-    {
-      text: "界面",
-      icon: "palette",
-      prefix: "interface/",
-      collapsable: true,
-      children: [
-        "darkmode",
-        "theme-color",
-        "icon",
-        "code-theme",
-        "accessibility",
-        "pure",
-        "others",
-      ],
     },
     {
       text: "布局",
@@ -94,7 +79,7 @@ export const zhSidebarConfig = defineSidebarConfig({
     },
   ],
 
-  "/zh/config/": [
+  "/config/": [
     "intro",
     "i18n",
     {
@@ -121,7 +106,7 @@ export const zhSidebarConfig = defineSidebarConfig({
     "style",
   ],
 
-  "/zh/cookbook/": [
+  "/cookbook/": [
     "tutorial",
     {
       text: "Markdown",
@@ -151,7 +136,7 @@ export const zhSidebarConfig = defineSidebarConfig({
     "style",
   ],
 
-  "/zh/": [
+  "/": [
     "",
     {
       text: "指南",
@@ -159,7 +144,6 @@ export const zhSidebarConfig = defineSidebarConfig({
       prefix: "guide/",
       children: [
         "get-started/",
-        "interface/",
         "layout/",
         "markdown/",
         "feature/",
@@ -187,7 +171,6 @@ export const zhSidebarConfig = defineSidebarConfig({
     },
     "changelog",
     "faq",
-    "demo/",
     "contribution",
   ],
 });

@@ -1,70 +1,80 @@
 ---
-title: Style Customization
+title: 如何自定义样式
 icon: guide
 ---
 
-This article briefly describes how to customize theme styles.
+本文简要介绍定制主题样式的方式。
 
 <!-- more -->
 
-## How to customize styles
+## 自定义样式的方式
 
-You can create three files under `.vuepress/styles` folder in your own document for style customization.
+你可以在自己文档内的 `.vuepress/styles` 文件夹下放置三个文件进行样式配置。
 
-- `index.scss`: You can place your own styles via CSS or SCSS syntax to modify the appearance of the theme here.
+- `index.scss`: 你可以在这里通过 CSS 或 SCSS 语法放置自己的样式以对主题的外观进行修改。
 
-  These styles will be injected after theme and plugin styles.
+  填入的样式会注入到主题和插件样式的后部。
 
-- `config.scss`: You can set some style related variables here, including responsive breakpoints, container class names, code themes, etc.
+- `config.scss`: 你可以在这里设置一些样式相关变量，包括响应式断点、容器类名、代码主题等。
 
-- `palette.scss`: You can set some color and layout related variables here, such as theme color, background color, navbar height, etc.
+- `palette.scss`: 你可以在这里设置一些颜色和布局的相关变量，比如主题色、背景色、导航栏高度等。
 
-For the complete config list supported by the above files, see [COnfig → Style](../config/style.md).
+上述文件支持的完整配置列表详见 [配置 → 样式](../config/style.md)。
 
-## Common style customization and corresponding modification methods
+## 常见样式定制以及对应修改方法
 
-### Modifying background color
+### 修改背景颜色
 
-Please configure the variables starting with `$bg-color` in `config.scss`, see [Configuration → Style](../config/style.md#color setting)
+请在 `config.scss` 中配置 `$bg-color` 开头的变量，详见 [配置 → 样式](../config/style.md#颜色设置)
 
-### Modifying theme font
+### 修改主题字体
 
-If you prefer **serif**[^serif] to **sans-serif**[^sans-serif], you can modify the font yourself. Please set `$font-family` to value you want in `palette.scss`.
+如果你更喜欢**衬线体**[^serif] 而不是**无衬线体**[^sans-serif]，你可以自行修改字体。请在 `palette.scss` 中将 `$font-family` 设置为你想要的值。
 
-::: tip Best Practice
+::: tip 最佳实践
 
-To let your website display well on different operating systems and devices with different fonts installed, you should set a fallback font [^fallback-font].
+为了让你的网站在不同操作系统以及安装了不同字体的设备上显示良好，你应该设置后备字体[^fallback-font]。
 
-So we recommend using the following font set as your preferred serif style:
+中文博客下最常使用的字体是 Adobe 发布的思源宋体[^noto-serif-sc]。
+
+所以我们推荐使用如下字体集作为衬线体首选样式:
 
 ```scss
-$font-family: 'Georgia, -apple-system, "Nimbus Roman No9 L", sans-serif';
+$font-family: 'Georgia, -apple-system, "Nimbus Roman No9 L", "PingFang SC", "Hiragino Sans GB", "Noto Serif SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "ST Heiti", sans-serif';
 ```
+
+当然，你仍需要导入这个字体，你可以通过 [GitHub](https://github.com/googlefonts/noto-cjk) 下载该字体。
 
 :::
 
-[^serif]: <https://simple.wikipedia.org/wiki/Serif>
-[^sans-serif]: <https://simple.wikipedia.org/wiki/Sans_serif>
-[^fallback-font]: <https://en.wikipedia.org/wiki/Fallback_font>
+[^serif]: 相关简介: <https://www.zhihu.com/topic/19559432/intro>
+[^sans-serif]: 相关简介: <https://www.zhihu.com/topic/19559433/intro>
+[^fallback-font]: 摘自维基百科
 
-### Modifying theme layout
+    后备字体 (Fallback font) 是指在当时显示的字型缺乏某些字元时，被用于显示缺失字元的字体。因为其作为显示的最后一道防线，后备字体应该尽可能包含所有 Unicode 字元。
 
-The theme allows you to freely config navbar, sidebar and footer, and you can also disable them if you don't like them. Please see [Guide → Layout → Navbar](../guide/layout/navbar.md), [Guide → Layout → Sidebar](../guide/layout/sidebar.md) and [Guide → Layout→ Footer](../guide/layout/footer.md) for full configuration instructions.
+    当缺失字元没有后备字体用于显示时，通常会将缺失字元改为黑色方块、白色空心方块、问号、Unicode 占位字元(U+FFFD)显示，或者干脆略过该字元。在实务上，像是 CSS 等支援字体列表依序显示的系统，通常会将一或多套后备字体置入列表最后，以防止缺字的情况发生。
 
-The theme's content layout also supports customization, if you don't like some features that are enabled by default, you are free to disable them. For details, please search through the search function of the document.
+[^noto-serif-sc]: 基于「开源字体授权发布」，并且在文档中说明可以基于其源代码进行二次修改后使用 (商用或者个人使用)，所以没有任何版权问题。
 
-### Modify animation speed
+### 修改主题布局
 
-If you don't like the animation speed of the theme and think they are too fast or too slow, you can set `$transform-transition` in `palette.scss` to change the animation duration and animation speed curve, the default value is `"0.3 ease"`.
+主题允许你自由配置导航栏、侧边栏和页脚，如果你不喜欢它们，你也可以禁用它们。请查看 [指南 → 布局 → 导航栏](../guide/layout/navbar.md)、[指南 → 布局 → 侧边栏](../guide/layout/sidebar.md) 和 [指南 → 布局 → 页脚](../guide/layout/footer.md) 获取完整的配置说明。
 
-### Modify component styles
+主题的内容布局也支持定制，如果你不喜欢默认启用的某些功能，你可以自由禁用它们。具体的配置请通过文档的搜索功能进行检索。
 
-If you are not satisfied with the styling of some components and want to make some tweaks on them, you can override the theme's default styles by adding CSS with `!important` in `index.scss`.
+### 修改动画速度
 
-If your changes involve modifying the component DOM (document structure), you may need to refer to the [Advanced → Customize Components](../guide/advanced/customize.md) section to customize the override of the component.
+如果你不太喜欢主题的动画速度，觉得它们太快或太慢，你可以在 `palette.scss` 中设置 `$transform-transition` 来改变动画时长和动画速度曲线，其默认值为 `"0.3s ease"`。
 
-### Add a new layout or re-create on the theme
+### 修改组件样式
 
-If you wish to do some revamping of the whole theme , or want to add a new layout, you can extend the theme. The new theme can be stored locally in the project, or it can be republished as a new theme on npm.
+如果你对某些组件的样式不满意，想在其上做一些微调，你可以在 `index.scss` 中通过添加带有 `!important` 的 CSS 来覆盖主题的默认样式。
 
-For related content, see [Advanced → Extending Theme](../guide/advanced/extend.md).
+如果你的改动涉及到修改组件 DOM (文档结构)，你可能需要参阅 [高级功能 → 自定义主题组件](../guide/advanced/customize.md) 章节来覆盖组件。
+
+### 新增布局或在主题上二次创作
+
+如果你希望在主题整体上进行一些改造，或者想要添加新的布局，你可以继承主题。继承后的主题可以存放在项目本地，也可以二次在 npm 上发布为新主题。
+
+相关内容请参阅 [高级功能 → 继承主题](../guide/advanced/extend.md)。

@@ -1,29 +1,29 @@
 ---
-title: Theme Config
+title: 主题配置
 icon: config
 category:
-  - Config
+  - 配置
 tag:
-  - Theme Config
+  - 主题配置
 ---
 
-## Content
+## 目录
 
-- [Theme Basic Config](basic.md)
+- [主题基本配置](basic.md)
 
-- [Theme Feature Config](feature.md)
+- [主题功能配置](feature.md)
 
-- [Theme Layout Config](layout.md)
+- [主题布局配置](layout.md)
 
-- [Theme Appearance Config](apperance.md)
+- [主题外观配置](apperance.md)
 
-## Demo
+## 案例
 
-You can check [theme docs' config][docs-config].
+你可以查看 [本文档的配置][docs-config] 作为案例。
 
-## Helper Function
+## Helper 函数
 
-We provide a `themeConfig` helper function that you can import to provide autocompletion and validation:
+我们提供了 `themeConfig` Helper 函数，你可以引入它来提供自动补全和校验:
 
 :::: code-group
 
@@ -34,7 +34,7 @@ We provide a `themeConfig` helper function that you can import to provide autoco
 import { themeConfig } from "vuepress-theme-hope";
 
 export default themeConfig({
-  // themeConfig here
+  // 此处放置主题配置
 });
 ```
 
@@ -47,7 +47,7 @@ export default themeConfig({
 const { themeConfig } = require("vuepress-theme-hope");
 
 module.exports = themeConfig({
-  // themeConfig here
+  // 此处放置主题配置
 });
 ```
 

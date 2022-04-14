@@ -29,12 +29,13 @@ export default defineHopeConfig({
 
   locales: {
     "/": {
-      lang: "en-US",
-      title: "vuepress-theme-hope",
-      description: "A vuepress theme with tons of features✨",
+      lang: "zh-CN",
+      title: "这是一个中文标题",
+      description: "一个具有强大功能的 vuepress 主题✨",
     },
-   },
-  
+
+  },
+
   themeConfig,
 
   alias: {

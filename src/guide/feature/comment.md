@@ -1,24 +1,24 @@
 ---
-title: Comment Service
+title: 评论
 icon: comment
 category:
-  - Feature
+  - 功能
 tag:
-  - Comment
-  - Feature
+  - 功能
+  - 评论
 ---
 
-`vuepress-theme-hope` implements the comment feature with built-in [`vuepress-plugin-comment2`][comment2].
+通过内置 [`vuepress-plugin-comment2`][comment2]，`vuepress-theme-hope` 实现了评论功能。
 
 ::: info
 
-`vuepress-theme-hope` provides `comment` options in `themeConfig.plugins` as plugin options to `vuepress-plugin-comment2`.
+`vuepress-theme-hope` 将 `themeConfig.plugins` 中的 `comment` 选项作为插件选项提供给 `vuepress-plugin-comment2`。
 
 :::
 
 <!-- more -->
 
-## Enable <Badge text="Support page config" />
+## 启用 <Badge text="支持页面配置" />
 
 :::: code-group
 
@@ -68,72 +68,74 @@ module.exports = themeConfig({
 
 ::::
 
-Comment feature is enabled globally by default, the configuration key is `comment` in `themeConfig.plugins.comment`.
+评论功能默认全局启用，配置项为 `themeConfig.plugins.comment` 中的 `comment`。
 
-::: tip
+::: info
 
-For the complete config item of the plugin ,please see [plugin documentation][comment2].
-
-:::
-
-## Comment Provider
-
-Currently you can choose from Giscus, Waline and Twikoo.
-
-::: tip Comment service selection
-
-- Giscus is recommended if your blog or documentation is primarily geared towards programmers.
-- If your blog or documentation is for the general public, Waline is recommended.
+受篇幅限制，完整的评论插件配置，详见 [插件文档][comment2]。
 
 :::
 
-<!-- You can choose from 2 comment service provider: Waline and Vssue.
+## 评论服务
 
-::: tip Comparison between services
+目前可以从 Giscus、Waline 和 Twikoo 中选择。
 
-- Waline uses a backend server to support comment and pageview statistics, and you can comment without logging in to any account. It needs extra configuration on backend, and you can deploy on vercel for free.
-- Vssue uses the issue panel of the code platform repo and requires the user to login or register the corresponding platform account.
+::: tip 评论服务选择
 
-If your site is for the general public rather than programmers, Waline is recommended.
+- 如果你的博客或文档主要面向程序员，建议使用 Giscus。
+- 如果你的博客或文档面向大众，建议使用 Waline。
+
+:::
+
+<!-- 有两个服务: Waline 和 Vssue -->
+
+<!-- ::: tip 评论服务的比较
+
+- Waline 需要后端服务器以及额外的配置，支持页面访问量统计，无需登录账号即可评论。可以使用 Vercel。
+- Vssue 使用代码平台仓库的 issue 面板，需要用户登录或注册相应平台账号。
+
+如果你的站点面向大众而非程序员，推荐使用 Waline。
 
 ::: -->
 
 ## Giscus
 
-Giscus is a Github Dicussion based commenting system that is easy to start.
+Giscus 是一个基于 Github Dicussion 的评论系统，启用简便。
 
-### Preparation
+<!-- more -->
 
-1. You need to create a public repository and open dicussion as a place to store comments
-1. You need to install the [Giscus App](https://github.com/apps/giscus) to have permission to access the corresponding repository.
+### 准备工作
 
-After completing the above steps, please go to the [Giscus page](https://giscus.app) to get your settings. You just need to fill in the repository and Discussion categories, then scroll to the "Enable giscus" section at the bottom of the page and copy the `data-repo`, `data-repo-id`, `data-category` and `data-category-id` four items as they are required.
+1. 你需要创建一个公开仓库，并开启评论区，以作为评论存放的地点
+1. 你需要安装 [Giscus App](https://github.com/apps/giscus)，使其有权限访问对应仓库。
 
-### Config
+在完成以上步骤后，请前往 [Giscus 页面](https://giscus.app/zh-CN) 获得你的设置。你只需要填写仓库和 Dicussion 分类，之后滚动到页面下部的 “启用 giscus” 部分，复制 `data-repo`, `data-repo-id`, `data-category` 和 `data-category-id` 四项，因为它们是必须的。
 
-Please pass `data-repo`, `data-repo-id`, `data-category` and `data-category-id` as plugin options as `repo`, `repoId`, `category` `categoryId`.
+### 配置
 
-::: info Darkmode
+请将 `data-repo`, `data-repo-id`, `data-category` 和 `data-category-id` 作为插件选项传入 `repo`, `repoId`, `category` `categoryId`。
 
-To let Giscus use the correct theme, you need to pass a boolean value to `<CommentService />` via the `darkmode` property, indicating whether darkmode is currently enabled.
+::: info 夜间模式
+
+为了能使 Giscus 使用正确的主题，你需要为 `<CommentService />` 通过 `darkmode` 属性传入一个布尔值，代表当前是否开启夜间模式。
 
 :::
 
-For other options, see [Giscus Config][comment2-giscus-config].
+其他的配置项详见 [Giscus 配置][comment2-giscus-config]。
 
 ## Waline
 
-### Get APP_ID and APP_Key
+### 获取 APP ID 和 APP Key
 
-[Sign in](https://console.leancloud.app/login.html#/signin) or [sign up](https://console.leancloud.app/login.html#/signup) leancloud. Then create new application in Leancloud, and you will get APP ID / APP Key / APP Master Key.
+请先 [登录](https://console.leancloud.app/login.html#/signin) 或 [注册](https://console.leancloud.app/login.html#/signup) `LeanCloud 国际版`, 进入 [控制台](https://console.leancloud.app/applist.html#/apps) 后点击左下角 [创建应用](https://console.leancloud.app/applist.html#/newapp)。创建应用后进入该应用，选择左下角的 `设置` > `应用Key`，然后记下 `APP ID`,`APP Key` 和 `Master Key`。
 
-After that, create a vercel app using the below button.
+之后点击下方按钮，跳转至 Vercel 进行快速部署。
 
 [![Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/lizheming/waline/tree/master/example)
 
-Then input your new GitHub repo name and set `LEAN_ID`, `LEAN_KEY` and `LEAN_MASTER_KEY` environment variables in the "Environment Variables" column. `APP ID` is the value of `LEAN_ID`, and `APP Key` to `LEAN_KEY`, `Master Key` to `LEAN_MASTER_KEY`.
+按照要求输入 Vercel 项目名称与 GitHub 仓库名称。Vercel 会基于 waline 模板帮助你新建并初始化该仓库。仓库初始化完毕后，需要在 Environment Variables 中配置 `LEAN_ID`, `LEAN_KEY` 和 `LEAN_MASTER_KEY` 三个环境变量。它们的值分别对应上一步在 LeanCloud 中获得的 `APP ID`, `APP KEY`, `Master Key`。
 
-Click `Deploy` button to deploy. It will show you deploy successfully after a minitues time. Then config the vercel link in your themeConfig:
+设置好环境变量后，点击 `Deploy` 部署，一两分钟即可部署完成。之后在主题设置中设置 vercel 地址:
 
 :::: code-group
 
@@ -179,30 +181,32 @@ module.exports = defineHopeConfig({
 
 ::::
 
+Waline 评论的其他配置将在 [Waline 配置][comment2-waline-config] 中列出。
+
 ::: tip
 
-Config will be listed on [Plugin Config][comment2-waline-config].
-
-For more details, please see [Waline Docs](https://waline.js.org/en/)。
+更多配置与使用，请见 [Waline 官方文档](https://waline.js.org)。
 
 :::
 
 ## Twikoo
 
-### Vercel Deployment
+### Vercel 部署
 
-1. Apply for [MongoDB](https://www.mongodb.com/cloud/atlas/register) account
-1. Create a free MongoDB database, the recommended region is `AWS / N. Virginia (us-east-1)`
-1. Click CONNECT on the Clusters page, follow the steps to allow connections from all IP addresses ([Why?](https://vercel.com/support/articles/how-to-allowlist-deployment-ip-address)), create Database user, and record the database connection string, please change the `<password>` in the connection string to the database password
-1. Sign up for a [Vercel](https://vercel.com/signup) account
-1. Click the button below to deploy Twikoo to Vercel in one click
+[查看视频教程](https://www.bilibili.com/video/BV1Fh411e7ZH)
+
+1. 申请 [MongoDB](https://www.mongodb.com/cloud/atlas/register) 账号
+1. 创建免费 MongoDB 数据库，区域推荐选择 `AWS / N. Virginia (us-east-1)`
+1. 在 Clusters 页面点击 CONNECT，按步骤设置允许所有 IP 地址的连接（[为什么？](https://vercel.com/support/articles/how-to-allowlist-deployment-ip-address)），创建数据库用户，并记录数据库连接字符串，请将连接字符串中的 `<password>` 修改为数据库密码
+1. 申请 [Vercel](https://vercel.com/signup) 账号
+1. 点击以下按钮将 Twikoo 一键部署到 Vercel
 
    [![Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/imaegoo/twikoo/tree/dev/src/vercel-min)
 
-1. Go to Settings - Environment Variables, add the environment variable `MONGODB_URI`, the value is the database connection string in step 3
-1. Go to Overview, click the link under Domains, if the environment configuration is correct, you can see the prompt "Twikoo cloud function is running normally"
-1. Vercel Domains (with `https://` prefix, eg `https://xxx.vercel.app`) is your environment id
+1. 进入 Settings - Environment Variables，添加环境变量 `MONGODB_URI`，值为第 3 步的数据库连接字符串
+1. 进入 Overview，点击 Domains 下方的链接，如果环境配置正确，可以看到 “Twikoo 云函数运行正常” 的提示
+1. Vercel Domains（包含 `https://` 前缀，例如 `https://xxx.vercel.app`）即为您的环境 id
 
-[comment2]: https://vuepress-theme-hope.github.io/v2/comment/
-[comment2-giscus-config]: https://vuepress-theme-hope.github.io/v2/comment/config/giscus.html
-[comment2-waline-config]: https://vuepress-theme-hope.github.io/v2/comment/config/waline.html
+[comment2]: https://vuepress-theme-hope.github.io/v2/comment/zh/
+[comment2-giscus-config]: https://vuepress-theme-hope.github.io/v2/comment/zh/config/giscus.html
+[comment2-waline-config]: https://vuepress-theme-hope.github.io/v2/comment/zh/config/waline.html

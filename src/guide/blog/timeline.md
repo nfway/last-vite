@@ -1,27 +1,27 @@
 ---
-title: Timeline
+title: 时间线
 icon: time
 category:
-  - Blog
+  - 博客
 tag:
-  - Blog
-  - Timeline
+  - 博客
+  - 时间线
 ---
 
-You can access the time page through `/timeline/`. On the page, you can view all the articles in time reverse order.
+你可以通过 `/timeline/` 访问时间页面，在页面中，你可以按照时间倒序查看所有的文章列表。
 
-![Timeline Page](./assets/timeline.png)
+![时间线列表](./assets/timeline.png)
 
-## Exclude articles
+## 排除文章
 
-By default, all articles which has a writing date will be displayed in timeline. If you don’t want an article to be included, just set the `timeline` to `false` in the frontmatter of the article.
+默认情况下所有注明了写作日期的文章都会显示时间线中。如果你不希望某篇文章被包含，只需在文章的 frontmatter 中将 `timeline` 设置为 `false`。
 
-## Configure the top text of the timeline
+## 配置时间线顶部文字
 
-We allow you to customize the top text of the timeline, you can configure it through `themeConfig.blog.timeline`.
+我们允许你定制时间线的顶部文字，你可以通过 `themeConfig.blog.timeline` 配置它。
 
-## Sidebar
+## 侧边栏
 
-We have added a timeline tab in the sidebar of blog-related pages for users to quickly preview the timeline.
+我们在博客相关页面的侧边栏添加了时间线选项卡，供用户快速预览时间线。
 
-![Timeline Tab](./assets/timeline-tab.png)
+![时间线选项卡](./assets/timeline-tab.png)

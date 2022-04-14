@@ -1,103 +1,101 @@
 ---
-title: Theme intro
+title: 主题介绍
 icon: info
 category:
-  - Get Started
+  - 快速上手
 tag:
-  - Get Started
-  - Intro
+  - 快速上手
+  - 介绍
 ---
 
-## Original intention
+## 主题初衷
 
-The original intention of building this theme was to find that VuePress is just a pure static document generator. For example, it will not inject meta tags for SEO optimization, nor will it generate a Sitemap to help search engines index the content of the document.
+制作本主题的初衷是发现 VuePress 只是一个单纯的静态文档生成器。举个例子，它并不会注入 meta 标签做 SEO 优化，也不会生成 Sitemap 帮助搜索引擎索引文档内容。
 
-Though VuePress has extended Markdown syntax to a certain extent, it still lacks some commonly used functions, such as text alignment, mark, flowchart, formula, presentation, etc. At the same time, some features provided by the default theme are weak or missing, such as picture preview, dark mode, etc.
+虽然 VuePress 在一定程度上扩展了 Markdown 语法，它仍然缺失一些常用的功能，比如文本对齐、标记、流程图、公式、演示等。同时默认主题提供的一些功能，也比较弱或者缺失，如图片预览，深色模式等。
 
-In this case, the design of `vuepress-theme-hope` was born.
+在这种情况下，`vuepress-theme-hope` 和一些系列插件就应运诞生。
 
-This theme not only **greatly improve outlook** comparing to `@vuepress/theme-default`, but also **dedicates to provide a full range of enhancements for VuePress** with its plugins.
+主题不仅在默认主题的基础上**大幅提高美观性**，同时搭配各种插件，**在各种细节与功能上为 VuePress 提供全方位的增强**。
 
-::: warning This project is not only a theme
+::: warning 本项目不是单纯一个主题
 
-Although [vuepress-theme-hope/vuepress-theme-hope](https://github.com/vuepress-theme-hope/vuepress-theme-hope) itself marked as a theme repository, it also contains more than a dozen equally complete and powerful plugin. Each plugin is also powerful, can be used with the default theme or third-party themes.
+[vuepress-theme-hope/vuepress-theme-hope](https://github.com/vuepress-theme-hope/vuepress-theme-hope) 虽然标明了这是一个主题仓库，但是它同时包含了十多个同样功能完善且强大的插件。每一个插件也都是由 Mr.Hope 精心开发，功能足够强大，可以自由搭配默认主题或者第三方主题单独使用。
 
-Based on such a dozen plugins, Mr.Hope can confidently say that `vuepress-theme-hope` is "**A powerful theme with tons of features**". It can also be seen as the most versatile and comprehensive theme among all VuePress themes.
-
-:::
-
-## Design goals
-
-::: info v1 Goal
-
-- Direction: All the functions of the theme are to enhance the document **content richness** and **shareable**.
-
-- Powerful and independent functions: The theme provides comprehensive details on functions and decompose them into independent plugins so users can use them in other themes.
-
-- Zero or simple configuration: All functions of this theme are designed to work under zero or simple configuration to reduce your migration or learning costs while directly enjoy their convenience.
+而基于这样十几个插件，Mr.Hope 才可以自信的说 `vuepress-theme-hope` 是“**一个带有成吨功能的强大主题**”。它也可以看作是 VuePress 所有主题中，功能最多，覆盖最全面的主题。
 
 :::
 
-Based on the goal V1 achieved, v2 is further carried out:
+## 设计目标
 
-- Improved outlook: The theme interface is not based on the layout and style of the default theme, but has been completely refactored.
+::: info v1 的设计目标
 
-- Decoupling Features: With the help of Vue3’s composition API, the theme fully achieve "Tree Shakeable" while remaining powerful.
+- 方向: 主题的所有功能都是为了增强文档**内容丰富性**与**可传播性**。
 
-  The theme will only run which features you need, without being slowed down by other features or affecting the build size.
+- 功能的强大与独立: 本主题会对功能提供全面的细节，并将它们解构成独立插件，以便用户在其他主题中引入并使用他们。
 
-## Why powerful
+- 零或低配置: 本主题的所有功能都尽可能设计成在零配置或低配置下即可工作，以便尽可能降低你的迁移或学习成本，直接享受到它们的便利。
 
-### Content richness
+:::
 
-The theme provides a lot of extended syntax support for Markdown, allowing you to insert more content in the body.
+在已经完善的 V1 基础上，v2 进一步的进行了:
 
-- If you are a literature lover and want to place some essays, the theme provides [Custom Alignment](../markdown/align.md) and [footnote](../markdown/footnote.md).
+- 美观度提升: 主题界面不在基于默认主题的布局与样式，进行了完全的重构。
 
-- To store some knowledge notes, the theme provides [Custom container](../markdown/container.md), [Mark](../markdown/mark.md), [Badge](../markdown/components.md)、Task list](../markdown/tasklist.md) and [Tex](../markdown/tex.md) support.
+- 功能的解构: 借助 Vue3 的组合式 API 主题在保持强大的同时进一步增强了 “Tree Shakeable”。
 
-- If you are a programmer and need to show a lot of codes and demos, this theme provides light and dark themes for code blocks, [code group](../markdown/code-group.md) and the ["one-click copy" button](../feature/copy-code.md). At the same time, we also provide the [Code Demo](../markdown/demo.md) function, which is convenient for you to show your own Vue, React components or other demos.
+  主题会只运行你需要的哪些功能，不会被其他功能拖慢或影响构建大小。
 
-- If you are providing product documentation and presentation, the theme provides [slide](../markdown/presentation.md), [chart](../markdown/chart.md), [flowchart](../markdown/flowchart.md), [mermaid diagram](../markdown/mermaid.md) functions.
+## 强大在哪
 
-In short, anyone can enjoy the convenience of Markdown’s enhanced syntax.
+### 更丰富的内容
 
-### Page UI
+主题为 Markdown 提供了大量的扩展语法支持，让你在正文插入更多的内容。
 
-- [Icon Support](../interface/icon.md)
+- 如果你是一名文学爱好者想放置一些随笔，主题提供了 [自定义对齐](../markdown/align.md) 与 [脚注](../markdown/footnote.md)。
 
-- Page: [Page information](../feature/page-info.md), TOC and [picture preview function](../feature/photo-swipe.md).
+- 如果你希望存放一些知识笔记，主题提供了 [自定义容器](../markdown/container.md)、[标记](../markdown/mark.md)、[徽章](../markdown/components.md)、[任务列表](../markdown/tasklist.md) 与 [公式](../markdown/tex.md) 支持。
 
-- Site structure:
+- 如果你是一名程序员需要大量展示代码与 demo，本主题为代码块提供了浅色与深色两种主题，[代码组](../markdown/code-group.md) 与 ["一键复制" 按钮](../feature/copy-code.md)。同时我们还提供 [代码演示](../markdown/demo.md) 功能，方便你展示自己的 Vue、React 组件或者其他 demo。
 
-  Rebuild mobile navbar
+- 如果你需要提供产品文档与展示，主题提供了 [幻灯片](../markdown/presentation.md)、[图表](../markdown/chart.md)、[流程图](../markdown/flowchart.md) 与 [Mermaid 图表](../markdown/mermaid.md) 功能。
 
-  simplfied [Navbar](../layout/navbar.md) and [Sidebar](../layout/sidebar.md) config, add support for icons and path prefixes.
+总之，任何人都可以享受 Markdown 增强语法带来的便利。
 
-- Layout: addes [breadcrumb](../layout/breadcrumb.md) and [footer](../layout/footer.md) support.
+### 页面 UI
 
-- [Homepage](../layout/home.md): New outlook, features support icons and links.
+- 页面: [**页面图标**](../interface/icon.md)、[**文章信息**](../feature/page-info.md)、[**标题目录**](../blog/page.md#标题列表)、[**图片预览功能**](../feature/photo-swipe.md)。
 
-- [Code Block Theme Customize](../interface/code-theme.md): Allows you to freely customize the code block style
+- 站点结构:
 
-### Search function
+  完全重构导航栏在移动设备的布局
 
-The theme adds [built-in support for the official VuePress search plugin](../feature/search.md).
+  简化了 [导航栏](../layout/navbar.md) 与 [侧边栏](../layout/sidebar.md) 配置，添加了图标与路径前缀支持。
 
-### Full Blog Support
+- 布局: 新增 [**路径导航**](../layout/breadcrumb.md) 与 [**页脚**](../layout/footer.md) 支持。
 
-The theme is containing full blog support, you can use the brand new [blog homepage](../blog/home.md).
+- [主页](../layout/home.md): 全新外观，特性支持图标与跳转。
 
-- provides [categories, tags](../blog/category-and-tags.md), [timeline](../blog/timeline.md), [star articles](../blog/article.md) and other functions.
+- [代码块自定义主题](../interface/code-theme.md): 允许你自由定制代码块样式
 
-- Provides [Comment and PageViews](../feature/comment.md) feature to let you communicate with your visitors
+### 完整的博客支持
 
-- Provides [Feed](../advanced/feed.md) generation, so that others can subscribe your site.
+主题引入了完整的博客支持，你可以启用全新的 [**博客主页**](../blog/home.md)。
 
-### Search engine enhancement
+- 内置的 [分类、标签](../blog/category-and-tags.md)、[时间线](../blog/timeline.md)、[文章精选](../blog/article.md) 等功能。
 
-- Provides [SEO Enhance](../advanced/seo.md), will automatically inject information to fully support OGP and JSON-LD protocols, and enhance search engine indexing.
+- 提供 [**评论**](../feature/comment.md) 功能以便你可以与你的访客交流。
 
-- Provides [Sitemap Generation](../advanced/sitemap.md)
+- 支持创建 [Feed](../advanced/feed.md)，以便他人可以订阅你的网站。
 
-- Provides [PWA](../advanced/pwa.md)
+### 搜索功能
+
+主题添加了 [VuePress 官方搜索插件的内置支持](../feature/search.md)。
+
+### 搜索引擎增强
+
+- 提供 [SEO 增强](../advanced/seo.md)，会自动注入网站信息以完整支持 OGP 与 JSON-LD 协议，增强搜索引擎索引。
+
+- 提供 [Sitemap 生成](../advanced/sitemap.md)
+
+- 提供 [PWA 支持](../advanced/pwa.md)，使你的站点可被安装。

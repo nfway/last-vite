@@ -1,63 +1,63 @@
 ---
-title: Style Migration Guide
+title: 样式迁移指南
 icon: style
 category:
-  - Migration
+  - 迁移
 tag:
-  - Migration
-  - Style
+  - 迁移
+  - 样式
 ---
 
-## Preprocessor Changes
+## 预处理器变更
 
-The entire style system was migrated from Stylus to Scss, which brought the following changes:
+整个样式系统从 Stylus 迁移到 Scss，这带来了以下更改:
 
-- `palette.styl` split into `config.scss` and `palette.scss`
-- `index.styl` changed to `index.scss`
+- `palette.styl` 拆分为 `config.scss` 和 `palette.scss`
+- `index.styl` 改为 `index.scss`
 
-## Style Changes
+## 样式变更
 
-### Responsive Layout Breakpoints
+### 响应式布局断点
 
-Move to `config.scss`.
+移动至 `config.scss`。
 
-- `$MQWide` renamed to `$wide`
-- `$MQNormal` renamed to `$desktop`
-- `$MQNarrow` renamed to `$pad`
-- `$MQMobile` renamed to `$mobile`
-- `$MQMobileNarrow` renamed to `$mobileS`
+- `$MQWide` 重命名为 `$wide`
+- `$MQNormal` 重命名为 `$desktop`
+- `$MQNarrow` 重命名为 `$pad`
+- `$MQMobile` 重命名为 `$mobile`
+- `$MQMobileNarrow` 重命名为 `$mobileS`
 
-### Layout
+### 布局
 
-Move to `palette.scss`.
+移动至 `palette.scss`。
 
-- `$mobileSidebarWidth` renamed to `$sidebar-mobile-width`
-- `$lineNumbersWrapperWidth` renamed to `$line-numbers-width`
+- `$mobileSidebarWidth` 重命名为 `$sidebar-mobile-width`
+- `$lineNumbersWrapperWidth` 重命名为 `$line-numbers-width`
 
-### Colors
+### 颜色
 
-Move to `palette.scss`.
+移动至 `palette.scss`。
 
-- `$accentColor` renamed to `$theme-color`
-- `$textColor`, `$darkTextColor` merged into `$text-color`
-- `$bgColor`, `$darkBgColor` merged into `$bg-color`
-- `$bgColorLight`, `$darkBgColorLight` merged into `$bg-color-light`
-- `$bgColorBlur`, `darkBgColorBlur` merged into `$bg-color-blur`
-- `$cardShadowColor`, `$darkCardShadowColor` merged into `$card-shadow`
-- `$boxShadowColor`, `$darkBoxShadowColor` merged into `$box-shadow`
+- `$accentColor` 重命名为 `$theme-color`
+- `$textColor`, `$darkTextColor` 合并为 `$text-color`
+- `$bgColor`, `$darkBgColor` 合并为 `$bg-color`
+- `$bgColorLight`, `$darkBgColorLight` 合并为 `$bg-color-light`
+- `$bg-color-blur`, `$darkBgColorBlur` 合并为 `$bg-color-blur`
+- `$cardShadowColor`, `$darkCardShadowColor` 合并为 `$card-shadow`
+- `$boxShadowColor`, `$darkBoxShadowColor` 合并为 `$box-shadow`
 
-- `$arrowBgColor` removed
+- `$arrowBgColor` 移除
 
-- `$colorPicker` removed
+- `$colorPicker` 移除
 
-  Now you just need to set the theme color in `themeConfig`
+  现在你只需要在 `themeConfig` 中设置主题色
 
-- `$codeBgColor`, `$darkCodeBgColor` removed, set `$code-light-theme` and `$code-dark-theme` in `config.scss` instead.
+- `$codeBgColor`, `$darkCodeBgColor` 移除，请在 `config.scss` 中配置 `$code-light-theme` 和 `$code-dark-theme`。
 
-### Font
+### 字体
 
-- Added `$font-family`, `$font-family-fancy` and `$font-family-code`
+- 新增 `$font-family`, `$font-family-fancy` 和 `$font-family-code`
 
-### Transition
+### 动画
 
-- Added `$color-transition` and `$transform-transition`
+- 新增 `$color-transition` 和 `$transform-transition`

@@ -1,58 +1,52 @@
 ---
-title: Style config
+title: 样式配置
 icon: style
 category:
-  - Config
+  - 配置
 tag:
-  - Theme Config
-  - Style
+  - 主题配置
+  - 样式
 ---
 
-You can change the theme’s styles in `.vuepress/styles` by setting variable values in the `config.scss` and `palette.scss` files.
+你可以在 `.vuepress/styles` 中通过在 `config.scss` 和 `palette.scss` 文件中写入变量值来更改主题的样式。
 
-Also you can add your own styles in `.vuepress/styles/index.scss`.
+你也可以在 `.vuepress/styles/index.scss` 中添加你自己的样式。
 
 <!-- more -->
 
 ## config.scss
 
-`config.scss` is used for pure variable config, the following are supported variables and default values.
+`config.scss` 用于纯变量配置，以下是支持的变量与默认值。
 
 ```scss
-/* responsive breakpoints */
+/* 响应式布局断点 */
+$wide: 1440px !default; // 宽屏
+$desktop: 1280px !default; // 桌面
+$pad: 959px !default; // 平板
+$mobile: 719px !default; // 移动设备
+$mobileS: 419px !default; // 小型移动设备
 
-// wide screen
-$wide: 1440px !default;
-// desktop
-$desktop: 1280px !default;
-// narrow desktop / iPad
-$pad: 959px !default;
-// wide mobile
-$mobile: 719px !default;
-// narrow mobile
-$mobileS: 419px !default;
-
-// code languages
+// 代码语言
 $code-lang: "c" "cpp" "cs" "css" "dart" "docker" "fs" "go" "html" "java" "js"
   "json" "kt" "less" "makefile" "md" "php" "py" "rb" "rs" "sass" "scss" "sh"
   "styl" "ts" "toml" "vue" "yml" !default;
 
-/* Content Class */
+/* 内容 Class */
 $content-class: ".theme-hope-content" !default;
 
-/* Color list */
+/* 颜色列表 */
 $colors: #cf1322, #fa541c, #f39c12, #2ecc71, #25a55b, #13c2c2, #096dd9, #aa6fe9,
   #eb2f96 !default;
 
-/* Code Theme */
+/* 代码主题 */
 $code-light-theme: "one-light" !default;
 $code-dark-theme: "one-dark" !default;
 ```
 
-::: details Demo
+::: details 例子
 
 ```scss
-// modify code theme in lightmode
+// 修改日间模式代码主题
 $code-light-theme: "coy";
 ```
 
@@ -60,19 +54,19 @@ $code-light-theme: "coy";
 
 ## palette.scss
 
-`palette.scss` is used for CSS variable injecting, the following are supported configurations and default values.
+`palette.scss` 用于 CSS 变量写入，以下是支持的配置与默认值。
 
 ::: info
 
-All variables here (including your newly added variables) will be converted to kebab-case format and injected as CSS variables.
+此处的所有变量 (包括你新添加的变量) 都会被转换为 kebab-case 的格式注入为 CSS 变量。
 
-For example `$theme-color` will be injected as `--theme-color`, and `$backgroundColor` will be injected as `--$background-color`.
+如 `$theme-color` 会被注入为 `--theme-color`，`$backgroundColor` 会被注入为 `--background-color`。
 
 :::
 
-### Color Config
+### 颜色设置
 
-For all colors, if they are the same in light mode and dark mode, you can set them directly; otherwise, please set a Sass variable of type Map to give the color values in light and dark modes respectively.
+对于所有颜色，如果其在浅色模式和深色模式颜色相同，可直接设置；否则，请设置一个 Map 类型的 Sass 变量分别给出浅色和深色模式下的颜色值。
 
 ```scss
 $theme-color: #3eaf7c !default;
@@ -134,16 +128,16 @@ $card-shadow: (
 ) !default;
 ```
 
-::: details Demo
+::: details 例子
 
 ```scss
-// set theme color to red
+// 将主题颜色设置为红色
 $theme-color: red;
 ```
 
 :::
 
-### Layout Config
+### 布局设置
 
 ```scss
 // navbar
@@ -175,25 +169,25 @@ $color-transition: "0.3s ease" !default;
 $transform-transition: "0.3s ease" !default;
 ```
 
-::: details Demo
+::: details 例子
 
 ```scss
-// Overide default font
-$font-family: 'Georgia, -apple-system, "Nimbus Roman No9 L", "PingFang SC", "Hiragino Sans GB", sans-serif';
+// 将 Windows 网页字体设置为思源宋体 (当然你也要记得导入这个字体)
+$font-family: 'Georgia, -apple-system, "Nimbus Roman No9 L", "PingFang SC", "Hiragino Sans GB", "Noto Serif SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "ST Heiti", sans-serif';
 ```
 
 :::
 
 ## index.scss
 
-Everything filling in this will be parsed to standard CSS and then injected after theme and plugins styles.
+填入此文件所有内容都将解析为标准 CSS，然后在主题和插件样式之后注入。
 
-So you can add new styles or overide styles here:
+因此，您可以在此处添加新样式或覆盖样式：
 
-::: details Demo
+::: details 例子
 
 ```scss
-// make site name in navbar italic
+// 在导航栏中将站点名称改为斜体
 .site-name {
   font-style: italic;
 }

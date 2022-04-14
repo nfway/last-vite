@@ -1,20 +1,22 @@
 ---
-title: Presentation
+title: 幻灯片
 icon: slides
 category:
   - Markdown
 tag:
   - Markdown
-  - Slides
+  - 幻灯片
 ---
 
-Let the Markdown file in your VuePress site support presentation.
+让你的 VuePress 站点中的 Markdown 文件支持幻灯片。
+
+本插件利用了 [reveal.js](https://revealjs.com/) 来支持这一功能。
 
 <!-- more -->
 
 <!--lint disable no-duplicate-headings-->
 
-## Configuration
+## 配置
 
 :::: code-group
 
@@ -58,15 +60,13 @@ module.exports = defineHopeConfig({
 
 ::::
 
-This plugin is using [reveal.js](https://revealjs.com/) to support this feature.
+你也可以传入一个对象以进行更详细的配置。
 
-You can also pass an object for configuration.
-
-`presentation.plugins` receives an array of strings, allowing you to freely config whether to enable some preset plugins.
+`presentation.plugins` 接收一个字符串数组，可以自由配置是否启用一些预设的插件。
 
 ::: tip
 
-Acceptable plugins are:
+可接受的插件有:
 
 - `"highlight"`
 - `"math"`
@@ -74,16 +74,20 @@ Acceptable plugins are:
 - `"notes"`
 - `"zoom"`
 
+<!-- - `"anything"`
+- `"audio"`
+- `"chalkboard"` -->
+
 :::
 
-You can also use `presentation.revealConfig` set configuration options passed to Reveal.js globally.
+你还可以使用 `presentation.revealConfig` 来配置全局传递给 Reveal.js 的配置选项。
 
-Reveal.js also provides [more plugins](https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware). If you need a specific plugin, please submit a [Feature Request](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/new?assignees=Mister-Hope&labels=enhancement&template=feature_request.md&title=%5BFeature+Request%5D) on GitHub.
+Reveal.js 还提供了[更多的插件](https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware)。如果你需要某个特定的插件，请在 GitHub 上提出 [Feature Request](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/new?assignees=Mister-Hope&labels=enhancement&template=feature_request.md&title=%5BFeature+Request%5D)
 
-## Syntax
+## 语法
 
-- Use `---` to split slides
-- Use `--` to split the slides second time (vertical display)
+- 使用 `---` 分割幻灯片
+- 使用 `--` 对幻灯片进行二次分割(垂直显示)
 
 ```md
 @slidestart [theme]
@@ -101,9 +105,9 @@ Reveal.js also provides [more plugins](https://github.com/hakimel/reveal.js/wiki
 @slideend
 ```
 
-Theme available(replace `[theme]` with them):
+目前可用的主题(请使用它们直接替换 `[theme]`):
 
-- `auto` (Default)
+- `auto` (默认)
 - `black`
 - `white`
 - `league`
@@ -116,26 +120,26 @@ Theme available(replace `[theme]` with them):
 - `blood`
 - `moon`
 
-For details, see [Themes demo][theme-demo].
+主题演示，请详见 [幻灯片主题][presentation-theme]
 
-## Demo
+## 演示
 
 @slidestart
 
-## Slide 1
+## 幻灯片 1
 
-A paragraph with some text and a [link](https://mrhope.site)
-
----
-
-## Slide 2
-
-- Item 1
-- Item 2
+一个有文字和 [链接](https://mrhope.site) 的段落
 
 ---
 
-## Slide 3.1
+## 幻灯片 2
+
+- 项目 1
+- 项目 2
+
+---
+
+## 幻灯片 3.1
 
 ```js
 const a = 1;
@@ -143,7 +147,7 @@ const a = 1;
 
 --
 
-## Slide 3.2
+## 幻灯片 3.2
 
 $$
 J(\theta_0,\theta_1) = \sum_{i=0}
@@ -154,20 +158,20 @@ $$
 ````md
 @slidestart
 
-## Slide 1
+## 幻灯片 1
 
-A paragraph with some text and a [link](https://mrhope.site)
-
----
-
-## Slide 2
-
-- Item 1
-- Item 2
+一个有文字和 [链接](https://mrhope.site) 的段落
 
 ---
 
-## Slide 3.1
+## 幻灯片 2
+
+- 项目 1
+- 项目 2
+
+---
+
+## 幻灯片 3.1
 
 ```js
 const a = 1;
@@ -175,7 +179,7 @@ const a = 1;
 
 --
 
-## Slide 3.2
+## 幻灯片 3.2
 
 $$
 J(\theta_0,\theta_1) = \sum_{i=0}
@@ -184,17 +188,17 @@ $$
 @slideend
 ````
 
-::: info
+::: tip
 
-For detailed demo, please see [Presentation Demo][presentation-demo]
+详细与完整的演示详见 [幻灯片演示][presentation-demo]。
 
 :::
 
-## Options
+## 选项
 
-You can set `reveal` to pass options to reveal.js per page in frontmatter, you can also set `presentation` in plugin options to set reveal.js globally.
+你可以在 Frontmatter 设置 `reveal` 以设置特定页面的 reveal.js 选项，也可以在插件选项中设置 `presentation` 以全局设置 reveal.js。
 
-For more options, see [reveal.js config](https://revealjs.com/config/). For more usage, see [reveal.js documatation](https://revealjs.com/)
+更多选项，请参见[reveal.js config](https://revealjs.com/config/)，更多用法，请参阅 [reveal.js 文档](https://revealjs.com/)。
 
-[theme-demo]: https://vuepress-theme-hope.github.io/v2/md-enhance/guide/presentation/themes.html
-[presentation-demo]: https://vuepress-theme-hope.github.io/v2/md-enhance/guide/presentation/demo.html
+[presentation-theme]: https://vuepress-theme-hope.github.io/v2/md-enhance/zh/guide/presentation/themes.html
+[presentation-demo]: https://vuepress-theme-hope.github.io/v2/md-enhance/zh/guide/presentation/demo.html

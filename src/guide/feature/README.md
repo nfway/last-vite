@@ -1,28 +1,28 @@
 ---
-title: Features
+title: 功能
 icon: discover
 ---
 
-`vuepress-theme-hope` introduces lots of great features. Most of the functions are separated into plugins, which means if you like them, you can use them in other VuePress themes or `@vuepress/theme-default`.
+`vuepress-theme-hope` 引入了很多非常棒的功能。绝大部分功能都抽离成了单独组件，这意味着如果你喜欢它们，你可以在其他 VuePress 主题或默认主题中使用它们。
 
 ::: info
 
-All the plugin settings are under `themeConfig.plugins`, and the option name is related with their names.
+所有插件设置都在 `themeConfig.plugins` 下，选项名称与它们的名称相关。
 
 :::
 
-## Catalog
+## 目录
 
-- [Page Information](page-info.md)
+- [页面信息](page-info.md)
 
-- [Comment function](comment.md)
+- [评论功能](comment.md)
 
-- [One Click copy](copy-code.md)
+- [一键复制](copy-code.md)
 
-- [Picture preview](photo-swipe.md)
+- [图片预览](photo-swipe.md)
 
-- [Meta and navigation](meta.md)
+- [页面元信息](meta.md)
 
-- [Search](search.md)
+- [搜索功能](search.md)
 
-- [Encryption function](encrypt.md)
+- [加密功能](encrypt.md)

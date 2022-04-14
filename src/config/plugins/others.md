@@ -1,81 +1,81 @@
 ---
-title: Other Plugin Config
+title: 其他插件配置
 icon: more
 category:
-  - Config
+  - 配置
 tag:
-  - Plugin Config
-  - Theme Config
+  - 插件配置
+  - 主题配置
 ---
 
-## copyCode <Badge text="enabled by default" />
+## copyCode <Badge text="默认启用" />
 
-Provides a code copy button.
+提供代码复制按钮。
 
-By default, no config is required. If you don’t need this feature, please set to `false`.
-
-::: info
-
-For the plugin config, please refer to [copy-code2 plugin config][copy-code-config].
-
-:::
-
-## photoSwipe <Badge text="enabled by default" />
-
-Provide picture browsing function.
-
-By default, no config is required. If you don’t need this feature, please set to `false`.
+默认情况下，不需要任何配置。如果你不需要这个功能，请设置为 `false`。
 
 ::: info
 
-For the plugin config, please refer to [photo-swipe plugin config][photo-swipe-config].
+插件配置请参见 [copy-code2 插件配置][copy-code-config]。
 
 :::
 
-## readingTime <Badge text="enabled by default" />
+## photoSwipe <Badge text="默认启用" />
 
-Take a word count for a page and generate an estimated reading time.
+提供图片浏览功能。
+
+默认情况下，不需要任何配置。如果你不需要这个功能，请设置为 `false`。
+
+::: info
+
+插件配置请参见 [photo-swipe 插件配置][photo-swipe-config]。
+
+:::
+
+## readingTime <Badge text="默认启用" />
+
+为页面进行字数统计并生成预计的阅读时间。
 
 ### readingTime.wordPerMinute
 
-- type: `number`
-- Default: `300`
+- 类型: `number`
+- 默认值: `300`
 
-Words read per minute.
-
-::: info
-
-For more plugin configs, see [reading-time2 plugin docs][reading-time].
-
-:::
-
-## seo <Badge text="enabled by default" />
-
-Provides search engine enhancements.
-
-By default, no config is required. If you don’t need this feature, please set to `false`.
+每分钟的阅读字数。
 
 ::: info
 
-For plugin config, see [seo2 plugin config][seo-config].
+更多插件配置请参见 [reading-time2 插件文档][reading-time]。
 
 :::
 
-## sitemap <Badge text="enabled by default" />
+## seo <Badge text="默认启用" />
 
-Automatically generate Sitemap.
+提供搜索引擎增强。
 
-By default, no config is required. If you don’t need this feature, please set to `false`.
+默认情况下，不需要任何配置。如果你不需要这个功能，请设置为 `false`。
 
 ::: info
 
-For plugin config, please refer to [sitemap2 plugin config][sitemap-config].
+插件配置请参见 [seo2 插件配置][seo-config]。
 
 :::
 
-[copy-code-config]: https://vuepress-theme-hope.github.io/v2/copy-code/config.html
-[feed-config]: https://vuepress-theme-hope.github.io/v2/feed/config/
-[photo-swipe-config]: https://vuepress-theme-hope.github.io/v2/photo-swipe/config.html
-[reading-time]: https://vuepress-theme-hope.github.io/v2/reading-time/
-[seo-config]: https://vuepress-theme-hope.github.io/v2/seo/config.html
-[sitemap-config]: https://vuepress-theme-hope.github.io/v2/sitemap/config.html
+## sitemap <Badge text="默认启用" />
+
+为网站自动生成 Sitemap。
+
+默认情况下，不需要任何配置。如果你不需要这个功能，请设置为 `false`。
+
+::: info
+
+插件配置请参见 [sitemap2 插件配置][sitemap-config]。
+
+:::
+
+[copy-code-config]: https://vuepress-theme-hope.github.io/v2/copy-code/zh/config.html
+[feed-config]: https://vuepress-theme-hope.github.io/v2/feed/zh/config/
+[photo-swipe-config]: https://vuepress-theme-hope.github.io/v2/photo-swipe/zh/config.html
+[reading-time]: https://vuepress-theme-hope.github.io/v2/reading-time/zh/
+[seo-config]: https://vuepress-theme-hope.github.io/v2/seo/zh/config.html
+[sitemap-config]: https://vuepress-theme-hope.github.io/v2/sitemap/zh/config.html

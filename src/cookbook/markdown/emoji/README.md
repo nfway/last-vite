@@ -1,24 +1,24 @@
 ---
-title: Emoji List
+title: Emoji 列表
 icon: emoji
 ---
 
-## People
+## 人物
 
-- [View Detail](people.md)
+- [点击前往](people.md)
 
-## Nature
+## 自然
 
-- [View Detail](nature.md)
+- [点击前往](nature.md)
 
-## Object
+## 对象
 
-- [View Detail](object.md)
+- [点击前往](object.md)
 
-## Location
+## 地点
 
-- [View Detail](place.md)
+- [点击前往](place.md)
 
-## Synbol
+## 符号
 
-- [View Detail](symbol.md)
+- [点击前往](symbol.md)

@@ -1,41 +1,39 @@
 ---
-title: Path Navigation
+title: 路径导航
 icon: navigation
 category:
-  - Layout
+  - 布局
 tag:
-  - Breadcrumb
-  - Layout
+  - 布局
+  - 路径导航
 ---
 
-The theme adds a new Breadcrumb support, you can config it using `breadcrumb` in Frontmatter and themeConfig <Badge text="Support page config" /> [^supportpageconfig], the default value is `true`.
+`vuepress-theme-hope` 添加了开箱即用的路径导航支持，你可以通过 `breadcrumb` 字段控制它 <Badge text="支持页面配置" /> [^supportpageconfig]，默认的值为 `true`。
 
-Without any config, a Breadcrumb that matches the theme color is displayed at the top of the page content to help the reader understand the document structure.
+无需任何额外配置，一个和主题色相符合的路径导航会显示在页面内容最上方，帮助阅读者理解文档结构。
+
+你也可以通过 `breadcrumbIcon` 字段 <Badge text="支持页面配置" /> 控制路径导航的图标显示，默认值为 `true`。
 
 <!-- more -->
 
-You can also control the icon display of the path navigation using `breadcrumbIcon` field <Badge text="Support page config" />, the default value is `true`.
+::: warning 注意事项
 
-::: warning Notice
+为了保证路径导航更好的提示，建议在每一个路径下创建 README.md 文件，同时为它们设置标题。否则，路径导航将因对应层级文件夹没有主页，无法生成标题与链接而忽略那一层级。
 
-To ensure Breadcrumb working well, the `README.md` file should be included in each folder.
-
-Otherwise, the path navigation will automatically ignore that level because the component can not generate titles and links from the corresponding level folder.
-
-Please remember to set a title for **HOME PAGE**!
+请尤其注意，为主页也设置一个标题!
 
 :::
 
-[^supportpageconfig]: **Page config support**
+[^supportpageconfig]: **支持页面配置** <Badge text="支持页面配置" />
 
-    **Support local configuration**<Badge text="Support page config" /> means that the theme allows the configuration of the page to override the global configuration.
+    **支持页面配置** 指主题允许页面的配置覆盖全局的配置。这意味着你可以在全局启用的情况下，在特定页面将其禁用，或在全局禁用的情况下在特定页面启用。
 
-    ::: details Example
+    ::: details 例子
 
-    Take path navigation as an example:
+    以路径导航为例:
 
-    This feature is enabled globally by default, that is, `themeConfig.breadcrumb` is `true` by default, and you can set `breadcrumb: false` in the Front Matter of a specific page to disable it locally.
+    该功能默认全局启用，即 `themeConfig.breadcrumb` 默认为 `true`，同时你可以在特定页面的 front matter 中设置 `breadcrumb: false` 来局部禁用它。
 
-    Of course, you can also set the `themeConfig.breadcrumb` option to `false` to disable it globally, and set `breadcrumb: true` in the Front Matter of a specific page to enable it locally.
+    当然你也可以将 `themeConfig.breadcrumb` 选项设置为 `false` 来全局禁用它，之在特定页面的 front Mmtter 中设置 `breadcrumb: true` 来局部启用它。
 
     :::

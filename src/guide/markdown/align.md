@@ -1,30 +1,30 @@
 ---
-title: Custom alignment
+title: 自定义对齐
 icon: align
 category:
   - Markdown
 tag:
-  - Align
   - Markdown
+  - 对齐
 ---
 
-By injecting configuration into vuepress-plugin-container, you can use
+通过对 `vuepress-plugin-container` 进行额外的配置注入，你可以使用
 
 ```md
 ::: center
-Paragraph to center
+要居中的段落
 :::
 
 ::: right
-Right paragraph
+要居右的段落
 :::
 ```
 
-To customize your paragraph alignment.
+来对你的段落对齐进行自定义。
 
 <!-- more -->
 
-## Config
+## 配置
 
 :::: code-group
 
@@ -68,34 +68,36 @@ module.exports = defineHopeConfig({
 
 ::::
 
-## Demo
+## 演示
 
-:::: danger
-vuepress-theme-hope v2 is still in W.I.P, the API may have
+:::: danger W.I.P
+vuepress-theme-hope v2 仍在制作中，API 可能会有
 
 ::: center
-Significant changes.
+重大的变动。
 :::
 
-If you meet a bug during usage, you can
+如果你在使用过程中遇到了 bug，可以
 
 ::: right
-[open an issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues).
+[提一个 issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues)。
 :::
+
 ::::
 
 ```md
-:::: danger
-vuepress-theme-hope v2 is still in W.I.P, the API may have
+:::: danger W.I.P
+vuepress-theme-hope v2 仍在制作中，API 可能会有
 
 ::: center
-Significant changes.
+重大的变动。
 :::
 
-If you meet a bug during usage, you can
+如果你在使用过程中遇到了 bug，可以
 
 ::: right
-[open an issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues).
+[提一个 issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues)。
 :::
+
 ::::
 ```

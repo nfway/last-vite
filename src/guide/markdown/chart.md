@@ -1,20 +1,15 @@
 ---
 title: Chart
 icon: rank
-category:
-  - Markdown
-tag:
-  - Chart
-  - Markdown
 ---
 
-Let the Markdown file support chart in your VuePress site.
+让你 VuePress 站点中的 Markdown 文件支持图表。
 
-This plugin is using [chart.js](https://www.chartjs.org/docs/latest/) to support this feature.
+此插件使用 [chart.js](https://www.chartjs.org/docs/latest/) 提供相应功能。
 
 <!-- more -->
 
-## Config
+## 配置
 
 :::: code-group
 
@@ -58,34 +53,34 @@ module.exports = defineHopeConfig({
 
 ::::
 
-## Syntax
+## 格式
 
 ````md
-::: chart Title
+::: chart 标题
 
 ```json
 {
-  // Your chart config here.
+  // 此处为图表配置
 }
 ```
 
 :::
 ````
 
-## Demo
+## 案例
 
-### Bar Chart
+### 块状图
 
-::: chart A bar chart
+::: chart 一个块状图案例
 
 ```json
 {
   "type": "bar",
   "data": {
-    "labels": ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    "labels": ["红色", "蓝色", "黄色", "绿色", "紫色", "橙色"],
     "datasets": [
       {
-        "label": "# of Votes",
+        "label": "投票数",
         "data": [12, 19, 3, 5, 2, 3],
         "backgroundColor": [
           "rgba(255, 99, 132, 0.2)",
@@ -119,19 +114,19 @@ module.exports = defineHopeConfig({
 
 :::
 
-:::: details Code
+:::: details 对应代码
 
 ````md
-::: chart A bar chart
+::: chart 一个块状图案例
 
 ```json
 {
   "type": "bar",
   "data": {
-    "labels": ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    "labels": ["红色", "蓝色", "黄色", "绿色", "紫色", "橙色"],
     "datasets": [
       {
-        "label": "# of Votes",
+        "label": "投票数",
         "data": [12, 19, 3, 5, 2, 3],
         "backgroundColor": [
           "rgba(255, 99, 132, 0.2)",
@@ -168,9 +163,9 @@ module.exports = defineHopeConfig({
 
 ::::
 
-### Bubble Chart
+### 气泡图
 
-::: chart A Bubble Chart
+::: chart 一个气泡图案例
 
 ```json
 {
@@ -178,7 +173,7 @@ module.exports = defineHopeConfig({
   "data": {
     "datasets": [
       {
-        "label": "First Dataset",
+        "label": "第一个数据集",
         "data": [
           { "x": 20, "y": 30, "r": 15 },
           { "x": 40, "y": 10, "r": 10 }
@@ -192,10 +187,10 @@ module.exports = defineHopeConfig({
 
 :::
 
-:::: details Code
+:::: details 对应代码
 
 ````md
-::: chart A Bubble Chart
+::: chart 一个气泡图案例
 
 ```json
 {
@@ -203,7 +198,7 @@ module.exports = defineHopeConfig({
   "data": {
     "datasets": [
       {
-        "label": "First Dataset",
+        "label": "第一个数据集",
         "data": [
           { "x": 20, "y": 30, "r": 15 },
           { "x": 40, "y": 10, "r": 10 }
@@ -220,18 +215,18 @@ module.exports = defineHopeConfig({
 
 ::::
 
-### Line Chart
+### 线状图
 
-::: chart A Line Chart
+::: chart 一个线状图案例
 
 ```json
 {
   "type": "line",
   "data": {
-    "labels": ["January", "Feburary", "March", "Apirl", "May", "June", "July"],
+    "labels": ["一月", "二月", "三月", "四月", "五月", "六月", "七月"],
     "datasets": [
       {
-        "label": "My First Dataset",
+        "label": "我的第一个数据集",
         "data": [65, 59, 80, 81, 56, 55, 40],
         "fill": false,
         "borderColor": "rgb(75, 192, 192)",
@@ -244,19 +239,19 @@ module.exports = defineHopeConfig({
 
 :::
 
-:::: details Code
+:::: details 代码
 
 ````md
-::: chart A Line Chart
+::: chart 一个线状图案例
 
 ```json
 {
   "type": "line",
   "data": {
-    "labels": ["January", "Feburary", "March", "Apirl", "May", "June", "July"],
+    "labels": ["一月", "二月", "三月", "四月", "五月", "六月", "七月"],
     "datasets": [
       {
-        "label": "My First Dataset",
+        "label": "我的第一个数据集",
         "data": [65, 59, 80, 81, 56, 55, 40],
         "fill": false,
         "borderColor": "rgb(75, 192, 192)",
@@ -272,15 +267,15 @@ module.exports = defineHopeConfig({
 
 ::::
 
-### Polar Area Chart
+### 玫瑰图
 
-::: chart A Polar Area Chart
+::: chart 一个玫瑰图案例
 
 ```json
 {
   "type": "polarArea",
   "data": {
-    "labels": ["Red", "Green", "Yellow", "Grey", "Blue"],
+    "labels": ["红色", "绿色", "黄色", "灰色", "蓝色"],
     "datasets": [
       {
         "label": "My First Dataset",
@@ -300,16 +295,16 @@ module.exports = defineHopeConfig({
 
 :::
 
-:::: details Code
+:::: details 代码
 
 ````md
-::: chart A Polar Area Chart
+::: chart 一个玫瑰图案例
 
 ```json
 {
   "type": "polarArea",
   "data": {
-    "labels": ["Red", "Green", "Yellow", "Grey", "Blue"],
+    "labels": ["红色", "绿色", "黄色", "灰色", "蓝色"],
     "datasets": [
       {
         "label": "My First Dataset",
@@ -332,26 +327,18 @@ module.exports = defineHopeConfig({
 
 ::::
 
-### Radar Chart
+### 雷达图
 
-::: chart A Radar Chart
+::: chart 一个雷达图案例
 
 ```json
 {
   "type": "radar",
   "data": {
-    "labels": [
-      "Eating",
-      "Drinking",
-      "Sleeping",
-      "Designing",
-      "Coding",
-      "Cycling",
-      "Running"
-    ],
+    "labels": ["吃饭", "喝水", "睡觉", "设计", "编程", "骑车", "跑步"],
     "datasets": [
       {
-        "label": "My First Dataset",
+        "label": "我的第一个数据集",
         "data": [65, 59, 90, 81, 56, 55, 40],
         "fill": true,
         "backgroundColor": "rgba(255, 99, 132, 0.2)",
@@ -362,7 +349,7 @@ module.exports = defineHopeConfig({
         "pointHoverBorderColor": "rgb(255, 99, 132)"
       },
       {
-        "label": "My Second Dataset",
+        "label": "我的第二个数据集",
         "data": [28, 48, 40, 19, 96, 27, 100],
         "fill": true,
         "backgroundColor": "rgba(54, 162, 235, 0.2)",
@@ -386,27 +373,19 @@ module.exports = defineHopeConfig({
 
 :::
 
-:::: details Code
+:::: details 代码
 
 ````md
-::: chart A Radar Chart
+::: chart 一个雷达图案例
 
 ```json
 {
   "type": "radar",
   "data": {
-    "labels": [
-      "Eating",
-      "Drinking",
-      "Sleeping",
-      "Designing",
-      "Coding",
-      "Cycling",
-      "Running"
-    ],
+    "labels": ["吃饭", "喝水", "睡觉", "设计", "编程", "骑车", "跑步"],
     "datasets": [
       {
-        "label": "My First Dataset",
+        "label": "我的第一个数据集",
         "data": [65, 59, 90, 81, 56, 55, 40],
         "fill": true,
         "backgroundColor": "rgba(255, 99, 132, 0.2)",
@@ -417,7 +396,7 @@ module.exports = defineHopeConfig({
         "pointHoverBorderColor": "rgb(255, 99, 132)"
       },
       {
-        "label": "My Second Dataset",
+        "label": "我的第二个数据集",
         "data": [28, 48, 40, 19, 96, 27, 100],
         "fill": true,
         "backgroundColor": "rgba(54, 162, 235, 0.2)",
@@ -444,9 +423,9 @@ module.exports = defineHopeConfig({
 
 ::::
 
-### Scatter Chart
+### 散点图
 
-::: chart A Scatter Chart
+::: chart 一个散点图案例
 
 ```json
 {
@@ -454,7 +433,7 @@ module.exports = defineHopeConfig({
   "data": {
     "datasets": [
       {
-        "label": "Scatter Dataset",
+        "label": "散点数据集",
         "data": [
           { "x": -10, "y": 0 },
           { "x": 0, "y": 10 },
@@ -478,10 +457,10 @@ module.exports = defineHopeConfig({
 
 :::
 
-:::: details Code
+:::: details 代码
 
 ````md
-::: chart A Scatter Chart
+::: chart 一个散点图案例
 
 ```json
 {
@@ -489,7 +468,7 @@ module.exports = defineHopeConfig({
   "data": {
     "datasets": [
       {
-        "label": "Scatter Dataset",
+        "label": "散点数据集",
         "data": [
           { "x": -10, "y": 0 },
           { "x": 0, "y": 10 },
@@ -516,6 +495,6 @@ module.exports = defineHopeConfig({
 
 ::::
 
-## Docs
+## 文档
 
-For details, please see [Chart.js Docs](https://www.chartjs.org/docs/latest/).
+相关详情，详见 [Chart.js 文档](https://www.chartjs.org/docs/latest/).
