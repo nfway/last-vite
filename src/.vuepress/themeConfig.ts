@@ -7,7 +7,7 @@ const hostname =
 
 export default defineThemeConfig({
   hostname,
-
+  title: 'VuePress Mix Theme', 
 // Navbar
 
    navbar:[
