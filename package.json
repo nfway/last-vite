@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@types/three": "0.138.0",
+	"@vuepress/plugin-search": "^2.0.0-beta.38",
     "@vuepress/plugin-docsearch": "2.0.0-beta.36",
     "axios": "0.26.1",
     "three": "0.138.3",
