@@ -2,7 +2,7 @@
 home: true
 title: 主页
 icon: home
-heroImage: /logo.svg
+heroImage: /esg.png
 heroText: All About ESG
 tagline: Environmental, Social, and Governance, and more.
 actions:
