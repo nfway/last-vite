@@ -9,16 +9,23 @@ export default defineThemeConfig({
   hostname,
  
 // Navbar
-
-   navbar:[
+  navbar:[
 	  {
     text: "指南",
     icon: "guide",
     prefix: "/guide/",
     children: ["advanced/", "markdown/", "blog/", "feature","get-started","layout"],
   },
-  "/config/",
-  "/faq/",
+	{
+		text: '配置',
+		link: '/config/',
+	  },
+
+    {
+		text: 'FAQ',
+		link: '/faq/',
+	  },
+  ,
   {
     text: "教程",
     icon: "guide",
@@ -31,10 +38,6 @@ export default defineThemeConfig({
   },
   
  ],
-
- 
-  
-  
   
   author: {
     name: "San Feng",
@@ -101,65 +104,6 @@ export default defineThemeConfig({
             src: "/assets/icon/chrome-192.png",
             sizes: "192x192",
             type: "image/png",
-          },
-        ],
-        shortcuts: [
-          {
-            name: "Guide",
-            short_name: "Guide",
-            url: "/guide/",
-            icons: [
-              {
-                src: "/assets/icon/guide-maskable.png",
-                sizes: "192x192",
-                purpose: "maskable",
-                type: "image/png",
-              },
-              {
-                src: "/assets/icon/guide-monochrome.png",
-                sizes: "192x192",
-                purpose: "monochrome",
-                type: "image/png",
-              },
-            ],
-          },
-          {
-            name: "Config",
-            short_name: "Config",
-            url: "/config/",
-            icons: [
-              {
-                src: "/assets/icon/config-maskable.png",
-                sizes: "192x192",
-                purpose: "maskable",
-                type: "image/png",
-              },
-              {
-                src: "/assets/icon/config-monochrome.png",
-                sizes: "192x192",
-                purpose: "monochrome",
-                type: "image/png",
-              },
-            ],
-          },
-          {
-            name: "Cookbook",
-            short_name: "Cookbook",
-            url: "/cookbook/",
-            icons: [
-              {
-                src: "/assets/icon/basic-maskable.png",
-                sizes: "192x192",
-                purpose: "maskable",
-                type: "image/png",
-              },
-              {
-                src: "/assets/icon/basic-monochrome.png",
-                sizes: "192x192",
-                purpose: "monochrome",
-                type: "image/png",
-              },
-            ],
           },
         ],
       },
