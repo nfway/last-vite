@@ -10,7 +10,7 @@ export const zhNavbarConfig = defineNavbarConfig([
 
  { text: "ESG介绍", 
    icon: "guide",
-   prefix: "/about/"
+   prefix: "/about/",
    children:[
 	{ text: "ESG是什么", link: "ESG", },
 	{ text: "ESG发展史", link: "ESG-history",},
@@ -20,7 +20,7 @@ export const zhNavbarConfig = defineNavbarConfig([
   }, 
  { text: "ESG标准", 
    icon: "define",
-   prefix: "/criteria/"
+   prefix: "/criteria/",
    children: [
 	 { text: "ESG标准",
 	   link: "ESG-Criteria", 
@@ -38,7 +38,7 @@ export const zhNavbarConfig = defineNavbarConfig([
  }, 
   { text: "ESG评级", 
     icon: "rank",
-	prefix: "/apply/"
+	prefix: "/apply/",
     children:[
 		{ text: "ESG评级", 
 		  link: "ESG-rating",
