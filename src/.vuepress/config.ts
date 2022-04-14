@@ -30,7 +30,7 @@ export default defineHopeConfig({
   locales: {
     "/": {
       lang: "zh-CN",
-      title: "这是一个中文标题",
+      title: "这不是一个中文标题",
       description: "一个具有强大功能的 vuepress 主题✨",
     },
 
