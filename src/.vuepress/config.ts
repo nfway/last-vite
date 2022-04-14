@@ -18,7 +18,13 @@ export default defineHopeConfig({
         href: "//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css",
       },
     ],
-    
+    //[
+    //  "meta",
+    //  {
+    //    name: "google-site-verification",
+    //    content: "qG3soux9jAKB4Q_DYf7yj1p5cEIuib6yG4zDhpmv2_E",
+    //  },
+    //],
   ],
 
   locales: {
@@ -27,6 +33,8 @@ export default defineHopeConfig({
       title: "这不是一个中文标题",
       description: "一个具有强大功能的 vuepress 主题✨",
     },
+
+  },
 
   themeConfig,
 

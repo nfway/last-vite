@@ -1,176 +1,153 @@
 import { defineSidebarConfig } from "vuepress-theme-hope";
 
 export const zhSidebarConfig = defineSidebarConfig({
-  "/guide/": [
-    {
-      text: "快速上手",
-      icon: "creative",
-      prefix: "get-started/",
-      collapsable: true,
-      children: ["intro", "install", "markdown"],
-    },
-    {
-      text: "布局",
-      icon: "layout",
-      prefix: "layout/",
-      collapsable: true,
-      children: [
-        "navbar",
-        "sidebar",
-        "page",
-        "breadcrumb",
-        "footer",
-        "home",
-        "slides",
-      ],
-    },
-    {
-      text: "Markdown 增强",
-      icon: "markdown",
-      prefix: "markdown/",
-      collapsable: true,
-      children: [
-        "intro",
-        "container",
-        "components",
-        "code-group",
-        "align",
-        "sup-sub",
-        "footnote",
-        "mark",
-        "tasklist",
-        "tex",
-        "flowchart",
-        "mermaid",
-        "demo",
-        "presentation",
-        "others",
-        "external",
-      ],
-    },
-    {
-      text: "功能",
-      icon: "discover",
-      prefix: "feature/",
-      collapsable: true,
-      children: [
-        "page-info",
-        "comment",
-        "copy-code",
-        "photo-swipe",
-        "meta",
-        "search",
-        "encrypt",
-      ],
-    },
-    {
-      text: "博客",
-      icon: "blog",
-      prefix: "blog/",
-      collapsable: true,
-      children: ["intro", "article", "category-and-tags", "timeline", "home"],
-    },
-    {
-      text: "高级功能",
-      icon: "advance",
-      prefix: "advanced/",
-      collapsable: true,
-      children: ["pwa", "feed", "seo", "sitemap", "customize", "extend"],
-    },
-  ],
+	
+'/about/':[         
+	{
+		title: 'ESG介绍',   // 一级菜单名称
+		collapsable: false, // false为默认展开菜单, 默认值true是折叠,
+		sidebarDepth: 1,    //  设置侧边导航自动提取markdown文件标题的层级，默认1为h2层级
+		children: [
+		
+		{
+			type: 'link',
+			text: 'ESG是什么',
+			link: 'ESG',          
+		},
+		
+		{
+			type: 'link',
+			text: 'ESG发展史',
+			link: 'ESG-history',          
+		},
+	
+		{
+			type: 'link',
+			text: 'ESG投资史',
+			link: 'ESG-investment-history',          
+		},
 
-  "/config/": [
-    "intro",
-    "i18n",
-    {
-      text: "主题配置",
-      icon: "config",
-      prefix: "theme/",
-      children: ["", "basic", "feature", "layout", "apperance"],
-    },
-    {
-      text: "插件配置",
-      icon: "plugin",
-      prefix: "plugins/",
-      children: [
-        "intro",
-        "blog",
-        "comment",
-        "feed",
-        "md-enhance",
-        "pwa",
-        "others",
-      ],
-    },
-    "page",
-    "style",
-  ],
+		],
+	},
+],
 
-  "/cookbook/": [
-    "tutorial",
-    {
-      text: "Markdown",
-      icon: "markdown",
-      prefix: "markdown/",
-      collapsable: true,
-      children: [
-        "",
-        "demo",
-        {
-          text: "Emoji",
-          icon: "emoji",
-          link: "emoji/",
-          prefix: "emoji/",
-          collapsable: true,
-          children: ["people", "nature", "object", "place", "symbol"],
-        },
-      ],
-    },
-    {
-      text: "VuePress",
-      icon: "vue",
-      prefix: "vuepress/",
-      collapsable: true,
-      children: ["", "file", "markdown", "config", "plugin", "theme"],
-    },
-    "style",
-  ],
+'/criteria/':[ 
+	{
+		title: 'ESG标准',
+		collapsable: false, 
+		sidebarDepth: 1, 
+		children: [
+		{
+			type: 'link',
+			text: 'ESG标准',
+			link: 'ESG-Criteria',          
+		},
+		{
+			type: 'link',
+			text: 'ESG在中国',
+			link: 'ESG-China',          
+		},
+		{
+			type: 'link',
+			text: '港交所ESG',
+			link: 'hkex-ESG',          
+		},
+		{
+			type: 'link',
+			text: '港交所ESG解读',
+			link: 'hkex-new-esg-guide-2019',          
+		},
+		{
+			type: 'link',
+			text: 'ESG政策更新',
+			link: 'ESG-update',          
+		},	
 
-  "/": [
-    "",
-    {
-      text: "指南",
-      icon: "creative",
-      prefix: "guide/",
-      children: [
-        "get-started/",
-        "layout/",
-        "markdown/",
-        "feature/",
-        "blog/",
-        "advanced/",
-      ],
-    },
-    {
-      text: "配置",
-      icon: "config",
-      prefix: "config/",
-      children: ["intro", "i18n", "theme/", "plugins/", "page", "style"],
-    },
-    {
-      text: "教程",
-      icon: "guide",
-      prefix: "cookbook/",
-      children: ["tutorial", "markdown/", "vuepress/", "style"],
-    },
-    {
-      text: "迁移",
-      icon: "change",
-      prefix: "migration",
-      children: ["config", "page", "style"],
-    },
-    "changelog",
-    "faq",
-    "contribution",
-  ],
+	  ],
+	},
+],
+ 
+'/apply/':[
+	{
+		title: 'ESG应用',
+		collapsable: false, 
+		sidebarDepth: 1, 
+		children: [
+		
+		{
+			type: 'link',
+			text: '以ESG实现监管',
+			link: 'ESG-as-supervision.md',          
+		},		
+		
+		{
+			type: 'link',
+			text: 'ESG评级',
+			link: 'ESG-rating.md',          
+		},		
+
+		{
+			type: 'link',
+			text: '作为投资工具',
+			link: 'ESG-investment.m',          
+		},		
+		{
+			type: 'link',
+			text: '作为沟通工具',
+			link: 'ESG-communicate.md',          
+		},		
+		{
+			type: 'link',
+			text: 'ESG投资与价值',
+			link: 'ESG-investment-and-social-value',          
+		},
+		{
+			type: 'link',
+			text: 'ESG研究报告',
+			link: 'ESG-research-reports',          
+		},		
+
+		{
+			type: 'link',
+			text: 'MSCI 评级',
+			link: 'MSCI-ESG-Rating-Methology-Chinese',          
+		},		
+		{
+			type: 'link',
+			text: '投资者需要什么ESG信息',
+			link: 'ESG-investor-need',          
+		},		
+		{
+			type: 'link',
+			text: '绿色债券指南',
+			link: 'Green-bond-definition-priciples-reporting',          
+		},	
+	  ],
+	},
+],
+
+'/how/':[
+	{
+		title: 'ESG披露实践',   // 一级菜单名称
+		collapsable: false, // false为默认展开菜单, 默认值true是折叠,
+		sidebarDepth: 1,    //  设置侧边导航自动提取markdown文件标题的层级，默认1为h2层级
+		children: [
+		{
+			type: 'link',
+			text: 'ESG披露指南',
+			link: 'ESG-guide.md',          
+		},		
+		
+		{
+			type: 'link',
+			text: '帮助',
+			link: 'contact',          
+		},		
+	
+	  ],
+	}
+],
+				
+	
+
 });

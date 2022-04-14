@@ -2,102 +2,78 @@ import { defineNavbarConfig } from "vuepress-theme-hope";
 
 export const zhNavbarConfig = defineNavbarConfig([
  {
-    text: "指南",
-    icon: "guide",
-    prefix: "/guide/",
-    children: ["advanced/", "markdown/", "blog/", "feature","get-started","layout"],
+    text: "首页",
+    icon: "home",
+    link: "/",    
   },
-  "/config/",
-  "/faq/",
-  {
-    text: "教程",
-    icon: "guide",
-    prefix: "/cookbook/",
-    children: ["tutorial", "markdown/", "vuepress/", "style"],
-  },
-{
-    text: "迁移",
-    link: "/migration/",
-  },
-  {
-    text: "下拉菜单",
-    icon: "info",
-    prefix: "/",
-    children: [
-      "changelog",
-      "demo/",
-      "contribution",
-      {
-        text: "插件",
-        icon: "plugin",
-        children: [
-          {
-            text: "AddThis 插件",
-            icon: "share",
-            link: "https://vuepress-theme-hope.github.io/v2/add-this/",
-          },
-          {
-            text: "博客插件",
-            icon: "blog",
-            link: "https://vuepress-theme-hope.github.io/v2/blog/",
-          },
-          {
-            text: "评论插件",
-            icon: "comment",
-            link: "https://vuepress-theme-hope.github.io/v2/comment/",
-          },
-          {
-            text: "组件库",
-            icon: "plugin",
-            link: "https://vuepress-theme-hope.github.io/v2/components/",
-          },
-          {
-            text: "代码复制插件",
-            icon: "copy",
-            link: "https://vuepress-theme-hope.github.io/v2/copy-code/",
-          },
-          {
-            text: "Feed 插件",
-            icon: "rss",
-            link: "https://vuepress-theme-hope.github.io/v2/feed/",
-          },
-          {
-            text: "LightGallery 插件",
-            icon: "pic",
-            link: "https://vuepress-theme-hope.github.io/v2/lightgallery/",
-          },
-          {
-            text: "Markdown 增强插件",
-            icon: "markdown",
-            link: "https://vuepress-theme-hope.github.io/v2/md-enhance/",
-          },
-          {
-            text: "图片预览插件",
-            icon: "pic",
-            link: "https://vuepress-theme-hope.github.io/v2/photo-swipe/",
-          },
-          {
-            text: "PWA 插件",
-            icon: "app",
-            link: "https://vuepress-theme-hope.github.io/v2/pwa/",
-          },
-          {
-            text: "阅读时间插件",
-            icon: "read",
-            link: "https://vuepress-theme-hope.github.io/v2/reading-time/",
-          },
-          {
-            text: "Sass 调色板插件",
-            icon: "palette",
-            link: "https://vuepress-theme-hope.github.io/v2/sass-palette/",
-          },
-          {
-            text: "Seo 插件",
-            icon: "strong",
-            link: "https://vuepress-theme-hope.github.io/v2/seo/",
-          },
-        ],
-      },
+ 
+
+ { text: "ESG介绍", 
+   icon: "guide",
+   prefix: "/about/",
+   children:[
+	{ text: "ESG是什么", link: "ESG", },
+	{ text: "ESG发展史", link: "ESG-history",},
+	{ text: "ESG投资史", link: "ESG-investment-history",},
+	  
+	],	
+  }, 
+ { text: "ESG标准", 
+   icon: "define",
+   prefix: "/criteria/",
+   children: [
+	 { text: "ESG标准",
+	   link: "ESG-Criteria", 
+	 },
+	 { text: "ESG在中国", 
+	   link: "ESG-China",
+	 },
+	 { text: "港交所ESG", 
+	   link: "hkex-ESG",
+	  },
+	 { text: "政策更新",
+   	   link: "ESG-update",
+	   },
+	],	
+ }, 
+  { text: "ESG评级", 
+    icon: "rank",
+	prefix: "/apply/",
+    children:[
+		{ text: "ESG评级", 
+		  link: "ESG-rating",
+		},
+		{ text: "ESG投资", 
+		  link: "ESG-investment",
+		},
+		{ text: "绿色债券", 
+		  link: "Green-bond-definition-priciples-reporting",},
+		{ text: "投资者需求", 
+		  link: "ESG-investor-need",
+		},
     ],
-  },
+  }, 
+
+ { text: "如何写ESG报告",
+   icon: "edit",
+   link: "/how/ESG-guide",
+ }, 		
+           			
+  {
+	text: "帮助/关于",  //默认显示        
+	icon: "support",
+	children: [
+		{ text: "ESG服务", link: "/contact.md" ,},
+		{ text: "SDGs 中文", link: "https://sdg.js.org", },
+		{ text: "CSR服务", link: "https://3feng.im", },  
+		{ text: "公益创投", link: "https://lib.3feng.im/venture-philanthropy/" ,}, 
+		{ text: "基金会咨询", link: "https://lib.3feng.im/",},
+		{ text: "作者简历", link: "https://zhou.3feng.im/",},
+		],
+   },
+ 
+ 
+ 
+ 
+ 
 ]);
