@@ -68,7 +68,7 @@ It is noted that strong companies with good ESG scores attract better talent and
 
 The findings come at a time when sustainable investing is rapidly transforming from a niche of the investment world into what looks like an unstoppable force. Based on U.S. demographic trends, Savita Subramanian, Head of U.S. Equity & Quantitative Strategy for BofA (Bank of America) Global Research, estimates that the amount invested in ESG funds could rise by $15-20 trillion over the next two decades. “That’s equivalent to the size of the S&P 500 today,” she notes.
 
-![](./assets/BofA_ESG-Placemat_For-in-line-article_2.png)
+![](BofA_ESG-Placemat_For-in-line-article_2.png)
 
 **Past performance is no guarantee of future results.**
 
@@ -82,7 +82,7 @@ Among U.S. companies on the S&P 500 index, those that scored in the top fifth of
 
 
 
-![](./assets/BofA_ESG-Placemat_For-in-line-article_1.png)
+![](BofA_ESG-Placemat_For-in-line-article_1.png)
 
 Past performance is no guarantee of future results.
 
