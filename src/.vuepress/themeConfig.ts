@@ -132,12 +132,6 @@ export default defineThemeConfig({
 
   pageInfo: ["Category", "Tag", "ReadingTime"],
 
-  locales: {
-    "/": {
-      navbar: zhNavbarConfig,
-      sidebar: zhSidebarConfig,
-    },
-  },
 
   plugins: {
     blog: true,
