@@ -1,9 +1,5 @@
 ---
 title: The future of ESG integration
-category:
-  - 关于
-tag:
-  - 关于
 ---
 
 

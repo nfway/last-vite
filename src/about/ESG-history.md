@@ -1,9 +1,5 @@
 ---
 title: ESG的发展历史
-category:
-  - 关于
-tag:
-  - 关于
 ---
 
 
