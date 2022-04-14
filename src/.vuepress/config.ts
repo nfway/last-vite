@@ -6,8 +6,6 @@ import themeConfig from "./themeConfig";
 const base = (process.env.BASE as "/" | `/${string}/`) || "/";
 
 export default defineHopeConfig({
-  title: 'VuePress Mix Theme', 
-  description: "一个具有强大功能的 vuepress 主题✨",
   base,
 
   dest: "./dist",
@@ -28,6 +26,13 @@ export default defineHopeConfig({
       },
     ],
   ],
+
+  locales: {
+    "/": {
+      lang: "zh-CN",
+      title: "这不是一个中文标题",
+      description: "一个具有强大功能的 vuepress 主题✨",
+    },
 
   themeConfig,
 
