@@ -49,10 +49,10 @@ You can customize the sidebar item text, like this only:
 //sidebar.ts 
 
 {
-			type: 'link',
-			text: 'Do not fuck',
-			link: 'i-will-not',          
-		},
+type: 'link',
+text: 'Do not fuck',
+link: 'i-will-not',          
+},
 ```
 
 Navbar should be easy:
