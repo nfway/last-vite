@@ -63,16 +63,16 @@ Navbar should be easy:
 { text: "title in nav", 
    prefix: "/criteria/",  //this will allow you ignore links prefix
    children: [
-	 { text: "OK1",
-	   link: "not-ok2", 
-	 },
-	 { text: "OK3",
-	   link: "not-ok4", 
-	 },
-	 { text: "OK5",
-	   link: "not-ok6", 
-	 },
-	],	
+  { text: "OK1",
+    link: "not-ok2", 
+  },
+  { text: "OK3",
+   link: "not-ok4", 
+  },
+ { text: "OK5",
+  link: "not-ok6", 
+  },
+    ],	
  }, 
 ```
 
