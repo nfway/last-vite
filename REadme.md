@@ -90,3 +90,8 @@ In vuepress next, the plugin should customize in `themeConfig.ts` or `config.ts`
 ```
 
 The official documentation is wrong.
+
+## Deploy
+
+- Build command: `yarn docs:build`
+- Output : `dist`
