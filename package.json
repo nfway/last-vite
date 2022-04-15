@@ -11,7 +11,7 @@
   },
   "scripts": {
     "docs:vite-build": "vuepress-vite build src",
-	"docs:build": "vuepress build src",
+    "docs:build": "vuepress build src",
     "docs:vite-clean-serve": "vuepress-vite dev src --clean-cache",
     "docs:vite-serve": "vuepress-vite dev src",
     "docs:webpack-build": "vuepress-webpack build src",
