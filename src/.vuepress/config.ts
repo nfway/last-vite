@@ -38,6 +38,8 @@ export default defineHopeConfig({
 
   themeConfig,
 
+  
+
   onInitialized: (app) => {
     if (app.env.isDev)
       addViteOptimizeDepsInclude(app, [
