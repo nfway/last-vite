@@ -1,13 +1,7 @@
 import { defineNavbarConfig } from "vuepress-theme-hope";
 
 export const enNavbarConfig = defineNavbarConfig([
-  {
-    text: "指南",
-    icon: "guide",
-    prefix: "/guide/",
-    children: ["advanced/", "markdown/", "blog/", "feature","get-started","interface","layout"],
-  },
-  
+  "/guide/",
   "/config/",
   "/faq/",
   {
@@ -16,10 +10,7 @@ export const enNavbarConfig = defineNavbarConfig([
     prefix: "/cookbook/",
     children: ["tutorial", "markdown/", "vuepress/", "style"],
   },
- {
-    text: "迁移",
-    link: "/migration/",
-  },
+  "/migration/",
   {
     text: "Project",
     icon: "info",
