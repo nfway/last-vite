@@ -18,8 +18,10 @@ jobs:
       - name: Build site
         run: npm run docs:build
 
-      - name: Deploy to Deno Deploy
-        uses: denoland/deployctl-action@v0.3.3
+      - name: Upload to Deno Deploy
+        uses: denoland/deployctl@v1
         with:
-          cmd: "deploy"
-          args: "--no-check ./path/to/your/site/folder ${{ secrets.DENO_DEPLOY_TOKEN }}"
+          project: "nfway-vuepress-next-test"
+          entrypoint: "./main.ts" # TODO: update entrypoint
+        env:
+          DENO_DEPLOY_TOKEN: ${{ secrets.DENO_DEPLOY_TOKEN }}
