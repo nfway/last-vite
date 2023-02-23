@@ -1,61 +1,23 @@
-import { addViteOptimizeDepsInclude } from "@mr-hope/vuepress-shared";
-import { path } from "@vuepress/utils";
-import { defineHopeConfig } from "vuepress-theme-hope";
-import themeConfig from "./themeConfig";
+import { defineUserConfig } from "vuepress";
+import theme from "./theme.js";
 
-const base = (process.env.BASE as "/" | `/${string}/`) || "/";
-
-export default defineHopeConfig({
-  base,
-
-  dest: "./dist",
-
-  head: [
-    [
-      "link",
-      {
-        rel: "stylesheet",
-        href: "//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css",
-      },
-    ],
-    //[
-    //  "meta",
-    //  {
-    //    name: "google-site-verification",
-    //    content: "qG3soux9jAKB4Q_DYf7yj1p5cEIuib6yG4zDhpmv2_E",
-    //  },
-    //],
-  ],
+export default defineUserConfig({
+  base: "/",
 
   locales: {
     "/": {
-      lang: "zh-CN",
-      title: "这不是一个中文标题",
-      description: "一个具有强大功能的 vuepress 主题✨",
+      lang: "en-US",
+      title: "Docs Demo",
+      description: "A docs demo for vuepress-theme-hope",
     },
-
+    "/zh/": {
+      lang: "zh-CN",
+      title: "文档演示",
+      description: "vuepress-theme-hope 的文档演示",
+    },
   },
 
-  themeConfig,
+  theme,
 
-  
-
-  onInitialized: (app) => {
-    if (app.env.isDev)
-      addViteOptimizeDepsInclude(app, [
-        "@mr-hope/vuepress-shared/lib/client",
-        "dayjs",
-        "dayjs/plugin/localizedFormat",
-        "dayjs/plugin/objectSupport",
-        "dayjs/plugin/timezone",
-        "dayjs/plugin/utc",
-      ]);
-
-    addViteOptimizeDepsInclude(app, [
-      "axios",
-      "three",
-      "three/examples/jsm/controls/OrbitControls",
-      "three/examples/jsm/loaders/STLLoader",
-    ]);
-  },
+  shouldPrefetch: false,
 });

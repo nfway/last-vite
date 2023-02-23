@@ -1,28 +1,17 @@
 ---
-title: Demos
+title: Features Demo
+index: false
 icon: discover
 category:
-  - Demo
+  - Guide
 ---
 
-## Mr.Hope’s Blog
+## Catalog
 
-- [Link](https://mrhope.site)
-- [Source](https://github.com/Mister-Hope/Mister-Hope.github.io)
+- [Markdown Enhance](markdown.md)
 
-## vuepress-theme-hope
+- [Page Config](page.md)
 
-- [Link][vuepress-theme-hope]
-- [Source](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/docs/theme)
+- [Function Disable](disable.md)
 
-## Hope Studio
-
-- [Link][hope-studio]
-- [Source](https://github.com/Hope-Studio/Hope-Studio.github.io)
-
-## More
-
-- Feel free to add yours
-
-[vuepress-theme-hope]: https://vuepress-theme-hope.github.io/v2/
-[hope-studio]: https://hope-studio.innenu.com
+- [Encryption Demo](encrypt.md)
