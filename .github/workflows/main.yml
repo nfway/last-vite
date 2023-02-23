@@ -21,7 +21,7 @@ jobs:
         run: npm install
 
       - name: Build site
-        run: npm run vuepress build src
+        run: npm run vuepress-vite build src
 
       - name: Deploy to Deno Deploy
         uses: denoland/deployctl@v1
