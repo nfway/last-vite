@@ -6,34 +6,20 @@ on:
       - main
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
-    permissions:
-      id-token: write # This is required to allow the GitHub Action to authenticate with Deno Deploy.
-      contents: read
-
     steps:
-      - name: 设置 Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: npm
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: 安装依赖
-        run: npm ci
+      - name: Install dependencies
+        run: npm install && npm ci
 
-      - name: 构建文档
-        env:
-          NODE_OPTIONS: --max_old_space_size=8192
-        run: |-
-          npm run docs:build
+      - name: Build site
+        run: npm run docs:build
 
       - name: Deploy to Deno Deploy
-        uses: denoland/deployctl@v1
+        uses: denoland/deployctl-action@v0.3.3
         with:
-          project: nfway-vuepress-next-test # the name of the project on Deno Deploy
-          entrypoint: ./main.ts # the entrypoint to deploy
-          args: "--no-check --reload --allow-read=./src/.vuepress/dist"
-        env:
-          DENO_DEPLOY_TOKEN: ${{ secrets.DENO_DEPLOY_TOKEN }}
+          cmd: "deploy"
+          args: "--no-check ./path/to/your/site/folder ${{ secrets.DENO_DEPLOY_TOKEN }}"
