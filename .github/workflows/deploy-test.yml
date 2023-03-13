@@ -1,24 +1,48 @@
 name: vuepress-deploy
 
+name: vuepress-deploy
+
 on:
+  # trigger deployment on every push to main branch
   push:
-    branches:
-      - main  # Set a branch name to trigger deployment
+    branches: [main]
+  # trigger deployment manually
+  workflow_dispatch:
 
 jobs:
-  deploy:
+  docs:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - name: Vuepress deploy
-        uses: jenkey2011/vuepress-deploy@v1.8.1
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BUILD_SCRIPT: pnpm install && pnpm docs:build # This is the command that builds your Vuepress site
-          BUILD_DIR: src/.vuepress/dist/ # This is the directory where the built files are located
+      - uses: actions/checkout@v3
+        with:
+          # fetch all commits to get last updated time or other git log info
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          # choose pnpm version to use
+          version: 7
+          # install deps with pnpm
+          run_install: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          # choose node.js version to use
+          node-version: 18
+          # cache deps for pnpm
+          cache: pnpm
+      # run build script
+      - name: Build VuePress site
+        run: pnpm docs:build
+        build_dir: src/.vuepress/dist/ # This is the directory where the built files are located
       - name: Deploy site to Deno Deploy
-        uses: denoland/deployctl@v1
+        uses: denoland/deployctl-action@v1
         with:
           token: ${{ secrets.DENO_TOKEN }}
           project_id: ${{ secrets.DENO_PROJECT }}
           entrypoint: public/index.html
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
