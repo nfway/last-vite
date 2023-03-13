@@ -14,10 +14,10 @@ jobs:
         uses: jenkey2011/vuepress-deploy@v1.8.1
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BUILD_SCRIPT: yarn && yarn build # This is the command that builds your Vuepress site
+          BUILD_SCRIPT: yarn && yarn docs:build # This is the command that builds your Vuepress site
           BUILD_DIR: src/.vuepress/dist/ # This is the directory where the built files are located
        - name: Deno Deploy
-       - run: |
+       - run: | 
           curl -fsSL https://deno.land/x/install/install.sh | sh # Install deno CLI tool
           export DENO_INSTALL="/home/runner/.deno"
           export PATH="$DENO_INSTALL/bin:$PATH"
