@@ -1,7 +1,5 @@
 name: vuepress-deploy
 
-name: vuepress-deploy
-
 on:
   # trigger deployment on every push to main branch
   push:
