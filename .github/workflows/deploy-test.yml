@@ -17,7 +17,7 @@ jobs:
           BUILD_SCRIPT: yarn && yarn docs:build # This is the command that builds your Vuepress site
           BUILD_DIR: src/.vuepress/dist/ # This is the directory where the built files are located
       - name: Deploy site to Deno Deploy
-        uses: denoland/deployctl-action@v1
+        uses: denoland/deployctl@v1
         with:
           token: ${{ secrets.DENO_TOKEN }}
           project_id: ${{ secrets.DENO_PROJECT }}
