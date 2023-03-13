@@ -37,7 +37,7 @@ jobs:
         run: pnpm docs:build
         #build_dir: src/.vuepress/dist/ # This is the directory where the built files are located
       - name: Deploy site to Deno Deploy
-        uses: denoland/deployctl-action@v1
+        uses: denoland/deployctl@v1
         with:
           token: ${{ secrets.DENO_TOKEN }}
           project_id: ${{ secrets.DENO_PROJECT }}
