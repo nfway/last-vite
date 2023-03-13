@@ -1,0 +1,25 @@
+name: vuepress-deploy
+
+on:
+  push:
+    branches:
+      - main  # Set a branch name to trigger deployment
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Vuepress deploy
+        uses: jenkey2011/vuepress-deploy@v1.8.1
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BUILD_SCRIPT: yarn && yarn build # This is the command that builds your Vuepress site
+          BUILD_DIR: src/.vuepress/dist/ # This is the directory where the built files are located
+       - name: Deno Deploy
+       - run: |
+          curl -fsSL https://deno.land/x/install/install.sh | sh # Install deno CLI tool
+          export DENO_INSTALL="/home/runner/.deno"
+          export PATH="$DENO_INSTALL/bin:$PATH"
+          deno login --token ${{ secrets.DENO_TOKEN }} # Login with deno.com/deploy API key (you need to create one first)
+          deno deploy --no-check main.tsx # Deploy main.tsx file using deno CLI tool
