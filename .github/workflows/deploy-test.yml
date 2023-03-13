@@ -14,7 +14,7 @@ jobs:
         uses: jenkey2011/vuepress-deploy@v1.8.1
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BUILD_SCRIPT: yarn && yarn docs:build # This is the command that builds your Vuepress site
+          BUILD_SCRIPT: pnpm install && pnpm docs:build # This is the command that builds your Vuepress site
           BUILD_DIR: src/.vuepress/dist/ # This is the directory where the built files are located
       - name: Deploy site to Deno Deploy
         uses: denoland/deployctl@v1
