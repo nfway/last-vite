@@ -8,9 +8,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  docs:
+  deno-deploy:
     runs-on: ubuntu-latest
-
+    permissions:
+      id-token: write # Allows authentication with Deno Deploy.
+      contents: read # Allows cloning the repo.
     steps:
       - uses: actions/checkout@v3
         with:
@@ -38,12 +40,9 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm docs:build
         #build_dir: src/.vuepress/dist/ # This is the directory where the built files are located
-      - name: Deploy site to Deno Deploy
+      - name: Deploy to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          token: ${{ secrets.DENO_TOKEN }}
-          project_id: ${{ secrets.DENO_PROJECT }}
-          entrypoint: src/.vuepress/public/main.tsx
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
- 
+          project: hugo-on-deno-deploy # the name of the project on Deno Deploy
+          entrypoint: https://deno.land/std@0.140.0/http/file_server.ts
+          root: src/.vuepress/public # Where the built HTML/CSS/JS files are located.
